@@ -493,7 +493,7 @@ section,nav,article,footer,header,menu {
 	position: fixed;
 	top: 0;
 	left: 0;
-	padding: 37px 0 10px 0;
+	padding: 10px 0 10px 0;
 	text-align: center;
 	z-index: 50;
 	overflow: hidden;
@@ -514,9 +514,9 @@ section,nav,article,footer,header,menu {
 }
 
 #site-header img {
-	-webkit-border-radius: 100%;
-	-moz-border-radius: 100%;
-	border-radius: 100%;
+	-webkit-border-radius: 0%;
+	-moz-border-radius: 0%;
+	border-radius: 0%;
 	display: block
 }
 
@@ -597,6 +597,10 @@ section,nav,article,footer,header,menu {
 	text-transform: uppercase;
 	display: inline-block;
 	padding: 10px
+}
+
+.site-sidebar-menu .menu-item:hover {
+	color:#f04e23;
 }
 
 @media only screen and (max-width:1280px) {
