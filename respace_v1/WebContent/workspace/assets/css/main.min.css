@@ -58,12 +58,12 @@
 
 @font-face {
 	font-family: 'cabin-regular';
-	src: url("/workspace/assets/fonts/cabin-regular.eot");
-	src: url("/workspace/assets/fonts/cabin-regular.eot?#iefix")
+	src: url("fonts/cabin-regular.eot");
+	src: url("fonts/cabin-regular.eot?#iefix")
 		format('embedded-opentype'),
-		url("/workspace/assets/fonts/cabin-regular.woff") format('woff'),
-		url("/workspace/assets/fonts/cabin-regular.ttf") format('truetype'),
-		url("/workspace/assets/fonts/cabin-regular.svg#cabin-regular")
+		url("fonts/cabin-regular.woff") format('woff'),
+		url("fonts/cabin-regular.ttf") format('truetype'),
+		url("fonts/cabin-regular.svg#cabin-regular")
 		format('svg');
 	font-weight: normal;
 	font-style: normal
@@ -71,24 +71,24 @@
 
 @font-face {
 	font-family: 'cabin-bold';
-	src: url("/workspace/assets/fonts/cabin-bold.eot");
-	src: url("/workspace/assets/fonts/cabin-bold.eot?#iefix")
+	src: url("fonts/cabin-bold.eot");
+	src: url("fonts/cabin-bold.eot?#iefix")
 		format('embedded-opentype'),
-		url("/workspace/assets/fonts/cabin-bold.woff") format('woff'),
-		url("/workspace/assets/fonts/cabin-bold.ttf") format('truetype'),
-		url("/workspace/assets/fonts/cabin-bold.svg#cabin-bold") format('svg');
+		url("fonts/cabin-bold.woff") format('woff'),
+		url("fonts/cabin-bold.ttf") format('truetype'),
+		url("fonts/cabin-bold.svg#cabin-bold") format('svg');
 	font-weight: normal;
 	font-style: normal
 }
 
 @font-face {
 	font-family: 'cabin-italic';
-	src: url("/workspace/assets/fonts/cabin-italic.eot");
-	src: url("/workspace/assets/fonts/cabin-italic.eot?#iefix")
+	src: url("fonts/cabin-italic.eot");
+	src: url("fonts/cabin-italic.eot?#iefix")
 		format('embedded-opentype'),
-		url("/workspace/assets/fonts/cabin-italic.woff") format('woff'),
-		url("/workspace/assets/fonts/cabin-italic.ttf") format('truetype'),
-		url("/workspace/assets/fonts/cabin-italic.svg#cabin-italic")
+		url("fonts/cabin-italic.woff") format('woff'),
+		url("fonts/cabin-italic.ttf") format('truetype'),
+		url("fonts/cabin-italic.svg#cabin-italic")
 		format('svg');
 	font-weight: normal;
 	font-style: normal
@@ -96,12 +96,12 @@
 
 @font-face {
 	font-family: 'Gotham-Black';
-	src: url("/workspace/assets/fonts/Gotham-Black.eot");
-	src: url("/workspace/assets/fonts/Gotham-Black.eot?#iefix")
+	src: url("fonts/Gotham-Black.eot");
+	src: url("fonts/Gotham-Black.eot?#iefix")
 		format('embedded-opentype'),
-		url("/workspace/assets/fonts/Gotham-Black.woff") format('woff'),
-		url("/workspace/assets/fonts/Gotham-Black.ttf") format('truetype'),
-		url("/workspace/assets/fonts/Gotham-Black.svg#Gotham-Black")
+		url("fonts/Gotham-Black.woff") format('woff'),
+		url("fonts/Gotham-Black.ttf") format('truetype'),
+		url("fonts/Gotham-Black.svg#Gotham-Black")
 		format('svg');
 	font-weight: normal;
 	font-style: normal
@@ -109,12 +109,12 @@
 
 @font-face {
 	font-family: 'learningcurve_ot';
-	src: url("/workspace/assets/fonts/learningcurve_ot.eot");
-	src: url("/workspace/assets/fonts/learningcurve_ot.eot?#iefix")
+	src: url("fonts/learningcurve_ot.eot");
+	src: url("fonts/learningcurve_ot.eot?#iefix")
 		format('embedded-opentype'),
-		url("/workspace/assets/fonts/learningcurve_ot.woff") format('woff'),
-		url("/workspace/assets/fonts/learningcurve_ot.ttf") format('truetype'),
-		url("/workspace/assets/fonts/learningcurve_ot.svg#learningcurve_ot")
+		url("fonts/learningcurve_ot.woff") format('woff'),
+		url("fonts/learningcurve_ot.ttf") format('truetype'),
+		url("fonts/learningcurve_ot.svg#learningcurve_ot")
 		format('svg');
 	font-weight: normal;
 	font-style: normal
@@ -435,7 +435,7 @@ section,nav,article,footer,header,menu {
 	width: 71px;
 	height: 71px;
 	display: inline-block;
-	background: url('/workspace/assets/img/button/ipad-menu.png') no-repeat
+	background: url('img/button/ipad-menu.png') no-repeat
 		center;
 	background-color: #f8f8f8;
 	background-size: cover
@@ -1078,11 +1078,11 @@ section,nav,article,footer,header,menu {
 #site-footer-social-facebook div {
 	width: 11px;
 	height: 23px;
-	background: url('/workspace/assets/img/facebook.png') no-repeat
+	background: url('img/facebook.png') no-repeat
 }
 
 #site-footer-social-facebook div.hover {
-	background: url('/workspace/assets/img/facebook.png') no-repeat
+	background: url('img/facebook.png') no-repeat
 }
 
 #site-footer-social-vimeo {
@@ -1094,11 +1094,11 @@ section,nav,article,footer,header,menu {
 #site-footer-social-vimeo div {
 	width: 19px;
 	height: 16px;
-	background: url('/workspace/assets/img/vimeo.png') no-repeat
+	background: url('img/vimeo.png') no-repeat
 }
 
 #site-footer-social-vimeo div.hover {
-	background: url('/workspace/assets/img/vimeo.png') no-repeat
+	background: url('img/vimeo.png') no-repeat
 }
 
 #site-footer-langue {
