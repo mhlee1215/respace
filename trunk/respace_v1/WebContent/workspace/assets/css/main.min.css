@@ -143,11 +143,11 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 b,strong {
-	font-family: 'cabin-bold'
+	font-family: 'cabin-bold','NanumGothic'
 }
 
 em,i {
-	font-family: 'cabin-italic'
+	font-family: 'cabin-italic','NanumGothic'
 }
 
 #site {
@@ -156,7 +156,7 @@ em,i {
 }
 
 p,.p {
-	font-family: 'cabin-regular';
+	font-family: 'cabin-regular','NanumGothic';
 	margin: 0 0 10px 0;
 	padding: 0;
 	font-size: 15px;
@@ -1869,6 +1869,8 @@ to {
 	transition: opacity 400ms linear, top 500ms
 		cubic-bezier(0.23, 1, 0.32, 1);
 	font: 26px/26px 'Gotham-Black';
+	font-weight:bold;
+	font-family: 'Gotham-Black', 'NanumGothic';
 	text-transform: uppercase;
 	margin-bottom: 10px;
 	position: relative;
@@ -1944,7 +1946,8 @@ to {
 		cubic-bezier(0.23, 1, 0.32, 1);
 	transition: opacity 800ms linear, bottom 800ms
 		cubic-bezier(0.23, 1, 0.32, 1);
-	font: 32px/32px 'learningcurve_ot';
+	font: 32px/32px 'NanumGothic';
+	font-family: 'learningcurve_ot', 'NanumGothic';
 	position: relative;
 	bottom: -30px
 }
