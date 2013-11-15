@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=IE8">
-<title>Home - 리스페이스</title>
+<title>RESPACE :: 누군가에게 남는 공간을 누군가에게 가치있는 공간으</title>
 <meta name="title" content="Home - Les enfants">
 <meta name="keywords" content="">
 <meta name="description" content="">
