@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=IE8">
-<title>RESPACE :: 누군가에게 남는 공간을 누군가에게 가치있는 공간으</title>
+<title>RESPACE - 누군가에게 남는 공간을 누군가에게 가치있는 공간으로</title>
 <meta name="title" content="Home - Les enfants">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -15,10 +15,10 @@
 <meta property="og:image"
 	content="http://les-enfants.tvworkspace/uploads/site/logo/gif-home-fade-nograin-1375737084.gif">
 <meta property="og:description" content="">
-<link rel="shortcut icon" href="http://les-enfants.tv/favicon.ico">
-<link rel="icon" href="http://les-enfants.tv/favicon.ico">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="icon" src="images/favicon.ico">
 <link rel="icon" type="images/png"
-	href="http://les-enfants.tv/favicon.png">
+	href="images/favicon_7.png">
 <link rel="apple-touch-icon" href="http://les-enfants.tv/fav64.png"
 	type="image/png">
 <link rel="pavatar" href="http://les-enfants.tv/fav64.png"
@@ -121,7 +121,7 @@
 					<div class="hover"></div>
 				</a>
 				<a id="site-footer-social-vimeo"
-					class="social-link" href="https://vimeo.com/lesenfants/videos"
+					class="social-link" href="https://blog.naver.com/respacee"
 					target="_blank"><div></div>
 					<div class="hover"></div>
 				</a>
@@ -131,13 +131,10 @@
 			</div>
 			<div id="site-footer-copyright">
 				<p>
-					Respace<br> Dev Team
+					RESPACE<br> Dev Team
 				</p>
 			</div>
-			<iframe id="copy-288"
-				src="http://watermark.deuxhuithuit.com/?lang=en&amp;bg=transparent&amp;text=7c7c7c&amp;font-size=10&amp;h=15&amp;w=85&amp;logo=/logo-7c.png&amp;ref=les-enfants&amp;transform=uppercase&amp;display=block&amp;t-align=center&amp;l-height=20"
-				margin="0" border="0" scrolling="no" frameborder="no" width="85px"
-				height="41px"></iframe></footer>
+			</footer>
 		</div>
 		<div id="site-pages" >
 			<div id="page-accueil" class="page ">
@@ -157,8 +154,8 @@
 									<div class="videos-list-item-realisateur">공간의 가치를 공유합니다.<br>리스페이스</div>
 									
 								</div>
-								<div class="videos-list-item-mot-cle">ART</div>
-								<div class="videos-list-item-agence">RESPACE</div></a>
+								<div class="videos-list-item-mot-cle">SPACE</div>
+								<div class="videos-list-item-agence">REMAKE</div></a>
 							<div class="videos-list-item-video-container"
 								data-video-provider="Vimeo" data-video-id="74946077"></div>
 						</div>
@@ -211,9 +208,8 @@
 								alt="SSQ"
 								data-src-format="workspace/images2/61545916-1372193448.jpg">
 							<div class="videos-list-item-titre-realisateur-container">
-									<div class="videos-list-item-titre">SSQ</div>
-									<div class="videos-list-item-realisateur">Alexandre
-										Franchi</div>
+									<div class="videos-list-item-titre">낮호랑</div>
+									<div class="videos-list-item-realisateur">고요 속의 매력</div>
 								</div>
 								<div class="videos-list-item-mot-cle">Post</div>
 								<div class="videos-list-item-agence">BRAD</div></a>
