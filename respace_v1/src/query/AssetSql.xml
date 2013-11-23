@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="AssetSql">
+	<resultMap id="Asset" class="com.respace.domain.Asset">
+		<result column="ID" property="id" />
+		<result column="NAME" property="name" />
+		<result column="URL" property="url" />
+		<result column="TYPE" property="type" />
+		<result column="ID_REFERENCE" property="id_reference" />
+		<result column="SEQ_NO" property="seq_no" />
+		<result column="REGISTERED_DATE" property="registered_date" />
+		<result column="ETC" property="etc" />
+		
+ 	</resultMap>
+ 	
+ 	<select id="readAssetList" resultMap="Asset">
+ 		SELECT id, name, url, type, id_reference, seq_no, registered_date, code_status, etc
+    	FROM rs_asset
+    	WHERE
+    	1=1
+    	<isNotEmpty property="id_reference">
+    	and id_reference = #id_reference#
+    	</isNotEmpty>
+    	<isNotEmpty property="code_status">
+    	and code_status = #code_status#
+    	</isNotEmpty>
+
+    	<isNotEmpty property="id_reference">
+    	ORDER BY seq_no
+    	</isNotEmpty>
+    	<isEmpty property="id_reference">
+    	ORDER BY registered_date desc
+    	</isEmpty>
+ 	</select>
+ 	
+	<select id="readAsset" resultMap="Asset">
+       SELECT id, name, url, type, id_reference, seq_no, registered_date, code_status, etc
+       FROM rs_asset
+       WHERE ID = #id# 
+	</select>
+
+	<insert id="createAsset" parameterClass="com.respace.domain.Asset">
+		INSERT INTO 
+		rs_asset (`name`, `url`, `type`, `id_reference`, `seq_no`, `registered_date`, `code_status`, `etc`) 
+		VALUES (#name#, #url#, #type#, #id_reference#, #seq_no#, DATE_FORMAT(now(), "%Y%m%d%H%i%s"), #code_status#, #etc#)
+	</insert>
+	
+	<update id="updateAsset" parameterClass="com.respace.domain.Asset">
+		 UPDATE rs_asset SET
+		 ID = #id#
+		 <isNotEmpty property="url">
+		 ,url = #url#
+		 ,registered_date = DATE_FORMAT(now(), "%Y%m%d%H%i%s")
+		 </isNotEmpty>
+		 WHERE ID = #id# 
+	</update>
+	
+	<delete id="deleteAsset" parameterClass="com.respace.domain.Asset">
+		 DELETE FROM rs_asset
+		 WHERE ID = #id#
+	</delete>
+</sqlMap>
+
+

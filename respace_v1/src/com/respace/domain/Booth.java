@@ -40,6 +40,7 @@ public class Booth {
 	String close_time;				//영업 시간 (종료)
 	String code_type;				//매대 타입
 	String code_instrument;			//장비 
+	
 	public int getId() {
 		return id;
 	}

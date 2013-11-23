@@ -16,6 +16,9 @@ public class Asset {
 	String url;				//어셋 URL
 	String type;			//어셋 타입 (작가, 공간, 상품)
 	int id_reference;		//참조 아이디 (작가, 공간, 상품) 다 가능..
+	int seq_no;				//순번
+	String registered_date;	//등록 날짜
+	String code_status;		//상태
 	String etc;				//비고
 	public int getId() {
 		return id;
@@ -53,12 +56,30 @@ public class Asset {
 	public void setEtc(String etc) {
 		this.etc = etc;
 	}
-	
+	public int getSeq_no() {
+		return seq_no;
+	}
+	public void setSeq_no(int seq_no) {
+		this.seq_no = seq_no;
+	}
+	public String getRegistered_date() {
+		return registered_date;
+	}
+	public void setRegistered_date(String registered_date) {
+		this.registered_date = registered_date;
+	}
+	public String getCode_status() {
+		return code_status;
+	}
+	public void setCode_status(String code_status) {
+		this.code_status = code_status;
+	}
 	@Override
 	public String toString() {
 		return "Asset [id=" + id + ", name=" + name + ", url=" + url
 				+ ", type=" + type + ", id_reference=" + id_reference
-				+ ", etc=" + etc + "]";
+				+ ", seq_no=" + seq_no + ", registered_date=" + registered_date
+				+ ", code_status=" + code_status + ", etc=" + etc + "]";
 	}
 	
 	
