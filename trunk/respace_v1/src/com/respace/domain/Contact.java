@@ -11,25 +11,27 @@ package com.respace.domain;
 //`etc` TEXT NULL COMMENT '비고',
 
 public class Contact {
-	int id;
-	int id_item;
-	int id_space;
-	int id_artist;
-	String status;
-	String period_start;
-	String period_end;
-	String etc;
+	int id;					//아이디
+	int id_product;			//상품 아이디
+	int id_space;			//공간 아이디
+	int id_artist;			//작가 아이디
+	String status;			//상태
+	String period_start;	//계약기간 (시작)
+	String period_end;		//계약기간 (종료)
+	String etc;				//비고
+	
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getId_item() {
-		return id_item;
+
+	public int getId_product() {
+		return id_product;
 	}
-	public void setId_item(int id_item) {
-		this.id_item = id_item;
+	public void setId_product(int id_product) {
+		this.id_product = id_product;
 	}
 	public int getId_space() {
 		return id_space;
@@ -70,9 +72,9 @@ public class Contact {
 	
 	@Override
 	public String toString() {
-		return "Contact [id=" + id + ", id_item=" + id_item + ", id_space="
-				+ id_space + ", id_artist=" + id_artist + ", status=" + status
-				+ ", period_start=" + period_start + ", period_end="
-				+ period_end + ", etc=" + etc + "]";
+		return "Contact [id=" + id + ", id_product=" + id_product
+				+ ", id_space=" + id_space + ", id_artist=" + id_artist
+				+ ", status=" + status + ", period_start=" + period_start
+				+ ", period_end=" + period_end + ", etc=" + etc + "]";
 	}
 }
