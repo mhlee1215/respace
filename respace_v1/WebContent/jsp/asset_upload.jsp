@@ -7,12 +7,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
   <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="${pageContext.request.contextPath}/jquery/jquery.jqGrid-4.4.5/css/ui.jqgrid.css" />
+  
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="${pageContext.request.contextPath}/js/jquery.jqGrid-4.4.5/css/ui.jqgrid.css" />
   <script src="${pageContext.request.contextPath}/js/jquery.jqGrid-4.4.5/js/jquery.jqGrid.min.js" type="text/javascript"></script>
   <script src="${pageContext.request.contextPath}/js/jquery.example.min.js" type="text/javascript"></script>
   <script src="${pageContext.request.contextPath}/js/jquery-ui-timepicker-addon.js" type="text/javascript"></script>
-  <script type="text/javascript" src="${pageContext.request.contextPath}/ckeditor/ckeditor_4.1.2_standard/ckeditor.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/js/ckeditor/ckeditor_4.1.2_standard/ckeditor.js"></script>
   <style>
     
   .l1_fieldset { border:2px solid rgb(40, 40, 40) }
@@ -50,9 +55,6 @@
   
    
    texi_out_load_hazard_item();
-   
-   CKEDITOR.replace( 'report_climb_narrative_ckeditor' );
-   CKEDITOR.replace( 'report_climb_recommendation_ckeditor' );
   });
   
  
@@ -131,29 +133,6 @@
 	  		
 	  	}  
 	  }).navGrid('#pager1',{edit:false,add:false,del:false}); 
-	  
-	  /*jQuery("#id_climb_attached_file_list_table").jqGrid({
-		   	url:'${pageContext.request.contextPath}/getHazardItems.do', 
-			datatype: "xml",
-		   	colNames:['Inv No','Date', 'Client', 'Amount','Tax','Total','Notes'],
-		   	colModel:[
-		   		{name:'id',index:'id', width:75},
-		   		{name:'invdate',index:'invdate', width:90},
-		   		{name:'name',index:'name', width:100},
-		   		{name:'amount',index:'amount', width:80, align:"right"},
-		   		{name:'tax',index:'tax', width:80, align:"right"},		
-		   		{name:'total',index:'total', width:80,align:"right"},		
-		   		{name:'note',index:'note', width:150, sortable:false}		
-		   	],
-		   	rowNum:10,
-		   	autowidth: true,
-		   	rowList:[10,20,30],
-		   	pager: jQuery('#pager1'),
-		   	sortname: 'id',
-		    viewrecords: true,
-		    sortorder: "desc",
-		    caption:"XML Example"
-		}).navGrid('#pager1',{edit:false,add:false,del:false});		*/
   }
   
 
@@ -161,54 +140,16 @@
 <body>
 
 <fieldset class="l1_fieldset">
-<legend class="l1_fieldset_legend">CLIMB ${lang.getStringInformation()}</legend>
+<legend class="l1_fieldset_legend">Asset List</legend>
 
 <table width="100%" cellpadding="0" cellspacing="0">
 	<tbody>
-		<tr>
-			<td width="90">${lang.getStringHazardTitle()}</td>
-			<td><input type="text" style="width:100%" name="" id="id_report_climb_hazard_title" value=""/></td>
-		</tr>
-		<tr>
-			<td>${lang.getStringTime()}</td>
-			<td>
-				<table width="100%" cellpadding="0" cellspacing="0" border="0">
-				<tbody>
-					<tr>
-						<td width="10%"><input type="text" style="width:100%; height:12px;" name="" id="id_report_climb_hazard_time" value=""/><td>
-						<td width="5%" align="right"> <input type="radio" name="new_hazard" id="climb_new_hazard_no" onchange="climb_enable_description_of_new_hazard('n');" value="n" checked="checked"/></td>
-						<td width="5%" align="left">Local</td>
-						<td width="5%" align="right"> <input type="radio"name="new_hazard" id="climb_new_hazard_yes" onchange="climb_enable_description_of_new_hazard('y');" value="y"/></td>
-						<td width="5%" align="left">UTC</td>
-						<td width="80%"></td>
-					</tr>
-				</tbody>
-				</table>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-			<fieldset class="l2_fieldset">
-				<legend class="l2_fieldset_legend">${lang.getStringNarrative()}</legend>
-				<textarea name="report_climb_narrative_ckeditor" rows="3" style="width:100%"></textarea>
-			</fieldset>
-			</td>
-		</tr>
 		
 		<tr>
 			<td colspan="2">
 			<fieldset class="l2_fieldset">
-				<legend class="l2_fieldset_legend">${lang.getStringRecommendation()}</legend>
-				<textarea name="report_climb_recommendation_ckeditor" rows="3" style="width:100%"></textarea>
-			</fieldset>
-			</td>
-		</tr>
-		
-		<tr>
-			<td colspan="2">
-			<fieldset class="l2_fieldset">
-				<legend class="l2_fieldset_legend">${lang.getStringAttachment()}</legend>
-				<div style="width:100%;" align="right"><a id="id_report_climb_attach_file_btn" href="#">${lang.getStringAttachFiles()}</a></div>
+				<legend class="l2_fieldset_legend">Attachment</legend>
+				<div style="width:100%;" align="right"><a id="id_report_climb_attach_file_btn" href="#">Attach file</a></div>
 				<div style="height:6px;"></div>
 				<table id="id_climb_attached_file_list_table" class="scroll" cellpadding="0" cellspacing="0"></table>
 				<div id="id_climb_attached_file_list_pager" class="scroll"></div>
