@@ -28,7 +28,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import com.respace.domain.AssetItem;
+import com.respace.domain.Asset;
+import com.respace.domain.Asset;
 import com.respace.service.AssetService;
 import com.respace.service.UserService;
 
@@ -53,19 +54,16 @@ public class AssetUploadController extends HttpServlet{
 	@RequestMapping(value="/fileUpload.do", method = RequestMethod.POST)
 	public @ResponseBody String upload(MultipartHttpServletRequest request, HttpServletResponse response) throws IOException {
 		
-		AssetItem attachedItem = null;
-		String report_no = ServletRequestUtils.getStringParameter(request, "report_no", "");
-		String report_item_type = ServletRequestUtils.getStringParameter(request, "report_item_type", "");
-		System.out.println("report_no: "+report_no);
-		System.out.println("report_item_type: "+report_item_type);
-		AssetItem ri = new AssetItem();
+		Asset asset = null;
+		
+		Asset ri = new Asset();
 		//ri.setReport_no(report_no);
 		//ri.setType(report_item_type);
-		AssetItem rri;// = assetService.readReportItem(ri);
+		Asset rri;// = assetService.readReportItem(ri);
 		
 		//1. build an iterator
 		 Iterator<String> itr =  request.getFileNames();
-		 String webPath = "report/attachedFiles";
+		 String webPath = "assets/images";
 		 String realPath = request.getSession().getServletContext().getRealPath(webPath);
 		 System.out.println(realPath);
 		 MultipartFile mpf = null;
@@ -85,35 +83,38 @@ public class AssetUploadController extends HttpServlet{
 			//	 files.pop();
 			 
 			 //2.3 create new fileMeta
-			 attachedItem = new AssetItem();
-			 attachedItem.setFilename(mpf.getOriginalFilename());
-			 attachedItem.setFilepath(curWebPath+"/"+mpf.getOriginalFilename());
-			 attachedItem.setFilesize(mpf.getSize()/1024+" Kb");
-			 attachedItem.setFiletype(mpf.getContentType());
+			 asset = new Asset();
+			 asset.setFilename(mpf.getOriginalFilename());
+			 asset.setFilepath(curWebPath+"/"+mpf.getOriginalFilename());
+			 asset.setFilesize(mpf.getSize()/1024+" Kb");
+			 asset.setFiletype(mpf.getContentType());
+			 asset.setType(mpf.getContentType());
+			 asset.setUrl(curWebPath+"/"+mpf.getOriginalFilename());
 			 FileOutputStream file = new FileOutputStream(curPath+"/"+mpf.getOriginalFilename());
 			 DateTime curTime = new DateTime();
-			 attachedItem.setModifieddate(curTime.toString("yyyy-MM-dd HH:mm:ss"));
+			 
+			 asset.setModified_date(curTime.toString("yyyy-MM-dd HH:mm:ss"));
 			 byte[] dataByte = mpf.getBytes();
 			 for (int i = 0; i < dataByte.length; i++)
-			        file.write(dataByte[i]);
+			      file.write(dataByte[i]);
 			      file.close();
-			 try {
-				attachedItem.setBytes(mpf.getBytes());
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+//			 try {
+//				//asset.setBytes(mpf.getBytes());
+//			} catch (IOException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 			 //attachedItem.setReport_item_id(rri.getId());
-			 //assetService.createAttachedItem(attachedItem);
+			 assetService.createAsset(asset);
 			 
 			 //2.4 add to files
-			 //files.add(attachedItem);
+			 //files.add(asset);
 			 
 		 }
 		 
-		 AssetItem ai = new AssetItem();
+		 Asset ai = new Asset();
 		 //ai.setReport_item_id(rri.getId());
-		 List<AssetItem> attachedItemList = null;// = assetService.readAttachedItemList(ai);
+		 List<Asset> attachedItemList = assetService.readAssetList(ai);
 		 
 		 //System.out.println(files);
 		// result will be like this
@@ -123,22 +124,20 @@ public class AssetUploadController extends HttpServlet{
 	
 	@RequestMapping(value="/fileDelete.do", method = RequestMethod.POST)
 	public @ResponseBody String delete(HttpServletRequest request, HttpServletResponse response) {
-		String report_no = ServletRequestUtils.getStringParameter(request, "report_no", "");
-		String report_item_type = ServletRequestUtils.getStringParameter(request, "report_item_type", "");
 		int file_id = ServletRequestUtils.getIntParameter(request, "file_id", 0);
 		
-		AssetItem ai = new AssetItem();
+		Asset ai = new Asset();
 		ai.setId(file_id);
-		//assetService.deleteAttachedItem(ai);
+		assetService.deleteAsset(ai);
 		
-		AssetItem ri = new AssetItem();
+		Asset ri = new Asset();
 		//ri.setReport_no(report_no);
 		//ri.setType(report_item_type);
-		AssetItem rri = null;//assetService.readReportItem(ri);
+		Asset rri = null;//assetService.readReportItem(ri);
 		
-		AssetItem ai2 = new AssetItem();
-		 ai2.setReport_item_id(rri.getId());
-		 List<AssetItem> attachedItemList = null;//assetService.readAttachedItemList(ai2);
+		Asset ai2 = new Asset();
+		 //ai2.setReport_item_id(rri.getId());
+		 List<Asset> attachedItemList = assetService.readAssetList(ai2);
 		
 		return attachedItemList.toString();
 	}

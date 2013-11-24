@@ -18,6 +18,11 @@ public class Asset {
 	int id_reference;		//참조 아이디 (작가, 공간, 상품) 다 가능..
 	int seq_no;				//순번
 	String registered_date;	//등록 날짜
+	String filename;
+	String filetype;
+	String filesize;
+	String modified_date;
+	String filepath;
 	String code_status;		//상태
 	String etc;				//비고
 	public int getId() {
@@ -74,12 +79,49 @@ public class Asset {
 	public void setCode_status(String code_status) {
 		this.code_status = code_status;
 	}
+	
+	public String getFilename() {
+		return filename;
+	}
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+	public String getFiletype() {
+		return filetype;
+	}
+	public void setFiletype(String filetype) {
+		this.filetype = filetype;
+	}
+	public String getFilesize() {
+		return filesize;
+	}
+	public void setFilesize(String filesize) {
+		this.filesize = filesize;
+	}
+	public String getModified_date() {
+		return modified_date;
+	}
+	public void setModified_date(String modified_date) {
+		this.modified_date = modified_date;
+	}
+	public String getFilepath() {
+		return filepath;
+	}
+	public void setFilepath(String filepath) {
+		this.filepath = filepath;
+	}
+	
 	@Override
 	public String toString() {
-		return "Asset [id=" + id + ", name=" + name + ", url=" + url
-				+ ", type=" + type + ", id_reference=" + id_reference
-				+ ", seq_no=" + seq_no + ", registered_date=" + registered_date
-				+ ", code_status=" + code_status + ", etc=" + etc + "]";
+		return "{\"id\":\"" + id + "\", \"name\":\"" + name + "\", \"url\":\""
+				+ url + "\", \"type\":\"" + type + "\", \"id_reference\":\""
+				+ id_reference + "\", \"seq_no\":\"" + seq_no
+				+ "\", \"registered_date\":\"" + registered_date
+				+ "\", \"filename\":\"" + filename + "\", \"filetype\":\""
+				+ filetype + "\", \"filesize\":\"" + filesize
+				+ "\", \"modified_date\":\"" + modified_date
+				+ "\", \"filepath\":\"" + filepath + "\", \"code_status\":\""
+				+ code_status + "\", \"etc\":\"" + etc + "\"}";
 	}
 	
 	

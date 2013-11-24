@@ -1,6 +1,7 @@
-<!DOCTYPE HTML>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %> 
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta charset="utf-8">
 <title>11jQuery File Upload Example</title>
@@ -109,7 +110,7 @@
 	       		{name:'filename',	index:'filename', width:120, align:"left", sorttype:"text", formatter:nameLinkfnFormatter},
 	       		{name:'filesize',	index:'filesize', width:50, align:"center", sorttype:"text"},
 	       		{name:'filetype',	index:'filetype', width:100, align:"center", sorttype:"text" ${isReadOnly == "Y" ? ",hidden:true" : ""}},
-	       		{name:'modifieddate',index:'modifieddate', width:80, align:"center",sorttype:"text"},
+	       		{name:'modified_date',index:'modified_date', width:80, align:"center",sorttype:"text"},
 	       		{name:'deleteFn',	index:'deleteFn', width:30, align:"center", formatter:deleteBtnfnFormatter ${isReadOnly == "Y" ? ",hidden:true" : ""}}
 	       	],
 	       	multiselect: false,
@@ -124,8 +125,8 @@
 	    }
 	    
 	    function deleteBtnfnFormatter( cellvalue, options, rowObject )
-	    {
-	    	var return_str = '<a id="id_row_item_'+rowObject['id']+'" href="#">${lang.getStringDelete()}</a>';
+	    { 
+	    	var return_str = '<a id="id_row_item_'+rowObject['id']+'" href="#">삭제</a>';
 	    	return_str += '<script>';
 	    	return_str += '$("#id_row_item_'+rowObject['id']+'").button({icons: {secondary: "ui-icon-trash" } }).click(function( event ) {'
 	    	return_str += '		removeFile(\"'+rowObject['id']+'\");';
@@ -180,7 +181,7 @@
 			$.ajax({
 				type: "POST",
 				url: "${pageContext.request.contextPath}/fileDelete.do",
-				data: 'file_id='+tr_idx+'&report_no=${report_no}&report_item_type=${report_item_type}',
+				data: 'file_id='+tr_idx,
 				success: function(msg){
 					//var Result = msg;
 					//alert(msg);
@@ -257,13 +258,13 @@
 	<table width="100%">
 	<tr>
 	<td align="right">
-	<c:if test="${isReadOnly == 'N'}">
+	
 	<span class="btn btn-success fileinput-button" style="float:right">
        <i class="icon-plus icon-white"></i>
        <span>Add files...</span>
-       <input id="fileupload" type="file" name="files[]" data-url="${pageContext.request.contextPath}/fileUpload.do?report_no=${report_no}&report_item_type=${report_item_type}" multiple>
+       <input id="fileupload" type="file" name="files[]" data-url="${pageContext.request.contextPath}/fileUpload.do" multiple>
    </span>
-   </c:if>
+  
    </td>
    </tr>
 	</table>

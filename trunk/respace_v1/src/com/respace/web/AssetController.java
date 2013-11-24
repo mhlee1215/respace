@@ -29,18 +29,10 @@ public class AssetController {
 	
 	@RequestMapping("/fileUploadForm.do")
     public ModelAndView fileUploadForm(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String report_no = ServletRequestUtils.getStringParameter(request, "report_no", "");
-		String report_item_type = ServletRequestUtils.getStringParameter(request, "report_item_type", "");
-		String isReadOnly = ServletRequestUtils.getStringParameter(request, "isReadOnly", "N");
-		
 		Asset ai = new Asset();
-		ai.setId(0);
 		List<Asset> itemList = assetService.readAssetList(ai);
 		
 		ModelAndView model = new ModelAndView("jsp/file_upload_form");
-		model.addObject("report_no", report_no);
-		model.addObject("isReadOnly", isReadOnly);
-		model.addObject("report_item_type", report_item_type);
 		model.addObject("attachedItemList", itemList);
 		return model;
 	}
