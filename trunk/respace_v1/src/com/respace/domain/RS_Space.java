@@ -35,6 +35,7 @@ package com.respace.domain;
 
 public class RS_Space {
 	int id;											//아이
+	int id_contact;
 	int name;										//공간
 	String url;										//공간 URL
 	String address_plain;							//공간 주소 (전체)
@@ -46,7 +47,7 @@ public class RS_Space {
 	String email;									//이메
 	String phone;									//연락처 1
 	String phone2;									//연락처 2
-	int frenchise_ox;								//프렌차이즈 유무
+	int franchise_ox;								//프렌차이즈 유무
 	String frenchise_headquater_phone;				//프렌차이즈 본사 연락
 	String frenchise_headquater_location;			//프렌차이즈 본사 위치
 	String business_registered_number;				//사업자 등록 번호
@@ -134,12 +135,7 @@ public class RS_Space {
 	public void setPhone2(String phone2) {
 		this.phone2 = phone2;
 	}
-	public int getFrenchise_ox() {
-		return frenchise_ox;
-	}
-	public void setFrenchise_ox(int frenchise_ox) {
-		this.frenchise_ox = frenchise_ox;
-	}
+	
 	public String getFrenchise_headquater_phone() {
 		return frenchise_headquater_phone;
 	}
@@ -232,16 +228,22 @@ public class RS_Space {
 		this.review = review;
 	}
 	
+	public int getId_contact() {
+		return id_contact;
+	}
+	public void setId_contact(int id_contact) {
+		this.id_contact = id_contact;
+	}
 	@Override
 	public String toString() {
-		return "Space [id=" + id + ", name=" + name + ", url=" + url
-				+ ", address_plain=" + address_plain + ", address_si="
-				+ address_si + ", address_do=" + address_do + ", address_dong="
-				+ address_dong + ", address_last=" + address_last
-				+ ", code_mood=" + code_mood + ", email=" + email + ", phone="
-				+ phone + ", phone2=" + phone2 + ", frenchise_ox="
-				+ frenchise_ox + ", frenchise_headquater_phone="
-				+ frenchise_headquater_phone
+		return "RS_Space [id=" + id + ", id_contact=" + id_contact + ", name="
+				+ name + ", url=" + url + ", address_plain=" + address_plain
+				+ ", address_si=" + address_si + ", address_do=" + address_do
+				+ ", address_dong=" + address_dong + ", address_last="
+				+ address_last + ", code_mood=" + code_mood + ", email="
+				+ email + ", phone=" + phone + ", phone2=" + phone2
+				+ ", franchise_ox=" + franchise_ox
+				+ ", frenchise_headquater_phone=" + frenchise_headquater_phone
 				+ ", frenchise_headquater_location="
 				+ frenchise_headquater_location
 				+ ", business_registered_number=" + business_registered_number
@@ -254,7 +256,10 @@ public class RS_Space {
 				+ ", registered_date=" + registered_date + ", review=" + review
 				+ "]";
 	}
-	
-	
-	
+	public int getFranchise_ox() {
+		return franchise_ox;
+	}
+	public void setFranchise_ox(int franchise_ox) {
+		this.franchise_ox = franchise_ox;
+	}
 }

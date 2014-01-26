@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="SpaceSql">
+	<resultMap id="Space" class="com.respace.domain.RS_Space">
+		<result column="ID" property="id" />
+		<result column="ID_CONTACT" property="id_contact" />
+		<result column="NAME" property="name" />
+		<result column="URL" property="url" />
+		<result column="ADDRESS_PLAIN" property="address_plain" />
+		<result column="ADDRESS_SI" property="address_si" />
+		<result column="ADDRESS_DO" property="address_do" />
+		<result column="ADDRESS_DONG" property="address_dong" />
+		<result column="ADDRESS_LAST" property="address_last" />
+		<result column="CODE_MOOD" property="code_mood" />
+		<result column="EMAIL" property="email" />
+		<result column="PHONE" property="phone" />
+		<result column="PHONE2" property="phone2" />
+		<result column="FRANCHISE_OX" property="franchise_ox" />
+		<result column="FRENCHISE_HEADQUATER_PHONE" property="frenchise_headquater_phone" />
+		<result column="FRENCHISE_HEADQUATER_LOCATION" property="frenchise_headquater_location" />
+		<result column="BUSINESS_REGISTERED_NUMBER" property="business_registered_number" />
+		<result column="COND_INPUT_PERIOD_START" property="cond_input_period_start" />
+		<result column="COND_INPUT_PERIOD_END" property="cond_input_period_end" />
+		<result column="COND_INPUT_TYPE" property="cond_input_type" />
+		<result column="CODE_TARGET" property="code_target" />
+		<result column="CODE_LEVEL" property="code_level" />
+		<result column="CODE_SIZE" property="code_size" />
+		<result column="OPEN_TIME" property="open_time" />
+		<result column="CLOSE_TIME" property="close_time" />
+		<result column="ETC" property="etc" />
+		<result column="OPEN_DATE" property="open_date" />
+		<result column="REGISTERED_DATE" property="registered_date" />
+		<result column="REVIEW" property="review" />
+ 	</resultMap> 	
+ 	
+ 	<select id="readSpaceList" resultMap="Space">
+ 		SELECT ID, ID_CONTACT, NAME, URL, ADDRESS_PLAIN, ADDRESS_SI, ADDRESS_DO, ADDRESS_DONG, ADDRESS_LAST, CODE_MOOD, EMAIL, PHONE, PHONE2, FRANCHISE_OX, FRENCHISE_HEADQUATER_PHONE, FRENCHISE_HEADQUATER_LOCATION, BUSINESS_REGISTERED_NUMBER, COND_INPUT_PERIOD_START, COND_INPUT_PERIOD_END, COND_INPUT_TYPE, CODE_TARGET, CODE_LEVEL, CODE_SIZE, OPEN_TIME, CLOSE_TIME, ETC, OPEN_DATE, REGISTERED_DATE, REVIEW 
+ 		FROM rs_space
+ 	</select>
+ 	
+	<select id="readSpace" resultMap="Space">
+       SELECT ID, ID_CONTACT, NAME, URL, ADDRESS_PLAIN, ADDRESS_SI, ADDRESS_DO, ADDRESS_DONG, ADDRESS_LAST, CODE_MOOD, EMAIL, PHONE, PHONE2, FRANCHISE_OX, FRENCHISE_HEADQUATER_PHONE, FRENCHISE_HEADQUATER_LOCATION, BUSINESS_REGISTERED_NUMBER, COND_INPUT_PERIOD_START, COND_INPUT_PERIOD_END, COND_INPUT_TYPE, CODE_TARGET, CODE_LEVEL, CODE_SIZE, OPEN_TIME, CLOSE_TIME, ETC, OPEN_DATE, REGISTERED_DATE, REVIEW 
+       FROM rs_space 
+       WHERE ID = #id# 
+	</select>
+
+	<insert id="createSpace" parameterClass="com.respace.domain.RS_Space">	 
+		 INSERT INTO 
+		 rs_space (`id`, `id_contact`, `name`, `url`, `address_plain`, `address_si`, `address_do`, `address_dong`, `address_last`, `code_mood`, `email`, `phone`, `phone2`, `franchise_ox`, `frenchise_headquater_phone`, `frenchise_headquater_location`, `business_registered_number`, `cond_input_period_start`, `cond_input_period_end`, `cond_input_type`, `code_target`, `code_level`, `code_size`, `open_time`, `close_time`, `etc`, `open_date`, `registered_date`, `review`) 
+		 VALUES (#id#, #id_contact#, #name#, #url#, #address_plain#, #address_si#, #address_do#, #address_dong#, #address_last#, #code_mood#, #email#, #phone#, #phone2#, #franchise_ox#, #frenchise_headquater_phone#, #frenchise_headquater_location#, #business_registered_number#, #cond_input_period_start#, #cond_input_period_end#, #cond_input_type#, #code_target#, #code_level#, #code_size#, #open_time#, #close_time#, #etc#, #open_date#, #registered_date#, #review#);
+	</insert>
+	
+	<update id="updateSpace" parameterClass="com.respace.domain.RS_Space">
+		 UPDATE rs_space SET
+		 ID = #id#
+		 <isNotEmpty property="id_contact">
+		 ,ID_CONTACT = #id_contact#
+		 </isNotEmpty>
+		 <isNotEmpty property="name">
+		 ,NAME = #name#
+		 </isNotEmpty>
+		 <isNotEmpty property="url">
+		 ,URL = #url#
+		 </isNotEmpty>
+		 <isNotEmpty property="address_plain">
+		 ,ADDRESS_PLAIN = #address_plain#
+		 </isNotEmpty>
+		 <isNotEmpty property="address_si">
+		 ,ADDRESS_SI = #address_si#
+		 </isNotEmpty>
+		 <isNotEmpty property="address_do">
+		 ,ADDRESS_DO = #address_do#
+		 </isNotEmpty>
+		 <isNotEmpty property="address_dong">
+		 ,ADDRESS_DONG = #address_dong#
+		 </isNotEmpty>
+		 <isNotEmpty property="address_last">
+		 ,ADDRESS_LAST = #address_last#
+		 </isNotEmpty>
+		 <isNotEmpty property="code_mood">
+		 ,CODE_MOOD = #code_mood#
+		 </isNotEmpty>
+		 <isNotEmpty property="email">
+		 ,EMAIL = #email#
+		 </isNotEmpty>
+		 <isNotEmpty property="phone">
+		 ,PHONE = #phone#
+		 </isNotEmpty>
+		 <isNotEmpty property="phone2">
+		 ,PHONE2 = #phone2#
+		 </isNotEmpty>
+		 <isNotEmpty property="franchise_ox">
+		 ,FRANCHISE_OX = #franchise_ox#
+		 </isNotEmpty>
+		 <isNotEmpty property="frenchise_headquater_phone">
+		 ,FRENCHISE_HEADQUATER_PHONE = #frenchise_headquater_phone#
+		 </isNotEmpty>
+		 <isNotEmpty property="frenchise_headquater_location">
+		 ,FRENCHISE_HEADQUATER_LOCATION = #frenchise_headquater_location#
+		 </isNotEmpty> 
+		 <isNotEmpty property="business_registered_number">
+		 ,BUSINESS_REGISTERED_NUMBER = #business_registered_number#
+		 </isNotEmpty>
+		 <isNotEmpty property="cond_input_period_start">
+		 ,COND_INPUT_PERIOD_START = #cond_input_period_start#
+		 </isNotEmpty>
+		 <isNotEmpty property="cond_input_period_end">
+		 ,COND_INPUT_PERIOD_END = #cond_input_period_end#
+		 </isNotEmpty>
+		 <isNotEmpty property="cond_input_type">
+		 ,COND_INPUT_TYPE = #cond_input_type#
+		 </isNotEmpty>
+		 <isNotEmpty property="code_target">
+		 ,CODE_TARGET = #code_target#
+		 </isNotEmpty>
+		 <isNotEmpty property="code_level">
+		 ,CODE_LEVEL = #code_level#
+		 </isNotEmpty>
+		 <isNotEmpty property="code_size">
+		 ,CODE_SIZE = #code_size#
+		 </isNotEmpty>
+		 <isNotEmpty property="open_time">
+		 ,OPEN_TIME = #open_time#
+		 </isNotEmpty>
+		 <isNotEmpty property="close_time">
+		 ,CLOSE_TIME = #close_time#
+		 </isNotEmpty>
+		 <isNotEmpty property="etc">
+		 ,ETC = #etc#
+		 </isNotEmpty>
+		 <isNotEmpty property="open_date">
+		 ,OPEN_DATE = #open_date#
+		 </isNotEmpty>
+		 <isNotEmpty property="registered_date">
+		 ,REGISTERED_DATE = #registered_date#
+		 </isNotEmpty>
+		 <isNotEmpty property="review">
+		 ,REVIEW = #review#
+		 </isNotEmpty>
+		 WHERE ID = #id# 
+	</update>
+</sqlMap>
+
+
