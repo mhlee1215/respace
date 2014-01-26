@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.respace.dao.UserDao;
-import com.respace.domain.User;
+import com.respace.domain.RS_User;
 import com.respace.util.Crypto;
 
 
@@ -24,32 +24,31 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserDao		userDao;
 	
-	boolean isEncrypt = false;
+	boolean isEncrypt = true;
 
-	public List<User> findAll() {
+	public List<RS_User> findAll() {
 		return userDao.findAll();
 	}
 
-	public int createUser(User user) throws Exception {
+	public int createUser(RS_User user) throws Exception {
 		
 		
 		//Encrypt
-        String passwordEncrypted = user.getPassword();
+        System.out.println(user.getPassword());
         if(isEncrypt)
-            passwordEncrypted = Crypto.encrypt(passwordEncrypted);
-        user.setPassword(passwordEncrypted);
-		//
+        	 user.setPassword(Crypto.encrypt(user.getPassword()));
+        System.out.println(user.getPassword());
         
-		User paramUser = new User();
-		paramUser.setId(user.getId());
-		User foundUser = readUserData(paramUser);
+		RS_User paramUser = new RS_User();
+		paramUser.setEmail(user.getEmail());
+		RS_User foundUser = readUserData(paramUser);
 		logger.debug("create User");
 		logger.debug("==[S]============================");
 		
 		if(foundUser != null){
 			logger.debug("User is already registered. Cancel Register.");
 			logger.debug("==[E]============================");
-			return User.STATUS_ALREADY_REGISTEREDED;
+			return RS_User.STATUS_ALREADY_REGISTEREDED;
 		}
 		else{
 			logger.debug("User doesn't find. Go Register.");
@@ -67,7 +66,7 @@ public class UserServiceImpl implements UserService {
 			//Env.exeCmd(cmd+" "+Env.ENV_LOG_PATH+user.getInternalid());
 			System.out.println(resultStr);
 			logger.debug("==[E]============================");
-			return User.STATUS_SUCCESS_REGISTER;
+			return RS_User.STATUS_SUCCESS_REGISTER;
 		}
 		
 		
@@ -75,77 +74,68 @@ public class UserServiceImpl implements UserService {
 
 	
 
-	public int readUser(User user) throws Exception {
+	public int readUser(RS_User user) throws Exception {
 		
-		String password = user.getPassword();
 		if(isEncrypt)
-		    password = Crypto.encrypt(password);
+		    user.setPassword(Crypto.encrypt(user.getPassword()));
         //
-        
-		User paramUser = new User();
-		paramUser.setId(user.getId());
-		paramUser.setPassword(password);
-		User readed = userDao.readUser(paramUser);
+		RS_User readed = userDao.readUser(user);
 		
 		if(readed == null){
-			return User.STATUS_NOT_FOUNDED;
+			return RS_User.STATUS_NOT_FOUNDED;
 		}else{
-			return User.STATUS_FOUNDED;
+			return RS_User.STATUS_FOUNDED;
 		}
 	}
 	
-	public User readUserData(User user) throws Exception {
+	public RS_User readUserData(RS_User user) throws Exception {
 		return userDao.readUser(user);
 	}
 
-	public void updateUser(User user) {
+	public void updateUser(RS_User user) {
 		userDao.updateUser(user);
 	}
 
-	public int activateUser(String id) {
+	public int verifyUser(String email) {
 
-		User paramUser = new User();
-		paramUser.setId(id);
-		User user = userDao.readUser(paramUser);
+		RS_User paramUser = new RS_User();
+		paramUser.setEmail(email);
+		RS_User user = userDao.readUser(paramUser);
 		if (user != null) {
-			if (user.getIsactivated().equals("Y")) {
-				//alread activated.
-				return User.STATUS_ALREADY_ACTIVATED;
+			if (user.getIsverified().equals("Y")) {
+				//alread verified.
+				return RS_User.STATUS_ALREADY_VERIFIED;
 			} else {
-				paramUser.setIsactivated("Y");
+				paramUser.setIsverified("Y");
+				paramUser.setStatus(RS_User.STATUS_VERIFIED);
 				userDao.updateUser(paramUser);
 				// Activate successfully.
-				return User.STATUS_SUCCESS_ACTIVATED;
+				return RS_User.STATUS_SUCCESS_VERIFIED;
 			}
 		}
 		// Activate fail.
-		return User.STATUS_NOT_FOUNDED;
+		return RS_User.STATUS_NOT_FOUNDED;
 	}
 
 	public int deleteUser(String id) {
 		return deleteUser(id, false);
 	}
-	public int deleteUser(String id, boolean isDeleteRow) {
-		User paramUser = new User();
-		paramUser.setId(id);
-		User user = userDao.readUser(paramUser);
+	
+	public int deleteUser(String email, boolean isDeleteRow) {
+		RS_User paramUser = new RS_User();
+		paramUser.setEmail(email);
+		RS_User user = userDao.readUser(paramUser);
 		if (user != null) {
 			if (user.getIsdeleted().equals("Y")) {
 				//alread deleted.
-				return User.STATUS_ALREADY_DELETED;
+				return RS_User.STATUS_ALREADY_DELETED;
 			} else {
-				if(isDeleteRow){
-					userDao.deleteUser(paramUser);
-				}else{
-					paramUser.setIsactivated("Y");
-					userDao.updateUser(paramUser);
-					//delete successfully.
-				}
-				return User.STATUS_SUCCESS_DELETED;
+				userDao.deleteUser(paramUser);
+				return RS_User.STATUS_SUCCESS_DELETED;
 			}
 		}
 		// Delete fail.
-		return User.STATUS_NOT_FOUNDED;
+		return RS_User.STATUS_DELTE_FAIL;
 		
 	}
 
@@ -155,6 +145,8 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+
 
 	
 

@@ -1,5 +1,7 @@
 package com.respace.web;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -10,6 +12,9 @@ import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.respace.domain.RS_Project;
+import com.respace.domain.RS_User;
+import com.respace.service.ProjectServiceImpl;
 import com.respace.service.UserService;
 
 
@@ -22,6 +27,9 @@ public class UserController {
 	
 	@Autowired
 	private final UserService userService = null;
+	
+	@Autowired
+	private final ProjectServiceImpl projectService = null;
 		
 	@RequestMapping("/index.do")
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -35,6 +43,7 @@ public class UserController {
 	    String userid = (String)request.getSession().getAttribute("userid");
 	    String user_type = (String) request.getSession().getAttribute("user_type");
 	    
+	    List<RS_Project> projectList = projectService.readProjectList();
 	    
 	    if(userid == null){
     		String remoteHost = request.getRemoteHost();
@@ -84,84 +93,84 @@ public class UserController {
 		return model;
     }
 	
-//	@RequestMapping("/login.do")
-//    public ModelAndView login(HttpServletRequest request, HttpServletResponse response) throws Exception {
-//		
-//		String id = request.getParameter("id");
-//		String password = request.getParameter("password");
-//		
-//		logger.debug("public ModelAndView login");
-//		logger.debug("===[S]======================");
-//		logger.debug("id : "+id);
-//		logger.debug("password : "+password);
-//		User user = new User();
-//		user.setId(id);
-//		user.setPassword(password);
-//		
-//		int result = userService.readUser(user);
-//		
-//		
-//		ModelAndView model = new ModelAndView("redirect:index.do");
-//		
-//		if(result == User.STATUS_NOT_FOUNDED){
-//			System.out.println("User does not exist! or password is wrong.");
-//			model.addObject("loginFail", "true");
-//		}
-//		else if(result == User.STATUS_FOUNDED){
-//			System.out.println("User is founded!");
-//			UserIdMap userIdMap = userService.getUserIdMap(id);
-//			request.getSession().setAttribute("userid", Integer.toString(userIdMap.getInternalId()));
-//			request.getSession().setAttribute("externalid", userIdMap.getExternalId());
-//			request.getSession().setAttribute("islogin", "true");
-//			model.addObject("loginComplete", "true");
-//		}
-//		model.addObject("userId", id);
-//		logger.debug("===[S]======================");
-//		return model;
-//    }
+	@RequestMapping("/login.do")
+    public ModelAndView login(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		
+		logger.debug("public ModelAndView login");
+		logger.debug("===[S]======================");
+		logger.debug("email : "+email);
+		logger.debug("password : "+password);
+		RS_User user = new RS_User();
+		user.setEmail(email);
+		user.setPassword(password);
+		
+		int result = userService.readUser(user);
+		
+		
+		ModelAndView model = new ModelAndView("redirect:index.do");
+		
+		if(result == RS_User.STATUS_NOT_FOUNDED){
+			System.out.println("User does not exist! or password is wrong.");
+			model.addObject("loginFail", "true");
+		}
+		else if(result == RS_User.STATUS_FOUNDED){
+			System.out.println("User is founded!");
+						
+			request.getSession().setAttribute("email", user.getEmail());
+			request.getSession().setAttribute("islogin", "true");
+			model.addObject("loginComplete", "true");
+		}
+		model.addObject("email", email);
+		logger.debug("===[S]======================");
+		return model;
+    }
 //	
-//	@RequestMapping("/register.do")
-//    public ModelAndView register(HttpServletRequest request, HttpServletResponse response) throws Exception {
-//		
-//		String id = request.getParameter("id");
-//		String password = request.getParameter("password");
-//		
-//
-//		int nextId = userService.getNextUserIdMap();
-//		User user = new User();
-//		user.setId(id);
-//		user.setInternalid(nextId);
-//		user.setPassword(password);
-//		int result = userService.createUser(user);
-//		
-//		ModelAndView model = new ModelAndView("redirect:index.do");
-//		if(result == User.STATUS_ALREADY_REGISTEREDED){
-//			System.out.println("The ID requested to register is already exists!");
-//			model.addObject("registerFail", "true");
-//			model.addObject("submittedUserId", id);
-//		}else if(result == User.STATUS_SUCCESS_REGISTER){
-//			
-//			UserIdMap userIdMap = new UserIdMap();
-//			userIdMap.setExternalId(id);
-//			userIdMap.setInternalId(nextId);
-//			userService.createUserIdMap(userIdMap);
-//			model.addObject("registerComplete", "true");
-//			model.addObject("submittedUserId", id);
-//		}
-//		return model;
-//    }
-//	
-//	@RequestMapping("/logout.do")
-//    public ModelAndView logout(HttpServletRequest request, HttpServletResponse response) {
-//		
-//		request.getSession().removeAttribute("userid");
-//		request.getSession().removeAttribute("externalid");
-//		request.getSession().removeAttribute("islogin");
-//		
-//		ModelAndView model = new ModelAndView("index");
-//		model.addObject("logoutComplete", "true");
-//		return model;
-//    }
+	@RequestMapping("/register.do")
+    public ModelAndView register(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		
+		ModelAndView model = new ModelAndView("redirect:index.do");
+		if( email == null || password == null){
+			model.addObject("reason", "parameter_incomplete");
+			model.addObject("registerFail", "true");
+		}else{
+			RS_User user = new RS_User();
+			user.setEmail(email);
+			user.setPassword(password);
+			int result = userService.createUser(user);
+			if(result == RS_User.STATUS_ALREADY_REGISTEREDED){
+				System.out.println("The ID requested to register is already exists!");
+				model.addObject("reason", "already_exist");
+				model.addObject("registerFail", "true");
+				//model.addObject("submittedUserId", id);
+			}else if(result == RS_User.STATUS_SUCCESS_REGISTER){
+				
+	//			UserIdMap userIdMap = new UserIdMap();
+	//			userIdMap.setExternalId(id);
+	//			userIdMap.setInternalId(nextId);
+	//			userService.createUserIdMap(userIdMap);
+	//			model.addObject("registerComplete", "true");
+	//			model.addObject("submittedUserId", id);
+				
+				model.addObject("registerComplete", "true");
+			}
+		}
+		return model;
+    }
+	
+	@RequestMapping("/logout.do")
+    public ModelAndView logout(HttpServletRequest request, HttpServletResponse response) {
+		request.getSession().invalidate();
+		
+		ModelAndView model = new ModelAndView("index");
+		model.addObject("logoutComplete", "true");
+		return model;
+    }
 //	
 //	@RequestMapping("/findPassword.do")
 //    public ModelAndView findPassword(HttpServletRequest request, HttpServletResponse response) {
@@ -184,30 +193,4 @@ public class UserController {
 //		return model;
 //    }
 //	
-//	@RequestMapping("/updateDesc.do")
-//    public ModelAndView updateWebDesc(HttpServletRequest request, HttpServletResponse response) {
-//		
-//		String desc = ServletRequestUtils.getStringParameter(request, "desc", "");
-//		String category = ServletRequestUtils.getStringParameter(request, "category", "");
-//		String password = ServletRequestUtils.getStringParameter(request, "password", "");
-//		logger.debug("desc : "+desc);
-//		logger.debug("category : "+category);
-//		logger.debug("password : "+password);
-//		String message = "";
-//		if("ml.ssu.ac.kr".equals(password)){
-//			WebDesc webDesc = new WebDesc();
-//			webDesc.setDescription(desc);
-//			webDesc.setCategory(category);
-//			userService.updateWebDesc(webDesc);
-//			message = "Update success.";
-//		}else{
-//			message = "Update fail. password mismatch";
-//		}
-//		ModelAndView model = new ModelAndView("redirect:"+category+".do");
-//		model.addObject("message", message);
-//		return model;
-//    }
-	
-	
-
 }

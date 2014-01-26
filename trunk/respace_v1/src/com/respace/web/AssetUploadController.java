@@ -28,8 +28,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import com.respace.domain.Asset;
-import com.respace.domain.Asset;
+import com.respace.domain.RS_Asset;
+import com.respace.domain.RS_Asset;
 import com.respace.service.AssetService;
 import com.respace.service.UserService;
 
@@ -54,12 +54,12 @@ public class AssetUploadController extends HttpServlet{
 	@RequestMapping(value="/fileUpload.do", method = RequestMethod.POST)
 	public @ResponseBody String upload(MultipartHttpServletRequest request, HttpServletResponse response) throws IOException {
 		
-		Asset asset = null;
+		RS_Asset asset = null;
 		
-		Asset ri = new Asset();
+		RS_Asset ri = new RS_Asset();
 		//ri.setReport_no(report_no);
 		//ri.setType(report_item_type);
-		Asset rri;// = assetService.readReportItem(ri);
+		RS_Asset rri;// = assetService.readReportItem(ri);
 		
 		//1. build an iterator
 		 Iterator<String> itr =  request.getFileNames();
@@ -83,7 +83,7 @@ public class AssetUploadController extends HttpServlet{
 			//	 files.pop();
 			 
 			 //2.3 create new fileMeta
-			 asset = new Asset();
+			 asset = new RS_Asset();
 			 asset.setFilename(mpf.getOriginalFilename());
 			 asset.setFilepath(curWebPath+"/"+mpf.getOriginalFilename());
 			 asset.setFilesize(mpf.getSize()/1024+" Kb");
@@ -112,9 +112,9 @@ public class AssetUploadController extends HttpServlet{
 			 
 		 }
 		 
-		 Asset ai = new Asset();
+		 RS_Asset ai = new RS_Asset();
 		 //ai.setReport_item_id(rri.getId());
-		 List<Asset> attachedItemList = assetService.readAssetList(ai);
+		 List<RS_Asset> attachedItemList = assetService.readAssetList(ai);
 		 
 		 //System.out.println(files);
 		// result will be like this
@@ -126,18 +126,18 @@ public class AssetUploadController extends HttpServlet{
 	public @ResponseBody String delete(HttpServletRequest request, HttpServletResponse response) {
 		int file_id = ServletRequestUtils.getIntParameter(request, "file_id", 0);
 		
-		Asset ai = new Asset();
+		RS_Asset ai = new RS_Asset();
 		ai.setId(file_id);
 		assetService.deleteAsset(ai);
 		
-		Asset ri = new Asset();
+		RS_Asset ri = new RS_Asset();
 		//ri.setReport_no(report_no);
 		//ri.setType(report_item_type);
-		Asset rri = null;//assetService.readReportItem(ri);
+		RS_Asset rri = null;//assetService.readReportItem(ri);
 		
-		Asset ai2 = new Asset();
+		RS_Asset ai2 = new RS_Asset();
 		 //ai2.setReport_item_id(rri.getId());
-		 List<Asset> attachedItemList = assetService.readAssetList(ai2);
+		 List<RS_Asset> attachedItemList = assetService.readAssetList(ai2);
 		
 		return attachedItemList.toString();
 	}

@@ -10,7 +10,7 @@ package com.respace.domain;
 //		  PRIMARY KEY (`id`))
 //		ENGINE = InnoDB;
 
-public class Asset {
+public class RS_Asset {
 	int id;					//아이디
 	String name;			//어셋 이름
 	String url;				//어셋 URL

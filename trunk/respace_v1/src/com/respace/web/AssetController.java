@@ -11,7 +11,7 @@ import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.respace.domain.Asset;
+import com.respace.domain.RS_Asset;
 import com.respace.service.AssetService;
 
 @Controller
@@ -29,8 +29,8 @@ public class AssetController {
 	
 	@RequestMapping("/fileUploadForm.do")
     public ModelAndView fileUploadForm(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		Asset ai = new Asset();
-		List<Asset> itemList = assetService.readAssetList(ai);
+		RS_Asset ai = new RS_Asset();
+		List<RS_Asset> itemList = assetService.readAssetList(ai);
 		
 		ModelAndView model = new ModelAndView("jsp/file_upload_form");
 		model.addObject("attachedItemList", itemList);

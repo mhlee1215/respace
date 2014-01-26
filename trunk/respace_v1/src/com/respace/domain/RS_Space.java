@@ -33,7 +33,7 @@ package com.respace.domain;
 //		ENGINE = InnoDB
 //		COMMENT = '공간 정보';
 
-public class Space {
+public class RS_Space {
 	int id;											//아이
 	int name;										//공간
 	String url;										//공간 URL

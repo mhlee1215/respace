@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="ProjectSql">
+
+	<resultMap id="Project" class="com.respace.domain.RS_Project">
+		<result column="ID" property="id" />
+		<result column="ID_CONTACT" property="id_contact" />
+		<result column="TITLE" property="title" />
+		<result column="DESCRIPTION" property="description" />
+		<result column="HOST_NAME" property="host_name" />
+ 	</resultMap>
+ 	
+ 	<select id="readProjectList" resultMap="Project">
+ 		SELECT ID, ID_CONTACT, TITLE, DESCRIPTION, HOST_NAME 
+ 		FROM rs_project
+ 	</select>
+ 	
+	<select id="readProject" resultMap="Project">
+       SELECT ID, ID_CONTACT, TITLE, DESCRIPTION, HOST_NAME 
+       FROM rs_project 
+       WHERE ID = #id# 
+	</select>
+
+	<insert id="createProject" parameterClass="com.respace.domain.RS_Project">
+		 INSERT INTO
+		 rs_project (ID_CONTACT, TITLE, HOST_NAME, DESCRIPTION)
+		 VALUES (#id_contact#, #title#, #host_name#, #description#)
+	</insert>
+	
+	<update id="updateProject" parameterClass="com.respace.domain.RS_Project">
+		 UPDATE rs_project SET
+		 ID = #id#
+		 <isNotEmpty property="title">
+		 ,TITLE = #title#
+		 </isNotEmpty>
+		 <isNotEmpty property="host_name">
+		 ,HOST_NAME = #host_name#
+		 </isNotEmpty>
+		 <isNotEmpty property="description">
+		 ,DESCRIPTION = #description#
+		 </isNotEmpty>
+		 <isNotEmpty property="id_contact">
+		 ,ID_CONTACT = #id_contact#
+		 </isNotEmpty>
+		 WHERE ID = #id# 
+	</update>
+</sqlMap>
+
+

@@ -8,7 +8,7 @@ import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
 import org.springframework.stereotype.Repository;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
-import com.respace.domain.Asset;
+import com.respace.domain.RS_Asset;
 
 @Repository
 public class AssetDaoImpl extends SqlMapClientDaoSupport implements AssetDao {
@@ -19,26 +19,26 @@ public class AssetDaoImpl extends SqlMapClientDaoSupport implements AssetDao {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Asset> readAssetList(Asset asset) {
-		List<Asset> array = getSqlMapClientTemplate().queryForList("AssetSql.readAssetList", asset);
+	public List<RS_Asset> readAssetList(RS_Asset asset) {
+		List<RS_Asset> array = getSqlMapClientTemplate().queryForList("AssetSql.readAssetList", asset);
 		return array;
 	}
 
-	public Asset readAsset(Asset asset) {
-		Asset result = (Asset) getSqlMapClientTemplate().queryForObject("AssetSql.readAsset", asset);
+	public RS_Asset readAsset(RS_Asset asset) {
+		RS_Asset result = (RS_Asset) getSqlMapClientTemplate().queryForObject("AssetSql.readAsset", asset);
 		return result;
 	}
 
-	public void createAsset(Asset asset) {
+	public void createAsset(RS_Asset asset) {
 		getSqlMapClientTemplate().insert("AssetSql.createAsset", asset);
 	}
 
-	public void deleteAsset(Asset asset) {
+	public void deleteAsset(RS_Asset asset) {
 		getSqlMapClientTemplate().delete("AssetSql.deleteAsset", asset);
 
 	}
 
-	public void updateAsset(Asset asset) {
+	public void updateAsset(RS_Asset asset) {
 		getSqlMapClientTemplate().update("AssetSql.updateAsset", asset);
 	}
 
