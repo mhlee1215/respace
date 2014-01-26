@@ -15,7 +15,7 @@ function clearText(field)
 </script>
 </head>
 <body>
-<div id="wrapper">
+<div id="wrapper" >
 한글
 	<img id="landing_image" src="landing_page.jpg" />
 </div>

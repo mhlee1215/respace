@@ -10,7 +10,7 @@ package com.respace.domain;
 //`contact_status` VARCHAR(45) NULL COMMENT '계약의 상태',
 //`etc` TEXT NULL COMMENT '비고',
 
-public class Contact {
+public class RS_Contact {
 	int id;					//아이디
 	int id_product;			//상품 아이디
 	int id_space;			//공간 아이디

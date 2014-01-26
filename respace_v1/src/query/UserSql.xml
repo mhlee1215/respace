@@ -4,40 +4,49 @@
     "http://ibatis.apache.org/dtd/sql-map-2.dtd">
 <sqlMap namespace="UserSql">
 
-	<resultMap id="User" class="com.respace.domain.User">
+	<resultMap id="User" class="com.respace.domain.RS_User">
 		<result column="ID" property="id" />
-		<result column="PASSWORD" property="password" />
-		<result column="ISACTIVATED" property="isactivated" />
+		<result column="NAME" property="name" />
+		<result column="EMAIL" property="email" />
+		<!-- <result column="PASSWORD" property="password" /> -->
+		<result column="ISVERIFIED" property="isverified" />
 		<result column="ISDELETED" property="isdeleted" />
 		<result column="REGISTEREDTIME" property="registeredtime" />
 		<result column="DELETEDTIME" property="deletedtime" />
-		<result column="ACTIVATEDTIME" property="activatedtime" />
+		<result column="VERIFIEDTIME" property="verifiedtime" />
  	</resultMap>
  	
+ 	
+ 	
  	<select id="readUserList" resultMap="User">
- 		SELECT ID, ISACTIVATED, PASSWORD, ISDELETED, REGISTEREDTIME, DELETEDTIME, ACTIVATEDTIME FROM USER_INFO
+ 		SELECT ID, NAME, EMAIL, ISVERIFIED, ISDELETED, REGISTEREDTIME, DELETEDTIME, VERIFIEDTIME 
+ 		FROM rs_user
  	</select>
  	
 	<select id="readUser" resultMap="User">
-       SELECT ID, PASSWORD, ISACTIVATED, ISDELETED, REGISTEREDTIME, DELETEDTIME, ACTIVATEDTIME FROM USER_INFO 
-       WHERE ID = #id# 
+       SELECT ID, NAME, EMAIL, ISVERIFIED, ISDELETED, REGISTEREDTIME, DELETEDTIME, VERIFIEDTIME 
+       FROM rs_user 
+       WHERE EMAIL = #email# 
        <isNotEmpty property="password">
        and PASSWORD = #password#
        </isNotEmpty>
 	</select>
 
-	<insert id="createUser" parameterClass="com.respace.domain.User">
+	<insert id="createUser" parameterClass="com.respace.domain.RS_User">
 		 INSERT INTO
-		 USER_INFO (ID, PASSWORD, ISACTIVATED, ISDELETED, REGISTEREDTIME)
-		 VALUES (#id#, #password#, 'N', 'N', DATE_FORMAT(now(), "%Y%m%d%H%i%s"))
+		 rs_user (EMAIL, PASSWORD)
+		 VALUES (#email#, #password#)
 	</insert>
 	
-	<update id="updateUser" parameterClass="com.respace.domain.User">
-		 UPDATE USER_INFO SET
+	<update id="updateUser" parameterClass="com.respace.domain.RS_User">
+		 UPDATE rs_user SET
 		 ID = #id#
-		 <isNotEmpty property="isactivated">
-		 ,ISACTIVATED = #isactivated#
-		 ,ACTIVATEDTIME = DATE_FORMAT(now(), "%Y%m%d%H%i%s")
+		 <isNotEmpty property="password">
+		 ,password = #password#
+		 </isNotEmpty>
+		 <isNotEmpty property="isverified">
+		 ,ISVERIFIED = #isverified#
+		 ,VERIFIEDTIME = DATE_FORMAT(now(), "%Y%m%d%H%i%s")
 		 </isNotEmpty>
 		 <isNotEmpty property="isdeleted">
 		 ,ISDELETED = #isdeleted#
@@ -45,19 +54,6 @@
 		 </isNotEmpty>
 		 WHERE ID = #id# 
 	</update>
-	
-	<delete id="deleteUser" parameterClass="com.respace.domain.User">
-		 DELETE FROM USER_INFO
-		 WHERE ID = #id#
-	</delete>
-	
-	<select id="getNextId" resultClass="Integer">
-		SELECT IFNULL(MAX(internalid)+1, '10000') FROM USER_IDMAP
-	</select>
-	
-
-	
-	
 </sqlMap>
 
 
