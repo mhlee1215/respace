@@ -1,6 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="java.sql.*" %>
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -18,7 +16,25 @@
 
 <body>
     
-    <%@include file = "header.jsp"%>
+    <!-- *********  Header  ********** -->
+    
+    <div id="header">
+        <div id="header_in">
+        
+        <h1><a href="index.html"><b>RE</b>SPACE</a></h1>
+        
+        <div id="menu">
+         <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="space.html">SPACE</a></li>
+            <li><a href="project.html">PROJECT</a></li>
+            <li><a href="join.html">Join</a></li>
+            <li><a href="contact.html">Contact</a></li>            
+         </ul>
+        </div>
+        
+        </div>
+    </div>
     
     <!-- *********  Main part (slider)  ********** -->
     
@@ -51,22 +67,6 @@
             <div class="thirds">
                 <h3>Share your space</h3>
                 <p>저 위에 검은색에 있는 버튼은 지워질 예정 설명 블라블라 붑부바바밥</p>
-                <!-- ${indexDesc}
-				
-				<script type="text/javascript" src="js/ckeditor/ckeditor_4.1.2_standard/ckeditor.js"></script>
-				<script type="text/javascript">
-					window.onload = function()
-					{
-						CKEDITOR.replace( 'desc' );
-					};
-				</script>
-				<form method="post" name="descForm" action="/updateDesc.do">
-				<textarea name="desc" rows="70" cols="100">${indexDesc}</textarea><br>
-				password : <input type="password" name="password"></input>
-				<input type="hidden" name="category" value="index"></input>
-				</form>
-				<button onclick="document.descForm.submit();">apply</button>
-				 -->
             </div>
             
             <div class="thirds">
@@ -91,31 +91,65 @@
             
             <h3>Featured Spaces</h3>
             
-            <c:forEach items="${featuredSpaceList}" var="featuredSpace" varStatus="list_status">
-						
-			<div class="fourths_portfolio">
-                <h4>${featuredSpace.name}<br>
+            <div class="fourths_portfolio">
+                <h4>신사동 코노이<br>
                 <span>see detail</span>
                 </h4>
-                <a href="#"><img src="${featuredSpace.thumbnail_url}" alt="item1"></a>
+                <a href="#"><img src="img/portfolio_1.jpg" alt="item1"></a>
             </div>
             
-	 		</c:forEach>
-                        
-            <!-- ****  Recent works  ***** -->        
+            <div class="fourths_portfolio">
+                <h4>신촌 명물거리<br>
+                <span>see detail</span>
+                </h4>
+                <a href="#"><img src="img/portfolio_2.jpg" alt="item2"></a>
+            </div>
+            
+            <div class="fourths_portfolio">
+                <h4>이대 정문 앞 팝업스토어<br>
+                <span>see detail</span>
+                </h4>
+                <a href="#"><img src="img/portfolio_3.jpg" alt="item3"></a>
+            </div>
+            
+            <div class="fourths_portfolio">
+                <h4>청담동 갤러리<br>
+                <span>see detail</span>
+                </h4>
+                <a href="#"><img src="img/portfolio_4.jpg" alt="item4"></a>
+            </div>
+            
+                  <!-- ****  Recent works  ***** -->        
             
             <h3>Featured Projects</h3>
             
-             <c:forEach items="${featuredProjectList}" var="featuredProject" varStatus="list_status">
-						
-			<div class="fourths_portfolio">
-                <h4>${featuredProject.title}<br>
+            <div class="fourths_portfolio">
+                <h4>나이키 뉴에디션 팝업<br>
                 <span>see detail</span>
                 </h4>
-                <a href="#"><img src="${featuredProject.thumbnail_url}" alt="item1"></a>
+                <a href="#"><img src="img/portfolio_1.jpg" alt="item1"></a>
             </div>
             
-	 		</c:forEach>
+            <div class="fourths_portfolio">
+                <h4>어플리케이션 시연 <br>
+                <span>see detail</span>
+                </h4>
+                <a href="#"><img src="img/portfolio_2.jpg" alt="item2"></a>
+            </div>
+            
+            <div class="fourths_portfolio">
+                <h4>또 들어갈 행사 이름 <br>
+                <span>see detail</span>
+                </h4>
+                <a href="#"><img src="img/portfolio_3.jpg" alt="item3"></a>
+            </div>
+            
+            <div class="fourths_portfolio">
+                <h4>행사행사행사 <br>
+                <span>see detail</span>
+                </h4>
+                <a href="#"><img src="img/portfolio_4.jpg" alt="item4"></a>
+            </div>
             
             
             <hr class="cleanit">
@@ -154,11 +188,22 @@
         </div>
         
     
-  
-    <%@include file = "footer.jsp"%>  
+    
     <!-- *********  Footer  ********** -->
     
-   
+    <hr class="cleanit">
+    
+     <div id="footer">
+        <div id="footer_in">
+            
+            <p>리스페이스 &mdash; 대표 : 여동인 사업자등록번호 : 110-555-55555 주소 : 서울특별시 서대문구 연세로 50</p>
+            <span>리스페이스 <a href="http://blog.naver.com/respace">&nbsp;BLOG</a> 
+            <a href="http://www.facebook.com/remakespace">&nbsp;&nbsp;FACEBOOK</a></span>
+            
+
+        
+        </div>
+    </div>
          
 <script>
 // script for testimonial' tabs
@@ -169,4 +214,3 @@ $(function() {
 
 </body>
 </html>
-

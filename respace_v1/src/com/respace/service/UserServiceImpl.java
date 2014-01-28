@@ -34,11 +34,8 @@ public class UserServiceImpl implements UserService {
 		
 		
 		//Encrypt
-        System.out.println(user.getPassword());
         if(isEncrypt)
-        	 user.setPassword(Crypto.encrypt(user.getPassword()));
-        System.out.println(user.getPassword());
-        
+        	 user.setPassword(Crypto.encrypt(user.getPassword()));       
 		RS_User paramUser = new RS_User();
 		paramUser.setEmail(user.getEmail());
 		RS_User foundUser = readUserData(paramUser);

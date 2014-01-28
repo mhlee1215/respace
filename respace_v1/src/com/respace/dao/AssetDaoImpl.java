@@ -11,7 +11,7 @@ import com.ibatis.sqlmap.client.SqlMapClient;
 import com.respace.domain.RS_Asset;
 
 @Repository
-public class AssetDaoImpl extends SqlMapClientDaoSupport implements AssetDao {
+public class AssetDaoImpl extends SqlMapClientDaoSupport {
 
 	@Resource(name = "sqlMapClient")
 	protected void initDAO(SqlMapClient sqlMapClient) {

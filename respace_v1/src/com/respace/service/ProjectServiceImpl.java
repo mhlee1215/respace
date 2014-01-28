@@ -1,5 +1,6 @@
 package com.respace.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.respace.dao.ProjectDaoImpl;
+import com.respace.domain.RS_Project;
 import com.respace.domain.RS_Project;
 
 
@@ -21,11 +23,11 @@ public class ProjectServiceImpl{
 	
 	boolean isEncrypt = true;
 
-	public List<RS_Project> readProjectList() {
-		return projectDao.readProjectList();
+	public List<RS_Project> readProjectList(RS_Project project) {
+		return projectDao.readProjectList(project);
 	}
 
-	public RS_Project createProject(RS_Project project) throws Exception {
+	public int createProject(RS_Project project) throws Exception {
 		return projectDao.createProject(project);
 		
 	}
@@ -38,15 +40,16 @@ public class ProjectServiceImpl{
 		return projectDao.updateProject(project);
 	}
 
-	public int deleteProject(int id) {
-		RS_Project project = new RS_Project();
-		project.setId(id);
+	public int deleteProject(RS_Project project) {
 		return projectDao.deleteProject(project);
 	}
-
-
-
-
 	
-
+	public List<RS_Project> readFeaturedProject(){
+		ArrayList<RS_Project> featuredProject = new ArrayList<RS_Project>();
+		RS_Project project = new RS_Project();
+		List<RS_Project> list = projectDao.readProjectList(project);
+		for(int i = 0 ; i < 4 && i < list.size() ; i++)
+			featuredProject.add(list.get(i));
+		return featuredProject;
+	}
 }

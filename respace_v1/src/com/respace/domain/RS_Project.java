@@ -6,7 +6,23 @@ public class RS_Project {
 	private String 	title 	= "";
 	private String 	description 	= "";
 	private String 	host_name 	= "";
+	private String code_category = "";
+	private String thumbnail_url;
 	
+	
+	
+	public String getThumbnail_url() {
+		return thumbnail_url;
+	}
+	public void setThumbnail_url(String thumbnail_url) {
+		this.thumbnail_url = thumbnail_url;
+	}
+	public String getCode_category() {
+		return code_category;
+	}
+	public void setCode_category(String code_category) {
+		this.code_category = code_category;
+	}
 	public int getId() {
 		return id;
 	}
@@ -41,6 +57,7 @@ public class RS_Project {
 	public String toString() {
 		return "RS_Project [id=" + id + ", id_contact=" + id_contact
 				+ ", title=" + title + ", description=" + description
-				+ ", host_name=" + host_name + "]";
+				+ ", host_name=" + host_name + ", code_category="
+				+ code_category + ", thumbnail_url=" + thumbnail_url + "]";
 	}
 }

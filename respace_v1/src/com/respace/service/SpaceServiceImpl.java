@@ -1,5 +1,6 @@
 package com.respace.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -21,11 +22,11 @@ public class SpaceServiceImpl{
 	
 	boolean isEncrypt = true;
 
-	public List<RS_Space> readSpaceList() {
-		return spaceDao.readSpaceList();
+	public List<RS_Space> readSpaceList(RS_Space space) {
+		return spaceDao.readSpaceList(space);
 	}
 
-	public RS_Space createSpace(RS_Space space) throws Exception {
+	public int createSpace(RS_Space space) throws Exception {
 		return spaceDao.createSpace(space);
 		
 	}
@@ -38,15 +39,16 @@ public class SpaceServiceImpl{
 		return spaceDao.updateSpace(space);
 	}
 
-	public int deleteSpace(int id) {
-		RS_Space space = new RS_Space();
-		space.setId(id);
+	public int deleteSpace(RS_Space space) {
 		return spaceDao.deleteSpace(space);
 	}
-
-
-
-
 	
-
+	public List<RS_Space> readFeaturedSpace(){
+		ArrayList<RS_Space> featuredSpace = new ArrayList<RS_Space>();
+		RS_Space space = new RS_Space();
+		List<RS_Space> list = spaceDao.readSpaceList(space);
+		for(int i = 0 ; i < 4 && i < list.size() ; i++)
+			featuredSpace.add(list.get(i));
+		return featuredSpace;
+	}
 }

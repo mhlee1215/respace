@@ -5,7 +5,7 @@ package com.respace.domain;
 //		  `name` VARCHAR(45) NULL,
 //		  `url` VARCHAR(255) NOT NULL,
 //		  `type` VARCHAR(45) NOT NULL,
-//		  `id_reference` INT NULL,
+//		  `reference_id` INT NULL,
 //		  `etc` VARCHAR(300) NULL,
 //		  PRIMARY KEY (`id`))
 //		ENGINE = InnoDB;
@@ -15,7 +15,8 @@ public class RS_Asset {
 	String name;			//어셋 이름
 	String url;				//어셋 URL
 	String type;			//어셋 타입 (작가, 공간, 상품)
-	int id_reference;		//참조 아이디 (작가, 공간, 상품) 다 가능..
+	int reference_id;				//참조 아이디 (작가, 공간, 상품) 다 가능..
+	String reference_category = "";	//참조 카테고리 (어디의 아이디인가..)
 	int seq_no;				//순번
 	String registered_date;	//등록 날짜
 	String filename;
@@ -49,11 +50,11 @@ public class RS_Asset {
 	public void setType(String type) {
 		this.type = type;
 	}
-	public int getId_reference() {
-		return id_reference;
+	public int getReference_id() {
+		return reference_id;
 	}
-	public void setId_reference(int id_reference) {
-		this.id_reference = id_reference;
+	public void setReference_id(int reference_id) {
+		this.reference_id = reference_id;
 	}
 	public String getEtc() {
 		return etc;
@@ -111,17 +112,22 @@ public class RS_Asset {
 		this.filepath = filepath;
 	}
 	
+	public String getReference_category() {
+		return reference_category;
+	}
+	public void setReference_category(String reference_category) {
+		this.reference_category = reference_category;
+	}
 	@Override
 	public String toString() {
-		return "{\"id\":\"" + id + "\", \"name\":\"" + name + "\", \"url\":\""
-				+ url + "\", \"type\":\"" + type + "\", \"id_reference\":\""
-				+ id_reference + "\", \"seq_no\":\"" + seq_no
-				+ "\", \"registered_date\":\"" + registered_date
-				+ "\", \"filename\":\"" + filename + "\", \"filetype\":\""
-				+ filetype + "\", \"filesize\":\"" + filesize
-				+ "\", \"modified_date\":\"" + modified_date
-				+ "\", \"filepath\":\"" + filepath + "\", \"code_status\":\""
-				+ code_status + "\", \"etc\":\"" + etc + "\"}";
+		return "RS_Asset [id=" + id + ", name=" + name + ", url=" + url
+				+ ", type=" + type + ", reference_id=" + reference_id
+				+ ", reference_category=" + reference_category + ", seq_no="
+				+ seq_no + ", registered_date=" + registered_date
+				+ ", filename=" + filename + ", filetype=" + filetype
+				+ ", filesize=" + filesize + ", modified_date=" + modified_date
+				+ ", filepath=" + filepath + ", code_status=" + code_status
+				+ ", etc=" + etc + "]";
 	}
 	
 	
