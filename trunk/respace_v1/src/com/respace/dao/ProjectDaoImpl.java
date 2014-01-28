@@ -18,8 +18,8 @@ public class ProjectDaoImpl extends SqlMapClientDaoSupport {
 	 } 
 	
 	@SuppressWarnings("unchecked")
-	public List<RS_Project> readProjectList() {	
-		List<RS_Project> array = getSqlMapClientTemplate().queryForList("ProjectSql.readProjectList");
+	public List<RS_Project> readProjectList(RS_Project project) {	
+		List<RS_Project> array = getSqlMapClientTemplate().queryForList("ProjectSql.readProjectList", project);
 		return array;
 	}
 
@@ -29,9 +29,9 @@ public class ProjectDaoImpl extends SqlMapClientDaoSupport {
 	}
 
 
-	public RS_Project createProject(RS_Project Project) {
-		RS_Project c_project = (RS_Project) getSqlMapClientTemplate().insert("ProjectSql.createProject", Project);
-		return c_project;
+	public int createProject(RS_Project Project) {
+		Integer rt_id = (Integer) getSqlMapClientTemplate().insert("ProjectSql.createProject", Project);
+		return rt_id; 
 	}
 
 

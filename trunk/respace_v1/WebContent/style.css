@@ -238,7 +238,7 @@ div.cara {
     font-size: 280%;
     font-weight: 200;
     text-align: center;
-    color: #fff;
+    color: #e66e0d;
     text-shadow: 0px 1px #000;
 }
 
@@ -899,12 +899,52 @@ form.formit .button_submit {
     top: 30px;
 }
 
-.banner1 a.button_small {
+.banner2 {
+    width: 890px;
+    height: 76px;
+    padding: 42px 0 0 50px;
+    margin: auto;
+    background: url('img/banner1.jpg') no-repeat scroll;
+    background-color: #000;
+    color: #c3ccd5;
+    position: relative;
+}
+
+.banner2 p {
+    font-weight: 200; 
+    font-size: 20pt;
+    display: block;
+    width: 630px;
+    text-shadow: 0px 1px #000;
+}
+
+.banner2 p b {
+    color: #fff;
+    font-weight: 300;
+}
+
+.banner2 a.button_dark {
     width: 100px;
-    position: center;
+    position: absolute;
+    right: 42px;
+    top: 30px;
 }
 
 
+a.button_sign {
+    background-color: #e66e0d;
+    width: 300px;
+    height: 58px;
+    color: #fff;
+    font-size: 10pt;
+    font-weight: 400;
+    letter-spacing: 1px;
+    border: 5px solid #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    box-shadow: 0px 0px 0px 1px #dbdbdb;
+    text-shadow: 0px 1px #d72d05;
+}
 
 
 

@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 
 import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
 import org.springframework.stereotype.Repository;
+
 import com.ibatis.sqlmap.client.SqlMapClient;
 import com.respace.domain.RS_Space;
 
@@ -18,8 +19,8 @@ public class SpaceDaoImpl extends SqlMapClientDaoSupport {
 	 } 
 	
 	@SuppressWarnings("unchecked")
-	public List<RS_Space> readSpaceList() {	
-		List<RS_Space> array = getSqlMapClientTemplate().queryForList("SpaceSql.readSpaceList");
+	public List<RS_Space> readSpaceList(RS_Space space) {	
+		List<RS_Space> array = getSqlMapClientTemplate().queryForList("SpaceSql.readSpaceList", space);
 		return array;
 	}
 
@@ -29,9 +30,9 @@ public class SpaceDaoImpl extends SqlMapClientDaoSupport {
 	}
 
 
-	public RS_Space createSpace(RS_Space Space) {
-		RS_Space c_space = (RS_Space) getSqlMapClientTemplate().insert("SpaceSql.createSpace", Space);
-		return c_space;
+	public int createSpace(RS_Space Space) {
+		Integer rt_id = (Integer) getSqlMapClientTemplate().insert("SpaceSql.createSpace", Space);
+		return rt_id;
 	}
 
 

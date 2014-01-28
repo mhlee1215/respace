@@ -6,40 +6,35 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.respace.dao.AssetDao;
+import com.respace.dao.AssetDaoImpl;
 import com.respace.domain.RS_Asset;
 
 @Service
-public class AssetServiceImpl implements AssetService {
+public class AssetServiceImpl {
 	private Logger logger = Logger.getLogger(getClass());
 
 	@Autowired
-	private AssetDao assetDao;
-	@Override
+	private AssetDaoImpl assetDao;
 	public RS_Asset readAsset(RS_Asset asset) {
 		// TODO Auto-generated method stub
 		return assetDao.readAsset(asset);
 	}
 
-	@Override
 	public void createAsset(RS_Asset asset) {
 		// TODO Auto-generated method stub
 		assetDao.createAsset(asset);
 	}
 
-	@Override
 	public void deleteAsset(RS_Asset asset) {
 		// TODO Auto-generated method stub
 		assetDao.deleteAsset(asset);
 	}
 
-	@Override
 	public void updateAsset(RS_Asset asset) {
 		// TODO Auto-generated method stub
 		assetDao.updateAsset(asset);
 	}
 
-	@Override
 	public List<RS_Asset> readAssetList(RS_Asset asset) {
 		// TODO Auto-generated method stub
 		return assetDao.readAssetList(asset);

@@ -42,8 +42,15 @@ public class RS_User {
 	private String	status 			= ""; 
 	private String	isverified		= "N";
 	private String	isdeleted		= "N";
+	private String  type			= "";
 
 	
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 	public int getId() {
 		return id;
 	}
@@ -112,7 +119,7 @@ public class RS_User {
 				+ registeredtime + ", deletedtime=" + deletedtime
 				+ ", verifiedtime=" + verifiedtime + ", status=" + status
 				+ ", isverified=" + isverified + ", isdeleted=" + isdeleted
-				+ "]";
+				+ ", type=" + type + "]";
 	}
 	
 }

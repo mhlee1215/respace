@@ -7,18 +7,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.respace.domain.RS_Asset;
-import com.respace.service.AssetService;
+import com.respace.service.AssetServiceImpl;
 
 @Controller
 public class AssetController {
 	
 	@Autowired
-	private final AssetService assetService = null;
+	private final AssetServiceImpl assetService = null;
 	
 	@RequestMapping("/attachedFileListFN.do")
     public ModelAndView attachedFileListFN(HttpServletRequest request, HttpServletResponse response) throws Exception {

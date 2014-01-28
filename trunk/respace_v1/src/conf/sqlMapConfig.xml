@@ -30,8 +30,10 @@
     </transactionManager>
   
   <sqlMap resource="query/UserSql.xml"/>
+  <sqlMap resource="query/CodeSql.xml"/>
   <sqlMap resource="query/ProjectSql.xml"/>
   <sqlMap resource="query/SpaceSql.xml"/>
   <sqlMap resource="query/AssetSql.xml"/>
+  <sqlMap resource="query/ArticleSql.xml"/>
   
 </sqlMapConfig>

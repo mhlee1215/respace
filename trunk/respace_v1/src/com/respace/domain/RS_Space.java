@@ -34,45 +34,64 @@ package com.respace.domain;
 //		COMMENT = '공간 정보';
 
 public class RS_Space {
-	int id;											//아이
-	int id_contact;
-	int name;										//공간
-	String url;										//공간 URL
-	String address_plain;							//공간 주소 (전체)
-	String address_si;								//공간 주소 (시)
-	String address_do;								//공간 주소 (도)
-	String address_dong;							//공간 주소 (동)
-	String address_last;							//공간 주소 (나머지)
-	String code_mood;								//분위기 (코드)
-	String email;									//이메
-	String phone;									//연락처 1
-	String phone2;									//연락처 2
-	int franchise_ox;								//프렌차이즈 유무
-	String frenchise_headquater_phone;				//프렌차이즈 본사 연락
-	String frenchise_headquater_location;			//프렌차이즈 본사 위치
-	String business_registered_number;				//사업자 등록 번호
-	String cond_input_period_start;					//
-	String cond_input_period_end;
-	String cond_input_type;
-	String code_target;
-	String code_level;
-	String code_size;
-	String open_time;
-	String close_time;
-	String etc;
-	String open_date;
-	String registered_date;
-	String review;
+	private int id;											//아이
+	private int id_contact;
+	private String name;										//공간
+	private String url;										//공간 URL
+	private String address_plain;							//공간 주소 (전체)
+	private String address_si;								//공간 주소 (시)
+	private String address_do;								//공간 주소 (도)
+	private String address_dong;							//공간 주소 (동)
+	private String address_last;							//공간 주소 (나머지)
+	private String code_mood;								//분위기 (코드)
+	private String email;									//이메
+	private String phone;									//연락처 1
+	private String phone2;									//연락처 2
+	private int franchise_ox;								//프렌차이즈 유무
+	private String frenchise_headquater_phone;				//프렌차이즈 본사 연락
+	private String frenchise_headquater_location;			//프렌차이즈 본사 위치
+	private String business_registered_number;				//사업자 등록 번호
+	private String cond_input_period_start;					//
+	private String cond_input_period_end;
+	private String cond_input_type;
+	private String code_target;
+	private String code_level;
+	private String code_size;
+	private String open_time;
+	private String close_time;
+	private String etc;
+	private String open_date;
+	private String registered_date;
+	private String review;
+	
+	private String thumbnail_url;
+	
+	
+	public String getThumbnail_url() {
+		return thumbnail_url;
+	}
+
+	public void setThumbnail_url(String thumbnail_url) {
+		this.thumbnail_url = thumbnail_url;
+	}
+
+	public RS_Space(){
+	}
+	
+	public RS_Space(String name){
+		this.name = name;
+	}
+	
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getName() {
+	public String getName() {
 		return name;
 	}
-	public void setName(int name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 	public String getUrl() {
@@ -254,7 +273,7 @@ public class RS_Space {
 				+ code_size + ", open_time=" + open_time + ", close_time="
 				+ close_time + ", etc=" + etc + ", open_date=" + open_date
 				+ ", registered_date=" + registered_date + ", review=" + review
-				+ "]";
+				+ ", thumbnail_url=" + thumbnail_url + "]";
 	}
 	public int getFranchise_ox() {
 		return franchise_ox;
