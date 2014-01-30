@@ -22,6 +22,7 @@
  	<select id="readUserList" resultMap="User">
  		SELECT ID, NAME, EMAIL, TYPE, ISVERIFIED, ISDELETED, REGISTEREDTIME, DELETEDTIME, VERIFIEDTIME 
  		FROM rs_user
+ 		
  	</select>
  	
 	<select id="readUser" resultMap="User">

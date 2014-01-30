@@ -45,11 +45,16 @@ public class ProjectServiceImpl{
 	}
 	
 	public List<RS_Project> readFeaturedProject(){
-		ArrayList<RS_Project> featuredProject = new ArrayList<RS_Project>();
+		//ArrayList<RS_Project> featuredProject = new ArrayList<RS_Project>();
 		RS_Project project = new RS_Project();
-		List<RS_Project> list = projectDao.readProjectList(project);
-		for(int i = 0 ; i < 4 && i < list.size() ; i++)
-			featuredProject.add(list.get(i));
+		project.setQuery_number(4);
+		List<RS_Project> featuredProject = projectDao.readProjectList(project);
+		//for(int i = 0 ; i < 4 && i < list.size() ; i++)
+		//	featuredProject.add(list.get(i));
 		return featuredProject;
+	}
+	
+	public int countProject(RS_Project project){
+		return projectDao.countProject(project);
 	}
 }

@@ -23,24 +23,29 @@ public class ProjectDaoImpl extends SqlMapClientDaoSupport {
 		return array;
 	}
 
-	public RS_Project readProject(RS_Project Project) {
-		RS_Project result = (RS_Project)getSqlMapClientTemplate().queryForObject("ProjectSql.readProject", Project);
+	public RS_Project readProject(RS_Project project) {
+		RS_Project result = (RS_Project)getSqlMapClientTemplate().queryForObject("ProjectSql.readProject", project);
 		return result;
 	}
 
 
-	public int createProject(RS_Project Project) {
-		Integer rt_id = (Integer) getSqlMapClientTemplate().insert("ProjectSql.createProject", Project);
+	public int createProject(RS_Project project) {
+		Integer rt_id = (Integer) getSqlMapClientTemplate().insert("ProjectSql.createProject", project);
 		return rt_id; 
 	}
 
 
-	public int deleteProject(RS_Project Project) {
-		return getSqlMapClientTemplate().delete("ProjectSql.deleteProject", Project);		
+	public int deleteProject(RS_Project project) {
+		return getSqlMapClientTemplate().delete("ProjectSql.deleteProject", project);		
 	}
 
-	public int updateProject(RS_Project Project) {
-		return getSqlMapClientTemplate().update("ProjectSql.updateProject", Project);
+	public int updateProject(RS_Project project) {
+		return getSqlMapClientTemplate().update("ProjectSql.updateProject", project);
+	}
+	
+	public int countProject(RS_Project project) {
+		Integer count = (Integer) getSqlMapClientTemplate().queryForObject("ProjectSql.countProject", project);
+		return count;
 	}
 
 }

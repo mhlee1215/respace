@@ -7,6 +7,23 @@ public class RS_Code {
 	private String category = "";
 	private int seq_no = 0;
 	
+	private int query_start = 0;
+	private int query_number = 0;
+	
+	
+	public int getQuery_start() {
+		return query_start;
+	}
+	public void setQuery_start(int query_start) {
+		this.query_start = query_start;
+	}
+	public int getQuery_number() {
+		return query_number;
+	}
+	public void setQuery_number(int query_number) {
+		this.query_number = query_number;
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -41,7 +58,9 @@ public class RS_Code {
 	@Override
 	public String toString() {
 		return "RS_Code [id=" + id + ", code=" + code + ", name=" + name
-				+ ", category=" + category + ", seq_no=" + seq_no + "]";
+				+ ", category=" + category + ", seq_no=" + seq_no
+				+ ", query_start=" + query_start + ", query_number="
+				+ query_number + "]";
 	}
 	
 	

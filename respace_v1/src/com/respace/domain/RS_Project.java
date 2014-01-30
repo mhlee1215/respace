@@ -9,8 +9,22 @@ public class RS_Project {
 	private String code_category = "";
 	private String thumbnail_url;
 	
+	private int query_start = 0;
+	private int query_number = 0;
 	
 	
+	public int getQuery_start() {
+		return query_start;
+	}
+	public void setQuery_start(int query_start) {
+		this.query_start = query_start;
+	}
+	public int getQuery_number() {
+		return query_number;
+	}
+	public void setQuery_number(int query_number) {
+		this.query_number = query_number;
+	}
 	public String getThumbnail_url() {
 		return thumbnail_url;
 	}
@@ -58,6 +72,8 @@ public class RS_Project {
 		return "RS_Project [id=" + id + ", id_contact=" + id_contact
 				+ ", title=" + title + ", description=" + description
 				+ ", host_name=" + host_name + ", code_category="
-				+ code_category + ", thumbnail_url=" + thumbnail_url + "]";
+				+ code_category + ", thumbnail_url=" + thumbnail_url
+				+ ", query_start=" + query_start + ", query_number="
+				+ query_number + "]";
 	}
 }

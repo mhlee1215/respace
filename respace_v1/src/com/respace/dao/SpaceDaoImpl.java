@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
 import com.respace.domain.RS_Space;
+import com.respace.domain.RS_Space;
 
 @Repository
 public class SpaceDaoImpl extends SqlMapClientDaoSupport {
@@ -34,7 +35,7 @@ public class SpaceDaoImpl extends SqlMapClientDaoSupport {
 		Integer rt_id = (Integer) getSqlMapClientTemplate().insert("SpaceSql.createSpace", Space);
 		return rt_id;
 	}
-
+	
 
 	public int deleteSpace(RS_Space Space) {
 		return getSqlMapClientTemplate().delete("SpaceSql.deleteSpace", Space);		
@@ -42,6 +43,11 @@ public class SpaceDaoImpl extends SqlMapClientDaoSupport {
 
 	public int updateSpace(RS_Space Space) {
 		return getSqlMapClientTemplate().update("SpaceSql.updateSpace", Space);
+	}
+	
+	public int countSpace(RS_Space space) {
+		Integer count = (Integer) getSqlMapClientTemplate().queryForObject("SpaceSql.countSpace", space);
+		return count;
 	}
 
 }

@@ -27,7 +27,7 @@ public class ArticleServiceImpl{
 		return articleDao.readArticleList(article);
 	}
 
-	public RS_Article createArticle(RS_Article article) throws Exception {
+	public int createArticle(RS_Article article) throws Exception {
 		return articleDao.createArticle(article);
 		
 	}
