@@ -67,6 +67,11 @@
             <h2>Contact</h2>
        
             
+            <c:if test="${send_message_complete	 == 'true'}">
+            <script type="text/javascript">
+			alert('메시지를 정상적으로 보냈습니다.');
+			</script>
+			</c:if>
             </div>
             
         </div>
@@ -83,11 +88,11 @@
             
            <h3>Leave a message</h3>
            
-           <form action="#" method="post" class="formit">
+           <form action="leave_message.do" method="post" class="formit">
                 <input type="text" name="name" placeholder="YOUR NAME"/>
                 <input type="text" name="email" placeholder="EMAIL"/>
-                <input type="text" name="url" placeholder="WEBSITE (OPTIONAL)"/>
-                <textarea name="message" placeholder="Leave your message here..."></textarea>
+                <input type="text" name="website" placeholder="WEBSITE (OPTIONAL)"/>
+                <textarea name="content" placeholder="Leave your message here..."></textarea>
                 <input type="submit" class="button_submit" value="SEND A MESSAGE">
             </form>
 

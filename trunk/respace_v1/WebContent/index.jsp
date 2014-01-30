@@ -49,8 +49,8 @@
         <div id="content">
             
             <div class="thirds">
-                <h3>Share your space</h3>
-                <p>저 위에 검은색에 있는 버튼은 지워질 예정 설명 블라블라 붑부바바밥</p>
+                <h3>${index_top_left.title}</h3>
+                <p>${index_top_left.content }</p>
                 <!-- ${indexDesc}
 				
 				<script type="text/javascript" src="js/ckeditor/ckeditor_4.1.2_standard/ckeditor.js"></script>
@@ -70,13 +70,13 @@
             </div>
             
             <div class="thirds">
-                <h3>Open Your Project </h3>
-                <p>임차인 소개멘트까지 내가 다 쓸수는 없소이다 ㅎㅎㅎㅎ 프로젝트를 개최하고 싶은 기업, 모임에서는 이 버튼을 눌러라 뿅갈라 앗 혹시 회원이 아니시라면 <a href="http://themeforest.net/item/nina-minimalist-psd-theme/4071242?ref=Flay">가입</a>버튼을 누르시와</p>
+                <h3>${index_top_center.title}</h3>
+                <p>${index_top_center.content }</p>
             </div>
             
             <div class="thirds">
-                <h3>Now Playing??? </h3>
-                <p>아아~~~~~~~~ ㅇ후호하호아황 지금 진행중입니다 꿀라리</p>
+                <h3>${index_top_right.title}</h3>
+                <p>${index_top_right.content }</p>
             </div>
             
             <hr class="cleanit">

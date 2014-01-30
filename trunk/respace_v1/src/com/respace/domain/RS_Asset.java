@@ -26,6 +26,23 @@ public class RS_Asset {
 	String filepath;
 	String code_status;		//상태
 	String etc;				//비고
+	
+	private int query_start = 0;
+	private int query_number = 0;
+	
+	
+	public int getQuery_start() {
+		return query_start;
+	}
+	public void setQuery_start(int query_start) {
+		this.query_start = query_start;
+	}
+	public int getQuery_number() {
+		return query_number;
+	}
+	public void setQuery_number(int query_number) {
+		this.query_number = query_number;
+	}
 	public int getId() {
 		return id;
 	}
@@ -127,7 +144,8 @@ public class RS_Asset {
 				+ ", filename=" + filename + ", filetype=" + filetype
 				+ ", filesize=" + filesize + ", modified_date=" + modified_date
 				+ ", filepath=" + filepath + ", code_status=" + code_status
-				+ ", etc=" + etc + "]";
+				+ ", etc=" + etc + ", query_start=" + query_start
+				+ ", query_number=" + query_number + "]";
 	}
 	
 	

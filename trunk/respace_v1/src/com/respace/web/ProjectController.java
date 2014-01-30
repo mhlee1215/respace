@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.respace.domain.RS_Article;
 import com.respace.domain.RS_Asset;
 import com.respace.domain.RS_Code;
 import com.respace.domain.RS_Project;
@@ -75,6 +76,15 @@ public class ProjectController {
 			spaceService.deleteSpace(aa);
 		}
 		
+		RS_Article article = null;
+		article = new RS_Article();
+		List<RS_Article> ArticleList = articleService.readArticleList(article);
+		for (RS_Article a : ArticleList){
+			RS_Article aa = new RS_Article();
+			aa.setId(aa.getId());
+			articleService.deleteArticle(aa);
+		}
+		
 		
 		ModelAndView model = new ModelAndView("redirect:index.do");
 		return model;
@@ -83,9 +93,9 @@ public class ProjectController {
 	@RequestMapping("/initialize_web.do")
     public ModelAndView initialize_web(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
+		cleanup(request, response);
 		
-		
-		add_basic_assets(request, response);
+		add_surface_article(request, response);
 		add_user_type_data(request, response);
 		add_project_category_data(request, response);
 		add_prepared_data(request, response);
@@ -94,13 +104,33 @@ public class ProjectController {
 		return model;
 	}
 	
-	@RequestMapping("/add_basic_assets.do")
-    public ModelAndView add_basic_assets(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	@RequestMapping("/add_surface_article.do")
+    public ModelAndView add_surface_article(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
+		RS_Article article = null;
+		
+		article = new RS_Article();
+		article.setTitle("share your space");
+		article.setCategory("index_top_left");
+		article.setContent("INITIAL VALUE");
+		articleService.createArticle(article);
+		
+		article = new RS_Article();
+		article.setTitle("open your project");
+		article.setCategory("index_top_center");
+		article.setContent("INITIAL VALUE");
+		articleService.createArticle(article);
+		
+		article = new RS_Article();
+		article.setTitle("now playing");
+		article.setCategory("index_top_right");
+		article.setContent("INITIAL VALUE");
+		articleService.createArticle(article);
 		
 		ModelAndView model = new ModelAndView("index");
 		return model;
 	}
+	
 	@RequestMapping("/add_user_type_data.do")
     public ModelAndView add_user_type_data(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		

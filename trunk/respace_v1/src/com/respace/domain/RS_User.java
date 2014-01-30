@@ -43,6 +43,23 @@ public class RS_User {
 	private String	isverified		= "N";
 	private String	isdeleted		= "N";
 	private String  type			= "";
+	
+	private int query_start = 0;
+	private int query_number = 0;
+	
+	
+	public int getQuery_start() {
+		return query_start;
+	}
+	public void setQuery_start(int query_start) {
+		this.query_start = query_start;
+	}
+	public int getQuery_number() {
+		return query_number;
+	}
+	public void setQuery_number(int query_number) {
+		this.query_number = query_number;
+	}
 
 	
 	public String getType() {
@@ -119,7 +136,8 @@ public class RS_User {
 				+ registeredtime + ", deletedtime=" + deletedtime
 				+ ", verifiedtime=" + verifiedtime + ", status=" + status
 				+ ", isverified=" + isverified + ", isdeleted=" + isdeleted
-				+ ", type=" + type + "]";
+				+ ", type=" + type + ", query_start=" + query_start
+				+ ", query_number=" + query_number + "]";
 	}
 	
 }

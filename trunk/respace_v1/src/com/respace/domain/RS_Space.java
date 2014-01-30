@@ -66,6 +66,22 @@ public class RS_Space {
 	
 	private String thumbnail_url;
 	
+	private int query_start = 0;
+	private int query_number = 0;
+	
+	
+	public int getQuery_start() {
+		return query_start;
+	}
+	public void setQuery_start(int query_start) {
+		this.query_start = query_start;
+	}
+	public int getQuery_number() {
+		return query_number;
+	}
+	public void setQuery_number(int query_number) {
+		this.query_number = query_number;
+	}
 	
 	public String getThumbnail_url() {
 		return thumbnail_url;
@@ -273,7 +289,8 @@ public class RS_Space {
 				+ code_size + ", open_time=" + open_time + ", close_time="
 				+ close_time + ", etc=" + etc + ", open_date=" + open_date
 				+ ", registered_date=" + registered_date + ", review=" + review
-				+ ", thumbnail_url=" + thumbnail_url + "]";
+				+ ", thumbnail_url=" + thumbnail_url + ", query_start="
+				+ query_start + ", query_number=" + query_number + "]";
 	}
 	public int getFranchise_ox() {
 		return franchise_ox;

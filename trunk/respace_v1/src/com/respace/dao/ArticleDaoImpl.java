@@ -29,9 +29,9 @@ public class ArticleDaoImpl extends SqlMapClientDaoSupport {
 	}
 
 
-	public RS_Article createArticle(RS_Article Article) {
-		RS_Article c_article = (RS_Article) getSqlMapClientTemplate().insert("ArticleSql.createArticle", Article);
-		return c_article;
+	public int createArticle(RS_Article Article) {
+		Integer rt_id = (Integer) getSqlMapClientTemplate().insert("ArticleSql.createArticle", Article);
+		return rt_id;
 	}
 
 

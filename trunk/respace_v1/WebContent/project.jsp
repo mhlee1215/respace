@@ -47,9 +47,9 @@
            <div class="cara"></div>
            
             <ul id="work_filter">
-                <li><a href="#" class="active">전체보기</a></li>
+                <li><a href="project.do" class="active">전체보기</a></li>
                 <c:forEach items="${projectCodeList}" var="projectCode" varStatus="list_status">
-                	<li><a href="#">${projectCode.name}</a></li>
+                	<li><a href="project.do?code_category=${projectCode.code}">${projectCode.name}</a></li>
                 </c:forEach>
             </ul>
             
@@ -67,12 +67,10 @@
             <hr class="cleanit">
             
             <!-- ** Pagination ** -->
-            
             <ul class="pagination">
-                <li><a href="#" class="active">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>            
+			<c:forEach begin="${pager_start}" end="${pager_start+pager_size-1}" varStatus="loop">
+			    <li><a href="project.do?query_page=${loop.index}" ${query_page==loop.index ? "class=\"active\"" : ""}>${loop.index}</a></li>
+			</c:forEach>           
             </ul>
             
             

@@ -20,6 +20,23 @@ public class RS_Contact {
 	String period_end;		//계약기간 (종료)
 	String etc;				//비고
 	
+	private int query_start = 0;
+	private int query_number = 0;
+	
+	
+	public int getQuery_start() {
+		return query_start;
+	}
+	public void setQuery_start(int query_start) {
+		this.query_start = query_start;
+	}
+	public int getQuery_number() {
+		return query_number;
+	}
+	public void setQuery_number(int query_number) {
+		this.query_number = query_number;
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -72,9 +89,11 @@ public class RS_Contact {
 	
 	@Override
 	public String toString() {
-		return "Contact [id=" + id + ", id_product=" + id_product
+		return "RS_Contact [id=" + id + ", id_product=" + id_product
 				+ ", id_space=" + id_space + ", id_artist=" + id_artist
 				+ ", status=" + status + ", period_start=" + period_start
-				+ ", period_end=" + period_end + ", etc=" + etc + "]";
+				+ ", period_end=" + period_end + ", etc=" + etc
+				+ ", query_start=" + query_start + ", query_number="
+				+ query_number + "]";
 	}
 }

@@ -12,10 +12,12 @@ import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.respace.domain.RS_Article;
 import com.respace.domain.RS_Code;
 import com.respace.domain.RS_Project;
 import com.respace.domain.RS_Space;
 import com.respace.domain.RS_User;
+import com.respace.service.ArticleServiceImpl;
 import com.respace.service.CodeServiceImpl;
 import com.respace.service.ProjectServiceImpl;
 import com.respace.service.SpaceServiceImpl;
@@ -41,20 +43,64 @@ public class UserController {
 	@Autowired
 	private final CodeServiceImpl codeService = null;
 	
+	@Autowired
+	private final ArticleServiceImpl articleService = null;
+	
 	@RequestMapping("/space.do")
     public ModelAndView space(HttpServletRequest request, HttpServletResponse response) {
+		Integer query_page = ServletRequestUtils.getIntParameter(request, "query_page", 1);
+		//String code_category = ServletRequestUtils.getStringParameter(request, "code_category", "");
+		//Integer query_start = ServletRequestUtils.getIntParameter(request, "query_start", 0);
+		//Integer query_number = ServletRequestUtils.getIntParameter(request, "query_number", 12);
+		
+		int count_space = spaceService.countSpace(new RS_Space());
+		System.out.println("count_space :"+count_space);
+		
+		int query_number = 12;
+		double pager_size = Math.ceil((double)count_space/query_number);
+		int pager_start = 1;
+		
 		RS_Space space = new RS_Space();
+		int query_start = ( query_page - 1 ) * query_number;
+		//space.setCode_category(code_category);
+		space.setQuery_start(query_start);
+		space.setQuery_number(query_number);
 		List<RS_Space> spaceList = spaceService.readSpaceList(space);
- 	    
+ 
+		RS_Code code = null;
+		code = new RS_Code();
+		code.setCategory("space category");
+		List<RS_Code> spaceCodeList = codeService.readCodeList(code);
+		
 		ModelAndView model = new ModelAndView("space");
 		model.addObject("active", "space");
+		model.addObject("spaceCodeList", spaceCodeList);
 		model.addObject("spaceList", spaceList);
+		model.addObject("query_page", query_page);
+		model.addObject("pager_start", pager_start);
+		model.addObject("pager_size", pager_size);
 		return model;
     }
 	
 	@RequestMapping("/project.do")
     public ModelAndView project(HttpServletRequest request, HttpServletResponse response) {
+		Integer query_page = ServletRequestUtils.getIntParameter(request, "query_page", 1);
+		String code_category = ServletRequestUtils.getStringParameter(request, "code_category", "");
+		//Integer query_start = ServletRequestUtils.getIntParameter(request, "query_start", 0);
+		//Integer query_number = ServletRequestUtils.getIntParameter(request, "query_number", 12);
+		
+		int count_project = projectService.countProject(new RS_Project());
+		System.out.println("count_project :"+count_project);
+		
+		int query_number = 12;
+		double pager_size = Math.ceil((double)count_project/query_number);
+		int pager_start = 1;
+		
 		RS_Project project = new RS_Project();
+		int query_start = ( query_page - 1 ) * query_number;
+		project.setCode_category(code_category);
+		project.setQuery_start(query_start);
+		project.setQuery_number(query_number);
 		List<RS_Project> projectList = projectService.readProjectList(project);
  
 		RS_Code code = null;
@@ -66,6 +112,10 @@ public class UserController {
 		model.addObject("active", "project");
 		model.addObject("projectCodeList", projectCodeList);
 		model.addObject("projectList", projectList);
+		model.addObject("query_page", query_page);
+		model.addObject("pager_start", pager_start);
+		model.addObject("pager_size", pager_size);
+		
 		return model;
     }
 	
@@ -99,6 +149,18 @@ public class UserController {
 	    
 	    List<RS_Project> featuredProjectList = projectService.readFeaturedProject();
 	    List<RS_Space> featuredSpaceList = spaceService.readFeaturedSpace(); 
+	    
+	    RS_Article article = null;
+	    
+	    article = new RS_Article();
+	    article.setCategory("index_top_left");
+	    RS_Article article_top_left = articleService.readArticle(article);
+	    
+	    article.setCategory("index_top_center");
+	    RS_Article article_top_center = articleService.readArticle(article);
+	    
+	    article.setCategory("index_top_right");
+	    RS_Article article_top_right = articleService.readArticle(article);
 	    
 	    if(userid == null){
     		String remoteHost = request.getRemoteHost();
@@ -141,6 +203,9 @@ public class UserController {
 		
 		model.addObject("featuredProjectList", featuredProjectList);
 		model.addObject("featuredSpaceList", featuredSpaceList);
+		model.addObject("index_top_left", article_top_left);
+		model.addObject("index_top_center", article_top_center);
+		model.addObject("index_top_right", article_top_right);
 		
 		model.addObject("active", "index");
 				

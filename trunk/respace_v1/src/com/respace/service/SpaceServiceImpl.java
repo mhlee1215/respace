@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.respace.dao.SpaceDaoImpl;
+import com.respace.domain.RS_Project;
 import com.respace.domain.RS_Space;
 
 
@@ -44,11 +45,16 @@ public class SpaceServiceImpl{
 	}
 	
 	public List<RS_Space> readFeaturedSpace(){
-		ArrayList<RS_Space> featuredSpace = new ArrayList<RS_Space>();
+		//ArrayList<RS_Space> featuredSpace = new ArrayList<RS_Space>();
 		RS_Space space = new RS_Space();
+		space.setQuery_number(4);
 		List<RS_Space> list = spaceDao.readSpaceList(space);
-		for(int i = 0 ; i < 4 && i < list.size() ; i++)
-			featuredSpace.add(list.get(i));
-		return featuredSpace;
+		//for(int i = 0 ; i < 4 && i < list.size() ; i++)
+		//	featuredSpace.add(list.get(i));
+		return list;
+	}
+	
+	public int countSpace(RS_Space space){
+		return spaceDao.countSpace(space);
 	}
 }

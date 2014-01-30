@@ -47,7 +47,7 @@
            <div class="cara"></div>
            
             <ul id="work_filter">
-                <li><a href="#" class="active">전체보기</a></li>
+                <li><a href="space.do" class="active">전체보기</a></li>
                 <li><a href="#">압구정/청담/신사</a></li>
                 <li><a href="#">홍대/합정/상수</a></li>
                 <li><a href="#">이태원/한남</a></li>
@@ -70,10 +70,9 @@
             <!-- ** Pagination ** -->
             
             <ul class="pagination">
-                <li><a href="#" class="active">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>            
+                <c:forEach begin="${pager_start}" end="${pager_start+pager_size-1}" varStatus="loop">
+			    <li><a href="space.do?query_page=${loop.index}" ${query_page==loop.index ? "class=\"active\"" : ""}>${loop.index}</a></li>
+			</c:forEach>            
             </ul>
             
             

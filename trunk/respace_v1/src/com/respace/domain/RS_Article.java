@@ -11,6 +11,23 @@ public class RS_Article {
 	private String isvalid = "";
 	private String modifieddate = "";
 	private String registereddate = "";
+	
+	private int query_start = 0;
+	private int query_number = 0;
+	
+	
+	public int getQuery_start() {
+		return query_start;
+	}
+	public void setQuery_start(int query_start) {
+		this.query_start = query_start;
+	}
+	public int getQuery_number() {
+		return query_number;
+	}
+	public void setQuery_number(int query_number) {
+		this.query_number = query_number;
+	}
 	public int getId() {
 		return id;
 	}
@@ -77,6 +94,7 @@ public class RS_Article {
 				+ author + ", email=" + email + ", website=" + website
 				+ ", content=" + content + ", category=" + category
 				+ ", isvalid=" + isvalid + ", modifieddate=" + modifieddate
-				+ ", registereddate=" + registereddate + "]";
+				+ ", registereddate=" + registereddate + ", query_start="
+				+ query_start + ", query_number=" + query_number + "]";
 	}
 }
