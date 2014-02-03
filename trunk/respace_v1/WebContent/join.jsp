@@ -46,8 +46,8 @@
            <h3>공간에 관한 모든 것, 리스페이스와 함께 하세요!</h3>
            
            <form action="login.do" method="post" class="formit">
-                <input type="text" name="email" placeholder="EMAIL" value="test2"/>
-                <br><input type="password" name="password" placeholder="PASSWORD" value="pass2"/>
+                <input type="text" name="email" placeholder="EMAIL" value="admin@respace.co.kr"/>
+                <br><input type="password" name="password" placeholder="PASSWORD" value="respace"/>
                 <br><input type="password" name="password_confirm" placeholder="PASSWORD_CONFIRM"/>
                 <br><input type="submit" class="button_submit" value="로그인">
             </form>

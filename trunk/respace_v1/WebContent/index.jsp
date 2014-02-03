@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <title>RESPACE :: 공간에 가치를 더합니다 </title>
     
-    <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+    <!-- <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script> -->
     
     <link rel="stylesheet" href="reset.css" type="text/css">
     <link rel="stylesheet" href="style.css" type="text/css">
@@ -19,6 +19,13 @@
 <body>
     
     <%@include file = "header.jsp"%>
+    
+    <script>
+// script for testimonial' tabs
+$(function() {
+    $("ul.controls").tabs("div.testimonials > div");
+});
+</script>
     
     <!-- *********  Main part (slider)  ********** -->
     
@@ -50,7 +57,12 @@
             
             <div class="thirds">
                 <h3>${index_top_left.title}</h3>
-                <p>${index_top_left.content }</p>
+                <p>${index_top_left.content } 
+                <%if("true".equals(islogin)){ %>
+                어드민 대헷...
+                <%} %>
+                
+                </p>
                 <!-- ${indexDesc}
 				
 				<script type="text/javascript" src="js/ckeditor/ckeditor_4.1.2_standard/ckeditor.js"></script>
@@ -160,12 +172,7 @@
     
    
          
-<script>
-// script for testimonial' tabs
-$(function() {
-    $("ul.controls").tabs("div.testimonials > div");
-});
-</script>
+
 
 </body>
 </html>
