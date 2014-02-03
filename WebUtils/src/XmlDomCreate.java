@@ -87,6 +87,11 @@ public class XmlDomCreate {
 		params.columns = "`id_contact`, `name`, `url`, `address_plain`, `address_si`, `address_do`, `address_dong`, `address_last`, `code_mood`, `email`, `phone`, `phone2`, `franchise_ox`, `frenchise_headquater_phone`, `frenchise_headquater_location`, `business_registered_number`, `cond_input_period_start`, `cond_input_period_end`, `cond_input_type`, `code_target`, `code_level`, `code_size`, `open_time`, `close_time`, `etc`, `open_date`, `registered_date`, `review`";
 		params.orderStr = "";
 		
+		params.name = "User";
+		params.className = "com.respace.domain.RS_User";
+		params.columns = "`name`, `email`, `password`, `registereddate`, `deleteddate`, `verifieddate`, `status`, `isverified`, `isdeleted`, `type`";
+		params.orderStr = "";
+		
 		String sqlMapXml = genSqlXML(params);
 		System.out.println(sqlMapXml);
 	}
@@ -304,7 +309,7 @@ public class XmlDomCreate {
 			update.setAttribute("id", "update"+name);
 			
 			String update_text = "";
-			insert_text += "/* update "+name+"*/";
+			update_text += "/* update "+name+"*/";
 			update_text += "update" +" rs_"+name.toLowerCase()+" ID = #id#";
 			
 			for (String p : cvs_parts){
