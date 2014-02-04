@@ -8,18 +8,17 @@ body {
   src: url('fonts/linecons.eot?#iefix') format('eot'), 
     url('fonts/linecons.woff') format('woff'), 
     url('fonts/linecons.ttf') format('truetype'), 
-    url('fonts/linecons.svg#linecons') format('svg')
-    url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css)
-    url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css)
-    url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css)
-    url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css)
-    url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
-    ;
+    url('fonts/linecons.svg#linecons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 
 .nanum-g { font-family: 'Nanum Gothic'; }
 .nanum-b { font-family: 'Nanum Brush Script'; }
@@ -35,7 +34,6 @@ h3 {
     font-weight: 300;
     margin: 46px 0 30px 10px;
     text-align: center;
-    font-family: 'Nanum Gothic';
 }
 
 h4 {
@@ -274,7 +272,7 @@ div.cbrb {
     padding-top: 120px;
     padding-bottom: 14px;
     font-size: 280%;
-    font-weight: 600;
+    font-weight: 200;
     text-align: center;
     color: #e66e0d;
     text-shadow: 0px 1px #000;
@@ -283,7 +281,6 @@ div.cbrb {
 #main_part_in p {
     font-size: 150%;
     font-weight: 300;
-    font-family: 'Nanum Gothic';
     color: #bcbcbc;
     text-align: center;
     text-shadow: 0px 1px #000;
@@ -353,7 +350,6 @@ div.cbrb {
     
     .thirds p {
 	font-size: 90%;
-	font-family: 'Nanum Gothic';
 	color: #37393a;
 	line-height: 160%;
     }
@@ -387,7 +383,6 @@ div.cbrb {
 	top: 80px;
 	display: block;
 	width: 220px;
-	font-family: 'Nanum Gothic';
 	text-align: center;
 	text-shadow: 0px 1px #d72d05;
     }
@@ -468,7 +463,6 @@ div.cbrb {
 	background-color: #e66e0d;
 	float: left;
 	position: relative;
-	border: 1px solid #999999;
     }
     
     .left_portfolio img {
@@ -478,9 +472,8 @@ div.cbrb {
     .right_portfolio {
 	width: 240px;
 	height: 520px;
-	margin: 0 0 0px 10px;
-	background-color: #fff;
-	border: 1px solid #999999;
+	margin: 0 0 20px 10px;
+	background-color: #eaeaea;
 	float: right;
 	position: relative;
     }
@@ -496,7 +489,6 @@ div.cbrb {
 	background-color: #e66e0d;
 	float: left;
 	position: relative;
-	border: 1px solid #999999;
     }
     
     .map_portfolio img {
@@ -505,9 +497,9 @@ div.cbrb {
     
     .story_portfolio {
 	width: 960px;
-	height: 200px;
+	height: 300px;
 	margin: 0 0 20px 0px;
-	background-color: #fff;
+	background-color: #eaeaea;
 	float: left;
 	position: relative;
     }
@@ -525,19 +517,6 @@ div.cbrb {
 	font-weight: 200;
 	font-size: 100%;
 	line-height: 140%;
-    }
-    
-    .signup {
-	width: 400px;
-	height: 700px;
-	margin: 0 0 20px 0px;
-	background-color: #fff;
-	float: left;
-	position: center;
-    }
-    
-    .signup img {
-	position: absolute;
     }
     
     /* --- */
@@ -770,7 +749,6 @@ p.youlike, p.teamline {
     font-weight: 400;
     line-height: 150%;
     width: 940px;
-    font-family: 'Nanum Gothic';
     color: #323536;
     margin: 10px 0 0 10px;
 }
@@ -904,23 +882,6 @@ form.formit .button_submit {
     text-shadow: 0px 1px #d72d05;
 }
 
-form.formit .button_book {
-    cursor:pointer;
-    background-color: #e66e0d;
-    width: 240px;
-    height: 58px;
-    color: #fff;
-    font-size: 10pt;
-    font-weight: 400;
-    font-family: 'Nanum Gothic';
-    letter-spacing: 1px;
-    border: 5px solid #fff;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-    box-shadow: 0px 0px 0px 1px #dbdbdb;
-    text-shadow: 0px 1px #d72d05;
-}
-
 .contactinfo {
     position: relative;
     float: left;
@@ -940,14 +901,11 @@ form.formit .button_book {
 }
 
 .mapit {
-    width: 960px;
+    width: 940px;
     margin: 0px 0 0 0px;
-    border: 1px solid #999999;
-    
 }
 
-/*----------- Sign Tabs ----------*/
-
+/*----------- Tabs ----------*/
 
 /* ---------- Footer ---------- */
 

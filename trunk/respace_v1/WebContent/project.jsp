@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="reset.css" type="text/css">
     <link rel="stylesheet" href="style.css" type="text/css">
        
-         <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+    <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
         
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
@@ -60,7 +60,7 @@
                 <h4>${project.title}<br>
                 <span>see detail</span>
                 </h4>
-                <a href="#"><img src="${project.thumbnail_url}" alt="item1"></a>
+                <a href="projectDetail.do?id=${project.id}"><img src="${project.thumbnail_url}" alt="item1"></a>
             </div>
            </c:forEach> 
             

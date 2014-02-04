@@ -5,11 +5,15 @@
 
  
 <link type="text/css" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+
+
+
+<!--
 <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.js" />
 <script type="text/javascript" src="//code.jquery.com/ui/1.10.4/jquery-ui.js" />
-<!--
 
-
+<script src="//code.jquery.com/jquery-1.9.1.js"></script>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
  -->
 <script type="text/javascript">
@@ -64,8 +68,12 @@ function showLogin(){
             <li><a href="index.do" ${active=="index" ? "class=\"active\"" : ""}>Home</a></li>
             <li><a href="space.do" ${active=="space" ? "class=\"active\"" : ""}>SPACE</a></li>
             <li><a href="project.do" ${active=="project" ? "class=\"active\"" : ""}>PROJECT</a></li>
+            <li><a href="contact.do" ${active=="contact" ? "class=\"active\"" : ""}>Contact</a></li>   
+            <%if("true".equals(islogin)){ %>         
+            <li><a href="logout.do" ${active=="join" ? "class=\"active\"" : ""}>Logout</a></li>
+            <%}else{ %>
             <li><a href="join.do" ${active=="join" ? "class=\"active\"" : ""}>Join</a></li>
-            <li><a href="contact.do" ${active=="contact" ? "class=\"active\"" : ""}>Contact</a></li>            
+            <%} %>
          </ul>
         </div>
         
