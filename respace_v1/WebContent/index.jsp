@@ -7,7 +7,8 @@
     <meta charset="utf-8">
     <title>RESPACE :: 공간에 가치를 더합니다 </title>
     
-    <!-- <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script> -->
+    
+    <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
     
     <link rel="stylesheet" href="reset.css" type="text/css">
     <link rel="stylesheet" href="style.css" type="text/css">
@@ -23,7 +24,7 @@
     <script>
 // script for testimonial' tabs
 $(function() {
-    $("ul.controls").tabs("div.testimonials > div");
+    $("#message_set").tabs("div.testimonials > div");
 });
 </script>
     
@@ -43,7 +44,7 @@ $(function() {
             
             <div class="button_main">
                   
-                <ul><a href="space.html" class="button_dark">RESPACE</a></ul>
+                <ul><a href="space.do" class="button_dark">RESPACE</a></ul>
                
             </div>
             
@@ -56,13 +57,15 @@ $(function() {
         <div id="content">
             
             <div class="thirds">
-                <h3>${index_top_left.title}</h3>
-                <p>${index_top_left.content } 
+                <h3>Share your space</h3>
+                <p>당신의 유휴 공간, 버려진 가치를 살립니다. 기존 단기임대에서 발생하는 리스크를 줄이고 공간의 새로운 가치를 얻어가세요!</p>
+                <!-- <p>${index_top_left.content } 
                 <%if("true".equals(islogin)){ %>
-                어드민 대헷...
+                
                 <%} %>
                 
                 </p>
+                 -->
                 <!-- ${indexDesc}
 				
 				<script type="text/javascript" src="js/ckeditor/ckeditor_4.1.2_standard/ckeditor.js"></script>
@@ -82,13 +85,15 @@ $(function() {
             </div>
             
             <div class="thirds">
-                <h3>${index_top_center.title}</h3>
-                <p>${index_top_center.content }</p>
+                <h3>Open Your Project</h3>
+                <p>프로젝트나 이벤트를 개최할 공간이 필요하신가요? 행사의 성격에 맞는 다양한 공간들을 합리적으로 이용하실 수 있습니다. 당신을 기다립니다!</p>
+                <!-- <p>${index_top_center.content }</p> -->
             </div>
             
             <div class="thirds">
-                <h3>${index_top_right.title}</h3>
-                <p>${index_top_right.content }</p>
+                <h3>Now Playing</h3>
+                <p>RESPACE에서 진행중인 즐거운 프로젝트들을 소개합니다. 지금 만나보세요. 당신에게도 좋은 영감을 수 있답니다!</p>
+                <!-- <p>${index_top_right.content }</p> -->
             </div>
             
             <hr class="cleanit">
@@ -113,7 +118,7 @@ $(function() {
             </div>
             
 	 		</c:forEach>
-                        
+            <p class="youlike">좋은 공간을 알고 있나요?<br><a href="contact.do"> 여기</a>로<a href="contact.do">contact us</a> and get started on your project? Or are you thinking about <a href="project.do">opening your own project</a>?</p>            
             <!-- ****  Recent works  ***** -->        
             
             <h3>Featured Projects</h3>
@@ -132,7 +137,7 @@ $(function() {
             
             <hr class="cleanit">
             
-            <p class="youlike">더 많은 정보를 보고 싶다면?<a href="contact.html">see more</a> or even <a href="contact.html">contact us</a> and get started on your project? Or are you thinking about <a href="project.html">opening your own project</a>?</p>
+            <p class="youlike">더 많은 정보를 보고 싶다면?<a href="contact.do">see more</a> or even <a href="contact.do">contact us</a> and get started on your project? Or are you thinking about <a href="project.do">opening your own project</a>?</p>
             
             <div class="cara"></div>
             
@@ -144,21 +149,21 @@ $(function() {
                 <h3>About Us</h3>
                 <p class="about">리스페이스는 남는 공간을 필요로하는 사람들에게 팝업~~~ 등등 소개멘트 </p>
                 
-                <a href="contact.html" class="button_light">LEARN MORE</a>
+                <a href="contact.do" class="button_light">LEARN MORE</a>
             </div>
             
-            <div class="testimonials">
-                <div class="quote">리스페이스 짱짱맨 리스페이스 짱짱맨리스페이스 짱짱맨리스페이스 짱짱맨리스페이스 짱짱맨리스페이스 짱짱맨리스페이스 짱짱맨리스페이스 짱짱맨</div>
+            <div id="message_set" class="testimonials">
+                <div id="message_set-1" class="quote">123</div>
                 
-                <div class="quote">리스페이스 짱짱맨 리스페이스 짱짱맨리스페이스 짱짱맨리스페이스 짱짱맨리스페이스 짱짱맨리스페이스 짱짱맨리스페이스 짱짱맨리스페이스 짱짱맨</div>
+                <div id="message_set-2" class="quote">456</div>
                 
-                <div class="quote">리스페이스 짱짱맨 리스페이스 짱짱맨리스페이스 짱짱맨리스페이스 짱짱맨리스페이스 짱짱맨리스페이스 짱짱맨리스페이스 짱짱맨리스페이스 짱짱맨</div>
+                <div id="message_set-3" class="quote">789</div>
                 <span class="testimonials_bottom"></span>
                 
                 <ul class="controls">
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
+                    <li><a href="#message_set-1"></a></li>
+                    <li><a href="#message_set-2"></a></li>
+                    <li><a href="#message_set-3"></a></li>
                 </ul>
                 <span class="by">리스페이스를 방문한 사람들! </span>
             </div>
