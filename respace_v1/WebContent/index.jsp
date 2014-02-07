@@ -24,7 +24,8 @@
     <script>
 // script for testimonial' tabs
 $(function() {
-    $("#message_set").tabs("div.testimonials > div");
+	//$( "#dialog" ).dialog();
+    //$("#message_set").tabs("div.testimonials > div");
 });
 </script>
     
@@ -114,7 +115,7 @@ $(function() {
                 <h4>${featuredSpace.name}<br>
                 <span>see detail</span>
                 </h4>
-                <a href="#"><img src="${featuredSpace.thumbnail_url}" alt="item1"></a>
+                <a href="spaceDetail.do?id=${featuredSpace.id}"><img src="${featuredSpace.thumbnail_url}" alt="item1"></a>
             </div>
             
 	 		</c:forEach>
@@ -129,7 +130,7 @@ $(function() {
                 <h4>${featuredProject.title}<br>
                 <span>see detail</span>
                 </h4>
-                <a href="#"><img src="${featuredProject.thumbnail_url}" alt="item1"></a>
+                <a href="projectDetail.do?id=${featuredProject.id}"><img src="${featuredProject.thumbnail_url}" alt="item1"></a>
             </div>
             
 	 		</c:forEach>
@@ -169,7 +170,8 @@ $(function() {
             </div>
             
         </div>
-        
+
+       
     
   
     <%@include file = "footer.jsp"%>  

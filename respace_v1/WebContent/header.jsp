@@ -4,50 +4,17 @@
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
  
-<link type="text/css" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet" />
-
-
-
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.9.1.js"></script>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.1.38/jquery.form-validator.min.js"></script>
 <!--
 <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.js" />
 <script type="text/javascript" src="//code.jquery.com/ui/1.10.4/jquery-ui.js" />
 
-<script src="//code.jquery.com/jquery-1.9.1.js"></script>
-<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
 
  -->
-<script type="text/javascript">
-$("#signinDialog").dialog({
-	bgiframe: true,
-	autoOpen: false,
-	height: 220,
-	modal: true,
-	buttons: {
-		'Submit': goSubmitSignin,
-		Cancel: function() {
-			$(this).dialog('close');
-		}
-		/*,
-		'Register': function() {
-			$(this).dialog('close');
-			showRegister();
-		}
-		*/
-	},
-	close: function() {
-		signinAllFields.val('').removeClass('ui-state-error');
-	}
-});
-
-function goSubmitSignin(){
-	
-}
-
-function showLogin(){
-	$('#signinDialog').dialog('open');
-}
-
-</script>
 
 <%
 	String email = (String)session.getAttribute("email");

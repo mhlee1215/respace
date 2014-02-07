@@ -280,7 +280,9 @@ public class ProjectController {
 		
 			
 			
-		space = new RS_Space("신사동 코노이");
+		space = new RS_Space();
+		space.setName("신사동 코노이");
+		space.setStatus("V");
 		rt_space_id = spaceService.createSpace(space);
 		
 			asset = new RS_Asset();
@@ -289,7 +291,9 @@ public class ProjectController {
 			asset.setReference_category("space_thumb_nail");
 			assetService.createAsset(asset);
 		
-		space = new RS_Space("신촌 명물버리");
+		space = new RS_Space();
+		space.setName("신촌 명물거리");
+		space.setStatus("V");
 		rt_space_id = spaceService.createSpace(space);
 		
 			asset = new RS_Asset();
@@ -298,7 +302,9 @@ public class ProjectController {
 			asset.setReference_category("space_thumb_nail");
 			assetService.createAsset(asset);
 		
-		space = new RS_Space("이대 앞 팝업 스토어");
+		space = new RS_Space();
+		space.setName("이대 앞 팝업 스토어");
+		space.setStatus("V");
 		rt_space_id = spaceService.createSpace(space);
 		
 			asset = new RS_Asset();
@@ -307,7 +313,9 @@ public class ProjectController {
 			asset.setReference_category("space_thumb_nail");
 			assetService.createAsset(asset);
 		
-		space = new RS_Space("청담동 갤러리");
+		space = new RS_Space();
+		space.setName("청담동 갤러리");
+		space.setStatus("V");
 		rt_space_id = spaceService.createSpace(space);
 		
 			asset = new RS_Asset();

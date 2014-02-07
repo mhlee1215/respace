@@ -25,24 +25,37 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.ls.DOMImplementationLS;
 
 public class XmlDomCreate {
-	public static String number_property_strings[] = {"id", "seq_no", "id_contact", "franchise_ox"};
+	public static String number_property_strings[] = {"id", "seq_no", "id_contact"};
 	public static ArrayList<String> number_property_list= new ArrayList<String>();
+	
+	public static String number_str_strings[] = {"price", "min", "max"};
+	public static ArrayList<String> number_str_list= new ArrayList<String>();
 	
 	public static String date_update_in_update_strings[] = {"modifieddate"};
 	public static ArrayList<String> date_update_in_update_list= new ArrayList<String>();
 	
 	public static String date_update_only_insert_strings[] = {"registereddate"};
 	public static ArrayList<String> date_update_only_insert_list= new ArrayList<String>();
+	
+	public static String class_basic_strings[] = {"query_start", "query_number"};
+	public static ArrayList<String> class_basic_strings_list= new ArrayList<String>();
 
 	
 	static class QueryParams{
 		String name;
 		String className;
 		String columns;
+		String extra_columns;
 		String orderStr;
 		String query_start_str;
 		String query_number_str;
 		String alias;
+		
+		public QueryParams(){
+			this.query_start_str = "query_start";
+			this.query_number_str = "query_number";
+			this.alias = "a";
+		}
 	}
 	
 	public static void main(String argv[]) {
@@ -56,52 +69,70 @@ public class XmlDomCreate {
 		for(int i = 0 ; i < date_update_only_insert_strings.length ; i++)
 			date_update_only_insert_list.add(date_update_only_insert_strings[i]);
 		
-		QueryParams params = new QueryParams();
-
+		for(int i = 0 ; i < class_basic_strings.length ; i++)
+			class_basic_strings_list.add(class_basic_strings[i]);
 		
+		for(int i = 0 ; i < number_str_strings.length ; i++)
+			number_str_list.add(number_str_strings[i]);
+		
+		QueryParams params = null;
+
+		params = new QueryParams();
 		params.name = "Code";
 		params.className = "com.respace.domain.RS_Code";
 		params.columns = "`code`, `name`, `category`, `seq_no`";
 		params.orderStr = "seq_no";
-		params.query_start_str = "query_start";
-		params.query_number_str = "query_number";
-		params.alias = "a";
 		
+		params = new QueryParams();
 		params.name = "Project";
 		params.className = "com.respace.domain.RS_Project";
 		params.columns = "`id_contact`, `title`, `host_name`, `description`, `code_category`";
 		params.orderStr = "";
 		
+		//params = new QueryParams();
 		//params.name = "Article";
 		//params.className = "com.respace.domain.RS_Article";
 		//params.columns = "`title`, `author`, `email`, `website`, `content`, `category`, `isvalid`, `modifieddate`, `registereddate`";
 		
-		
+		//params = new QueryParams();
 //		params.name = "Asset";
 //		params.className = "com.respace.domain.RS_Asset";
 //		params.columns = "`reference_id`, `reference_category`, `name`, `url`, `type`, `seq_no`, `registered_date`, `filename`, `filetype`, `filesize`, `modified_date`, `filepath`, `code_status`, `etc`";
 //		params.orderStr = "seq_no";
 //		
+		params = new QueryParams();
 		params.name = "Space";
 		params.className = "com.respace.domain.RS_Space";
-		params.columns = "`id_contact`, `name`, `url`, `address_plain`, `address_si`, `address_do`, `address_dong`, `address_last`, `code_mood`, `email`, `phone`, `phone2`, `franchise_ox`, `frenchise_headquater_phone`, `frenchise_headquater_location`, `business_registered_number`, `cond_input_period_start`, `cond_input_period_end`, `cond_input_type`, `code_target`, `code_level`, `code_size`, `open_time`, `close_time`, `etc`, `open_date`, `registered_date`, `review`";
+		params.columns = "`id_contact`, `name`, `url`, `address_plain`, `address_si`, `address_do`, `address_dong`, `address_last`, `code_mood`, `email`, `phone`, `phone2`, `franchise_ox`, `frenchise_headquater_phone`, `frenchise_headquater_location`, `business_registered_number`, `cond_input_period_start`, `cond_input_period_end`, `cond_input_type`, `code_target`, `code_level`, `code_size`, `open_time`, `close_time`, `etc`, `open_date`, `registered_date`, `review`, `price_hour`, `price_day`, `price_week`, `price_month`, `price_detail_rental`, `price_detail_deposit`, `price_detail_commission`, `accommodation_min`, `accommodation_max`, `address_simple`, `address_full`, `facilities_list`, `status`";
+		params.extra_columns = "thumbnail_url";
 		params.orderStr = "";
 		
-		params.name = "User";
-		params.className = "com.respace.domain.RS_User";
-		params.columns = "`name`, `email`, `password`, `registereddate`, `deleteddate`, `verifieddate`, `status`, `isverified`, `isdeleted`, `type`";
-		params.orderStr = "";
+		//params = new QueryParams();
+		//params.name = "User";
+		//params.className = "com.respace.domain.RS_User";
+		//params.columns = "`name`, `email`, `password`, `registereddate`, `deleteddate`, `verifieddate`, `status`, `isverified`, `isdeleted`, `type`";
+		//params.orderStr = "";
 		
 		String sqlMapXml = genSqlXML(params);
-		System.out.println(sqlMapXml);
-		//System.out.println(genClassDomain(columns.replace("`",  "")));
+		System.out.println(params);
+		//System.out.println(genClassDomain(params.columns.replace("`",  "")));
 	}
 	
-	public static String genClassDomain(String cvs){
+	public static String genClassDomain(QueryParams params){
+		String columns = params.columns.replace("`", "");
+		String ex_columns = params.extra_columns;
+		
 		String resultStr = "int id = 0;";
 		
-		String[] cvs_parts = cvs.split(",");
+		String[] cvs_parts = columns.split(",");
 		for (String p : cvs_parts){
+			resultStr += "String "+p+" = \"\";";
+		}
+		for (String p : class_basic_strings_list){
+			resultStr += "int "+p+" = 0;";
+		}
+		String[] ex_cvs_parts = ex_columns.split(",");
+		for (String p : ex_cvs_parts){
 			resultStr += "String "+p+" = \"\";";
 		}
 		
@@ -112,6 +143,7 @@ public class XmlDomCreate {
 		String name = params.name;
 		String className = params.className;
 		String columns = params.columns.replace("`", "");
+		String ex_columns = params.extra_columns.replace("`", "");
 		String orderStr = params.orderStr;
 		String alias = params.alias;
 		String query_start = params.query_start_str;
@@ -166,6 +198,18 @@ public class XmlDomCreate {
 					result.setAttributeNode(property);
 				}
 				
+				String[] ex_cvs_parts = ex_columns.split(",");
+				for (String p : cvs_parts){
+					Element result = doc.createElement("result");
+					resultMap.appendChild(result);
+					Attr p_id = doc.createAttribute("property");
+					p_id.setValue(p.toLowerCase().trim());
+					result.setAttributeNode(p_id);
+					Attr property = doc.createAttribute("column");
+					property.setValue(p.toUpperCase().trim());
+					result.setAttributeNode(property);
+				}
+				
 			
 			/**
 			 * SELECT LIST
@@ -184,6 +228,10 @@ public class XmlDomCreate {
 					select_columns += ", "+alias+"."+cvs_parts[i].trim();
 			}
 			
+			for (int i = 0 ; i < ex_cvs_parts.length ; i++){
+				select_columns += ", '' "+ex_cvs_parts[i].trim();
+			}
+			
 			String select_read_list_text = "";
 			select_read_list_text += "/*select read list "+name+"*/";
 			select_read_list_text += "SELECT "+alias+".id,"+select_columns+" FROM "+"rs_"+name.toLowerCase()+" "+alias+" WHERE 1=1";
@@ -191,7 +239,7 @@ public class XmlDomCreate {
 			for (String p : cvs_parts){
 				p = p.trim();
 				Element isnotnull2 = null;
-				if(number_property_list.contains(p)){
+				if(isNumberProperty(p)){
 					isnotnull2 = doc.createElement("isNotEqual");
 					isnotnull2.setAttribute("property", p);
 					isnotnull2.setAttribute("compareValue", "0");
@@ -252,7 +300,7 @@ public class XmlDomCreate {
 			for (String p : cvs_parts){
 				p = p.trim();
 				Element isnotnull2 = null;
-				if(number_property_list.contains(p)){
+				if(isNumberProperty(p)){
 					isnotnull2 = doc.createElement("isNotEqual");
 					isnotnull2.setAttribute("property", p);
 					isnotnull2.setAttribute("compareValue", "0");
@@ -342,7 +390,7 @@ public class XmlDomCreate {
 				}else{
 					
 					Element isnotnull2 = null;
-					if(number_property_list.contains(p)){
+					if(isNumberProperty(p)){
 						isnotnull2 = doc.createElement("isNotEqual");
 						isnotnull2.setAttribute("property", p);
 						isnotnull2.setAttribute("compareValue", "0");
@@ -380,7 +428,7 @@ public class XmlDomCreate {
 			for (String p : cvs_parts){
 				p = p.trim();
 				Element isnotnull2 = null;
-				if(number_property_list.contains(p)){
+				if(isNumberProperty(p)){
 					isnotnull2 = doc.createElement("isNotEqual");
 					isnotnull2.setAttribute("property", p);
 					isnotnull2.setAttribute("compareValue", "0");
@@ -411,7 +459,7 @@ public class XmlDomCreate {
 			for (String p : cvs_parts){
 				p = p.trim();
 				Element isnotnull2 = null;
-				if(number_property_list.contains(p)){
+				if(isNumberProperty(p)){
 					isnotnull2 = doc.createElement("isNotEqual");
 					isnotnull2.setAttribute("property", p);
 					isnotnull2.setAttribute("compareValue", "0");
@@ -459,6 +507,20 @@ public class XmlDomCreate {
 			tfe.printStackTrace();
 		}
 		return "fail";
+	}
+	
+	public static boolean isNumberProperty(String str){
+		boolean isNumber = false;
+		
+		if(number_property_list.contains(str))
+			isNumber = true;
+		else{
+			for (String numberStr : number_str_list){
+				if (str.contains(numberStr))
+					isNumber = true;
+			}
+		}
+		return isNumber;
 	}
 
 	public static String prettyFormat(String input, int indent) {

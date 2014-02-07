@@ -82,6 +82,85 @@ public class UserController {
 		return model;
     }
 	
+	@RequestMapping("/spaceDetail.do")
+    public ModelAndView spaceDetial(HttpServletRequest request, HttpServletResponse response) throws Exception {		
+		Integer id = ServletRequestUtils.getIntParameter(request, "id", 0);
+		
+		RS_Space s = new RS_Space();
+		s.setId(id);
+		RS_Space space = spaceService.readSpace(s);
+	
+		ModelAndView model = new ModelAndView("spaceDetail");
+		model.addObject("active", "space");
+		model.addObject("space", space);
+		
+		
+		return model;
+    }
+	
+	@RequestMapping("/spaceRegister.do")
+    public ModelAndView spaceRegister(HttpServletRequest request, HttpServletResponse response) throws Exception {		
+		Integer id = ServletRequestUtils.getIntParameter(request, "id", 0);
+		
+		RS_Space s = new RS_Space();
+		RS_Space space = null;
+		if (id > 0){
+			s.setId(id);
+			space = spaceService.readSpace(s);
+		}else{
+			s.setStatus("U");
+			int new_id = spaceService.createSpace(s);
+			s.setId(new_id);
+			space = spaceService.readSpace(s);
+		}
+	
+		ModelAndView model = new ModelAndView("spaceEdit");
+		model.addObject("active", "space");
+		model.addObject("space", space);
+
+		return model;
+    }
+	
+	@RequestMapping("/spaceEdit.do")
+    public ModelAndView spaceEdit(HttpServletRequest request, HttpServletResponse response) throws Exception {		
+		Integer id = ServletRequestUtils.getIntParameter(request, "id", 0);
+		
+		RS_Space s = new RS_Space();
+		s.setId(id);
+		RS_Space space = spaceService.readSpace(s);
+	
+		ModelAndView model = new ModelAndView("spaceEdit");
+		model.addObject("active", "space");
+		model.addObject("space", space);
+		return model;
+    }
+	
+	@RequestMapping("/spaceEditSubmit.do")
+    public ModelAndView spaceEditSubmit(HttpServletRequest request, HttpServletResponse response) throws Exception {		
+		Integer id = ServletRequestUtils.getIntParameter(request, "id", 0);
+		
+		RS_Space s = new RS_Space();
+		s.setId(id);
+		RS_Space space = spaceService.readSpace(s);
+	
+		ModelAndView model = new ModelAndView("space");
+		model.addObject("active", "space");
+		return model;
+    }
+	
+	@RequestMapping("/spaceDelete.do")
+    public ModelAndView spaceDelete(HttpServletRequest request, HttpServletResponse response) throws Exception {		
+		Integer id = ServletRequestUtils.getIntParameter(request, "id", 0);
+		
+		RS_Space s = new RS_Space();
+		s.setId(id);
+		//RS_Space space = spaceService.readSpace(s);
+	
+		ModelAndView model = new ModelAndView("redirect:space.do");
+		model.addObject("active", "space");
+		return model;
+    }
+	
 	@RequestMapping("/project.do")
     public ModelAndView project(HttpServletRequest request, HttpServletResponse response) {
 		Integer query_page = ServletRequestUtils.getIntParameter(request, "query_page", 1);
@@ -115,6 +194,17 @@ public class UserController {
 		model.addObject("query_page", query_page);
 		model.addObject("pager_start", pager_start);
 		model.addObject("pager_size", pager_size);
+		
+		return model;
+    }
+	
+	@RequestMapping("/projectDetail.do")
+    public ModelAndView projectDetial(HttpServletRequest request, HttpServletResponse response) {		
+		Integer project_id = ServletRequestUtils.getIntParameter(request, "id", 0);
+	
+		ModelAndView model = new ModelAndView("projectDetail");
+		model.addObject("active", "project");
+		
 		
 		return model;
     }

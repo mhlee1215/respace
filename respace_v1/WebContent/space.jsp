@@ -55,6 +55,7 @@
             </ul>
             
             <!-- **** Items **** -->
+            
            <c:forEach items="${spaceList}" var="space" varStatus="list_status">
            <div class="fourths_portfolio">
                 <h4>${space.name}<br>
@@ -75,6 +76,12 @@
 			</c:forEach>            
             </ul>
             
+            <%if("true".equals(islogin)){ %>    
+			<div style="float: right;">
+                
+                <a href="spaceRegister.do?id=${space.id}" class="button_light">REGISTER</a>
+            </div>
+            <%} %>
             
             
         </div>

@@ -12,21 +12,21 @@
 		<!-- <result column="PASSWORD" property="password" /> -->
 		<result column="ISVERIFIED" property="isverified" />
 		<result column="ISDELETED" property="isdeleted" />
-		<result column="REGISTEREDTIME" property="registeredtime" />
-		<result column="DELETEDTIME" property="deletedtime" />
-		<result column="VERIFIEDTIME" property="verifiedtime" />
+		<result column="REGISTEREDDATE" property="registereddate" />
+		<result column="DELETEDDATE" property="deleteddate" />
+		<result column="VERIFIEDDATE" property="verifieddate" />
  	</resultMap>
  	
  	
  	
  	<select id="readUserList" resultMap="User">
- 		SELECT ID, NAME, EMAIL, TYPE, ISVERIFIED, ISDELETED, REGISTEREDTIME, DELETEDTIME, VERIFIEDTIME 
+ 		SELECT ID, NAME, EMAIL, TYPE, ISVERIFIED, ISDELETED, REGISTEREDDATE, DELETEDDATE, VERIFIEDDATE 
  		FROM rs_user
  		
  	</select>
  	
 	<select id="readUser" resultMap="User">
-       SELECT ID, NAME, EMAIL, TYPE, ISVERIFIED, ISDELETED, REGISTEREDTIME, DELETEDTIME, VERIFIEDTIME 
+       SELECT ID, NAME, EMAIL, TYPE, ISVERIFIED, ISDELETED, REGISTEREDDATE, DELETEDDATE, VERIFIEDDATE 
        FROM rs_user 
        WHERE EMAIL = #email# 
        <isNotEmpty property="password">
@@ -51,11 +51,11 @@
 		 </isNotEmpty>
 		 <isNotEmpty property="isverified">
 		 ,ISVERIFIED = #isverified#
-		 ,VERIFIEDTIME = DATE_FORMAT(now(), "%Y%m%d%H%i%s")
+		 ,VERIFIEDDATE = DATE_FORMAT(now(), "%Y%m%d%H%i%s")
 		 </isNotEmpty>
 		 <isNotEmpty property="isdeleted">
 		 ,ISDELETED = #isdeleted#
-		 ,DELETEDTIME = DATE_FORMAT(now(), "%Y%m%d%H%i%s")
+		 ,DELETEDDATE = DATE_FORMAT(now(), "%Y%m%d%H%i%s")
 		 </isNotEmpty>
 		 WHERE ID = #id# 
 	</update>

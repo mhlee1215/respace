@@ -10,9 +10,9 @@ package com.respace.domain;
 //`name` VARCHAR(16) NULL,
 //`email` VARCHAR(255) NOT NULL,
 //`password` VARCHAR(32) NOT NULL,
-//`registeredtime` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-//`deletedtime` VARCHAR(45) NULL,
-//`verifiedtime` VARCHAR(45) NULL,
+//`registereddate` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+//`deleteddate` VARCHAR(45) NULL,
+//`verifieddate` VARCHAR(45) NULL,
 //`status` VARCHAR(45) NULL,
 //`isverified` INT NOT NULL DEFAULT 0,
 
@@ -36,9 +36,9 @@ public class RS_User {
 	private String 	name			= "";
 	private String 	email 			= "";
 	private String	password		= "";	// PASSWORD
-	private String  registeredtime 	= "";
-	private String  deletedtime 	= "";
-	private String  verifiedtime 	= "";
+	private String  registereddate 	= "";
+	private String  deleteddate 	= "";
+	private String  verifieddate 	= "";
 	private String	status 			= ""; 
 	private String	isverified		= "N";
 	private String	isdeleted		= "N";
@@ -92,23 +92,24 @@ public class RS_User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getRegisteredtime() {
-		return registeredtime;
+	
+	public String getRegistereddate() {
+		return registereddate;
 	}
-	public void setRegisteredtime(String registeredtime) {
-		this.registeredtime = registeredtime;
+	public void setRegistereddate(String registereddate) {
+		this.registereddate = registereddate;
 	}
-	public String getDeletedtime() {
-		return deletedtime;
+	public String getDeleteddate() {
+		return deleteddate;
 	}
-	public void setDeletedtime(String deletedtime) {
-		this.deletedtime = deletedtime;
+	public void setDeleteddate(String deleteddate) {
+		this.deleteddate = deleteddate;
 	}
-	public String getVerifiedtime() {
-		return verifiedtime;
+	public String getVerifieddate() {
+		return verifieddate;
 	}
-	public void setVerifiedtime(String verifiedtime) {
-		this.verifiedtime = verifiedtime;
+	public void setVerifieddate(String verifieddate) {
+		this.verifieddate = verifieddate;
 	}
 	public String getStatus() {
 		return status;
@@ -132,9 +133,9 @@ public class RS_User {
 	@Override
 	public String toString() {
 		return "RS_User [id=" + id + ", name=" + name + ", email=" + email
-				+ ", password=" + password + ", registeredtime="
-				+ registeredtime + ", deletedtime=" + deletedtime
-				+ ", verifiedtime=" + verifiedtime + ", status=" + status
+				+ ", password=" + password + ", registereddate="
+				+ registereddate + ", deleteddate=" + deleteddate
+				+ ", verifieddate=" + verifieddate + ", status=" + status
 				+ ", isverified=" + isverified + ", isdeleted=" + isdeleted
 				+ ", type=" + type + ", query_start=" + query_start
 				+ ", query_number=" + query_number + "]";
