@@ -13,7 +13,12 @@
     <link rel="stylesheet" href="style_ex.css" type="text/css">
         
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-	
+
+	<script>  	
+	$(function() {
+		$.validate();
+	});
+	</script>
 </head>
 
 <body>
@@ -72,7 +77,7 @@
      <div id="tab2" class="tab_content"> 
 
         <form action="register.do" method="post" class="formit">
-                <input type="text" name="email" placeholder="EMAIL"/>
+                <input type="text" name="email" placeholder="EMAIL" />
                 <!-- <br><input type="text" name="name" placeholder="NAME"/> -->
                 <!-- <br><input type="text" name="company" placeholder="소속"/> -->
                 <br><input type="text" name="password" placeholder="PASSWORD"/>

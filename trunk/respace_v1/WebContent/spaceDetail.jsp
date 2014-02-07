@@ -40,71 +40,59 @@
       <!-- *********  Content  ********** -->
         
         <div id="content_inner">
-            <h3><font color="#e66e0d">스페이스 코노이</h3></font>
+            <h3><font color="#e66e0d"><b>스페이스 코노이</b></h3></font>
            
            <p class="teamline">도산대로13길 32, 강남구, 서울</p>
            <div class="cara"></div>
            <hr class="cleanit">
            
-       <!-- **** Details **** -->
-            
-           <div class="left_portfolio">
-                <a href="#"><img src="img/space_1.jpg"></a>
-            </div>
-            
-            
-           <div class="right_portfolio">
-           		 <div class="booking">
-                <div class="button_main">
-                <a href="booking.html" class="button_dark">Booking</a>
-            </div>
-           </div>
-                <p><h4>가격, 신청하기 배너 등등 </h4>
-           </div>
-           
-           <hr class="cleanit">
-           <div class="mapit">
-                <iframe width="960" height="360" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=San+Francisco,+CA,+United+States&amp;aq=0&amp;oq=san+f&amp;sll=37.0625,-95.677068&amp;sspn=45.553578,93.076172&amp;ie=UTF8&amp;hq=&amp;ll=37.77493,-122.419416&amp;z=14&amp;output=embed"> 
-                
-                </iframe>
-            </div>
-            <hr class="cleanit">
-           
-           
-       <!-- 상세설명 -->    
-           <div class="story_portfolio">
-                     
+    <!-- **** Details **** -->
+    
+               <div class="left_portfolio">
+              
               <ul class="tabs"> 
-       			<li class="active" rel="tab1"> 공간 소개</li>
-       			<li rel="tab2"> 임대 조건</li>
-       			<li rel="tab3"> 예약 일정</li>
-        		<li rel="tab4"> 이용 후기</li>
+       			<li class="active" rel="tab1"> 사진</li>
+       			<li rel="tab2"> 지도</li>
+       			<li rel="tab3"> 일정</li>
     		   </ul>
     		   
     		   <div class="tab_container"> 
 
      <div id="tab1" class="tab_content"> 
- 
-        
-         <strong>
-         신사동에 위치한 코노이 스페이스는, 가로수길 한 가운데 자리한 아담한 잔디광장입니다. <br>
-         이 곳에서는 40명 이하의 인원이 수용될 수 있으며, 다양한 즐길 거리, 팝업스토어, 
-         <p>플리마켓에서 파티까지 놀라운 일들을 실현하는 공간입니다. 
-         <p>단언컨대 코노이 스페이스는 여러분의 즐거움을 책임질 수 있는 공간입니다. 
-         <br> <p><img src="images/shareclass.jpg">
-         </strong>
-         </p> <br />
+       <div class="slider-wrapper">
+
+<ul class="s-slides">
+    <li id="slide-1" class="slideleft"><img src="img/space_1.jpg" alt="" /></li>
+    <li id="slide-2" class="slideleft"><img src="img/space_2.jpg" alt="" /></li>
+    <li id="slide-3" class="slideleft"><img src="img/space_3.jpg" alt="" /></li>
+    <li id="slide-4" class="slideleft"><img src="img/space_4.jpg" alt="" /></li>
+    <li id="slide-5" class="slideleft"><img src="img/space_3.jpg" alt="" /></li>
+    <li id="slide-6" class="slideleft"><img src="img/space_2.jpg" alt="" /></li>
+    <li id="slide-7" class="slideleft"><img src="img/space_1.jpg" alt="" /></li>
+</ul>
+<ul class="s-thumbs">
+    <li><a href="#slide-1"><img src="img/space_1.jpg" alt="" /></a></li>
+    <li><a href="#slide-2"><img src="img/space_2.jpg" alt="" /></a></li>
+    <li><a href="#slide-3"><img src="img/space_3.jpg" alt="" /></a></li>
+    <li><a href="#slide-4"><img src="img/space_4.jpg" alt="" /></a></li>
+    <li><a href="#slide-5"><img src="img/space_3.jpg" alt="" /></a></li>
+    <li><a href="#slide-6"><img src="img/space_2.jpg" alt="" /></a></li>
+    <li><a href="#slide-7"><img src="img/space_1.jpg" alt="" /></a></li>
+</ul>
+</div>
+       
+       
+       
+       
 
      </div><!-- #tab1 -->
      <div id="tab2" class="tab_content"> 
 
-        
-      	<strong>
-      	하루 단위 : 100만원, 일주일 : 500만원, 2주 이상~한달 미만 : 날짜 별 상이 (별도 협의)
-      	<p>소동 금지, 소란 금지, 뽕 금지, 불법 전시나 판매 금지
-      	<br /> <p><img src="images/shareconditons.jpg">
-      	</strong>
-        </p><br />
+         <div class="mapspace">
+                <iframe width="656" height="360" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=San+Francisco,+CA,+United+States&amp;aq=0&amp;oq=san+f&amp;sll=37.0625,-95.677068&amp;sspn=45.553578,93.076172&amp;ie=UTF8&amp;hq=&amp;ll=37.77493,-122.419416&amp;z=14&amp;output=embed"> 
+                </iframe>
+            </div>
+      	<br />
 
      </div><!-- #tab2 -->
      <div id="tab3" class="tab_content"> 
@@ -112,27 +100,15 @@
         
       	<strong>
       	현재 가능한 예약 일정을 알려드립니다.
-      	<p><img src="images/calender.jpg">
+      	<p>
       	</strong>
        </p><br />
 
      </div><!-- #tab3 -->
-     <div id="tab4" class="tab_content"> 
-
-      
-      	<strong>
-      	이 공간을 이용했던 기업 및 개인 임차인들의 후기입니다. 
-      	<p><img src="images/sharereview.jpg">
-      	</strong>
-       </p><br />
-
-     </div><!-- #tab4 --> 
-     
+          
  </div> <!-- .tab_container -->
-            
-   
-</div>
- <style type="text/css">
+ 
+   <style type="text/css">
 
 	ul.tabs {
 		margin: 0;
@@ -180,9 +156,11 @@
 		display: none;
 		font-weight: light;
 		font-family: 'Nanum Gothic';
+		font-color: #777;
 	}
  
 </style>
+
 <script type="text/javascript">
 
 $(document).ready(function() {
@@ -200,8 +178,159 @@ $(document).ready(function() {
 });
 
 </script> 
+  </div>
+   <div class="right_portfolio">
+   <ul class="price"> 
+       			<li class="active" rel="price0">시간</li>
+       			<li rel="price1">일</li>
+       			<li rel="price2">주</li>
+       			<li rel="price3">월</li>
+    		   </ul>
+    		   
+    		   <div class="price_container"> 
 
+	 <div id="price0" class="how_much"> 
+       <h5>Standard Rental Rate</h5>
+       <h3><b><font color="#e66e0d">150,000 \</b></font></h3><br><span>/Per Hour</span>
+       <br><br>
+
+
+     </div><!-- #price0 -->
+
+     <div id="price1" class="how_much"> 
+       <h5>Standard Rental Rate</h5>
+       <h3><b><font color="#e66e0d">3,000,000 \</b></font></h3><br><span>/Per Day</span>
+       <br><br>
+     
+     </div><!-- #price1 -->
+    <div id="price2" class="how_much"> 
+       <h5>Standard Rental Rate</h5>
+       <h3><b><font color="#e66e0d">3,000,000 \</b></font></h3><br><span>/Per Week</span>
+       
+     
+     </div><!-- #price2 -->
+     <div id="price3" class="how_much"> 
+       <h5>Standard Rental Rate</h5>
+       <h3><b><font color="#e66e0d">3,000,000 \</b></font></h3><br><span>/Per Month</span>
+       
+     
+     </div><!-- #price3 -->
+ </div> <!-- .tab_container -->
+ 
+ <section class="ac-container">
+    <div>
+        <input id="ac-1" name="accordion-1" type="checkbox" />
+        <label for="ac-1"><b>비용 상세내역 보기</b></label>
+        <article class="ac-small">
+            <p><b>임대료</b> <span>125,000\</span>
+            <br><b>보증금</b>  <span>25,000\</span>
+            <br><b>수수료</b>	<span>오픈행사중</span></p>
+        </article>
+    </div>
+    <div>
+        <input id="ac-2" name="accordion-1" type="checkbox" checked />
+        <label for="ac-2"><b>공간 소개</b></label>
+        <article class="ac-medium">
+            <p><b>수용인원</b>&nbsp;&nbsp;최대 150-170명
+            <br><b>이용시간</b>&nbsp;&nbsp;월-금 10:00-22:00 
+            <br><b>상세주소</b>&nbsp;&nbsp;서울특별시 마포구 와우산로 DM빌딩 1층
+            <br><b>구비시설</b>&nbsp;&nbsp;무선인터넷, 빔프로젝트, 스피커 </p>
+            
+        </article>
+    </div>
+ </section>
+</div>
+
+<div class="story_portfolio">
+"후기들어갈 부분"
+
+</div>
+       
+   
+<style type="text/css">
+
+	ul.price {
+		margin: 0;
+		padding: 0;
+		float: left;
+		list-style: none;
+		height: 32px;
+		border-bottom: 1px solid #999999;
+		border-left: 1px solid #999999;
+		width: 100%;
+	}
+	ul.price li {
+		float: left;
+		margin: 0;
+		cursor: pointer;
+		padding: 0px 15px ;
+		height: 31px;
+		line-height: 31px;
+		border: 1px solid #999999;
+		border-left: none;
+		font-weight: bold;
+		font-color: #777;
+		font-family: 'Nanum Gothic';
+		background: #EEEEEE;
+		overflow: hidden;
+		position: relative;
+	}
+	ul.price li:hover {
+		background: #CCCCCC;
+	}	
+	ul.price li.active{
+		background: #FFFFFF;
+		border-bottom: 1px solid #FFFFFF;
+	}
+	.price_container {
+		border: 1px solid #999999;
+		border-top: none;
+		clear: both;
+		float: left; 
+		width: 100%;
+		background: #FFFFFF;
+	}
+	.how_much {
+		padding: 10px;
+		font-size: 0.9em;
+		display: none;
+		font-weight: light;
+		font-family: 'Nanum Gothic';
+	}
+ 
+</style>
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+	$(".how_much").hide();
+	$(".how_much:first").show(); 
+
+	$("ul.price li").click(function() {
+		$("ul.price li").removeClass("active");
+		$(this).addClass("active");
+		$(".how_much").hide();
+		var activeTab = $(this).attr("rel"); 
+		$("#"+activeTab).fadeIn(); 
+	});
+});
+
+</script> 
+	<%if("true".equals(islogin)){ %>    
+			<div style="float: right;">
+                
+                <a href="spaceDelete.do?id=${space.id}" class="button_light" style="float: right;">DELETE</a>
+                <a href="spaceEdit.do?id=${space.id}" class="button_light" style="float: right;">EDIT</a>
+                
+            </div>
+            <%} %>
+   
+   </div>
+   
+
+		
            </div>
+           
           
     <!-- *********  Footer  ********** -->
     
