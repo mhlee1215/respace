@@ -94,6 +94,18 @@ public class XmlDomCreate {
 		
 		String sqlMapXml = genSqlXML(params);
 		System.out.println(sqlMapXml);
+		//System.out.println(genClassDomain(columns.replace("`",  "")));
+	}
+	
+	public static String genClassDomain(String cvs){
+		String resultStr = "int id = 0;";
+		
+		String[] cvs_parts = cvs.split(",");
+		for (String p : cvs_parts){
+			resultStr += "String "+p+" = \"\";";
+		}
+		
+		return resultStr;
 	}
 
 	public static String genSqlXML(QueryParams params) {
