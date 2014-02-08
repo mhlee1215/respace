@@ -93,16 +93,6 @@
 	   		
 			//dropZone: $('#dropzone')
 	    });
-	    
-	    
-	    
-	    
-	    
-	    var mydata = eval('${assetList}');
-
-	    
-	    //jQuery("#list4").jqGrid ('setLabel', 'filename', '', 'textalignleft');
-
 	});
 	
 	function init(dd){
@@ -115,16 +105,16 @@
 		var item_idx = 0;
 		$.each(dd, function (index, file) {
 			if (item_idx == 0){
-				changeMainView(file.url);
+				changeMainView(file.url, item_idx);
 			}
 			//$("#s-thumbs").append('<li id="thumbs_'+index+'">').append($('<a href="javascript:blank();"/>'))
 			//.append('<label>').append('<img src="'+file.url+'"	style="width:60px; height:60px;" alt="" />');
 			
 			$("#s-thumbs").append(
-				    $('<li/>', {'id': 'thumbs_'+index}).append(
+				    $('<li/>', {'id': 'thumbs_'+index, 'asset_id':file.id}).append(
 				        $('<a/>', {'href': 'javascript:blank();'}).append(
 				            $('<label/>').append(
-				            	$('<img/>', {src: file.url, style:'width:60px; height:60px;', onclick:'changeMainView(this.src);'})
+				            	$('<img/>', {src: file.url, style:'width:60px; height:60px;', onclick:'changeMainView(this.src, '+index+');'})
 				            )
 				        )
 				    )
@@ -152,10 +142,23 @@
 			        )
 			    )
 			);
+		
+		$("#s-thumbs").append(
+			    $('<li/>').append(
+			        $('<a/>', {'href': 'javascript:removeCurAsset();'}).append(
+			            $('<label/>').append(
+			            	$('<img/>', {src: 'img/icons/delete_button.png', style:'width:60px; height:60px;'})
+			            )
+			        )
+			    )
+			);
 		</c:if>
 	}
 
-	function removeFile(tr_idx){
+	function removeCurAsset(){
+		removeFile(cur_idx);
+	}
+	function removeFile(idx){
 		//alert(tr_idx);
 		//alert(tr_idx);
 		//$("tr:has(td)#"+tr_idx).remove();
@@ -165,12 +168,14 @@
 		//printObject($("tr:has(td)#"+tr_idx).context.remove());
 		//$('#uploaded-files #'+tr_idx).hide();
 		
+		var id = $('#thumbs_'+idx).attr('asset_id');
+		
 		if (confirm("Delete this file?")){
 		
 			$.ajax({
 				type: "POST",
-				url: "${pageContext.request.contextPath}/fileDelete.do",
-				data: 'file_id='+tr_idx,
+				url: "fileDelete.do",
+				data: 'id='+id+'&reference_id=${id}&reference_category=${type}',
 				success: function(msg){
 					//var Result = msg;
 					//alert(msg);
@@ -180,10 +185,7 @@
 					
 					var mydata = eval(msg);
 				    
-				    $.each(mydata, function (index, file) {
-				    	file['no'] = index;
-				    	jQuery("#list4").jqGrid('addRowData',index,file);
-				    });
+				    init(mydata);
 				}
 			});
 		}
@@ -197,7 +199,9 @@
 		  alert(out);
 		}
 	
-	function changeMainView(src){
+	var cur_idx = 0;
+	function changeMainView(src, idx){
+		cur_idx = idx;
 		$('#mainView').attr('src', src);
 	}
 	
