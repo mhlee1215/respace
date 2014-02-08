@@ -46,7 +46,7 @@
             <li><a href="index.do" ${active=="index" ? "class=\"active\"" : ""}>Home</a></li>
             <li><a href="space.do" ${active=="space" ? "class=\"active\"" : ""}>SPACE</a></li>
             <li><a href="project.do" ${active=="project" ? "class=\"active\"" : ""}>PROJECT</a></li>
-            <li><a href="contact.do" ${active=="contact" ? "class=\"active\"" : ""}>Contact</a></li>   
+            <li><a href="contact.do" ${active=="contact" ? "class=\"active\"" : ""}>ABOUT</a></li>   
             <%if("true".equals(islogin)){ %>         
             <li><a href="logout.do" ${active=="join" ? "class=\"active\"" : ""}>Logout</a></li>
             <%}else{ %>
