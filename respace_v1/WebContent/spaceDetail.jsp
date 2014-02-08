@@ -11,11 +11,83 @@
        
     <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
         
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDWbQkciXXMXPhb2PBb3x-VUpID2LWVLio&sensor=true"></script>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+	$(".tab_content").hide();
+	$(".tab_content:first").show(); 
+
+	$("ul.tabs li").click(function() {
+		$("ul.tabs li").removeClass("active");
+		$(this).addClass("active");
+		$(".tab_content").hide();
+		var activeTab = $(this).attr("rel"); 
+		$("#"+activeTab).fadeIn(); 
+	});
+});
+
+</script> 
+
+<script type="text/javascript">
+var map;
+var geocoder;
+geocoder = new google.maps.Geocoder();
+var address = '${space.address_simple}';
+
+function initialize() {
+    var mapOptions = {
+      center: new google.maps.LatLng(-34.397, 150.644),
+      zoom: 16,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    map = new google.maps.Map(document.getElementById("map_canvas"),
+        mapOptions);
+    
+    geocoder.geocode( { 'address': address}, function(results, status) {
+   	 
+	    if (status == google.maps.GeocoderStatus.OK) {
+	    	
+	      map.setCenter(results[0].geometry.location);
+	      var marker = new google.maps.Marker({
+	          map: map,
+	          position: results[0].geometry.location
+	      });
+	    } else {
+	      //alert('Geocode was not successful for the following reason: ' + status);
+	    }
+	  });
+  }
+  
+$(document).ready(function() {
+	$("#id_button_delete")
+	.click(function( event ) {
+	
+		  var str = $("#space_edit_form").serialize();
+		  if(confirm('정말 지웁니까?')){
+			  $.ajax({
+				    type:"post",
+				    data:'id=${space.id}',
+				    url:"spaceDelete.do",
+				    async: false,
+				    success: function(msg){
+				    	if( msg == 'success'){
+				    		 document.location = 'space.do';
+				    	}
+				    }
+				});
+		  }
+		  
+	 event.preventDefault();
+	});
+});
+</script>
 </head>
 
-<body>
+<body onload="initialize()">
     
     <!-- *********  Header  ********** -->
     
@@ -40,9 +112,9 @@
       <!-- *********  Content  ********** -->
         
         <div id="content_inner">
-            <h3><font color="#e66e0d"><b>스페이스 코노이</b></h3></font>
+            <h3><font color="#e66e0d"><b>${space.name}</b></h3></font>
            
-           <p class="teamline">도산대로13길 32, 강남구, 서울</p>
+           <p class="teamline">${space.address_simple }</p>
            <div class="cara"></div>
            <hr class="cleanit">
            
@@ -59,27 +131,9 @@
     		   <div class="tab_container"> 
 
      <div id="tab1" class="tab_content"> 
-       <div class="slider-wrapper">
-
-<ul class="s-slides">
-    <li id="slide-1" class="slideleft"><img src="img/space_1.jpg" alt="" /></li>
-    <li id="slide-2" class="slideleft"><img src="img/space_2.jpg" alt="" /></li>
-    <li id="slide-3" class="slideleft"><img src="img/space_3.jpg" alt="" /></li>
-    <li id="slide-4" class="slideleft"><img src="img/space_4.jpg" alt="" /></li>
-    <li id="slide-5" class="slideleft"><img src="img/space_3.jpg" alt="" /></li>
-    <li id="slide-6" class="slideleft"><img src="img/space_2.jpg" alt="" /></li>
-    <li id="slide-7" class="slideleft"><img src="img/space_1.jpg" alt="" /></li>
-</ul>
-<ul class="s-thumbs">
-    <li><a href="#slide-1"><img src="img/space_1.jpg" alt="" /></a></li>
-    <li><a href="#slide-2"><img src="img/space_2.jpg" alt="" /></a></li>
-    <li><a href="#slide-3"><img src="img/space_3.jpg" alt="" /></a></li>
-    <li><a href="#slide-4"><img src="img/space_4.jpg" alt="" /></a></li>
-    <li><a href="#slide-5"><img src="img/space_3.jpg" alt="" /></a></li>
-    <li><a href="#slide-6"><img src="img/space_2.jpg" alt="" /></a></li>
-    <li><a href="#slide-7"><img src="img/space_1.jpg" alt="" /></a></li>
-</ul>
-</div>
+    
+<iframe width="660" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="imageSlider.do?id=${space.id}&type=space"> 
+                		</iframe>
        
        
        
@@ -89,8 +143,7 @@
      <div id="tab2" class="tab_content"> 
 
          <div class="mapspace">
-                <iframe width="656" height="360" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=San+Francisco,+CA,+United+States&amp;aq=0&amp;oq=san+f&amp;sll=37.0625,-95.677068&amp;sspn=45.553578,93.076172&amp;ie=UTF8&amp;hq=&amp;ll=37.77493,-122.419416&amp;z=14&amp;output=embed"> 
-                </iframe>
+                 <div id="map_canvas" style="width: 100%; height: 360px;"></div>
             </div>
       	<br />
 
@@ -161,23 +214,7 @@
  
 </style>
 
-<script type="text/javascript">
 
-$(document).ready(function() {
-
-	$(".tab_content").hide();
-	$(".tab_content:first").show(); 
-
-	$("ul.tabs li").click(function() {
-		$("ul.tabs li").removeClass("active");
-		$(this).addClass("active");
-		$(".tab_content").hide();
-		var activeTab = $(this).attr("rel"); 
-		$("#"+activeTab).fadeIn(); 
-	});
-});
-
-</script> 
   </div>
    <div class="right_portfolio">
    <ul class="price"> 
@@ -191,7 +228,7 @@ $(document).ready(function() {
 
 	 <div id="price0" class="how_much"> 
        <h5>Standard Rental Rate</h5>
-       <h3><b><font color="#e66e0d">150,000 \</b></font></h3><br><span>/Per Hour</span>
+       <h3><b><font color="#e66e0d">${space.price_hour} \</b></font></h3><br><span>/Per Hour</span>
        <br><br>
 
 
@@ -199,19 +236,19 @@ $(document).ready(function() {
 
      <div id="price1" class="how_much"> 
        <h5>Standard Rental Rate</h5>
-       <h3><b><font color="#e66e0d">3,000,000 \</b></font></h3><br><span>/Per Day</span>
+       <h3><b><font color="#e66e0d">${space.price_day} \</b></font></h3><br><span>/Per Day</span>
        <br><br>
      
      </div><!-- #price1 -->
     <div id="price2" class="how_much"> 
        <h5>Standard Rental Rate</h5>
-       <h3><b><font color="#e66e0d">3,000,000 \</b></font></h3><br><span>/Per Week</span>
+       <h3><b><font color="#e66e0d">${space.price_week} \</b></font></h3><br><span>/Per Week</span>
        
      
      </div><!-- #price2 -->
      <div id="price3" class="how_much"> 
        <h5>Standard Rental Rate</h5>
-       <h3><b><font color="#e66e0d">3,000,000 \</b></font></h3><br><span>/Per Month</span>
+       <h3><b><font color="#e66e0d">${space.price_month} \</b></font></h3><br><span>/Per Month</span>
        
      
      </div><!-- #price3 -->
@@ -222,8 +259,8 @@ $(document).ready(function() {
         <input id="ac-1" name="accordion-1" type="checkbox" />
         <label for="ac-1"><b>비용 상세내역 보기</b></label>
         <article class="ac-small">
-            <p><b>임대료</b> <span>125,000\</span>
-            <br><b>보증금</b>  <span>25,000\</span>
+            <p><b>임대료</b> <span>${space.price_detail_rental}\</span>
+            <br><b>보증금</b>  <span>${space.price_detail_deposit}\</span>
             <br><b>수수료</b>	<span>오픈행사중</span></p>
         </article>
     </div>
@@ -231,10 +268,10 @@ $(document).ready(function() {
         <input id="ac-2" name="accordion-1" type="checkbox" checked />
         <label for="ac-2"><b>공간 소개</b></label>
         <article class="ac-medium">
-            <p><b>수용인원</b>&nbsp;&nbsp;최대 150-170명
-            <br><b>이용시간</b>&nbsp;&nbsp;월-금 10:00-22:00 
-            <br><b>상세주소</b>&nbsp;&nbsp;서울특별시 마포구 와우산로 DM빌딩 1층
-            <br><b>구비시설</b>&nbsp;&nbsp;무선인터넷, 빔프로젝트, 스피커 </p>
+            <p><b>수용인원</b>&nbsp;&nbsp;최대 ${space.accommodation_min}-${space.accommodation_max}명
+            <br><b>이용시간</b>&nbsp;&nbsp;월-금 ${space.open_time}-${space.close_time}
+            <br><b>상세주소</b>&nbsp;&nbsp;${space.address_full}
+            <br><b>구비시설</b>&nbsp;&nbsp;${space.facilities_list} </p>
             
         </article>
     </div>
@@ -319,8 +356,11 @@ $(document).ready(function() {
 	<%if("true".equals(islogin)){ %>    
 			<div style="float: right;">
                 
-                <a href="spaceDelete.do?id=${space.id}" class="button_light" style="float: right;">DELETE</a>
+                 
+				<a href="javascript:blank();" class="button_light" id="id_button_delete"
+					style="float: left">DELETE</a>
                 <a href="spaceEdit.do?id=${space.id}" class="button_light" style="float: right;">EDIT</a>
+				<a href="space.do" class="button_light" style="float: right;">LIST</a>
                 
             </div>
             <%} %>

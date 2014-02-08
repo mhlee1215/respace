@@ -4,22 +4,21 @@ body {
 
 @font-face {
   font-family: "linecons";
-  src: url('fonts/linecons.eot');
-  src: url('fonts/linecons.eot?#iefix') format('eot'), 
-    url('fonts/linecons.woff') format('woff'), 
-    url('fonts/linecons.ttf') format('truetype'), 
-    url('fonts/linecons.svg#linecons') format('svg')
-    url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css)
-    url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css)
-    url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css)
-    url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css)
-    url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+  src: url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css)
+    url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
     ;
+    
   font-weight: normal;
   font-style: normal;
 }
 
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 
+.fng{font-family:'나눔고딕', NanumGothic, 'Nanum Gothic';}
 
 .nanum-g { font-family: 'Nanum Gothic'; }
 .nanum-b { font-family: 'Nanum Brush Script'; }

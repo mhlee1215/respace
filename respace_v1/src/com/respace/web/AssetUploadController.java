@@ -34,23 +34,25 @@ public class AssetUploadController extends HttpServlet{
 	
 	//LinkedList<AttachedItem> files = new LinkedList<AttachedItem>();
 	//AttachedItem attachedItem = null;
-	/***************************************************
-	 * URL: /rest/controller/upload  
-	 * upload(): receives files
-	 * @param request : MultipartHttpServletRequest auto passed
-	 * @param response : HttpServletResponse auto passed
-	 * @return LinkedList<FileMeta> as json format
-	 * @throws IOException 
-	 ****************************************************/
+	
 	@RequestMapping(value="/fileUpload.do", method = RequestMethod.POST)
 	public @ResponseBody String upload(MultipartHttpServletRequest request, HttpServletResponse response) throws IOException {
+		//reference_id=${space.id}&reference_category=space
+		int reference_id = ServletRequestUtils.getIntParameter(request, "reference_id", 0);
+		String reference_category = ServletRequestUtils.getStringParameter(request, "reference_category", "");
+		
+		if(reference_id == 0 || reference_category.equals("")){
+			System.err.println("[INPUT REFERENCE ID OR CATEGORY IS NULL");
+		}
+		
 		
 		RS_Asset asset = null;
 		
 		RS_Asset ri = new RS_Asset();
-		//ri.setReport_no(report_no);
+		ri.setReference_id(reference_id);
+		ri.setReference_category(reference_category);
 		//ri.setType(report_item_type);
-		RS_Asset rri;// = assetService.readReportItem(ri);
+		List<RS_Asset> rri = assetService.readAssetList(ri);
 		
 		//1. build an iterator
 		 Iterator<String> itr =  request.getFileNames();
@@ -75,6 +77,9 @@ public class AssetUploadController extends HttpServlet{
 			 
 			 //2.3 create new fileMeta
 			 asset = new RS_Asset();
+			 asset.setReference_id(reference_id);
+			 asset.setReference_category(reference_category);
+			 asset.setSeq_no(rri.size()+1);
 			 asset.setFilename(mpf.getOriginalFilename());
 			 asset.setFilepath(curWebPath+"/"+mpf.getOriginalFilename());
 			 asset.setFilesize(mpf.getSize()/1024+" Kb");
@@ -104,10 +109,12 @@ public class AssetUploadController extends HttpServlet{
 		 }
 		 
 		 RS_Asset ai = new RS_Asset();
+		 ai.setReference_id(reference_id);
+		 ai.setReference_category(reference_category);
 		 //ai.setReport_item_id(rri.getId());
 		 List<RS_Asset> attachedItemList = assetService.readAssetList(ai);
 		 
-		 //System.out.println(files);
+		 System.out.println(attachedItemList);
 		// result will be like this
 		// [{"fileName":"app_engine-85x77.png","fileSize":"8 Kb","fileType":"image/png"},...]
 		return attachedItemList.toString();

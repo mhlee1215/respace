@@ -232,7 +232,8 @@ public class ProjectController {
 			asset = new RS_Asset();
 			asset.setUrl("img/portfolio_1.jpg");
 			asset.setReference_id(rt_project_id);
-			asset.setReference_category("project_thumb_nail");
+			asset.setReference_category("project");
+			asset.setSeq_no(1);
 			assetService.createAsset(asset);
 		
 		
@@ -247,7 +248,8 @@ public class ProjectController {
 			asset = new RS_Asset();
 			asset.setUrl("img/portfolio_3.jpg");
 			asset.setReference_id(rt_project_id);
-			asset.setReference_category("project_thumb_nail");
+			asset.setReference_category("project");
+			asset.setSeq_no(1);
 			assetService.createAsset(asset);
 		
 		project = new RS_Project();
@@ -261,7 +263,8 @@ public class ProjectController {
 			asset = new RS_Asset();
 			asset.setUrl("img/portfolio_2.jpg");
 			asset.setReference_id(rt_project_id);
-			asset.setReference_category("project_thumb_nail");
+			asset.setReference_category("project");
+			asset.setSeq_no(1);
 			assetService.createAsset(asset);
 		
 		project = new RS_Project();
@@ -275,7 +278,8 @@ public class ProjectController {
 			asset = new RS_Asset();
 			asset.setUrl("img/portfolio_4.jpg");
 			asset.setReference_id(rt_project_id);
-			asset.setReference_category("project_thumb_nail");
+			asset.setReference_category("project");
+			asset.setSeq_no(1);
 			assetService.createAsset(asset);
 		
 			
@@ -288,7 +292,8 @@ public class ProjectController {
 			asset = new RS_Asset();
 			asset.setUrl("img/portfolio_1.jpg");
 			asset.setReference_id(rt_space_id);
-			asset.setReference_category("space_thumb_nail");
+			asset.setReference_category("space");
+			asset.setSeq_no(1);
 			assetService.createAsset(asset);
 		
 		space = new RS_Space();
@@ -299,7 +304,8 @@ public class ProjectController {
 			asset = new RS_Asset();
 			asset.setUrl("img/portfolio_2.jpg");
 			asset.setReference_id(rt_space_id);
-			asset.setReference_category("space_thumb_nail");
+			asset.setReference_category("space");
+			asset.setSeq_no(1);
 			assetService.createAsset(asset);
 		
 		space = new RS_Space();
@@ -310,7 +316,8 @@ public class ProjectController {
 			asset = new RS_Asset();
 			asset.setUrl("img/portfolio_3.jpg");
 			asset.setReference_id(rt_space_id);
-			asset.setReference_category("space_thumb_nail");
+			asset.setReference_category("space");
+			asset.setSeq_no(1);
 			assetService.createAsset(asset);
 		
 		space = new RS_Space();
@@ -321,7 +328,8 @@ public class ProjectController {
 			asset = new RS_Asset();
 			asset.setUrl("img/portfolio_4.jpg");
 			asset.setReference_id(rt_space_id);
-			asset.setReference_category("space_thumb_nail");
+			asset.setReference_category("space");
+			asset.setSeq_no(1);
 			assetService.createAsset(asset);
 		
 		

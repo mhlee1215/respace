@@ -137,16 +137,19 @@ public class RS_Asset {
 	}
 	@Override
 	public String toString() {
-		return "RS_Asset [id=" + id + ", name=" + name + ", url=" + url
-				+ ", type=" + type + ", reference_id=" + reference_id
-				+ ", reference_category=" + reference_category + ", seq_no="
-				+ seq_no + ", registered_date=" + registered_date
-				+ ", filename=" + filename + ", filetype=" + filetype
-				+ ", filesize=" + filesize + ", modified_date=" + modified_date
-				+ ", filepath=" + filepath + ", code_status=" + code_status
-				+ ", etc=" + etc + ", query_start=" + query_start
-				+ ", query_number=" + query_number + "]";
+		return "{\"id\":\"" + id + "\", \"name\":\"" + name + "\", \"url\":\""
+				+ url + "\", \"type\":\"" + type + "\", \"reference_id\":\""
+				+ reference_id + "\", \"reference_category\":\""
+				+ reference_category + "\", \"seq_no\":\"" + seq_no
+				+ "\", \"registered_date\":\"" + registered_date
+				+ "\", \"filename\":\"" + filename + "\", \"filetype\":\""
+				+ filetype + "\", \"filesize\":\"" + filesize
+				+ "\", \"modified_date\":\"" + modified_date
+				+ "\", \"filepath\":\"" + filepath + "\", \"code_status\":\""
+				+ code_status + "\", \"etc\":\"" + etc
+				+ "\", \"query_start\":\"" + query_start
+				+ "\", \"query_number\":\"" + query_number + "\"}";
 	}
-	
+
 	
 }

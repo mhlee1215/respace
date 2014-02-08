@@ -61,7 +61,7 @@
                 <h4>${space.name}<br>
                 <span>see detail</span>
                 </h4>
-                <a href="spaceDetail.do?id=${space.id}"><img src="${space.thumbnail_url}" alt="item1"></a>
+                <a href="spaceDetail.do?id=${space.id}"><img src="${space.thumbnail_url}" alt="item1" class="thumb_nail"></a>
             </div>
            </c:forEach> 
            

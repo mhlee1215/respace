@@ -8,16 +8,22 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.ServletRequestUtils;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.respace.domain.RS_Article;
+import com.respace.domain.RS_Asset;
 import com.respace.domain.RS_Code;
 import com.respace.domain.RS_Project;
 import com.respace.domain.RS_Space;
 import com.respace.domain.RS_User;
 import com.respace.service.ArticleServiceImpl;
+import com.respace.service.AssetServiceImpl;
 import com.respace.service.CodeServiceImpl;
 import com.respace.service.ProjectServiceImpl;
 import com.respace.service.SpaceServiceImpl;
@@ -45,6 +51,9 @@ public class UserController {
 	
 	@Autowired
 	private final ArticleServiceImpl articleService = null;
+	
+	@Autowired
+	private final AssetServiceImpl assetService = null;
 	
 	@RequestMapping("/space.do")
     public ModelAndView space(HttpServletRequest request, HttpServletResponse response) {
@@ -98,6 +107,26 @@ public class UserController {
 		return model;
     }
 	
+	@RequestMapping("/imageSlider.do")
+    public ModelAndView imageSlider(HttpServletRequest request, HttpServletResponse response) throws Exception {		
+		Integer id = ServletRequestUtils.getIntParameter(request, "id", 0);
+		String type = ServletRequestUtils.getStringParameter(request, "type", "");
+		String readOnly = ServletRequestUtils.getStringParameter(request, "readOnly", "Y");
+		
+		RS_Asset a = new RS_Asset();
+		a.setReference_category(type);
+		a.setReference_id(id);
+		List<RS_Asset> assetList = assetService.readAssetList(a);
+		
+		ModelAndView model = new ModelAndView("imageSlider");	
+		model.addObject("id", id);
+		model.addObject("type", type);
+		model.addObject("readOnly", readOnly);
+		model.addObject("assetList", assetList);
+		
+		return model;
+    }
+	
 	@RequestMapping("/spaceRegister.do")
     public ModelAndView spaceRegister(HttpServletRequest request, HttpServletResponse response) throws Exception {		
 		Integer id = ServletRequestUtils.getIntParameter(request, "id", 0);
@@ -118,12 +147,15 @@ public class UserController {
 		model.addObject("active", "space");
 		model.addObject("space", space);
 
-		return model;
+		return model; 
     }
 	
 	@RequestMapping("/spaceEdit.do")
     public ModelAndView spaceEdit(HttpServletRequest request, HttpServletResponse response) throws Exception {		
 		Integer id = ServletRequestUtils.getIntParameter(request, "id", 0);
+		String test = ServletRequestUtils.getStringParameter(request, "test", "");
+		
+		System.out.println("<<<<<<<<<<<<<<<<<<"+test);
 		
 		RS_Space s = new RS_Space();
 		s.setId(id);
@@ -135,30 +167,35 @@ public class UserController {
 		return model;
     }
 	
-	@RequestMapping("/spaceEditSubmit.do")
-    public ModelAndView spaceEditSubmit(HttpServletRequest request, HttpServletResponse response) throws Exception {		
-		Integer id = ServletRequestUtils.getIntParameter(request, "id", 0);
+	@RequestMapping(value="/spaceEditSubmit.do", method = RequestMethod.POST)
+    public @ResponseBody String spaceEditSubmit(@ModelAttribute RS_Space space, BindingResult result ) throws Exception {
+		System.out.println(space);
+		//Integer id = ServletRequestUtils.getIntParameter(request, "id", 0);
+		//Integer id = 0;
 		
-		RS_Space s = new RS_Space();
-		s.setId(id);
-		RS_Space space = spaceService.readSpace(s);
+		//s.setId(id);
+		int rtn = spaceService.updateSpace(space);
+		//RS_Space space = spaceService.readSpace(s);
 	
-		ModelAndView model = new ModelAndView("space");
-		model.addObject("active", "space");
-		return model;
+		//ModelAndView model = new ModelAndView("spaceEdit");
+		//model.addObject("active", "space");
+		//model.addObject("space", space);
+		return "success";
     }
+
 	
 	@RequestMapping("/spaceDelete.do")
-    public ModelAndView spaceDelete(HttpServletRequest request, HttpServletResponse response) throws Exception {		
+    public @ResponseBody String spaceDelete(HttpServletRequest request, HttpServletResponse response) throws Exception {		
 		Integer id = ServletRequestUtils.getIntParameter(request, "id", 0);
 		
 		RS_Space s = new RS_Space();
 		s.setId(id);
+		spaceService.deleteSpace(s);
 		//RS_Space space = spaceService.readSpace(s);
 	
 		ModelAndView model = new ModelAndView("redirect:space.do");
 		model.addObject("active", "space");
-		return model;
+		return "success";
     }
 	
 	@RequestMapping("/project.do")
