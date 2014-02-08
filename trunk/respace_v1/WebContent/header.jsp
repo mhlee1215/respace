@@ -2,15 +2,26 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="org.springframework.web.bind.ServletRequestUtils"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css' rel='stylesheet' type='text/css'>
  
 <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/jquery-1.9.1.js"></script>
 <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.1.38/jquery.form-validator.min.js"></script>
+
+<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+    
+<link rel="stylesheet" href="reset.css" type="text/css">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="stylesheet" href="style_ex.css" type="text/css">
+    
 <!--
 <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.js" />
 <script type="text/javascript" src="//code.jquery.com/ui/1.10.4/jquery-ui.js" />
+
 
 
 
@@ -47,16 +58,4 @@
         </div>
     </div>
     
-    <div id="articleUpdateDialog" title="Article Update" style="display:none">
-	<p id="signinValidateTips">All form fields are required.</p>
-
-	<form name="signinForm" action="/login.do"  method="post">
-	<fieldset>
-		<label>Title</label>
-		<input style="width:95%;margin-bottom:5px;" type="text" name="id" id="signinId" value="" class="text ui-widget-content ui-corner-all" />
-		<br>
-		<label for="password">Content</label>
-		<input style="width:95%;margin-bottom:5px;" type="password" name="password" id="signinPassword" value="" class="text ui-widget-content ui-corner-all" />
-	</fieldset>
-	</form>
-</div>
+ 

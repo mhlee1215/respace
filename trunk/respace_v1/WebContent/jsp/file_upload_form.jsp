@@ -9,10 +9,7 @@
 	<link href="css/tableStyle.css" rel="stylesheet" type="text/css" />
     <script src="${pageContext.request.contextPath}/js/fileupload/jquery-1.8.2.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/fileupload/vendor/jquery.ui.widget.js"></script>
-
    <script src="${pageContext.request.contextPath}/js/fileupload/jquery.fileupload.js"></script>
-
-<!-- bootstrap just to have good looking page -->
 	<script src="${pageContext.request.contextPath}/js/fileupload/bootstrap.min.js"></script>
 	
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
@@ -140,7 +137,7 @@
 	    }
 	    
 	    var mydata = eval('${attachedItemList}');
-	    
+
 	    $.each(mydata, function (index, file) {
 	    	file['no'] = index+1;
 	    	jQuery("#list4").jqGrid('addRowData',index,file);
@@ -262,7 +259,7 @@
 	<span class="btn btn-success fileinput-button" style="float:right">
        <i class="icon-plus icon-white"></i>
        <span>Add files...</span>
-       <input id="fileupload" type="file" name="files[]" data-url="${pageContext.request.contextPath}/fileUpload.do" multiple>
+       <input id="fileupload" type="file" name="files[]" accept="image/*" data-url="${pageContext.request.contextPath}/fileUpload.do" multiple>
    </span>
   
    </td>

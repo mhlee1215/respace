@@ -8,12 +8,9 @@
     <title>RESPACE :: 공간에 가치를 더합니다 </title>
     
     
-    <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
     
-    <link rel="stylesheet" href="reset.css" type="text/css">
-    <link rel="stylesheet" href="style.css" type="text/css">
         
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    
 
 </head>
 
@@ -115,7 +112,7 @@ $(function() {
                 <h4>${featuredSpace.name}<br>
                 <span>see detail</span>
                 </h4>
-                <a href="spaceDetail.do?id=${featuredSpace.id}"><img src="${featuredSpace.thumbnail_url}" alt="item1"></a>
+                <a href="spaceDetail.do?id=${featuredSpace.id}"><img src="${featuredSpace.thumbnail_url}" alt="${featuredSpace.name}" class="thumb_nail"></a>
             </div>
             
 	 		</c:forEach>
@@ -130,7 +127,7 @@ $(function() {
                 <h4>${featuredProject.title}<br>
                 <span>see detail</span>
                 </h4>
-                <a href="projectDetail.do?id=${featuredProject.id}"><img src="${featuredProject.thumbnail_url}" alt="item1"></a>
+                <a href="projectDetail.do?id=${featuredProject.id}"><img src="${featuredProject.thumbnail_url}" alt="${featuredProject.title}" class="thumb_nail"></a>
             </div>
             
 	 		</c:forEach>

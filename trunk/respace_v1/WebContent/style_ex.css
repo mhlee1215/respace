@@ -9,3 +9,8 @@
     font-weight: 300;
     letter-spacing: 1px;
 }
+
+.thumb_nail {
+	width:220px;
+	height:220px;
+}
