@@ -67,6 +67,7 @@ public class AssetUploadController extends HttpServlet{
 			 String curPath = realPath+"/"+uId;
 			 String curWebPath = webPath + "/"+uId;
 			 new File(curPath).mkdir();
+			 
 			 //2.1 get next MultipartFile
 			 mpf = request.getFile(itr.next()); 
 			 //System.out.println(mpf.getOriginalFilename() +" uploaded! "+files.size());
@@ -120,22 +121,66 @@ public class AssetUploadController extends HttpServlet{
 		return attachedItemList.toString();
 	}
 	
+	public boolean deleteFolder(File targetFolder){		 
+	      File[] childFile = targetFolder.listFiles();
+	      boolean confirm = false;
+	      int size = childFile.length;
+	 
+	      if (size > 0) {
+	          for (int i = 0; i < size; i++) {
+	              if (childFile[i].isFile()) {
+	                  confirm = childFile[i].delete();
+	                  System.out.println(childFile[i]+":"+confirm + " 삭제");
+	              } else {
+	                  deleteFolder(childFile[i]);
+	              }
+	          }
+	      }
+	      targetFolder.delete();
+	 
+	      System.out.println(targetFolder + " 폴더삭제됨삭제");
+	      System.out.println(targetFolder+":"+confirm + " 삭제");	      
+	      return (!targetFolder.exists());
+
+	 }//deleteFolder
+	
 	@RequestMapping(value="/fileDelete.do", method = RequestMethod.POST)
 	public @ResponseBody String delete(HttpServletRequest request, HttpServletResponse response) {
-		int file_id = ServletRequestUtils.getIntParameter(request, "file_id", 0);
+		Integer id = ServletRequestUtils.getIntParameter(request, "id", 0);
+		int reference_id = ServletRequestUtils.getIntParameter(request, "reference_id", 0);
+		String reference_category = ServletRequestUtils.getStringParameter(request, "reference_category", "");
+		
+		String webPath = "assets/images";
+		String realPath = request.getSession().getServletContext().getRealPath(webPath);
+		RS_Asset ai3 = new RS_Asset();
+		ai3.setId(id);
+		RS_Asset asset_for_delete = assetService.readAsset(ai3);
+		String[] file_parts = asset_for_delete.getFilepath().split("/");
+		String UUID = "";
+		for(int i = 0 ; i < file_parts.length ; i++){
+			if(!webPath.contains(file_parts[i])){
+				UUID = file_parts[i];
+				break;
+			}
+		}
+		deleteFolder(new File(realPath+"/"+UUID));
+		
 		
 		RS_Asset ai = new RS_Asset();
-		ai.setId(file_id);
+		ai.setId(id);
 		assetService.deleteAsset(ai);
 		
-		RS_Asset ri = new RS_Asset();
-		//ri.setReport_no(report_no);
-		//ri.setType(report_item_type);
-		RS_Asset rri = null;//assetService.readReportItem(ri);
-		
 		RS_Asset ai2 = new RS_Asset();
-		 //ai2.setReport_item_id(rri.getId());
-		 List<RS_Asset> attachedItemList = assetService.readAssetList(ai2);
+		ai2.setReference_id(reference_id);
+		ai2.setReference_category(reference_category);
+		List<RS_Asset> attachedItemList = assetService.readAssetList(ai2);
+		System.out.println(attachedItemList);
+		//Reordering sequence number
+		for(int i = 0 ; i < attachedItemList.size() ; i++){
+			RS_Asset asset = attachedItemList.get(i);
+			asset.setSeq_no(i+1);
+			assetService.updateAsset(asset);
+		}
 		
 		return attachedItemList.toString();
 	}
