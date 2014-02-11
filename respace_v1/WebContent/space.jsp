@@ -41,17 +41,19 @@
         <!-- *********  Content  ********** -->
         
         <div id="content_inner">
-            <h3>공간 찾기</h3>
+            <h3><font color="#ff5721" style="text-shadow:0px 1px #777"><b>공간 찾기</b></font></h3>
            
            <p class="teamline">리스페이스에서는 여러분들을 위한 멋진 공간들을 소개합니다.</p>
            <div class="cara"></div>
            
             <ul id="work_filter">
                 <li><a href="space.do" class="active">전체보기</a></li>
-                <li><a href="#">압구정/청담/신사</a></li>
+                <li><a href="#">종로/인사/삼청</a></li>
                 <li><a href="#">홍대/합정/상수</a></li>
+                <li><a href="#">강남/역삼/선릉</a></li>
                 <li><a href="#">이태원/한남</a></li>
-                <li><a href="#">기타등등/젬베등등</a></li>
+                <li><a href="#">왕십리/건대</a></li>
+                <li><a href="#">기타</a></li>
             </ul>
             
             <!-- **** Items **** -->
@@ -59,7 +61,8 @@
            <c:forEach items="${spaceList}" var="space" varStatus="list_status">
            <div class="fourths_portfolio">
                 <h4>${space.name}<br>
-                <span>see detail</span>
+                <span>@홍대<br>
+                see detail</span>
                 </h4>
                 <a href="spaceDetail.do?id=${space.id}"><img src="${space.thumbnail_url}" alt="item1" class="thumb_nail"></a>
             </div>

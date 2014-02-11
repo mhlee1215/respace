@@ -26,26 +26,19 @@ $(function() {
 });
 </script>
     
-    <!-- *********  Main part (slider)  ********** -->
+   <!-- *********  Main part (slider)  ********** -->
     
         
         <div id="main_part">
-            <div id="main_part_in"style="background:url('./images/service_bg.gif');">
+            <div id="main_part_in">
         <div id="service" >
             <h2>RESPACE</h2>
-            
+            <br><br><br>
             <p>리스페이스는 공간이 필요한 사람들에게</p>
             <p>유휴공간을 제공하는 공유경제 플랫폼입니다</p>
             
             </div>
-            
-            
-            <div class="button_main">
-                  
-                <ul><a href="space.do" class="button_dark">RESPACE</a></ul>
-               
-            </div>
-            
+       
         </div>
         </div>
         
@@ -56,7 +49,8 @@ $(function() {
             
             <div class="thirds">
                 <h3>Share your space</h3>
-                <p>당신의 유휴 공간, 버려진 가치를 살립니다. 기존 단기임대에서 발생하는 리스크를 줄이고 공간의 새로운 가치를 얻어가세요!</p>
+                <p>당신의 유휴 공간, 버려진 가치를 살립니다. <p> 기존의 단기임대에서 발생하는 리스크를 줄이고 공간의 새로운 가치를 얻어가세요!</p>
+            
                 <!-- <p>${index_top_left.content } 
                 <%if("true".equals(islogin)){ %>
                 
@@ -82,29 +76,31 @@ $(function() {
 				 -->
             </div>
             
-            <div class="thirds">
-                <h3>Open Your Project</h3>
-                <p>프로젝트나 이벤트를 개최할 공간이 필요하신가요? 행사의 성격에 맞는 다양한 공간들을 합리적으로 이용하실 수 있습니다. 당신을 기다립니다!</p>
-                <!-- <p>${index_top_center.content }</p> -->
+           <div class="thirds">
+                <h3>Open Your Project </h3>
+                <p>프로젝트나 이벤트를 개최할 공간이 필요하세요? 행사의 성격에 맞는 다양한 공간들을 합리적으로 이용하실 수 있습니다. 당신을 기다립니다!</p>
             </div>
             
             <div class="thirds">
-                <h3>Now Playing</h3>
-                <p>RESPACE에서 진행중인 즐거운 프로젝트들을 소개합니다. 지금 만나보세요. 당신에게도 좋은 영감을 수 있답니다!</p>
-                <!-- <p>${index_top_right.content }</p> -->
+                <h3>Now Playing </h3>
+                <p>RESPACE에서 진행 중인 즐거운 프로젝트들을 </p><p>소개합니다. 지금 만나보세요. 당신에게도 좋은 </p><p>영감을 줄 수 있답니다! </p>
             </div>
             
             <hr class="cleanit">
             
-            <div class="banner1">
-                <p>The <b>소개 ? n</b> ~~ 사용해주세요 ~배너도. <p>
-                <a href="#" class="button_dark">WHAT CAN</a>
+           <div class="banner1">
+                <p>&nbsp;&nbsp;3월 첫째주, 톡톡튀는 기업들의 팝업스토어! <br>&nbsp;&nbsp;리스페이스의 공간을 즐겁고 신나게 채워주세요!</p>
+                <a href="http://www.facebook.co.kr/remakespace" class="button_dark">자세히 보기</a>
             </div>
+             <hr class="cleanit">
+             <div class="cara"></div>  
                 
                 
             <!-- ****  Recent works  ***** -->        
             
-            <h3>Featured Spaces</h3>
+            <div class="featured">   
+            <h3>Featured Spaces
+            <p>좋은 공간을 갖고 계신가요? <a href="spacee.do"> 더 보러가기 </a></p></h3></div>
             
             <c:forEach items="${featuredSpaceList}" var="featuredSpace" varStatus="list_status">
 						
@@ -116,10 +112,12 @@ $(function() {
             </div>
             
 	 		</c:forEach>
-            <p class="youlike">좋은 공간을 알고 있나요?<br><a href="contact.do"> 여기</a>로<a href="contact.do">contact us</a> and get started on your project? Or are you thinking about <a href="project.do">opening your own project</a>?</p>            
+           
             <!-- ****  Recent works  ***** -->        
             
-            <h3>Featured Projects</h3>
+            <div class="featured">   
+            <h3>Featured Projects
+            <p>새로운 프로젝트나 행사 이벤트를 개최하고 싶다면? <a href="project.do"> 더 보러가기 </a></p></h3></div>
             
              <c:forEach items="${featuredProjectList}" var="featuredProject" varStatus="list_status">
 						
@@ -135,7 +133,6 @@ $(function() {
             
             <hr class="cleanit">
             
-            <p class="youlike">더 많은 정보를 보고 싶다면?<a href="contact.do">see more</a> or even <a href="contact.do">contact us</a> and get started on your project? Or are you thinking about <a href="project.do">opening your own project</a>?</p>
             
             <div class="cara"></div>
             
@@ -145,17 +142,15 @@ $(function() {
             
             <div class="about_blok">
                 <h3>About Us</h3>
-                <p class="about">리스페이스는 남는 공간을 필요로하는 사람들에게 팝업~~~ 등등 소개멘트 </p>
+                <p class="about">리스페이스는 남는 공간을 필요로 하는 사람들에게 공간을 제공하는 공유 공간 &nbsp; 플랫폼입니다. 임대인들에게는 유휴공간에 안정적인 수익을, 임차인에게는 행사에 적합한 공간을 제공합니다. 리스페이스와 함께하는 다양한 행사에 참여하세요! </p>
                 
-                <a href="contact.do" class="button_light">LEARN MORE</a>
+                <a href="contact.do" class="button_light">Contact us!</a>
             </div>
             
             <div id="message_set" class="testimonials">
-                <div id="message_set-1" class="quote">123</div>
-                
-                <div id="message_set-2" class="quote">456</div>
-                
-                <div id="message_set-3" class="quote">789</div>
+                <div id="message_set-1" class="quote">리스페이스 덕분에 저도 저만의 공연 공간을 갖게 된 좋은 기회가 될 것 같아요! 번화가에서 공연하는 건 이번이 처음이라 너무 설렙니다! 리스페이스 화이팅 :) </div>
+                <!-- <div id="message_set-2" class="quote">456</div>
+                <div id="message_set-3" class="quote">789</div> -->
                 <span class="testimonials_bottom"></span>
                 
                 <ul class="controls">
@@ -163,7 +158,7 @@ $(function() {
                     <li><a href="#message_set-2"></a></li>
                     <li><a href="#message_set-3"></a></li>
                 </ul>
-                <span class="by">리스페이스를 방문한 사람들! </span>
+                <span class="by">리스페이스를 응원합니다! </span>
             </div>
             
         </div>

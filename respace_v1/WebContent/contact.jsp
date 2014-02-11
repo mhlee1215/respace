@@ -19,7 +19,7 @@
     var map;
     var geocoder;
     geocoder = new google.maps.Geocoder();
-    var address = '서울특별시, 서대문구 연세로 50';
+    var address = '서울특별시 서대문구 창천동 연세대학교 공학원';
     
       function initialize() {
         var mapOptions = {
@@ -61,17 +61,12 @@
     <!-- *********  Main part – headline ********** -->
     
         
-        <div id="main_part_inner">
+          <div id="main_part_inner">
             <div id="main_part_inner_in">
         
-            <h2>Contact</h2>
+            <h2>ABOUT</h2>
        
             
-            <c:if test="${send_message_complete	 == 'true'}">
-            <script type="text/javascript">
-			alert('메시지를 정상적으로 보냈습니다.');
-			</script>
-			</c:if>
             </div>
             
         </div>
@@ -82,37 +77,64 @@
         <div id="content_inner">
             
             <!-- *** contact form *** -->
-           <h3>About RESPACE</h3>
-           <span>여기에 통이미지 사업제안서 이미지 들어가자 헤ㅜ</span>
-           <div class="cara"></div>
-            
-           <h3>Leave a message</h3>
-           
-           <form action="leave_message.do" method="post" class="formit">
-                <input type="text" name="name" placeholder="YOUR NAME"/>
-                <input type="text" name="email" placeholder="EMAIL"/>
-                <input type="text" name="website" placeholder="WEBSITE (OPTIONAL)"/>
-                <textarea name="content" placeholder="Leave your message here..."></textarea>
-                <input type="submit" class="button_submit" value="SEND A MESSAGE">
-            </form>
+             <div id="content_inner">
+            <h3><font color="#ff5721" style="text-shadow:0px 1px #777"><b>사업 소개</b></font></h3>
+             <div class="cara"></div>
+         	 <div class="featured"><h3><img src="img/icon_1.png" width="20px" height="22px"> &nbsp;&nbsp;RESPACE</h3></div>
+         	 <div class="introduce_1"><h3>남는 공간과<br>
+         	 필요한 공간을 연결하는 플랫폼</h3></font></div>
+         	<div id="align"> 
+			<div id="contents"> 
+				<h7><font style="line-height:1.8em">RESPACE는 카페, 교회, 강당 등의 공간과 공간을 필요로 하는<br>
+         	 강연업체, 공연기획단, 각종 프로모션 및 행사를 기획하는 기업 및 개인들을<br>
+         	 보다 쉽고 효과적으로 연결해주는 서비스입니다.</font></h7> 
+			</div> 
+			</div>
+         	 
+         	 </div>
+         	 
+         	 <div class="featured"><h3><img src="img/icon_1.png" width="20px" height="22px"> &nbsp;&nbsp;VISION</h3></div>
+         	 <div class="introduce_1">
+			 <h3><font color="#777">{</font>&nbsp; 새로운 문화공간 창출 &nbsp;<font color="#777">}</font><br></div>
+         	<div id="align"> 
+			<div id="contents"> 
+         	 <h7><font color="#959595"></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Innovate New Cultural Space</h7></font></div></h3>
+			</div> 
+			
+			
+			<div class="featured"><h3><img src="img/icon_1.png" width="20px" height="22px"> &nbsp;&nbsp;사업 내용</h3></div>
+			<div class="introduce_1"><img src="img/bmintro_1.jpg" width="750px"></div>
+			
+         	<div class="featured"><h3><img src="img/icon_1.png" width="20px" height="22px"> &nbsp;&nbsp;BUSINESS MODEL</h3></div>
+			<div class="introduce_1"><img src="img/bmintro_2.jpg" width="750px">
+			 <h3>공간에 가치를 더합니다</h3></div>
+			 <div id="align"> 
+			<div id="contents"> 
+         	 <h7><font color="#959595"></font>&nbsp;&nbsp;&nbsp;&nbsp;
+         	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;빈 공간이 필요한 공간으로 재탄생하다 <br> &nbsp;&nbsp;&nbsp;&nbsp;
+         	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RESPACE를 통한 임대인과 임차인의 연결</h7></font></div></h3>
+			</div> 
+      
 
             <div class="cara"></div>
             
-            <h3>Contact information</h3>
-            
+            <div class="introduce_1">
+			 <h3>Contact information</h3></div>
+			 
             <div class="contactinfo">
-                <span class="ico_mapmark"><b>서울특별시, 서대문구 연세로 50</b></span>    
+                <span><b><font color="#4d4d4d">서울특별시 서대문구 창천동 연세대학교 공학원 B193</b></span></font>  
             </div>
             
             <div class="contactinfo">
-                <span class="ico_message"><b>respace@respace.co.kr</b></span>    
+                <span><b>respace@respace.co.kr</b></span>    
             </div>
      
             
             <hr class="cleanit">
             
             
-            <div id="map_canvas" style="width:100%; height:300px;"></div>
+             <div id="map_canvas" style="width:100%; height:300px;"></div>
 
             
             
@@ -120,6 +142,8 @@
             
             
         </div>
+        	</div>
+         
         
     
     
