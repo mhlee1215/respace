@@ -41,7 +41,7 @@
         <!-- *********  Content  ********** -->
         
         <div id="content_inner">
-            <h3>프로젝트 열기</h3>
+            <h3><font color="#ff5721" style="text-shadow:0px 1px #777"><b>프로젝트 열기</b></font></h3>
            
            <p class="teamline">리스페이스에서는 여러분의 멋진 프로젝트를 실현합니다.</p>
            <div class="cara"></div>

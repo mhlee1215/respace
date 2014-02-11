@@ -14,11 +14,6 @@
         
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
-	<script>  	
-	$(function() {
-		$.validate();
-	});
-	</script>
 </head>
 
 <body>
@@ -49,8 +44,19 @@
             
            <!-- *** contact form *** -->
             
-           <h3>공간에 관한 모든 것, 리스페이스와 함께 하세요!</h3>
+              <h3><font color="#ff5721" style="text-shadow:0px 1px #777"><b>공간에 관한 모든 것, 리스페이스와 함께 하세요!</b></font></h3>
+            <p class="teamline">공간 공유를 원하시는 임대인, 프로젝트를 열고 싶으신 임차인, <br>재미있는 행사에 참여하고 싶은 모든 분들을 환영합니다.</p>
+            <div class="cara"></div>
+           <!-- *** contact form *** -->
            <hr class="cleanit">
+        	<div class="button_main">
+                <a href="share.html" class="button_register">임대공간 등록하기</a>
+            </div> <br>
+            <div class="button_main">
+                <a href="open.html" class="button_register">프로젝트 등록하기</a>
+            </div>
+            <div class="cara"></div>
+            <hr class="cleanit">
         
             <!-- sign up/sign in tab -->
             

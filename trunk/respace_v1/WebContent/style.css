@@ -1,5 +1,5 @@
 body {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family:'Nanum Gothic';
 }
 
 @font-face {
@@ -18,7 +18,7 @@ body {
 @import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
 @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 
-.fng{font-family:'나눔고딕', NanumGothic, 'Nanum Gothic';}
+.fng{font-family:'������������', NanumGothic, 'Nanum Gothic';}
 
 .nanum-g { font-family: 'Nanum Gothic'; }
 .nanum-b { font-family: 'Nanum Brush Script'; }
@@ -35,6 +35,7 @@ h3 {
     margin: 46px 0 15px 10px;
     text-align: center;
     font-family: 'Nanum Gothic';
+    
 }
 
 h4 {
@@ -52,7 +53,7 @@ h5 {
 }
 
 a {
-    color: #e66e0d;
+    color: #ff5721;
 }
 
 p a {
@@ -67,8 +68,8 @@ a:hover {
     color: #000;
 }
 
-a.button_dark, a.button_light {
-    background-color: #e66e0d;
+a.button_dark  {
+    background-color: #ff5721;
     display: block;
     width: 90px;
     padding: 15px 30px 0 30px;
@@ -76,7 +77,7 @@ a.button_dark, a.button_light {
     text-align: center;
     margin: auto;
     z-index: 2;
-    position: relative;
+    position: absolute;
     color: #fff;
     font-size: 11pt;
     font-weight: 400;
@@ -88,6 +89,7 @@ a.button_dark, a.button_light {
     background-clip: padding-box;
     box-shadow: inset 0px 1px #f08715;
     
+    
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
@@ -95,8 +97,65 @@ a.button_dark, a.button_light {
     transition: all 0.2s ease-in-out;
 }
 
+a.button_light  {
+    background-color: #ff5721;
+    display: block;
+    width: 100px;
+    padding: 15px 10px 0 10px;
+    height: 33px;
+    text-align: center;
+    margin: 0 35px 0;    
+    z-index: 2;
+    position: center;
+    color: #fff;
+    font-size: 11pt;
+    font-weight: 400;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-shadow: 0px 1px #d72d05;
+    border: 5px solid rgba(0, 0, 0, .2);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    box-shadow: inset 0px 1px #f08715;
+    display: right;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+a.button_register  {
+    background-color: #ff5721;
+    display: block;
+    width: 250px;
+    padding: 13px 10px 0 10px;
+    height: 33px;
+    text-align: center;
+    margin: 0 355px 0 355px;					    
+    z-index: 2;
+    position: center;
+    color: #fff;
+    font-size: 15pt;
+    font-weight: 400;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-shadow: 0px 1px #d72d05;
+    border: 5px solid rgba(0, 0, 0, .2);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    box-shadow: inset 0px 1px #f08715;
+    display: right;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+
 a.button_darky {
-    background-color: #e66e0d;
+    background-color: #ff5721;
     display: block;
     width: 90px;
     padding: 15px 30px 0 30px;
@@ -124,7 +183,7 @@ a.button_darky {
 }
 
 a.button_light {
-    margin-left: 10px;
+    margin-left: 390px;
     width: 100px;
     border: 5px solid #fff;
     -webkit-background-clip: padding-box;
@@ -132,7 +191,14 @@ a.button_light {
     box-shadow: 0px 0px 0px 1px #dbdbdb;
 }
 
-a:hover.button_dark, a:hover._button_light {
+a.button_register {
+    border: 5px solid #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    box-shadow: 0px 0px 0px 1px #dbdbdb;
+}
+
+a:hover.button_dark, a:hover._button_light, a:hover._button_register {
     background-color: #d76203;
     text-shadow: 0px -1px #a70d00;
     border: 5px solid rgba(0, 0, 0, .4);
@@ -141,7 +207,7 @@ a:hover.button_dark, a:hover._button_light {
     box-shadow: inset 0px 1px 2px #c14d00;
 }
 
-a:hover.button_light {
+a:hover.button_light, a:hover.button_register {
     background-color: #d76203;
     border: 5px solid #f5f5f5;
     box-shadow: 0px 0px 0px 1px #cbcbcb;
@@ -179,9 +245,9 @@ div.cara {
 
 div.cbrb {
     clear: both;
-    width: 940px;
+    width: 640px;
     height: 1px;
-    background-color: #ffffff;
+    background-color: #eaeaea;
     margin-top: 40px;
     margin-left: 10px;
 }
@@ -190,14 +256,14 @@ div.cbrb {
 
 #header {
     width: 100%;
-    height: 50px;
-    background-color: #fff;
+    height: 51px;
+    background-color: #fd5624;
 }
 
 #header_in {
     width: 960px;
     padding: 0px 10px 0 10px;
-    height: 50px;
+    height: 51px;
     margin: auto;
     position: relative;
 }
@@ -211,7 +277,7 @@ div.cbrb {
 
 #header_in h1 a {
     text-decoration: none;
-    color: #111;
+    color: #000;
     font-weight: 100;
 }
 
@@ -225,7 +291,7 @@ div.cbrb {
 	position: absolute;
 	right: 00px;
 	font-size: 95%;
-	height: 50px;
+	height: 51px;
 	background: url('img/menu_cut.jpg') no-repeat scroll right;
 	margin-right: 0px;
     }
@@ -246,7 +312,7 @@ div.cbrb {
 	display: block;
 	padding: 15px 40px 0 40px;
 	height: 36px;
-	background-color: #fff;
+	background-color: #fd5624;
     }
     
     #menu ul li a:hover {
@@ -287,17 +353,17 @@ div.cbrb {
     font-size: 280%;
     font-weight: 600;
     text-align: center;
-    color: #e66e0d;
-    text-shadow: 0px 1px #000;
+    color: #ff5721;
+    text-shadow: 1px 1px #777;
 }
 
 #main_part_in p {
-    font-size: 150%;
-    font-weight: 300;
+    font-size: 130%;
+    font-weight: 150;
     font-family: 'Nanum Gothic';
-    color: #bcbcbc;
+    color: #4d4d4d;
     text-align: center;
-    text-shadow: 0px 1px #000;
+    text-shadow: 0px 1px #eaeaea;
 }
 
 #main_part .button_main {
@@ -344,19 +410,66 @@ div.cbrb {
     margin: auto;
     padding-top: 0;
 }
-
+#align {  
+width:100%;  
+text-align:center;  
+}   
+ 
+#contents {  
+margin:0 auto; 
+width:550px; 
+text-align:left;  
+}
     /* ----- thirds / fourths (homepage) / sixths (about)----- */
 	.featured h3 {
 	margin-top: 30px;
 	margin-left: 30px;
-	font-size: 150%;
+	font-size: 120%;
 	font-weight: 300;
-	color: #27292a;
+	color: #4d4d4d;
 	margin-bottom: 18px; 
-	text-align: left;  
+	text-align: left;
+		
     }
 
+	.featured p {
+	float: right;
+	font-size: 75%;
+	margin-right: 30px;
+	
+	
+	}
+	
+	.introduce_1 {
+	width: 960px;
+	margin: 10px;
+	display: block;
+	}
+	
+	.introduce_1 h3 {
+	
+	line-height: 1.8em;
+	text-align: left;
+	font-size: 150%;
+	font-weight: 300;
+	font-familly: 'Nanum Gothic';
+	color: #4d4d4d;
+	margin-bottom: 10px;
+	padding: 0 0 0 250px;
+    }
+    
+    .introduce_1 h7 {
+	
+	line-height: 2.0em;
+	text-align: center;
+	font-size: 100%;
+	font-weight: 100;
+	font-familly: 'Nanum Gothic';
+	color: #4d4d4d;
+    }
 
+	
+	
     .thirds {
 	width: 300px;
 	margin: 0 10px 0 10px;
@@ -368,14 +481,14 @@ div.cbrb {
 	margin-left: 0;
 	font-size: 150%;
 	font-weight: 300;
-	color: #27292a;
+	color: #4d4d4d;
 	margin-bottom: 18px;   
     }
     
     .thirds p {
 	font-size: 90%;
 	font-family: 'Nanum Gothic';
-	color: #37393a;
+	color: #4d4d4d;
 	line-height: 160%;
     }
     
@@ -385,7 +498,7 @@ div.cbrb {
 	width: expression(this.width>220:true);
     height: expression(this.width>220:true);
 	margin: 0 10px 20px 10px;
-	background-color: #e66e0d;
+	background-color: #ff5721;
 	float: left;
 	position: relative;
     }
@@ -429,7 +542,7 @@ div.cbrb {
 	width: 140px;
 	height: 160px;
 	margin: 0 10px 0 10px;
-	background-color: #e66e0d;
+	background-color: #ff5721;
 	float: left;
 	position: relative;
     }
@@ -516,7 +629,7 @@ div.cbrb {
 	margin-left: 10px;
 	font-size: 185%;
 	font-weight: 900;
-	color: #e66e0d;
+	color: #ff5721;
 	margin-bottom: 5px;
 	text-align: left; 
 	letter-spacing:-1px;
@@ -551,7 +664,7 @@ div.cbrb {
     
     .ac-container{
     width: 241px;
-    margin: 118px auto 5px auto;
+    margin: 135px auto 5px auto;
 	}
     
     .ac-container label{
@@ -580,7 +693,7 @@ div.cbrb {
     .ac-container input:checked + label,
 	.ac-container input:checked + label:hover{
     background: #eaeaea;
-    color: #e66e0d;
+    color: #ff5721;
     text-shadow: 0px 1px 1px rgba(255,255,255, 0.6);
     box-shadow: 
         0px 0px 0px 1px rgba(155,155,155,0.3), 
@@ -663,7 +776,7 @@ div.cbrb {
 .slider-wrapper div,
 .slider-wrapper img,
 .slider-wrapper a {
-    margin: 0;
+    margin: 0 0 10px;
     padding: 0;
     border: none;
     outline: none;
@@ -671,7 +784,7 @@ div.cbrb {
 }
  
 .slider-wrapper {
-    width: 665px;
+    width: 679px;
     overflow: hidden;
 }
  
@@ -683,7 +796,7 @@ ul.s-slides,
 ul.s-slides li,
 ul.s-slides a,
 ul.s-slides img {
-    width: 656px;
+    width: 679px;
     height: 369px;
     position: relative;
 }
@@ -744,17 +857,17 @@ ul.s-thumbs img {
     
 }
  
-ul.s-thumbs a:hover,
+
 ul.s-slides {
-    border: 1px solid #e66e0d;
- 
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    border-radius: 0px;
- 
-    -webkit-box-shadow: 0px 1px 0px rgba(255,255,255,.05);
-    -moz-box-shadow: 0px 1px 0px rgba(255,255,255,.05);
-    box-shadow: 0px 1px 0px rgba(255,255,255,.05);
+    border: 0px;
+
+}
+
+ul.s-thumbs a:hover {
+    border: 1px solid #ff5721;
+    -webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.05);
+    -moz-box-shadow: 0px 1px 0px rgba(255,255,255,0.05);
+    box-shadow: 0px 1px 0px rgba(255,255,255,0.05);
 }
 
 
@@ -782,7 +895,7 @@ ul.s-slides li.slideLeft:target {
 	width: 960px;
 	height: 300px;
 	margin: 0 0 20px 0px;
-	background-color: #e66e0d;
+	background-color: #ff5721;
 	float: left;
 	position: relative;
 	border: 1px solid #999999;
@@ -794,37 +907,69 @@ ul.s-slides li.slideLeft:target {
     
     
     .story_portfolio {
-	width: 955px;
-	height: 200px;
-	margin: 11px 0px 0px 0px;
+	width: 680px;
+	height: 280px;
+	margin: 20px 0px 0px 3px;
+	padding: 10px 10px 10px 10px;
 	background-color: #fff;
-	float: right;
+	float: left;
 	position: relative;
-	box-shadow: 0px 0px 0px 1px rgba(155,155,155,0.3);
+	box-shadow: 0px 0px 0px 1px rgba(155, 155, 155, 0.3), 0px 2px 2px rgba(0, 0, 0, 0.1);
+		
     }
     
     .story_portfolio img {
-	position: absolute;
+	position: relative;
     }
+    
+    .review_pic {
+	width: 100px;
+	height: 100px;
+	margin: 15px 0px 0px 0px;
+	padding: 0px 20px 0 20px;
+	float: left;
+	display: inline;
+	position: relative;
+		
+    }
+    
+    .review_twt {
+    width: 500px;
+	height: auto;
+	margin: 25px 0px 0px 0px;
+	padding: 5px 20px 5px 5px;
+	background: #ffddd3;
+	float: left;
+	display: inline;
+	position: relative;
+	border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -o-border-radius: 7px;
+    text-color: 4d4d4d;
+		
+    }
+    
     
     .story_portfolio h4 {
 	position: absolute;
-	top: 50px;
+	top: 5px;
 	width: 940px;
 	text-align: center;
-	text-color: black;
+	text-color: 4d4d4d;
 	font-weight: 200;
 	font-size: 100%;
 	line-height: 140%;
+	display: block;
     }
     
     .signup {
 	width: 400px;
-	height: 700px;
-	margin: 0 0 20px 0px;
+	height: 400px;
+	margin: 0 30% 20px 30%;
 	background-color: #fff;
-	float: left;
-	position: center;
+	position: relative;
+	font-family: 'Nanum Gothic';
     }
     
     .signup img {
@@ -1021,31 +1166,80 @@ ul.s-slides li.slideLeft:target {
     /* --------- Our Work (portfolio stuffs) ---------- */
 		
     ul#work_filter {
-    margin: 20px 0 22px 0;
+    margin: 20px 2px 22px 2px;
     }
 	    
-    #work_filter li a, .pagination li a {
+    #work_filter li a {
     text-decoration: none;
     color: #27292a;
     font-size: 100%;
     font-weight: 200;
     font-family: 'Nanum Gothic';
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
+    
     }
+    
 	    
-    #work_filter li a:hover, .pagination li a:hover {
+    #work_filter li a:hover {
     color: #000;
     font-weight: 400;
+    border: 1px solid #ff7721;
+    padding: 3px 3px 3px 3px;
+    background: #ff7721;
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -o-border-radius: 7px;
     }
 	    
-    #work_filter li a.active, .pagination li a.active {
+    #work_filter li a.active {
     font-weight: 400;
+    border: 1px solid #eaeaea;
+    padding: 3px 3px 3px 3px;
+    background: #eaeaea;
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -o-border-radius: 7px;
+    
     }
 		
-    #work_filter li, .pagination li {
+    #work_filter li {
     display: inline;
     margin: 0 10px 0 10px;
     }
+    
+    .pagination li a {
+    text-decoration: none;
+    color: #4d4d4d;
+    font-size: 100%;
+    font-weight: 200;
+    font-family: 'Nanum Gothic';
+    letter-spacing: 0.5px;
+    
+    }
+    
+    
+    
+	    
+    .pagination li a:hover {
+    color: #959595;
+    font-weight: 400;
+    
+    }
+	    
+    .pagination li a.active {
+    color: #ff5721;
+    font-weight: 400;
+    
+    }
+		
+    .pagination li {
+    display: inline;
+    margin: 0 10px 0 10px;
+    }
+    
+    
     
     .pagination {
 	text-align: right;
@@ -1054,18 +1248,19 @@ ul.s-slides li.slideLeft:target {
  
 
 p.youlike, p.teamline {
-    font-size: 125%;
+    font-size: 67%;
     font-weight: 400;
     line-height: 150%;
     width: 940px;
     font-family: 'Nanum Gothic';
-    color: #777;
+    color: #4d4d4d;
     margin: 7px 0 0 10px;
+    float: inline
 }
 
 
 p.teamline {
-    font-size: 110%;
+    font-size: 80%;
     margin: -7px 0 20px 10px;
     text-align: center;
 }
@@ -1082,12 +1277,22 @@ p.textit {
     width: 550px;
     float: left;
     margin-right: 80px;
+    font-family: 'Nanum Gothic';
+}
+
+.about_blok h3 {
+    font-size: 150%;
+    font-weight: 300;
+    margin: 46px 0 15px 50px;
+    text-align: left;
+    font-family: 'Nanum Gothic';
+    
 }
 
 p.about {
-    width: 540px;
-    margin: -10px 0 25px 10px;
-    color: #27292a;
+    width: 522px;
+    margin: 0px 0px 25px 30px;
+    color: #4d4d4d;
     font-size: 95%;
     font-weight: 400;
     line-height: 165%;
@@ -1098,6 +1303,7 @@ p.about {
     min-height: 80px;
     float: left;
     margin-top: 50px;
+    font-family: 'Nanum Gothic';
 }
 
 .testimonials .quote {
@@ -1152,6 +1358,7 @@ p.about {
 
 form.formit {
     margin-left: 10px;
+    position: center;
 }
 
 .formit input[type="text"] {
@@ -1178,23 +1385,24 @@ form.formit {
 
 form.formit .button_submit {
     cursor:pointer;
-    background-color: #e66e0d;
+    background-color: #ff5721;
     width: 300px;
     height: 58px;
     color: #fff;
-    font-size: 10pt;
+    font-size: 15pt;
     font-weight: 400;
     letter-spacing: 1px;
     border: 5px solid #fff;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
     box-shadow: 0px 0px 0px 1px #dbdbdb;
-    text-shadow: 0px 1px #d72d05;
+    
+    font-family: 'Nanum Gothic';
 }
 
 form.formit .button_book {
     cursor:pointer;
-    background-color: #e66e0d;
+    background-color: #ff5721;
     width: 240px;
     height: 58px;
     color: #fff;
@@ -1235,8 +1443,8 @@ form.formit .button_book {
 }
 
 .mapspace {
-    width: 656px;
-    heighth: 369px;
+    width: 679px;
+    height: 369px;
     margin: 0px 0 0 0px;
     border: 1px solid #999999;
     
@@ -1295,23 +1503,32 @@ form.formit .button_book {
 
 .banner1 {
     width: 890px;
-    height: 76px;
+    height: 100px;
     padding: 20px 0 0 50px;
     margin: auto;
     margin-bottom: 0px;
     margin-top: 30px;
     background: url('img/banner1.jpg') no-repeat scroll;
+    background-position:center; 
     background-color: #000;
     color: #c3ccd5;
+    font-size: 150%;
     position: relative;
 }
 
 .banner1 p {
-    font-weight: 200; 
-    font-size: 18pt;
+    font-weight: 150; 
+    font-size: 10pt;
     font-family: 'Nanum Gothic';
-    display: block;
-    width: 630px;
+    font-color: #ffffff;
+    margin-left: 300px;
+    margin-top: 20px;
+    margin-right: 250px;
+    padding: 5px 0px 5px 0px;
+    display: inline;
+    float: right;
+    width: 300px;
+    background-color: #000; opacity: 0.6;
     text-shadow: 0px 1px #000;
 }
 
@@ -1324,7 +1541,8 @@ form.formit .button_book {
     width: 100px;
     position: absolute;
     right: 42px;
-    top: 17px;
+    top: 32px;
+    font-family: 'Nanum Gothic';
 }
 
 .banner2 {
@@ -1360,7 +1578,7 @@ form.formit .button_book {
 
 
 a.button_sign {
-    background-color: #e66e0d;
+    background-color: #ff5721;
     width: 300px;
     height: 58px;
     color: #fff;
@@ -1374,9 +1592,115 @@ a.button_sign {
     text-shadow: 0px 1px #d72d05;
 }
 
+ 
 
+	ul.tabs {
+		margin: 0 0 12px 0;
+		padding: 0;
+		float: left;
+		list-style: none;
+		height: 40px;
+		border-bottom: 0px none;
+		border-left: 0px none;
+		width: 100%;
+	}
 
-
+	ul.tabs li {
+		float: left;
+		margin: 0;
+		cursor: pointer;
+		padding: 5px 21px 4px;
+		height: 29px;
+		line-height: 30px;
+		border: 0px none;
+		font-weight: bold;
+		font-size: 14px;
+		font-family: 'Nanum Gothic';
+		box-shadow: 0px 0px 0px 1px rgba(155, 155, 155, 0.3), 0px 2px 2px rgba(0, 0, 0, 0.1);
+		background: #fff;
+		overflow: hidden;
+		position: relative;
+	}
+	ul.tabs li:hover {
+		background: #eaeaea;
+	}	
+	ul.tabs li.active{
+		background: #ff5721;
+		font-style: bold #ff5721;
+		border-bottom: 0px none;
+		
+	}
+	.tab_container {
+		border: 0px none;
+		border-top: none;
+		box-shadow: 0px 0px 0px 1px rgba(155, 155, 155, 0.3), 0px 2px 2px rgba(0, 0, 0, 0.1);
+		clear: both;
+		float: left; 
+		width: 100%;
+		background: #FFFFFF;
+	}
+	.tab_content {
+		padding: 10px;
+		font-size: 0.9em;
+		display: none;
+		font-weight: light;
+		font-family: 'Nanum Gothic';
+		font-color: #777;
+	}
+ 
+ 
+ 
+	ul.price {
+		margin: 0 0 12px 0;
+		padding: 0;
+		float: left;
+		list-style: none;
+		height: 40px;
+		border-bottom: 0px none;
+		border-left: 0px none;
+		width: 100%;
+	}
+	ul.price li {
+		float: left;
+		margin: 0;
+		cursor: pointer;
+		padding: 5px 15px 4px;
+		height: 29px;
+		line-height: 30px;
+		border: 0px none;
+		border-left: none;
+		font-weight: bold;
+		font-color: #4d4d4d;
+		font-family: 'Nanum Gothic';
+		box-shadow: 0px 0px 0px 1px rgba(155, 155, 155, 0.3), 0px 2px 2px rgba(0, 0, 0, 0.1);
+		background: #fff;
+		overflow: hidden;
+		position: relative;
+	}
+	ul.price li:hover {
+		background: #eaeaea;
+	}	
+	ul.price li.active{
+		background: #FF5721;
+		border-bottom: 0px none;
+	}
+	.price_container {
+		border: 0px none;
+		border-top: none;
+		box-shadow: 0px 0px 0px 1px rgba(155, 155, 155, 0.3), 0px 2px 2px rgba(0, 0, 0, 0.1);
+		clear: both;
+		float: left; 
+		width: 100%;
+		letter-spacing: 0.5px;
+		background: #FFFFFF;
+	}
+	.how_much {
+		padding: 10px 2px 10px 2px;
+		font-size: 0.9em;
+		display: none;
+		font-weight: light;
+		font-family: 'Nanum Gothic';
+	}
 
 
 

@@ -55,6 +55,20 @@ public class UserController {
 	@Autowired
 	private final AssetServiceImpl assetService = null;
 	
+	@RequestMapping("/projectOpen.do")
+    public ModelAndView projectOpen(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView model = new ModelAndView("projectOpen");
+		model.addObject("active", "project");
+		return model;
+    }
+	
+	@RequestMapping("/spaceShare.do")
+    public ModelAndView spaceShare(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView model = new ModelAndView("spaceShare");
+		model.addObject("active", "space");
+		return model;
+    }
+	
 	@RequestMapping("/space.do")
     public ModelAndView space(HttpServletRequest request, HttpServletResponse response) {
 		Integer query_page = ServletRequestUtils.getIntParameter(request, "query_page", 1);
