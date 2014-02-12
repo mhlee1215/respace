@@ -30,7 +30,7 @@
             <h2>SPACE</h2>
             
             <div class="button_main">
-                <a href="download.html" class="button_dark">SHARE!</a>
+                <a href="spaceShare.do" class="button_dark">SHARE!</a>
             </div>
             
             </div>
