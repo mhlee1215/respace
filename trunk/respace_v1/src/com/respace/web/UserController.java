@@ -62,6 +62,13 @@ public class UserController {
 		return model;
     }
 	
+	@RequestMapping("/projectRegister.do")
+    public ModelAndView projectRegister(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView model = new ModelAndView("projectRegister");
+		model.addObject("active", "project");
+		return model;
+    }
+	
 	@RequestMapping("/spaceBooking.do")
     public ModelAndView spaceBooking(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView model = new ModelAndView("spaceBooking");
@@ -437,7 +444,7 @@ public class UserController {
     public ModelAndView logout(HttpServletRequest request, HttpServletResponse response) {
 		request.getSession().invalidate();
 		
-		ModelAndView model = new ModelAndView("index");
+		ModelAndView model = new ModelAndView("redirect:index.do");
 		model.addObject("logoutComplete", "true");
 		return model;
     }

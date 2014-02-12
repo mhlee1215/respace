@@ -188,22 +188,36 @@ public class ProjectController {
 		
 		
 		code = new RS_Code();
-		code.setName("플리마켓");
+		code.setName("강연/세미나");
 		code.setCode("2");
 		code.setCategory("project category");
 		code.setSeq_no(seq_no++);
 		codeService.createCode(code);
 		
 		code = new RS_Code();
-		code.setName("강연/세미나");
+		code.setName("마켓/장터");
 		code.setCode("3");
 		code.setCategory("project category");
 		code.setSeq_no(seq_no++);
 		codeService.createCode(code);
 		
 		code = new RS_Code();
-		code.setName("팝업스토어");
+		code.setName("전시/공연");
 		code.setCode("4");
+		code.setCategory("project category");
+		code.setSeq_no(seq_no++);
+		codeService.createCode(code);
+		
+		code = new RS_Code();
+		code.setName("모임/파티");
+		code.setCode("5");
+		code.setCategory("project category");
+		code.setSeq_no(seq_no++);
+		codeService.createCode(code);
+		
+		code = new RS_Code();
+		code.setName("기타");
+		code.setCode("6");
 		code.setCategory("project category");
 		code.setSeq_no(seq_no++);
 		codeService.createCode(code);

@@ -30,7 +30,7 @@
             <h2>PROJECT</h2>
             
             <div class="button_main">
-                <a href="download.html" class="button_dark">OPEN!</a>
+                <a href="projectOpen.do" class="button_dark">OPEN!</a>
             </div>
             
             </div>
@@ -60,7 +60,9 @@
                 <h4>${project.title}<br>
                 <span>see detail</span>
                 </h4>
-                <a href="projectDetail.do?id=${project.id}"><img src="${project.thumbnail_url}" alt="item1"></a>
+                <!-- <a href="projectDetail.do?id=${project.id}"><img src="${project.thumbnail_url}" alt="item1"></a> -->
+                <a href="projectRegister.do?id=${project.id}"><img src="${project.thumbnail_url}" alt="item1"></a>
+                
             </div>
            </c:forEach> 
             

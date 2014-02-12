@@ -100,7 +100,7 @@ $(function() {
             
             <div class="featured">   
             <h3>Featured Spaces
-            <p>좋은 공간을 갖고 계신가요? <a href="spacee.do"> 더 보러가기 </a></p></h3></div>
+            <p>좋은 공간을 갖고 계신가요? <a href="space.do"> 더 보러가기 </a></p></h3></div>
             
             <c:forEach items="${featuredSpaceList}" var="featuredSpace" varStatus="list_status">
 						
@@ -125,7 +125,7 @@ $(function() {
                 <h4>${featuredProject.title}<br>
                 <span>see detail</span>
                 </h4>
-                <a href="projectDetail.do?id=${featuredProject.id}"><img src="${featuredProject.thumbnail_url}" alt="${featuredProject.title}" class="thumb_nail"></a>
+                <a href="projectRegister.do?id=${featuredProject.id}"><img src="${featuredProject.thumbnail_url}" alt="${featuredProject.title}" class="thumb_nail"></a>
             </div>
             
 	 		</c:forEach>

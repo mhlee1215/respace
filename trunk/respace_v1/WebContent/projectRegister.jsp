@@ -1,6 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <html>
 <head>
     <meta charset="utf-8">
@@ -19,38 +18,43 @@
     
     <!-- *********  Header  ********** -->
     
-    <%@include file = "header.jsp"%>
-    
-    <!-- *********  Main part – headline ********** -->
+ <%@include file = "header.jsp"%>
+     <!-- *********  Main part – headline ********** -->
     
         
         <div id="main_part_inner">
             <div id="main_part_inner_in">
         
-            <h2>Open your project!</h2>
-       
+            <h2>PROJECT</h2>
+            
+            <div class="button_main">
+                <a href="projectOpen.do" class="button_dark">OPEN!</a>
+            </div>
             
             </div>
             
         </div>
         
-        
-        <!-- *********  Content  ********** -->
+   
+      <!-- *********  Content  ********** -->
         
         <div id="content_inner">
-            <!-- Change the width and height values to suit you best -->
-<div class="typeform-widget" data-url="https://hongyl0.typeform.com/to/uBcfRF" 
-data-text="RESPACE" style="width:100%;height:500px;"></div>
+            <h3><font color="#ff5721" style="text-shadow:0px 1px #777"><b>세상의 많은 즐거움이 당신을 기다립니다!</b></h3></font>
+            <p class="teamline">리스페이스에서는 임차인들에게 프로젝트를 실현할 가장 좋은 기회를 제공합니다.<br> 팝업스토어, 플리마켓, 각종 소모임 등 여러분의 즐거움을 리스페이스에서 누려보세요! </p>
+             <br><div class="button_main">
+                <a href="projectOpen.do" class="button_register">프로젝트 등록하기</a>
+            </div>
+       		<br><br>
+            <img src="img/event_0.jpg" width="960px"></div>
+        
+        <hr class="cleanit">
+            
+           
 
-<script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,
-	id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'widget.js';q=gt.call(d,'script')[0];
-	q.parentNode.insertBefore(js,q)}})()</script>
-        </div>
+
+    <!-- *********  Footer  ********** -->
     
-    
- <!-- *********  Footer  ********** -->
-    
-  <%@include file = "footer.jsp"%>
+ <%@include file = "footer.jsp"%>
          
 <script>
 // script for testimonial' tabs
