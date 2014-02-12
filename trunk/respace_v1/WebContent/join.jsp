@@ -6,13 +6,23 @@
     <meta charset="utf-8">
     <title>RESPACE :: 공간에 가치를 더합니다 </title>
     
-    <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
-    
+        
     <link rel="stylesheet" href="reset.css" type="text/css">
     <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="stylesheet" href="style_ex.css" type="text/css">
         
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    
+    
+	
+<style>
+label.error{
+	color: #d54e21;
+	display: none;
+	margin-left: .5em;
+}
+</style>
+
 
 </head>
 
@@ -39,7 +49,7 @@
         
                       
         <!-- *********  Content  ********** -->
-        
+                
         <div id="content_inner" style="height: 600px;">
             
            <!-- *** contact form *** -->
@@ -50,10 +60,10 @@
            <!-- *** contact form *** -->
            <hr class="cleanit">
         	<div class="button_main">
-                <a href="share.html" class="button_register">임대공간 등록하기</a>
+                <a href="spaceShare.do" class="button_register">임대공간 등록하기</a>
             </div> <br>
             <div class="button_main">
-                <a href="open.html" class="button_register">프로젝트 등록하기</a>
+                <a href="projectOpen.do" class="button_register">프로젝트 등록하기</a>
             </div>
             <div class="cara"></div>
             <hr class="cleanit">
@@ -71,23 +81,25 @@
 
      <div id="tab1" class="tab_content"> 
  
-        <form action="login.do" method="post" class="formit">
-                <input type="text" name="email" placeholder="EMAIL" value="admin@respace.co.kr"/>
-                <br><input type="password" name="password" placeholder="PASSWORD" value="respace"/>
-                <!-- <br><input type="password" name="password_confirm" placeholder="PASSWORD_CONFIRM"/> -->
+        	<form action="login.do" method="post" class="formit" id="loginForm">
+        	 
+                <input type="email" name="email" id="login_email" placeholder="EMAIL" value="admin@respace.co.kr" required/>
+                <br>
+                <input type="password" name="password" placeholder="PASSWORD" value="respace" required/>
                 <br><input type="submit" class="button_submit" value="로그인">
+                
                 
             </form>
 		<br />
      </div><!-- #tab1 -->
      <div id="tab2" class="tab_content"> 
 
-        <form action="register.do" method="post" class="formit">
-                <input type="text" name="email" placeholder="EMAIL" />
+        <form action="register.do" method="post" class="formit" id="registerForm">
+                <input type="email" name="email" id="regi_email" placeholder="EMAIL" required/>
                 <!-- <br><input type="text" name="name" placeholder="NAME"/> -->
                 <!-- <br><input type="text" name="company" placeholder="소속"/> -->
-                <br><input type="text" name="password" placeholder="PASSWORD"/>
-                <br><input type="text" name="password_confirm" placeholder="PASSWORD_CONFIRM"/>
+                <br><input type="password" name="password" placeholder="PASSWORD" required/>
+                <br><input type="password" name="confirm_password" placeholder="PASSWORD_CONFIRM" equalTo="password" required/>
                 <br><input type="submit" class="button_submit" value="가입하기">
                 
             </form>
@@ -170,23 +182,7 @@
 	}
  
 </style>
-<script type="text/javascript">
 
-$(document).ready(function() {
-
-	$(".tab_content").hide();
-	$(".tab_content:first").show(); 
-
-	$("ul.tabs li").click(function() {
-		$("ul.tabs li").removeClass("active");
-		$(this).addClass("active");
-		$(".tab_content").hide();
-		var activeTab = $(this).attr("rel"); 
-		$("#"+activeTab).fadeIn(); 
-	});
-});
-
-</script> 
 
            </div>
             <!-- sign up tab end -->
@@ -198,10 +194,85 @@ $(document).ready(function() {
     
     <%@include file = "footer.jsp"%>
     
+    
+    
+<script src="js/jquery-validation-1.11.1/dist/jquery.validate.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+	// validate signup form on keyup and submit
+	
+	
+
+	$("#loginForm").validate({
+		rules: {
+			password: {
+				required: true,
+				minlength: 5
+			},
+			email: {
+				required: true,
+				email: true
+			}
+		},
+		messages: {
+			password: {
+				required: "<br>패스워드를 입력 해주세요.",
+				minlength: "<br>패스워드는 최소 5글자 이상이어야 합니다."
+			},
+			email: "<br>올바른 이메일 주소를 넣어주세요."
+		}
+	});
+	
+	$("#registerForm").validate({
+		rules: {
+			password: {
+				required: true,
+				minlength: 5
+			},
+			confirm_password: {
+				required: true,
+				minlength: 5,
+				equalTo: "#password"
+			},
+			email: {
+				required: true,
+				email: true
+			}
+		},
+		messages: {
+			password: {
+				required: "<br>패스워드를 입력 해주세요.",
+				minlength: "<br>패스워드는 최소 5글자 이상이어야 합니다."
+			},
+			confirm_password: {
+				required: "<br>패스워드값과 동일하게 입력 해주세요.",
+				minlength: "<br>패스워드는 최소 5글자 이상이어야 합니다.",
+				equalTo: "<br>패스워드갑과 동일한 값을 넣어주세요."
+			},
+			email: "<br>올바른 이메일 주소를 넣어주세요."
+		}
+	});
+});
+
+</script> 
+    
 <script>
 // script for testimonial' tabs
 $(function() {
-    $("ul.controls").tabs("div.testimonials > div");
+      
+
+   	$(".tab_content").hide();
+   	$(".tab_content:first").show(); 
+
+   	$("ul.tabs li").click(function() {
+   		$("ul.tabs li").removeClass("active");
+   		$(this).addClass("active");
+   		$(".tab_content").hide();
+   		var activeTab = $(this).attr("rel"); 
+   		$("#"+activeTab).fadeIn(); 
+   	});
+    	
 });
 </script>
 
