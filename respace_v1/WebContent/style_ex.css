@@ -10,6 +10,18 @@
     letter-spacing: 1px;
 }
 
+.formit input[type="email"] {
+    padding: 15px 22px;
+    height: 20px;
+    width: 230px;
+    border: 1px solid #bbbbbb;
+    margin: 0px 18px 20px 0px;
+    font-size: 75%;
+    color: #010f5f;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
 .thumb_nail {
 	width:220px;
 	height:220px;

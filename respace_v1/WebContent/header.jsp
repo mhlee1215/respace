@@ -8,17 +8,24 @@
 <link href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css' rel='stylesheet' type='text/css'>
  
 <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-<script src="//code.jquery.com/jquery-1.9.1.js"></script>
-<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.1.38/jquery.form-validator.min.js"></script>
 
-<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+
     
 <link rel="stylesheet" href="reset.css" type="text/css">
 <link rel="stylesheet" href="style.css" type="text/css">
 <link rel="stylesheet" href="style_ex.css" type="text/css">
     
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.js" ></script>
 <!--
+
+<script src="//code.jquery.com/jquery-1.9.1.js"></script>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.1.38/jquery.form-validator.min.js"></script>
+
+<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+
+
 <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.js" />
 <script type="text/javascript" src="//code.jquery.com/ui/1.10.4/jquery-ui.js" />
 
