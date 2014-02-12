@@ -189,6 +189,8 @@ ul.price li.active {
 		$('#tab_picture_content').show();
 		$('#tab_map_content').show();
 		$('#tab_schedule_content').show();
+		$(".how_much").show();
+		
 		
 		$("#id_button_update")
 		  .click(function( event ) {

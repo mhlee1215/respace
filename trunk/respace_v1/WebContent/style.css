@@ -18,7 +18,7 @@ body {
 @import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
 @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 
-.fng{font-family:'������������', NanumGothic, 'Nanum Gothic';}
+.fng{font-family:'������������������������������������', NanumGothic, 'Nanum Gothic';}
 
 .nanum-g { font-family: 'Nanum Gothic'; }
 .nanum-b { font-family: 'Nanum Brush Script'; }
@@ -153,6 +153,35 @@ a.button_register  {
     transition: all 0.2s ease-in-out;
 }
 
+a.button_booking  {
+    background-color: #ff5721;
+    display: block;
+    width: 210px;
+    padding: 13px 10px 0 10px;
+    height: 33px;
+    text-align: center;
+    margin: 15px auto 0 auto;					    
+    z-index: 2;
+    position: center;
+    color: #fff;
+    font-size: 15pt;
+    font-weight: 400;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-shadow: 0px 1px #d72d05;
+    border: 5px solid rgba(0, 0, 0, .2);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    box-shadow: inset 0px 1px #f08715;
+    display: right;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+
 
 a.button_darky {
     background-color: #ff5721;
@@ -198,7 +227,14 @@ a.button_register {
     box-shadow: 0px 0px 0px 1px #dbdbdb;
 }
 
-a:hover.button_dark, a:hover._button_light, a:hover._button_register {
+a.button_booking {
+    border: 5px solid #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    box-shadow: 0px 0px 0px 1px #dbdbdb;
+}
+
+a:hover.button_dark, a:hover._button_light, a:hover._button_register, a:hover._button_booking {
     background-color: #d76203;
     text-shadow: 0px -1px #a70d00;
     border: 5px solid rgba(0, 0, 0, .4);
@@ -664,7 +700,7 @@ text-align:left;
     
     .ac-container{
     width: 241px;
-    margin: 135px auto 5px auto;
+    margin: 205px auto 5px auto;
 	}
     
     .ac-container label{
@@ -763,7 +799,7 @@ text-align:left;
     height: 100px;
 	}
 	.ac-container input:checked ~ article.ac-medium{
-    height: 162px;
+    height: 205px;
 	}
 	.ac-container input:checked ~ article.ac-large{
     height: 230px;
@@ -963,9 +999,10 @@ ul.s-slides li.slideLeft:target {
 	display: block;
     }
     
+   
     .signup {
 	width: 400px;
-	height: 400px;
+	height: 300px;
 	margin: 0 30% 20px 30%;
 	background-color: #fff;
 	position: relative;
@@ -1366,9 +1403,9 @@ form.formit {
     height: 20px;
     width: 230px;
     border: 1px solid #bbbbbb;
-    margin: 0px 18px 20px 0px;
+    margin: 0px 18px 20px 40px;
     font-size: 75%;
-    color: #010f5f;
+    color: #4d4d4d;
     font-weight: 300;
     letter-spacing: 1px;
 }
@@ -1396,7 +1433,7 @@ form.formit .button_submit {
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
     box-shadow: 0px 0px 0px 1px #dbdbdb;
-    
+    margin: 0 0 0 28px;
     font-family: 'Nanum Gothic';
 }
 
@@ -1640,7 +1677,7 @@ a.button_sign {
 		background: #FFFFFF;
 	}
 	.tab_content {
-		padding: 10px;
+		padding: 10px 10px 10px 10px;
 		font-size: 0.9em;
 		display: none;
 		font-weight: light;

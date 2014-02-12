@@ -101,7 +101,7 @@ $(document).ready(function() {
             <h2>SPACE</h2>
             
             <div class="button_main">
-                <a href="download.html" class="button_dark">SHARE!</a>
+                <a href="spaceShare.do" class="button_dark">SHARE!</a>
             </div>
             
             </div>
@@ -161,58 +161,7 @@ $(document).ready(function() {
           
  </div> <!-- .tab_container -->
  
-   <style type="text/css">
-
-	ul.tabs {
-		margin: 0;
-		padding: 0;
-		float: left;
-		list-style: none;
-		height: 32px;
-		border-bottom: 1px solid #999999;
-		border-left: 1px solid #999999;
-		width: 100%;
-	}
-	ul.tabs li {
-		float: left;
-		margin: 0;
-		cursor: pointer;
-		padding: 0px 21px ;
-		height: 31px;
-		line-height: 31px;
-		border: 1px solid #999999;
-		border-left: none;
-		font-weight: bold;
-		font-family: 'Nanum Gothic';
-		background: #EEEEEE;
-		overflow: hidden;
-		position: relative;
-	}
-	ul.tabs li:hover {
-		background: #CCCCCC;
-	}	
-	ul.tabs li.active{
-		background: #FFFFFF;
-		border-bottom: 1px solid #FFFFFF;
-	}
-	.tab_container {
-		border: 1px solid #999999;
-		border-top: none;
-		clear: both;
-		float: left; 
-		width: 100%;
-		background: #FFFFFF;
-	}
-	.tab_content {
-		padding: 20px;
-		font-size: 0.9em;
-		display: none;
-		font-weight: light;
-		font-family: 'Nanum Gothic';
-		font-color: #777;
-	}
- 
-</style>
+  
 
 
   </div>
@@ -276,66 +225,31 @@ $(document).ready(function() {
         </article>
     </div>
  </section>
+ 
+ <div class="button_main">
+                <a href="spaceBooking.do" class="button_booking">예약하기</a>
+            </div> <br>
+ 
 </div>
 
 <div class="story_portfolio">
-"후기들어갈 부분"
-
+ <p><b>장소 이용후기</p></b><br>
+ <div class="review_pic">
+ <img src="img/review_1.png" width="80px" height="80px" ></div>
+ <div class="review_twt">
+ <p><font size=10> 연말에 홈커밍데이 때문에 대여했던 카페 비닷은 최고의 선택이었습니다. 
+ 나중에 연구실에서 있을 모임이나, 동창회 낮모임 등에도 딱일 듯 합니다! <p> 리스페이스 감사합니다~ </p></font>
+ </div> 
+  <div class="cbrb" width="660px"></div> 
+ <div class="review_pic">
+ <img src="img/review_2.png" width="80px" height="80px" ></div>
+ <div class="review_twt">
+ <p> 공연 장소 구하기가 만만치 않았는데, 덕분에 좋은 곳에서 좋은 사람들과 저희 음악을 공유할 수 있었습니다! 앞으로도 다양한 지역에서 이런 기회가 생겼으면 하네요... 리스페이스 계속 들어와볼게요! ㄱㅅㄱㅅ </p></div> 
+ 
 </div>
        
    
-<style type="text/css">
 
-	ul.price {
-		margin: 0;
-		padding: 0;
-		float: left;
-		list-style: none;
-		height: 32px;
-		border-bottom: 1px solid #999999;
-		border-left: 1px solid #999999;
-		width: 100%;
-	}
-	ul.price li {
-		float: left;
-		margin: 0;
-		cursor: pointer;
-		padding: 0px 15px ;
-		height: 31px;
-		line-height: 31px;
-		border: 1px solid #999999;
-		border-left: none;
-		font-weight: bold;
-		font-color: #777;
-		font-family: 'Nanum Gothic';
-		background: #EEEEEE;
-		overflow: hidden;
-		position: relative;
-	}
-	ul.price li:hover {
-		background: #CCCCCC;
-	}	
-	ul.price li.active{
-		background: #FFFFFF;
-		border-bottom: 1px solid #FFFFFF;
-	}
-	.price_container {
-		border: 1px solid #999999;
-		border-top: none;
-		clear: both;
-		float: left; 
-		width: 100%;
-		background: #FFFFFF;
-	}
-	.how_much {
-		padding: 10px;
-		font-size: 0.9em;
-		display: none;
-		font-weight: light;
-		font-family: 'Nanum Gothic';
-	}
- 
-</style>
 <script type="text/javascript">
 
 $(document).ready(function() {

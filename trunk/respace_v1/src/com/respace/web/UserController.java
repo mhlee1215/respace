@@ -62,6 +62,13 @@ public class UserController {
 		return model;
     }
 	
+	@RequestMapping("/spaceBooking.do")
+    public ModelAndView spaceBooking(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView model = new ModelAndView("spaceBooking");
+		model.addObject("active", "space");
+		return model;
+    }
+	
 	@RequestMapping("/spaceShare.do")
     public ModelAndView spaceShare(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView model = new ModelAndView("spaceShare");
