@@ -370,7 +370,7 @@ public class XmlDomCreate {
 			
 			String update_text = "";
 			update_text += "/* update "+name+"*/";
-			update_text += "update" +" rs_"+name.toLowerCase()+" ID = #id#";
+			update_text += "update" +" rs_"+name.toLowerCase()+" SET ID = #id#";
 			
 			for (String p : cvs_parts){
 				p = p.trim();
@@ -401,6 +401,14 @@ public class XmlDomCreate {
 					isnotnull2.setTextContent(","+p.toUpperCase()+" = #"+p.toLowerCase()+"#");
 					update.appendChild(isnotnull2);
 				}
+			}
+			
+			{
+				Element isnotnull = doc.createElement("isNotEqual");
+				update.appendChild(isnotnull);
+				isnotnull.setAttribute("property", "id");
+				isnotnull.setAttribute("compareValue", "0");
+				isnotnull.setTextContent(" WHERE "+"id".toUpperCase()+" = #"+"id"+"#");
 			}
 			
 			
@@ -440,6 +448,13 @@ public class XmlDomCreate {
 				delete.appendChild(isnotnull2);
 			}
 			
+			{
+				isnotnull = doc.createElement("isNotEqual");
+				delete.appendChild(isnotnull);
+				isnotnull.setAttribute("property", "id");
+				isnotnull.setAttribute("compareValue", "0");
+				isnotnull.setTextContent(" WHERE "+"id".toUpperCase()+" = #"+"id"+"#");
+			}
 			
 			
 			/**
