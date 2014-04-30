@@ -90,7 +90,7 @@ $(function() {
             
            <div class="banner1">
                 <p>&nbsp;&nbsp;3월 첫째주, 톡톡튀는 기업들의 팝업스토어! <br>&nbsp;&nbsp;리스페이스의 공간을 즐겁고 신나게 채워주세요!</p>
-                <a href="http://www.facebook.co.kr/remakespace" class="button_dark">자세히 보기</a>
+                <a href="http://www.facebook.com/remakespace" class="button_dark">자세히 보기</a>
             </div>
              <hr class="cleanit">
              <div class="cara"></div>  
@@ -125,7 +125,7 @@ $(function() {
                 <h4>${featuredProject.title}<br>
                 <span>see detail</span>
                 </h4>
-                <a href="projectRegister.do?id=${featuredProject.id}"><img src="${featuredProject.thumbnail_url}" alt="${featuredProject.title}" class="thumb_nail"></a>
+                <a href="projectDetail.do?id=${featuredProject.id}"><img src="${featuredProject.thumbnail_url}" alt="${featuredProject.title}" class="thumb_nail"></a>
             </div>
             
 	 		</c:forEach>

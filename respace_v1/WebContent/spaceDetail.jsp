@@ -166,41 +166,39 @@ $(document).ready(function() {
 
   </div>
    <div class="right_portfolio">
-   <ul class="price"> 
-       			<li class="active" rel="price0">시간</li>
-       			<li rel="price1">일</li>
-       			<li rel="price2">주</li>
-       			<li rel="price3">월</li>
+    
+     <ul class="price"> 
+       			<li class="active" rel="price0">평일</li>
+       			<li rel="price1">주말</li>
+       			<li rel="price2">week</li>
     		   </ul>
     		   
     		   <div class="price_container"> 
 
 	 <div id="price0" class="how_much"> 
-       <h5>Standard Rental Rate</h5>
-       <h3><b><font color="#e66e0d">${space.price_hour} \</b></font></h3><br><span>/Per Hour</span>
+       <h5><b>주간 시간대 (10:00 ~ 17:00)</b></h5>
+       <h3><b><font color="#ff5721">150,000 원</b></font></h3><br><span>/시간</span>
        <br><br>
-
-
+       <h5><b>야간 시간대 (18:00 ~ 02:00)</b></h5>
+       <h3><b><font color="#ff5721">180,000 원</b></font></h3><br><span>/시간</span>
      </div><!-- #price0 -->
 
-     <div id="price1" class="how_much"> 
-       <h5>Standard Rental Rate</h5>
-       <h3><b><font color="#e66e0d">${space.price_day} \</b></font></h3><br><span>/Per Day</span>
+
+	 <div id="price1" class="how_much"> 
+       <h5><b>주간 시간대 (10:00 ~ 17:00)</b></h5>
+       <h3><b><font color="#ff5721">3,000,000 원</b></font></h3><br><span>/시간</span>
        <br><br>
-     
+       <h5><b>야간 시간대 (18:00 ~ 02:00)</b></h5>
+       <h3><b><font color="#ff5721">3,500,000 원</b></font></h3><br><span>/시간</span>
      </div><!-- #price1 -->
-    <div id="price2" class="how_much"> 
-       <h5>Standard Rental Rate</h5>
-       <h3><b><font color="#e66e0d">${space.price_week} \</b></font></h3><br><span>/Per Week</span>
-       
      
+	 <div id="price2" class="how_much"> 
+       <h5><b>주간 시간대 (10:00 ~ 17:00)</b></h5>
+       <h3><b><font color="#ff5721">3,000,000 원</b></font></h3><br><span>/시간</span>
+       <br><br>
+       <h5><b>야간 시간대 (18:00 ~ 02:00)</b></h5>
+       <h3><b><font color="#ff5721">3,500,000 원</b></font></h3><br><span>/시간</span>
      </div><!-- #price2 -->
-     <div id="price3" class="how_much"> 
-       <h5>Standard Rental Rate</h5>
-       <h3><b><font color="#e66e0d">${space.price_month} \</b></font></h3><br><span>/Per Month</span>
-       
-     
-     </div><!-- #price3 -->
  </div> <!-- .tab_container -->
  
  <section class="ac-container">

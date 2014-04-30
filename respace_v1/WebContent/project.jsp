@@ -49,7 +49,7 @@
             <ul id="work_filter">
                 <li><a href="project.do" class="active">전체보기</a></li>
                 <c:forEach items="${projectCodeList}" var="projectCode" varStatus="list_status">
-                	<li><a href="project.do?code_category=${projectCode.code}">${projectCode.name}</a></li>
+                	<li><a href="projectDoor.do?code_category=${projectCode.code}">${projectCode.name}</a></li>
                 </c:forEach>
             </ul>
             
@@ -60,8 +60,7 @@
                 <h4>${project.title}<br>
                 <span>see detail</span>
                 </h4>
-                <!-- <a href="projectDetail.do?id=${project.id}"><img src="${project.thumbnail_url}" alt="item1"></a> -->
-                <a href="projectRegister.do?id=${project.id}"><img src="${project.thumbnail_url}" alt="item1"></a>
+                <a href="projectDetail.do?id=${project.id}"><img src="${project.thumbnail_url}" alt="item1"></a>               
                 
             </div>
            </c:forEach> 
