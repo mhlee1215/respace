@@ -62,9 +62,9 @@ public class UserController {
 		return model;
     }
 	
-	@RequestMapping("/projectRegister.do")
-    public ModelAndView projectRegister(HttpServletRequest request, HttpServletResponse response) {
-		ModelAndView model = new ModelAndView("projectRegister");
+	@RequestMapping("/projectDoor.do")
+    public ModelAndView projectDoor(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView model = new ModelAndView("projectDoor");
 		model.addObject("active", "project");
 		return model;
     }
@@ -75,6 +75,14 @@ public class UserController {
 		model.addObject("active", "space");
 		return model;
     }
+	
+	@RequestMapping("/spaceDoor.do")
+    public ModelAndView spaceDoor(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView model = new ModelAndView("spaceDoor");
+		model.addObject("active", "space");
+		return model;
+    }
+	
 	
 	@RequestMapping("/spaceShare.do")
     public ModelAndView spaceShare(HttpServletRequest request, HttpServletResponse response) {

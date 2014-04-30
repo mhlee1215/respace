@@ -48,12 +48,12 @@
            
             <ul id="work_filter">
                 <li><a href="space.do" class="active">전체보기</a></li>
-                <li><a href="#">종로/인사/삼청</a></li>
-                <li><a href="#">홍대/합정/상수</a></li>
-                <li><a href="#">강남/역삼/선릉</a></li>
-                <li><a href="#">이태원/한남</a></li>
-                <li><a href="#">왕십리/건대</a></li>
-                <li><a href="#">기타</a></li>
+                <li><a href="spaceDoor.do">종로/인사/삼청</a></li>
+                <li><a href="spaceDoor.do">홍대/합정/상수</a></li>
+                <li><a href="spaceDoor.do">강남/역삼/선릉</a></li>
+                <li><a href="spaceDoor.do">이태원/한남</a></li>
+                <li><a href="spaceDoor.do">왕십리/건대</a></li>
+                <li><a href="spaceDoor.do">기타</a></li>
             </ul>
             
             <!-- **** Items **** -->
