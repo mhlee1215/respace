@@ -23,6 +23,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.respace.domain.RS_Asset;
 import com.respace.service.AssetServiceImpl;
+import com.respace.util.MyEncoder;
 
 
 
@@ -86,8 +87,9 @@ public class AssetUploadController extends HttpServlet{
 			 asset.setFilesize(mpf.getSize()/1024+" Kb");
 			 asset.setFiletype(mpf.getContentType());
 			 asset.setType(mpf.getContentType());
-			 asset.setUrl(curWebPath+"/"+mpf.getOriginalFilename());
-			 FileOutputStream file = new FileOutputStream(curPath+"/"+mpf.getOriginalFilename());
+			 asset.setUrl(curWebPath+"/"+MyEncoder.dropHangul(mpf.getOriginalFilename()).replace(" ", ""));
+			 System.out.println("\n\n"+curPath+"\n\n");
+			 FileOutputStream file = new FileOutputStream(curPath+"/"+MyEncoder.dropHangul(mpf.getOriginalFilename()).replace(" ", ""));
 			 DateTime curTime = new DateTime();
 			 
 			 asset.setModified_date(curTime.toString("yyyy-MM-dd HH:mm:ss"));
@@ -123,6 +125,7 @@ public class AssetUploadController extends HttpServlet{
 	
 	public boolean deleteFolder(File targetFolder){		 
 	      File[] childFile = targetFolder.listFiles();
+	      if(childFile == null) return false;
 	      boolean confirm = false;
 	      int size = childFile.length;
 	 

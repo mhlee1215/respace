@@ -410,36 +410,46 @@ public class RS_Event {
 
 	@Override
 	public String toString() {
-		return "RS_Space [id=" + id + ", id_contact=" + id_contact + ", name="
-				+ name + ", url=" + url + ", address_plain=" + address_plain
-				+ ", address_si=" + address_si + ", address_do=" + address_do
-				+ ", address_dong=" + address_dong + ", address_last="
-				+ address_last + ", code_mood=" + code_mood + ", email="
-				+ email + ", phone=" + phone + ", phone2=" + phone2
-				+ ", franchise_ox=" + franchise_ox
-				+ ", frenchise_headquater_phone=" + frenchise_headquater_phone
-				+ ", frenchise_headquater_location="
+		return "{\"id\":\"" + id + "\", \"id_contact\":\"" + id_contact
+				+ "\", \"name\":\"" + name + "\", \"url\":\"" + url
+				+ "\", \"address_plain\":\"" + address_plain
+				+ "\", \"address_si\":\"" + address_si
+				+ "\", \"address_do\":\"" + address_do
+				+ "\", \"address_dong\":\"" + address_dong
+				+ "\", \"address_last\":\"" + address_last
+				+ "\", \"code_mood\":\"" + code_mood + "\", \"email\":\""
+				+ email + "\", \"phone\":\"" + phone + "\", \"phone2\":\""
+				+ phone2 + "\", \"franchise_ox\":\"" + franchise_ox
+				+ "\", \"frenchise_headquater_phone\":\""
+				+ frenchise_headquater_phone
+				+ "\", \"frenchise_headquater_location\":\""
 				+ frenchise_headquater_location
-				+ ", business_registered_number=" + business_registered_number
-				+ ", cond_input_period_start=" + cond_input_period_start
-				+ ", cond_input_period_end=" + cond_input_period_end
-				+ ", cond_input_type=" + cond_input_type + ", code_target="
-				+ code_target + ", code_level=" + code_level + ", code_size="
-				+ code_size + ", open_time=" + open_time + ", close_time="
-				+ close_time + ", etc=" + etc + ", open_date=" + open_date
-				+ ", registered_date=" + registered_date + ", review=" + review
-				+ ", price_hour=" + price_hour + ", price_day=" + price_day
-				+ ", price_week=" + price_week + ", price_month=" + price_month
-				+ ", price_detail_rental=" + price_detail_rental
-				+ ", price_detail_deposit=" + price_detail_deposit
-				+ ", price_detail_commission=" + price_detail_commission
-				+ ", accommodation_min=" + accommodation_min
-				+ ", accommodation_max=" + accommodation_max
-				+ ", address_simple=" + address_simple + ", address_full="
-				+ address_full + ", facilities_list=" + facilities_list
-				+ ", status=" + status + ", query_start=" + query_start
-				+ ", query_number=" + query_number + ", thumbnail_url="
-				+ thumbnail_url + "]";
+				+ "\", \"business_registered_number\":\""
+				+ business_registered_number
+				+ "\", \"cond_input_period_start\":\""
+				+ cond_input_period_start + "\", \"cond_input_period_end\":\""
+				+ cond_input_period_end + "\", \"cond_input_type\":\""
+				+ cond_input_type + "\", \"code_target\":\"" + code_target
+				+ "\", \"code_level\":\"" + code_level + "\", \"code_size\":\""
+				+ code_size + "\", \"open_time\":\"" + open_time
+				+ "\", \"close_time\":\"" + close_time + "\", \"etc\":\"" + etc
+				+ "\", \"open_date\":\"" + open_date
+				+ "\", \"registered_date\":\"" + registered_date
+				+ "\", \"review\":\"" + review + "\", \"price_hour\":\""
+				+ price_hour + "\", \"price_day\":\"" + price_day
+				+ "\", \"price_week\":\"" + price_week
+				+ "\", \"price_month\":\"" + price_month
+				+ "\", \"price_detail_rental\":\"" + price_detail_rental
+				+ "\", \"price_detail_deposit\":\"" + price_detail_deposit
+				+ "\", \"price_detail_commission\":\""
+				+ price_detail_commission + "\", \"accommodation_min\":\""
+				+ accommodation_min + "\", \"accommodation_max\":\""
+				+ accommodation_max + "\", \"address_simple\":\""
+				+ address_simple + "\", \"address_full\":\"" + address_full
+				+ "\", \"facilities_list\":\"" + facilities_list
+				+ "\", \"status\":\"" + status + "\", \"query_start\":\""
+				+ query_start + "\", \"query_number\":\"" + query_number
+				+ "\", \"thumbnail_url\":\"" + thumbnail_url + "\"}";
 	}
 
 }
