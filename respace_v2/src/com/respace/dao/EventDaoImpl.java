@@ -8,8 +8,7 @@ import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
 import org.springframework.stereotype.Repository;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
-import com.respace.domain.RS_Space;
-import com.respace.domain.RS_Space;
+import com.respace.domain.RS_Event;
 
 @Repository
 public class EventDaoImpl extends SqlMapClientDaoSupport {
@@ -20,33 +19,33 @@ public class EventDaoImpl extends SqlMapClientDaoSupport {
 	 } 
 	
 	@SuppressWarnings("unchecked")
-	public List<RS_Space> readSpaceList(RS_Space space) {	
-		List<RS_Space> array = getSqlMapClientTemplate().queryForList("SpaceSql.readSpaceList", space);
+	public List<RS_Event> readEventList(RS_Event event) {	
+		List<RS_Event> array = getSqlMapClientTemplate().queryForList("EventSql.readEventList", event);
 		return array;
 	}
 
-	public RS_Space readSpace(RS_Space Space) {
-		RS_Space result = (RS_Space)getSqlMapClientTemplate().queryForObject("SpaceSql.readSpace", Space);
+	public RS_Event readEvent(RS_Event Event) {
+		RS_Event result = (RS_Event)getSqlMapClientTemplate().queryForObject("EventSql.readEvent", Event);
 		return result;
 	}
 
 
-	public int createSpace(RS_Space Space) {
-		Integer rt_id = (Integer) getSqlMapClientTemplate().insert("SpaceSql.createSpace", Space);
+	public int createEvent(RS_Event Event) {
+		Integer rt_id = (Integer) getSqlMapClientTemplate().insert("EventSql.createEvent", Event);
 		return rt_id;
 	}
 	
 
-	public int deleteSpace(RS_Space Space) {
-		return getSqlMapClientTemplate().delete("SpaceSql.deleteSpace", Space);		
+	public int deleteEvent(RS_Event Event) {
+		return getSqlMapClientTemplate().delete("EventSql.deleteEvent", Event);		
 	}
 
-	public int updateSpace(RS_Space Space) {
-		return getSqlMapClientTemplate().update("SpaceSql.updateSpace", Space);
+	public int updateEvent(RS_Event Event) {
+		return getSqlMapClientTemplate().update("EventSql.updateEvent", Event);
 	}
 	
-	public int countSpace(RS_Space space) {
-		Integer count = (Integer) getSqlMapClientTemplate().queryForObject("SpaceSql.countSpace", space);
+	public int countEvent(RS_Event event) {
+		Integer count = (Integer) getSqlMapClientTemplate().queryForObject("EventSql.countEvent", event);
 		return count;
 	}
 
