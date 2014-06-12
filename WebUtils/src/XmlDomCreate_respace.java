@@ -24,7 +24,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.ls.DOMImplementationLS;
 
-public class XmlDomCreate {
+public class XmlDomCreate_respace {
 	public static String number_property_strings[] = {"id", "seq_no", "id_contact", "home_team_id", "away_team_id"};
 	public static ArrayList<String> number_property_list= new ArrayList<String>();
 	
@@ -77,63 +77,69 @@ public class XmlDomCreate {
 		
 		QueryParams params = null;
 
+		params = new QueryParams();
+		params.name = "Code";
+		params.className = "com.respace.domain.RS_Code";
+		params.columns = "`code`, `name`, `category`, `seq_no`";
+		params.orderStr = "seq_no";
 		
-		int p_type = 3
-				;
+		params = new QueryParams();
+		params.name = "Project";
+		params.className = "com.respace.domain.RS_Project";
+		params.columns = "`id_contact`, `title`, `host_name`, `description`, `code_category`";
+		params.orderStr = "";
+		
+		//params = new QueryParams();
+		//params.name = "Article";
+		//params.className = "com.respace.domain.RS_Article";
+		//params.columns = "`title`, `author`, `email`, `website`, `content`, `category`, `isvalid`, `modifieddate`, `registereddate`";
+		
+		//params = new QueryParams();
+//		params.name = "Asset";
+//		params.className = "com.respace.domain.RS_Asset";
+//		params.columns = "`reference_id`, `reference_category`, `name`, `url`, `type`, `seq_no`, `registered_date`, `filename`, `filetype`, `filesize`, `modified_date`, `filepath`, `code_status`, `etc`";
+//		params.orderStr = "seq_no";
+//		
+		
+		int p_type = 1;
 		if (p_type == 1){
-			params = new QueryParams();
-			params.name = "UserGroup";
-			params.className = "com.JSCorp.wp.domain.FPUserGroup";
-			params.columns = " `name`";
-			params.extra_columns = "";
-			params.orderStr = "";
-		}else if(p_type==2){
-			params = new QueryParams();
-			params.name = "User";
-			params.className = "com.JSCorp.wp.domain.FPUser";
-			params.columns = " `device_id`, `group_id`, `nickname`, `tag`, `score_dynamic`, `score_static`, `twitter`, `facebook`, `is_twitter_visible`, `is_facebook_visible`, `is_nickname_initialized`";
-			params.extra_columns = "";
-			params.orderStr = "";
-			
-			String number_property_strings[] = {"id", "group_id", "score_dynamic", "score_static"};
-			number_property_list = new ArrayList<String>();
-			for(int i = 0 ; i < number_property_strings.length ; i++)
-				number_property_list.add(number_property_strings[i]);
-		}else if(p_type==3){
-			params = new QueryParams();
-			params.name = "GameProphet";
-			params.className = "com.JSCorp.wp.domain.FPGameProphet";
-			params.columns = " `user_id`, `match_id`, `prophet_type`, `home_team_win`, `away_team_win`, `draw`, `prophet_result`";
-			params.extra_columns = "";
-			params.orderStr = "";
-			
-			String number_property_strings[] = {"id", "user_id", "match_id"};
-			number_property_list = new ArrayList<String>();
-			for(int i = 0 ; i < number_property_strings.length ; i++)
-				number_property_list.add(number_property_strings[i]);
-			
-		}else if(p_type==4){
-			params = new QueryParams();
-			params.name = "UserGroup";
-			params.className = "com.respace.domain.FPUserGroup";
-			params.columns = " `name`";
-			params.extra_columns = "";
-			params.orderStr = "";
-		}else if(p_type==5){
-			params = new QueryParams();
-			params.name = "UserGroup";
-			params.className = "com.respace.domain.FPUserGroup";
-			params.columns = " `name`";
-			params.extra_columns = "";
-			params.orderStr = "";
-		}else if(p_type==6){
-			params = new QueryParams();
-			params.name = "GameMatchSchedule";
-			params.className = "com.respace.domain.FPGameMatchSchedule";
-			params.columns = " `type`, `home_team_id`, `away_team_id`, `city`, `time`, `reference_time`";
-			params.extra_columns = "";
-			params.orderStr = "";
+		params = new QueryParams();
+		params.name = "UserGroup";
+		params.className = "com.respace.domain.FPUserGroup";
+		params.columns = " `name`";
+		params.extra_columns = "";
+		params.orderStr = "";
 		}
+		params = new QueryParams();
+		params.name = "UserGroup";
+		params.className = "com.respace.domain.FPUserGroup";
+		params.columns = " `name`";
+		params.extra_columns = "";
+		params.orderStr = "";
+		params = new QueryParams();
+		params.name = "UserGroup";
+		params.className = "com.respace.domain.FPUserGroup";
+		params.columns = " `name`";
+		params.extra_columns = "";
+		params.orderStr = "";
+		params = new QueryParams();
+		params.name = "UserGroup";
+		params.className = "com.respace.domain.FPUserGroup";
+		params.columns = " `name`";
+		params.extra_columns = "";
+		params.orderStr = "";
+		params = new QueryParams();
+		params.name = "UserGroup";
+		params.className = "com.respace.domain.FPUserGroup";
+		params.columns = " `name`";
+		params.extra_columns = "";
+		params.orderStr = "";
+		params = new QueryParams();
+		params.name = "GameMatchSchedule";
+		params.className = "com.respace.domain.FPGameMatchSchedule";
+		params.columns = " `type`, `home_team_id`, `away_team_id`, `city`, `time`, `reference_time`";
+		params.extra_columns = "";
+		params.orderStr = "";
 		
 		//params = new QueryParams();
 		//params.name = "User";
@@ -228,7 +234,6 @@ public class XmlDomCreate {
 				
 				String[] ex_cvs_parts = ex_columns.split(",");
 				for (String p : ex_cvs_parts){
-					if(p.isEmpty()) continue;
 					Element result = doc.createElement("result");
 					resultMap.appendChild(result);
 					Attr p_id = doc.createAttribute("property");
@@ -480,7 +485,6 @@ public class XmlDomCreate {
 			{
 				isnotnull = doc.createElement("isNotEqual");
 				delete.appendChild(isnotnull);
-
 				isnotnull.setAttribute("property", "id");
 				isnotnull.setAttribute("compareValue", "0");
 				isnotnull.setTextContent(" WHERE "+"id".toUpperCase()+" = #"+"id"+"#");

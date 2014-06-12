@@ -39,7 +39,7 @@ public class PrepareDemo {
        // System.out.println("Reading SQL from stdin (quit; or exit; to quit)");
        // p = new ZqlParser(System.in);
       //} else {
-        p = new ZqlParser(new DataInputStream(new FileInputStream("E:/ext_work/respace/workspace/Utils/src/PreparedDemo.txt")));
+        p = new ZqlParser(new DataInputStream(new FileInputStream("/Users/mhlee1215/Desktop/workspace_respace/WebUtils/src/PreparedDemo.txt")));
      // }
 
       // Read all SQL statements from input
