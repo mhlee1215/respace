@@ -7,31 +7,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.ServletRequestUtils;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.view.RedirectView;
-
-import com.respace.domain.RS_Asset;
-import com.respace.domain.RS_Code;
-import com.respace.domain.RS_Event;
-import com.respace.service.ArticleServiceImpl;
-import com.respace.service.AssetServiceImpl;
-import com.respace.service.CodeServiceImpl;
-import com.respace.service.ProjectServiceImpl;
-import com.respace.service.EventServiceImpl;
-import com.respace.service.UserService;
-import com.respace.util.MyJsonUtil;
 
 @Controller
 public class GameController {
@@ -43,6 +26,53 @@ private Logger logger = Logger.getLogger(getClass());
 	private static List<GameController> consumerList = new ArrayList<GameController>();
 	private static int consumerNum = 0;	
 	
+	@RequestMapping(value="/game.login.do")
+    public ModelAndView login(HttpServletRequest request, HttpServletResponse response) {
+		System.out.println("Hi! I am here");
+//		Facebook facebook = new FacebookFactory().getInstance();
+//		// facebook 인스턴스를 생성합니다.
+//		facebook.setOAuthAppId("525363714258644", "f788777467578d981da9db3331fe4832");
+//		facebook.setOAuthPermissions("email, publish_actions, publish_stream, user_likes, friends_likes, read_stream");
+//		// 권한 요청
+//		request.getSession().setAttribute("facebook", facebook);
+//		System.out.println("facebook: "+facebook);
+		// 세션에 현재 facebook 인스턴스를 등록ㅋ 
+//		StringBuffer callbackURL = request.getRequestURL();
+//		int index = callbackURL.lastIndexOf("/");
+//		callbackURL.replace(index, callbackURL.length(), "")
+//				.append("/callback");
+//		// 콜백주소를 만들었어요. http://적절한주소/callback입니다
+//		try {
+//			response.sendRedirect(facebook.getOAuthAuthorizationURL(callbackURL
+//					.toString()));
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		
+		ModelAndView model = new ModelAndView("redirect:game.main.do");
+		
+		 
+		return model;
+	}
+	
+	@RequestMapping(value="/game.main.do")
+    public ModelAndView gameMain(HttpServletRequest request, HttpServletResponse response) {
+		
+		ModelAndView model = new ModelAndView("game_mobile");
+		
+		
+		return model;
+	}
+	
+	@RequestMapping(value="/game.index.do")
+    public ModelAndView gameIndex(HttpServletRequest request, HttpServletResponse response) {
+		
+		ModelAndView model = new ModelAndView("game_mobile_login");
+		
+		
+		return model;
+	}
 	
 	@RequestMapping(value="/game.queueGameInfo.do")
     public View queueGameInfo(HttpServletRequest request, HttpServletResponse response) {
