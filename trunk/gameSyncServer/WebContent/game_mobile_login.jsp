@@ -10,34 +10,30 @@
 <script
 	src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js"></script>
 </head>
+
+<script type="text/javascript">
+
+function go(url){
+	window.location.href=url;
+}
+
+</script>
+
 <body>
 	<!-- 720 x 1280 -->
 	<table border="0" width="640" height="960"
 		style="background-color: #232222" cellpadding="50">
 		<tr height="10%">
-			<td><img src="images/mobile_title.png" width="100%" alt=""></td>
+			<td width="100%"align="center"><img src="images/web_title.png" width="60%" alt=""></td>
 		</tr>
 		<tr>
 			<td align="center">
 				<table>
 					<tr>
-						<td colspan="3" rowspan="2" width="35%" height="188"></td>
-						<td colspan="3" width="30%" align="center"><img src="images/rock_off.png"  alt=""></td>
-						<td colspan="3" rowspan="2" width="35%" height="188"></td>
+						<td><a href="#" onclick="go('game.login.do')"><img src="images/mobile_login.gif"  alt=""></a></td>
 					</tr>
 					<tr>
-						<td colspan="3" width="161"
-							height="27"></td>
-					</tr>
-					</table>
-					<table>
-					<tr>
-						
-						<td colspan="3" width="45%" align="right" ><img src="images/rock_off.png" alt=""></td>
-						<td rowspan="2" width="10%"
-							></td>
-						<td colspan="3" width="45%" align="left"><img src="images/rock_off.png" alt=""></td>
-						
+						<td><img src="images/mobile_howto.gif"  alt=""></td>
 					</tr>
 				</table>
 			</td>
