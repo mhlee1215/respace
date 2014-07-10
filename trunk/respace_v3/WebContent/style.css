@@ -1,0 +1,45 @@
+@CHARSET "UTF-8";
+
+.header{
+	width:960px;
+}
+
+.bodyView{
+	width:960px;
+}
+
+.title{
+	width:211px;
+}
+
+.login_menu{
+	text-decoration: none;
+}
+
+.login_menu_span{
+	text-align:right;
+}
+
+.main_menu{
+	font-size: 21px;
+	text-decoration: none;
+}
+
+.main_menu:hover{
+	font-weight: bold;
+}
+
+.menu_span{
+	width:100px;
+	text-align: center;
+}
+
+.main_titlecontent{
+	font-weight: bold;
+	text-align:center;
+}
+
+.main_detailcontent{
+	text-align:center;
+}	
+}
