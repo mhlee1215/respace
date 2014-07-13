@@ -10,6 +10,9 @@
 
 .title{
 	width:211px;
+	height: 100px;
+	background: url(images/respace_logo.jpg) no-repeat center center; 
+	background-size: 211px 100px;
 }
 
 .login_menu{
