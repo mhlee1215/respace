@@ -2,16 +2,49 @@
 
 .header{
 	width:960px;
+
+	
 }
+
 
 #header_div {
     width: 100%;
     height: 125px;
+    align: center;
+    margin-top: 0;
+    background: #e5e1e0;
 }
 
-#header_div {
-    width: 100%;
-    height: 125px;
+.rspc_status {
+	width: 70px;
+	height: 30px;
+	float: right;
+	margin: 0 45px 0 0;
+	background: #e5e1e0;
+	
+}
+
+.rspc_status a {
+	font-color: #444444;
+	font-size: 10pt;
+	margin: 7 0 0 0;
+	text-align: center;
+	font-family: 'Cabin';
+}
+
+#main_menu {
+	float: right;
+	width: 100%;
+	height: 65px;
+	background: #dc504f;
+	
+}
+
+#main_menu h1 {
+    font-size: 17pt;
+    letter-spacing: 1px;
+    float: left;
+    padding-top: 20px;
 }
 
 .bodyView{
