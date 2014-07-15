@@ -14,7 +14,7 @@ a {
     width: 960px;
     height: 30px;
     align: center;
-    margin: 0 auto 0 auto;
+    margin: 0 auto;
    
 }
 
@@ -46,7 +46,7 @@ a {
 	position: relative;
 	top: 0px;
 	background: #ff6666;
-	margin: 0 auto 0 auto;
+	margin: 0 auto;
 	
 }
 
@@ -58,11 +58,11 @@ a {
 .main_menu {
 	float: right;
 	font-family: 'nanumbarungothic','Cabin';
-	font-size: 17pt 
+	font-size: 17pt; 
+	font-color: #e5e1e0;
 	width: 90px;
 	height: 65px;
-	margin: 0 30px 0 0;
-	background: #ff6666;
+	margin: 20px 30px 0 0;
 	
 }
 
