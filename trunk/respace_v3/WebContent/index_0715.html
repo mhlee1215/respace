@@ -9,6 +9,10 @@
 <link href="style2.css" rel="stylesheet" type="text/css">
 <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/slippry.min.js"></script>
+<link rel="stylesheet" href="css/slippry.css" />
+
 
 <!-- sub menu script -->
 <script>
@@ -24,6 +28,10 @@ sfHover = function() {
    }
 }
 if (window.attachEvent) window.attachEvent("onload", sfHover);
+
+	jQuery(document).ready(function(){
+	  jQuery('#main_table_slider').slippry()
+	});
 </script>
 
 
@@ -80,6 +88,20 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
 		<hr class="neckslice_1">
 		
 		<div class="Main_table">
+		
+		<ul id="main_table_slider">
+		  <li>
+		    <a href="#slide1"><img src="images/DEPT_text.jpg" alt="Welcome to Slippry!"></a>
+		  </li>
+		  <li>
+		    <a href="#slide2"><img src="images/DEPT_text.jpg"  alt="This is an awesome jQuery slider plugin."></a>
+		  </li>
+		  <li>
+		    <a href="#slide3"><img src="images/DEPT_text.jpg" alt="Check it out, you are going to <span class='red'>♥</span> it :)"></a>
+		  </li>
+		</ul>
+		
+		
 		<img src="images/icon_house.png" width="100%">
 		<h1>SHARE</h1><hr class="neckslice_2"><h2>공유하기</h2>
 		<p>당신의 공간이 더 많은 사람들과 만나길 원하시나요? 지금 바로 RESPACE에 당신의 공간을 등록해 보세요.</p>
