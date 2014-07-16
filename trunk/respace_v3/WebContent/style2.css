@@ -10,26 +10,23 @@ a {
 	
 }
 
-a.main_menu {
-	color: #4;
-	text-decoration: none;
-	
-}
 
 #header_div {
-    width: 960px;
-    height: 30px;
+    width: 1200px;
+    height: 20px;
     align: center;
     margin: 0 auto;
+    padding: 8px;
+   
    
 }
 
 .rspc_status {
-	width: 960px;
+	width: 1200px;
 	height: 30px;
 	float: right;
-	margin: 0 0 0 0;
-	background: #e5e1e0;
+	margin: 0 auto;
+	background: #fff;
 	text-align: right;
 	text-decoration: none;
 	font-color: #444444;
@@ -51,12 +48,21 @@ a.main_menu {
    position: relative;
    font-size: 17pt;
    font-color: #444444;
-   width: 1020px;
+   width: 1200px;
    height: 65px;
-   margin: 0 auto; 
-   background-color: #ff6666;
+   margin: -70px auto; 
+   background-color: transparent;
    position: relative; 
+   text-shadow: 1px 1px 1px 1px rgba(51,51,51,.8);
    }
+
+#wrap img {
+	position: absolute;
+	margin: 0 0 0 0;
+	top: 0;
+	
+	
+}
 
 #navbar {
    position: absolute;
@@ -102,7 +108,7 @@ a.main_menu {
    margin: 0 0 3px 0; 
    }
    
-#navbar li:hover li a, #navbar li.hover li a {
+#navbar li:hover li a, #navbar li.hover li a, #navbar li:active ul {
    color: #444;
    weight: 200; 
    }
@@ -111,9 +117,48 @@ a.main_menu {
    color: #ff6666; 
    }
    
+hr.block_1 {
+	width: 960px;
+	height: 45px;
+    visibility: visible;
+    background-color: #e5e1e0;
+    clear: both;
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+}
 
+/*---*/
 
+.ribbon {
+ font-size: 17pt !important;
+ /* This ribbon is based on a 16px font side and a 24px vertical rhythm. 
+ I've used em's to position each element for scalability. 
+ If you want to use a different font size 
+ you may have to play with the position of the ribbon elements */
 
+ width: 1200px;
+ position: relative;
+ background: #ff6666;
+ color: #efeee8;
+ text-align: left;
+ padding: 1.65em 2em; /* Adjust to suit */
+ margin: 0 auto; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+}
 
-
-
+.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+ content: "";
+ position: absolute;
+ display: block;
+ border-style: solid;
+ border-color: #993333 transparent transparent transparent;
+ bottom: -1.97em;
+}
+.ribbon .ribbon-content:before {
+ left: 0;
+ border-width: 2em 0 0 2em;
+}
+.ribbon .ribbon-content:after {
+ right: 0;
+ border-width: 2em 2em 0 0;
+}
