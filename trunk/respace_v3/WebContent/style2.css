@@ -11,60 +11,12 @@ a {
 	
 }
 
+@font-face { font-family: 'NanumBarunGothic';
+src: url('/font/NanumBarunGothic.eot');
+src: url('/font/NanumBarunGothic.eot') format('embedded-opentype'),
+url('/font/NanumBarunGothic.woff') format('woff');}
 
-div {
-    font-family: nanumbarungothic;
-    font-family: Cabin;
-}
-
-
-@font-face {
-  font-family: 'Cabin';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Cabin Regular'), local('Cabin-Regular'), url(http://themes.googleusercontent.com/static/fonts/cabin/v5/JEgmtEDzc-IH8jBshQXrYA.woff) format('woff');
-}
-@font-face {
-  font-family: 'Cabin';
-  font-style: normal;
-  font-weight: 500;
-  src: local('Cabin Medium'), local('Cabin-Medium'), url(http://themes.googleusercontent.com/static/fonts/cabin/v5/km2iCywk7CnC11BE8pBNVPesZW2xOQ-xsNqO47m55DA.woff) format('woff');
-}
-@font-face {
-  font-family: 'Cabin';
-  font-style: normal;
-  font-weight: 600;
-  src: local('Cabin SemiBold'), local('Cabin-SemiBold'), url(http://themes.googleusercontent.com/static/fonts/cabin/v5/bSicyj3YibVhVPhGZyWVI_esZW2xOQ-xsNqO47m55DA.woff) format('woff');
-}
-@font-face {
-  font-family: 'Cabin';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Cabin Bold'), local('Cabin-Bold'), url(http://themes.googleusercontent.com/static/fonts/cabin/v5/haOjnueK8Or1ztuuRtr8dvesZW2xOQ-xsNqO47m55DA.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'nanumbarungothic';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Nanum Barun Gothic Regular'), local('Nanum Barun Gothic-Regular'), local('NanumBarunGothic Regular');
-  src: url(./NanumBarunGothic.eot);
-  src: url(./NanumBarunGothic.eot?#iefix) format('embedded-opentype'),
-       url(./NanumBarunGothic.woff) format('woff'),
-       url(./NanumBarunGothic.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'nanumbarungothic';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Nanum Barun Gothic Bold'), local('Nanum Barun Gothic-Bold'), local('NanumBarunGothic Bold');
-  src: url(./NanumBarunGothicBold.eot);
-  src: url(./NanumBarunGothicBold.eot?#iefix) format('embedded-opentype'),
-       url(./NanumBarunGothicBold.woff) format('woff'),
-       url(./NanumBarunGothicBold.ttf) format('truetype');
-}
-
-
+p {font-family:'나눔바른고딕', NanumBarunGothic;}
 
 /* ----- HEAD  ----- */
 
