@@ -2,312 +2,354 @@
 <html lang="kr">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
 
-    <title>이상락의 연습작품</title>
+<title>이상락의 연습작품</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+<!-- Bootstrap core CSS -->
+<link href="css/mybootstrap.css" rel="stylesheet">
 
-    <!-- Add custom CSS here -->
-    <link href="css/exercise_main.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<!-- Add custom CSS here -->
+<link href="css/exercise_main.css" rel="stylesheet">
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+
 </head>
 
 <body>
-	
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
-                <a class="navbar-brand" href="exercise_index.html">RESPACE</a>
-            </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                   <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="portfolio-1-col.html">About us</a>
-                            </li>
-                            <li><a href="portfolio-2-col.html">History</a>
-                            </li>
-                            <li><a href="portfolio-3-col.html">Contact</a>
-                            </li>      
-                        </ul>        
-                    <li><a href="services.html">FIND SPACE</a>
-                    </li>
-                    <li><a href="contact.php">LIST SPACE</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">PROJECTS <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="blog-home-1.html">Magazine</a>
-                            </li>
-                            <li><a href="blog-home-2.html">Calendar</a>
-                            </li>
-                        </ul>
-                    </li>
-                  </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+	<nav class="navbar navbar-inverse navbar-fixed-top"
+		style="height: 80px" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+				<a class="navbar-brand" href="exercise_index.html">RESPACE</a>
+			</div>
 
-    <div id="myCarousel" class="carousel slide">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown">어바웃<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="portfolio-1-col.html">About us</a></li>
+							<li><a href="portfolio-2-col.html">History</a></li>
+							<li><a href="portfolio-3-col.html">Contact</a></li>
+						</ul>
+					<li><a href="services.html">공간찾기</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown">참여하기 <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="blog-home-1.html">Magazine</a></li>
+							<li><a href="blog-home-2.html">Calendar</a></li>
+						</ul></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container -->
+	</nav>
 
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <div class="fill" style="background-image:url('images/main_slide0.JPG');"></div>
-                <div class="carousel-caption">
-                    <h2>RESPACE 5th PROJECT</h2>
-                    <h3>Chungchun Market @Jonggak, Seoul</h3>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('images/main_slide1.jpg');"></div>
-                <div class="carousel-caption">
-                    <h2>RESPACE 2nd PROJECT</h2>
-                    <h3>Department Freemarket @Shinchon, Seoul</h3>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('images/main_slide2.jpg');"></div>
-                <div class="carousel-caption">
-                    <h2>RESPACE 4th PROJECT</h2>
-                    <h3>Monster Market @Hongdae, Seoul</h3>
-                </div>
-            </div>
-        </div>
+	<div id="myCarousel" class="carousel slide">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+		</ol>
 
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
-    </div>
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner">
+			<div class="item active">
+				<div class="fill"
+					style="background-image: url('images/main_slide0.JPG');"></div>
+				<div class="carousel-caption">
+					<h2>RESPACE 5th PROJECT</h2>
+					<h3>Chungchun Market @Jonggak, Seoul</h3>
+				</div>
+			</div>
+			<div class="item">
+				<div class="fill"
+					style="background-image: url('images/main_slide1.jpg');"></div>
+				<div class="carousel-caption">
+					<h2>RESPACE 2nd PROJECT</h2>
+					<h3>Department Freemarket @Shinchon, Seoul</h3>
+				</div>
+			</div>
+			<div class="item">
+				<div class="fill"
+					style="background-image: url('images/main_slide2.jpg');"></div>
+				<div class="carousel-caption">
+					<h2>RESPACE 4th PROJECT</h2>
+					<h3>Monster Market @Hongdae, Seoul</h3>
+				</div>
+			</div>
+		</div>
 
-    <div class="section">
+		<!-- Controls -->
+		<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+			<span class="icon-prev"></span>
+		</a> <a class="right carousel-control" href="#myCarousel"
+			data-slide="next"> <span class="icon-next"></span>
+		</a>
+	</div>
 
-        <div class="container">
+	<div class="section">
 
-            <div class="row">
-                <div class="col-lg-4 col-md-4">
-                    <h2><i class="fa fa-home"></i>&nbsp;LIST SPACE</h2>
-                    <p>Do you want that your space becomes more famous? List your space on RESPACE right now. List your space on RESPACE right now. List your space on RESPACE right now. List your space on RESPACE right now.</p>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <h2><i class="fa fa-search"></i>&nbsp;FIND SPACE</h2>
-                    <p>Right here in RESPACE, so many spaces are waiting for you. Find and get the space which you want!</p>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <h2><i class="fa fa-calendar-o"></i>&nbsp;PROJECTS</h2>
-                    <p>You can see lots of RESPACE's cultural events in here. R U ready to hang out dude?</p>
-                </div>
-            </div>
-            <!-- /.row -->
+		<div class="container">
 
-        </div>
-        <!-- /.container -->
+			<div class="row">
+				<div class="col-lg-4 main_3containers">
+					<img src="images/icon_house.png" style="width: 33.333333%">
+					<h2>SHARE</h2>
+					<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis
+						euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.
+						Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+						Praesent commodo cursus magna.</p>
+					<p>
+						<a class="btn btn-default" href="#" role="button">View details
+							&raquo;</a>
+					</p>
+				</div>
+				<!-- /.col-lg-4 -->
+				<div class="col-lg-4">
+					<img class="img-circle" data-src="holder.js/140x140"
+						alt="Generic placeholder image">
+					<h2>Heading</h2>
+					<p>Duis mollis, est non commodo luctus, nisi erat porttitor
+						ligula, eget lacinia odio sem nec elit. Cras mattis consectetur
+						purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo,
+						tortor mauris condimentum nibh.</p>
+					<p>
+						<a class="btn btn-default" href="#" role="button">View details
+							&raquo;</a>
+					</p>
+				</div>
+				<!-- /.col-lg-4 -->
+				<div class="col-lg-4">
+					<img class="img-circle" data-src="holder.js/140x140"
+						alt="Generic placeholder image">
+					<h2>Heading</h2>
+					<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis
+						in, egestas eget quam. Vestibulum id ligula porta felis euismod
+						semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+						condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+					<p>
+						<a class="btn btn-default" href="#" role="button">View details
+							&raquo;</a>
+					</p>
+				</div>
+				<!-- /.col-lg-4 -->
+			</div>
+			<!-- /.row -->
 
-    </div>
-    
-    <!-- /.section-colored -->
+		</div>
+		<!-- /.container -->
 
-    <div class="section-colored">
+	</div>
 
-        <div class="container">
+	<!-- /.section-colored -->
 
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>OUR PORTFOLIO</h2>
-                    <ol>
-                    	<li>RESPCE is always planning a variety of cultural contents through a short-term rental.</li>
-                    </ol>
-                    
-                    <hr>	
-                </div>
-                
-             	<div class="project_container">
-             		<div class="project_container_imgbox project_containerbox_img">
-             		</div>
-         			<div class="project_container_info">
-         				<div class="project_container_info_left">
-         					<h3>Busking Festival</h3>
-         					<h4>Music</h4>
-         				</div>
-         			</div>
-         			<div class="project_container_detail">
-         				<p>Busking Festival will give you the most unique experience you haven't ever had. We give a chance to muscians to perform in Gangnam.</p>
-         			</div>
-         		</div>
-         
-          		<div class="project_container">
-             		<div class="project_container_imgbox project_containerbox_img">
-             		</div>
-         			<div class="project_container_info">
-         				<div class="project_container_info_left">
-         					<h3>Busking Festival</h3>
-         					<h4>Music</h4>
-         				</div>
-         			</div>
-         			<div class="project_container_detail">
-         				<p>Busking Festival will give you the most unique experience you haven't ever had. We give a chance to muscians to perform in Gangnam.</p>
-         			</div>
-         		</div>
-         		
-         		<div class="project_container">
-             		<div class="project_container_imgbox project_containerbox_img">
-             		</div>
-         			<div class="project_container_info">
-         				<div class="project_container_info_left">
-         					<h3>Busking Festival</h3>
-         					<h4>Music</h4>
-         				</div>
-         			</div>
-         			<div class="project_container_detail">
-         				<p>Busking Festival will give you the most unique experience you haven't ever had. We give a chance to muscians to perform in Gangnam.</p>
-         			</div>
-         		</div>
-         		
-         		<div class="project_container">
-             		<div class="project_container_imgbox project_containerbox_img">
-             		</div>
-         			<div class="project_container_info">
-         				<div class="project_container_info_left">
-         					<h3>Busking Festival</h3>
-         					<h4>Music</h4>
-         				</div>
-         			</div>
-         			<div class="project_container_detail">
-         				<p>Busking Festival will give you the most unique experience you haven't ever had. We give a chance to muscians to perform in Gangnam.</p>
-         			</div>
-         		</div>
-         		
-         		<div class="project_container">
-             		<div class="project_container_imgbox project_containerbox_img">
-             		</div>
-         			<div class="project_container_info">
-         				<div class="project_container_info_left">
-         					<h3>Busking Festival</h3>
-         					<h4>Music</h4>
-         				</div>
-         			</div>
-         			<div class="project_container_detail">
-         				<p>Busking Festival will give you the most unique experience you haven't ever had. We give a chance to muscians to perform in Gangnam.</p>
-         			</div>
-         		</div>
-         		
-         		<div class="project_container">
-             		<div class="project_container_imgbox project_containerbox_img">
-             		</div>
-         			<div class="project_container_info">
-         				<div class="project_container_info_left">
-         					<h3>Busking Festival</h3>
-         					<h4>Music</h4>
-         				</div>
-         			</div>
-         			<div class="project_container_detail">
-         				<p>Busking Festival will give you the most unique experience you haven't ever had. We give a chance to muscians to perform in Gangnam.</p>
-         			</div>
-         		</div>
-         	
-             </div>
-            <!-- /.row -->
+	<div class="section-colored">
 
-        </div>
-        <!-- /.container -->
+		<div class="container">
 
-    </div>
-    
-    <!-- /.section-colored -->
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h2>OUR PORTFOLIO</h2>
+					<ol>
+						<li>RESPCE is always planning a variety of cultural contents
+							through a short-term rental.</li>
+					</ol>
 
-    <div class="section">
+					<hr>
+				</div>
 
-        <div class="container">
+				<div class="project_container" style="margin-left: 22.5px">
+					<div class="project_container_imgbox project_containerbox_img">
+					</div>
+					<div class="project_container_info">
+						<div class="project_container_info_left">
+							<h3>Busking Festival</h3>
+							<h4>Music</h4>
+						</div>
+					</div>
+					<div class="project_container_detail">
+						<p>Busking Festival will give you the most unique experience
+							you haven't ever had. We give a chance to muscians to perform in
+							Gangnam.</p>
+					</div>
+				</div>
 
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <img class="img-responsive" src="http://placehold.it/700x450">
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <h2>Modern Business Features Include:</h2>
-                    <ul>
-                        <li>Bootstrap 3 Framework</li>
-                        <li>Mobile Responsive Design</li>
-                        <li>Predefined File Paths</li>
-                        <li>Working PHP Contact Page</li>
-                        <li>Minimal Custom CSS Styles</li>
-                        <li>Unstyled: Add Your Own Style and Content!</li>
-                        <li>Font-Awesome fonts come pre-installed!</li>
-                        <li>100% <strong>Free</strong> to Use</li>
-                        <li>Open Source: Use for any project, private or commercial!</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- /.row -->
+				<div class="project_container">
+					<div class="project_container_imgbox project_containerbox_img">
+					</div>
+					<div class="project_container_info">
+						<div class="project_container_info_left">
+							<h3>Busking Festival</h3>
+							<h4>Music</h4>
+						</div>
+					</div>
+					<div class="project_container_detail">
+						<p>Busking Festival will give you the most unique experience
+							you haven't ever had. We give a chance to muscians to perform in
+							Gangnam.</p>
+					</div>
+				</div>
 
-        </div>
-        <!-- /.container -->
+				<div class="project_container">
+					<div class="project_container_imgbox project_containerbox_img">
+					</div>
+					<div class="project_container_info">
+						<div class="project_container_info_left">
+							<h3>Busking Festival</h3>
+							<h4>Music</h4>
+						</div>
+					</div>
+					<div class="project_container_detail">
+						<p>Busking Festival will give you the most unique experience
+							you haven't ever had. We give a chance to muscians to perform in
+							Gangnam.</p>
+					</div>
+				</div>
 
-    </div>
-    <!-- /.section -->
+				<div class="project_container" style="margin-left: 22.5px">
+					<div class="project_container_imgbox project_containerbox_img">
+					</div>
+					<div class="project_container_info">
+						<div class="project_container_info_left">
+							<h3>Busking Festival</h3>
+							<h4>Music</h4>
+						</div>
+					</div>
+					<div class="project_container_detail">
+						<p>Busking Festival will give you the most unique experience
+							you haven't ever had. We give a chance to muscians to perform in
+							Gangnam.</p>
+					</div>
+				</div>
 
-    <div class="container">
+				<div class="project_container">
+					<div class="project_container_imgbox project_containerbox_img">
+					</div>
+					<div class="project_container_info">
+						<div class="project_container_info_left">
+							<h3>Busking Festival</h3>
+							<h4>Music</h4>
+						</div>
+					</div>
+					<div class="project_container_detail">
+						<p>Busking Festival will give you the most unique experience
+							you haven't ever had. We give a chance to muscians to perform in
+							Gangnam.</p>
+					</div>
+				</div>
 
-        <div class="row well">
-            <div class="col-lg-8 col-md-8">
-                <h4>'Modern Business' is a ready-to-use, Bootstrap 3 updated, multi-purpose HTML theme!</h4>
-                <p>For more templates and more page options that you can integrate into this website template, visit Start Bootstrap!</p>
-            </div>
-            <div class="col-lg-4 col-md-4">
-                <a class="btn btn-lg btn-primary pull-right" href="http://startbootstrap.com">See More Templates!</a>
-            </div>
-        </div>
-        <!-- /.row -->
+				<div class="project_container">
+					<div class="project_container_imgbox project_containerbox_img">
+					</div>
+					<div class="project_container_info">
+						<div class="project_container_info_left">
+							<h3>Busking Festival</h3>
+							<h4>Music</h4>
+						</div>
+					</div>
+					<div class="project_container_detail">
+						<p>Busking Festival will give you the most unique experience
+							you haven't ever had. We give a chance to muscians to perform in
+							Gangnam.</p>
+					</div>
+				</div>
 
-    </div>
-    <!-- /.container -->
+			</div>
+			<!-- /.row -->
 
-    <div class="container">
+		</div>
+		<!-- /.container -->
 
-        <hr>
+	</div>
 
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Company 2013</p>
-                </div>
-            </div>
-        </footer>
+	<!-- /.section-colored -->
 
-    </div>
-    <!-- /.container -->
+	<div class="section">
 
-    <!-- JavaScript -->
-    <script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/modern-business.js"></script>
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-6">
+					<img class="img-responsive" src="http://placehold.it/700x450">
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6">
+					<h2>Modern Business Features Include:</h2>
+					<ul>
+						<li>Bootstrap 3 Framework</li>
+						<li>Mobile Responsive Design</li>
+						<li>Predefined File Paths</li>
+						<li>Working PHP Contact Page</li>
+						<li>Minimal Custom CSS Styles</li>
+						<li>Unstyled: Add Your Own Style and Content!</li>
+						<li>Font-Awesome fonts come pre-installed!</li>
+						<li>100% <strong>Free</strong> to Use
+						</li>
+						<li>Open Source: Use for any project, private or commercial!</li>
+					</ul>
+				</div>
+			</div>
+			<!-- /.row -->
+
+		</div>
+		<!-- /.container -->
+
+	</div>
+	<!-- /.section -->
+
+	<div class="container">
+
+		<div class="row well">
+			<div class="col-lg-8 col-md-8">
+				<h4>'Modern Business' is a ready-to-use, Bootstrap 3 updated,
+					multi-purpose HTML theme!</h4>
+				<p>For more templates and more page options that you can
+					integrate into this website template, visit Start Bootstrap!</p>
+			</div>
+			<div class="col-lg-4 col-md-4">
+				<a class="btn btn-lg btn-primary pull-right"
+					href="http://startbootstrap.com">See More Templates!</a>
+			</div>
+		</div>
+		<!-- /.row -->
+
+	</div>
+	<!-- /.container -->
+
+	<div class="container">
+
+		<hr>
+
+		<footer>
+			<div class="row">
+				<div class="col-lg-12">
+					<p>Copyright &copy; Company 2013</p>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+	<!-- /.container -->
+
+	<!-- JavaScript -->
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/modern-business.js"></script>
 
 </body>
 

@@ -1,15 +1,12 @@
-/* 
-Custom CSS for...
-'Modern Business' HTML Theme by Start Bootstrap
+@font-face {
+    font-family: 'cabin-regular';
+    src: url('../fonts/cabin-regular.ttf');
+}
 
-All Start Bootstrap themes are licensed under Apache 2.0. 
-For more info and more free Bootstrap 3 HTML themes, visit http://startbootstrap.com!
-*/
-
-/* Global Styles */
 
 html, body {
   height: 100%;
+  font-family: 'cabin-regular'; 
 }
 
 body {
@@ -191,4 +188,8 @@ margin: 10px 0px 0px 10px;
 text-align: left;
 margin-left: 10px;
 font-size: 12px;
+}
+
+.main_3containers{
+	text-align: center;
 }

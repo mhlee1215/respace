@@ -1389,6 +1389,7 @@ pre code {
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
+  padding-top:15px;
 }
 @media (min-width: 768px) {
   .container {
@@ -4181,13 +4182,13 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   border-color: #fff;
 }
 .navbar-inverse .navbar-brand {
-  color: #ff6666;
+  color: #FF3300;
   font-size : 22px;
   font-weight: bold;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
-  color: #ff6666;
+  color: #FF3300;
   background-color: transparent;
 }
 .navbar-inverse .navbar-text {
@@ -4198,8 +4199,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-  color: #212121;
-  font-weight: bold;
+  color: #FF3300;
   background-color: transparent;
 }
 .navbar-inverse .navbar-nav > .active > a,
