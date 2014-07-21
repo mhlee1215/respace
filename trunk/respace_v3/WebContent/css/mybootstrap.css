@@ -1208,7 +1208,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small,
 	.h4 .small, .h5 .small, .h6 .small {
 	font-weight: normal;
 	line-height: 1;
-	color: #777777;
+	color: #333333;
 }
 
 h1, .h1, h2, .h2, h3, .h3 {
