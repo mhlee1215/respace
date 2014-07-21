@@ -2,10 +2,14 @@
 	font-family: 'cabin-regular';
 	src: url('../fonts/cabin-regular.ttf');
 }
+@font-face {
+	font-family: 'godoM';
+	src: url('../fonts/GodoM.ttf');
+}
 
 html, body {
 	height: 100%;
-	font-family: 'cabin-regular';
+	font-family: 'godoM';
 }
 
 body {
@@ -121,7 +125,7 @@ body {
 
 /* Footer Styles */
 footer {
-	margin: 50px 0;
+	margin: 15px 0;
 }
 
 /* Responsive Styles */
@@ -133,9 +137,10 @@ footer {
 }
 
 .project_container {
-	height: 350px;
+	height: 290px;
 	width: 30.3333333%;
-	background-color: #fff;
+	background-color: #cccc99;
+	color: #333333;
 	float: left;
 	margin: 0 15px 30px;
 	position: relative;
@@ -154,7 +159,7 @@ footer {
 }
 
 .project_container_imgbox {
-	background-position: 0px 220px;
+	background-position: -1px 220px;
 	height: 220px;
 	-webkit-border-top-left-radius: 10px;
 	-moz-border-top-left-radius: 10px;
@@ -184,7 +189,6 @@ footer {
 
 .project_container_info h4 {
 	margin: 0;
-	color: #999;
 }
 
 .project_container_detail {
