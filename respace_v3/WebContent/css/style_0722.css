@@ -6,7 +6,10 @@
 	font-family: 'godoM';
 	src: url('../fonts/GodoM.ttf');
 }
-
+@font-face {
+	font-family: 'Dense-regular';
+	src: url('../fonts/Dense-Regular.otf');
+}
 html, body {
 	height: 100%;
 	font-family: 'godoM';
@@ -135,6 +138,7 @@ footer {
 		/* increases the carousel height so it looks good on phones */
 	}
 }
+
 
 .project_container {
 	height: 290px;

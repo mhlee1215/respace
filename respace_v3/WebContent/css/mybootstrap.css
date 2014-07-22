@@ -4545,8 +4545,7 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
 
 .navbar-inverse .navbar-brand {
 	color: #FF3300;
-	font-size: 22px;
-	font-weight: bold;
+	font-size: 40px;
 }
 
 .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus
@@ -4778,7 +4777,7 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
 	display: inline;
 }
 
-.pager li>a, .pager li>span {
+.pager li>a, .pager li> {
 	display: inline-block;
 	padding: 5px 14px;
 	background-color: #ffffff;
