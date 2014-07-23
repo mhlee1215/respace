@@ -1,18 +1,45 @@
 @font-face {
-	font-family: 'cabin-regular';
-	src: url('../fonts/cabin-regular.ttf');
+	font-family: 'NotoSansKR-Black';
+	src: url('../fonts/NotoSansKR-Black.otf');
 }
+
 @font-face {
-	font-family: 'godoM';
-	src: url('../fonts/GodoM.ttf');
+	font-family: 'NotoSansKR-Bold';
+	src: url('../fonts/NotoSansKR-Bold.otf');
 }
+
+@font-face {
+	font-family: 'NotoSansKR-DemiLight';
+	src: url('../fonts/NotoSansKR-DemiLight.otf');
+}
+
+@font-face {
+	font-family: 'NotoSansKR-Light';
+	src: url('../fonts/NotoSansKR-Light.otf');
+}
+
+@font-face {
+	font-family: 'NotoSansKR-Medium';
+	src: url('../fonts/NotoSansKR-Medium.otf');
+}
+
+@font-face {
+	font-family: 'NotoSansKR-Regular';
+	src: url('../fonts/NotoSansKR-Regular.otf');
+}
+
+@font-face {
+	font-family: 'NotoSansKR-Thin';
+	src: url('../fonts/NotoSansKR-Thin.otf');
+}
+
 @font-face {
 	font-family: 'Dense-regular';
 	src: url('../fonts/Dense-Regular.otf');
 }
 html, body {
 	height: 100%;
-	font-family: 'godoM';
+	font-family: 'NotoSansKR-Medium';
 }
 
 body {
