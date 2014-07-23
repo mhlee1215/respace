@@ -233,5 +233,6 @@ footer {
 }
 
 .vertical_line{
-	border-left: solid #cccc99;
+	border-left: solid #d2d2d2;
+	height: 50%;
 }
