@@ -231,4 +231,11 @@ footer {
 .main_3containers {
 	text-align: center;
 }
+.filters_container{
+	display: block;
+	float: left;
+	width: 20%;
+	height: 532px;
+	background-color: #66cc99;
+}
 
