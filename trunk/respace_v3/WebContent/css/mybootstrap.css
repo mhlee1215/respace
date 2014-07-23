@@ -1114,12 +1114,12 @@ input, button, select, textarea {
 }
 
 a {
-	color: #1dd87a;
+	color: #333333;
 	text-decoration: none;
 }
 
 a:hover, a:focus {
-	color: #2d2d2d;
+	color: #1dd87a;
 	text-decoration: underline;
 }
 
@@ -1212,7 +1212,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small,
 }
 
 h1, .h1, h2, .h2, h3, .h3 {
-	margin-top: 10px;
+	margin-top: 25px;
 	margin-bottom: 10px;
 }
 
