@@ -4544,7 +4544,7 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
 }
 
 .navbar-inverse .navbar-brand {
-	color: #333333;
+	color: #d2d2d2;
 	font-size: 40px;
 	letter-spacing: +2pt;
 }
@@ -4600,7 +4600,7 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
 
 .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover,
 	.navbar-inverse .navbar-nav>.open>a:focus {
-	background-color: #080808;
+	background-color: #1dd87a;
 	color: #ffffff;
 }
 
