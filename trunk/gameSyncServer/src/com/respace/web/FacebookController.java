@@ -32,8 +32,8 @@ import com.respace.domain.FacebookResponse;
 public class FacebookController {
 
 	private static final String SCOPE = "email,offline_access,user_about_me,user_birthday,read_friendlists";
-	//private static final String SERVER_DOMAIN = "http://localhost:8080/";
-	private static final String SERVER_DOMAIN = "http://respace.co.kr/";
+	private static final String SERVER_DOMAIN = "http://localhost:8080/";
+	//private static final String SERVER_DOMAIN = "http://respace.co.kr/";
 	 
 	private static final String REDIRECT_URI = SERVER_DOMAIN+"gameSyncServer/social/facebook/callback.do";
 	private static final String CLIENT_ID = "525363714258644";
