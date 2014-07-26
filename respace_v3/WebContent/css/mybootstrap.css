@@ -1281,11 +1281,11 @@ h2, .h2 {
 }
 
 h3, .h3 {
-	font-size: 24px;
+	font-size: 20px;
 }
 
 h4, .h4 {
-	font-size: 18px;
+	font-size: 16px;
 }
 
 h5, .h5 {
@@ -1664,6 +1664,16 @@ pre code {
 	min-height: 1px;
 	padding-left: 15px;
 	padding-right: 15px;
+	margin-top: -1px;
+}
+
+.col-xs-1 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-top: -1px;
+	
 }
 
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6,
@@ -1709,6 +1719,7 @@ pre code {
 
 .col-xs-3 {
 	width: 25%;
+	padding: 0 20px 0 20px;
 }
 
 .col-xs-2 {
@@ -4885,9 +4896,11 @@ border-radius
 }
 
 .navbar-inverse .navbar-brand {
-	color: #d2d2d2;
+	color: #fff;
 	font-size: 40px;
 	letter-spacing: +2pt;
+	text-shadow: 1px 0 10px #333;
+	
 }
 
 .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus
@@ -4901,7 +4914,8 @@ border-radius
 }
 
 .navbar-inverse .navbar-nav>li>a {
-	color: #d2d2d2;
+	color: #fff;
+	text-shadow: 1px 0 10px #333;
 }
 
 .navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus
@@ -6864,7 +6878,7 @@ button.close {
 	display: inline-block;
 	width: 10px;
 	height: 10px;
-	margin: 1px;
+	margin: 4px;
 	text-indent: -999px;
 	border: 1px solid #ffffff;
 	border-radius: 10px;
@@ -6874,10 +6888,11 @@ button.close {
 }
 
 .carousel-indicators .active {
-	margin: 0;
+	margin: 4px;
 	width: 12px;
 	height: 12px;
 	background-color: #ffffff;
+	transparency: 50;
 }
 
 .carousel-caption {
