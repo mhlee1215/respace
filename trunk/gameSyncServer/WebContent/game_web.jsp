@@ -228,17 +228,17 @@ function waitingDecisions(){
 
 @font-face {
 	font-family: 'Helvetica_Extended_Light';
-	src: url('WebContent/Fonts/Helvetica_Extended_Light.ttf');
+	src: url('Fonts/Helvetica_Extended_Light.ttf');
 }
 
 @font-face {
 	font-family: 'Helvetica_Extended_Thin';
-	src: url('WebContent/Fonts/Helvetica_Extended_Thin.ttf');
+	src: url('Fonts/Helvetica_Extended_Thin.ttf');
 }
 
 @font-face {
 	font-family: 'Helvetica_Extended';
-	src: url('WebContent/Fonts/Helvetica_Extended.ttf');
+	src: url('Fonts/Helvetica_Extended.ttf');
 }
 
 html {

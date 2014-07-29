@@ -81,8 +81,8 @@ html {
 			</td>
 		</tr>
 		<tr height="10%">
-			<td align="center"><img src="images/mobile_foot.png" width="80%"
-				alt=""></td>
+			<td align="center"><span
+				style="font-family: 'Helvetica_Extended_Thin'; color: #b2b1b1;">www.facebook.com/remakespace</span></td>
 		</tr>
 
 	</table>
