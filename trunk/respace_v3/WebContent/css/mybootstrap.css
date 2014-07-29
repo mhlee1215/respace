@@ -1635,6 +1635,31 @@ pre code {
 	padding-top: 15px;
 	max-width: none !important;
 	width: 1170px;
+	
+}
+
+.container2 {
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	max-width: none !important;
+	width: 1170px;
+	text-align: right;
+
+}
+
+
+.container2 a {
+	text-decoration: none;
+	color: #333;
+
+}
+.container2 a:hover {
+	text-decoration: none;
+	color: ;
+
 }
 
 .container_nopaddingtop {
@@ -1649,6 +1674,15 @@ pre code {
 .row {
 	margin-left: -15px;
 	margin-right: -15px;
+}
+
+#in-bar {
+	background-color: #fff;
+	width: 100%;
+	margin-top: 0px;
+	display: block;
+	
+	
 }
 
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2,
