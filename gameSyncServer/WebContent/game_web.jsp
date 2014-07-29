@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
 
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
 	
@@ -226,6 +226,24 @@ function waitingDecisions(){
   	-webkit-mask: url(images/mask62.png) no-repeat center center;
 }
 
+@font-face {
+	font-family: 'Helvetica_Extended_Light';
+	src: url('WebContent/Fonts/Helvetica_Extended_Light.ttf');
+}
+
+@font-face {
+	font-family: 'Helvetica_Extended_Thin';
+	src: url('WebContent/Fonts/Helvetica_Extended_Thin.ttf');
+}
+
+@font-face {
+	font-family: 'Helvetica_Extended';
+	src: url('WebContent/Fonts/Helvetica_Extended.ttf');
+}
+
+html {
+	font-family: 'Helvetica_Extended';
+}
 </style>
 </head>
 <body>
@@ -251,7 +269,7 @@ function waitingDecisions(){
 									<td width="7%"></td>
 									<td width="27%"><img id="id_left_choise" width="100%" src="images/unknown_off.png"  alt="scissor"/></td>
 									<td width="32%" align="center" >
-										<span id="id_game_score" style="font-size:50px; color: #a9abae">2:3</span>
+										<span id="id_game_score" style="font-size:50px; color: #a9abae; font-family: 'Helvetica_Extended_Light';">2:3</span>
 									</td> 
 									<td width="27%"><img id="id_right_choise" width="100%" src="images/unknown_off.png"  alt="scissor"/></td>
 									<td width="7%"></td>
