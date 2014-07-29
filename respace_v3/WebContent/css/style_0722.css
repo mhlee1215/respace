@@ -52,6 +52,13 @@ body {
 	margin-bottom: 30px;
 }
 
+.introduction {
+	margin-top: -100px;
+	z-index: 333;
+	margin: 0 auto;
+	color: #fff;
+}
+
 /* Page Sections */
 .section, .section-colored2 {
 	padding: 50px 0;
