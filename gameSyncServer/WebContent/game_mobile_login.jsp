@@ -82,7 +82,7 @@ html {
 		</tr>
 		<tr height="10%">
 			<td align="center"><span
-				style="font-family: 'Helvetica_Extended_Thin'; color: #b2b1b1;">www.facebook.com/remakespace</span></td>
+				style="font-family: 'Helvetica_Extended_Thin'; font-size: 24px; color: #b2b1b1;">www.facebook.com/remakespace</span></td>
 		</tr>
 
 	</table>

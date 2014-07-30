@@ -199,7 +199,7 @@ html {
 	<table id="bodyTable" border="0" width="640" height="960"
 		style="background-color: #232222" cellspacing="50">
 		<tr height="10%">
-			<td><img src="images/mobile_title.png" width="100%" alt=""></td>
+			<td width=100% align="center""center"><img src="images/web_title.png" width="40%" alt=""></td>
 		</tr>
 		<tr id="id_tr_result" style="display: none">
 			<td><img id="id_mobile_result" width="100"
@@ -235,7 +235,9 @@ html {
 			</td>
 		</tr>
 		<tr height="10%">
-			<td align="center"><span style="font-family: 'Helvetica_Extended_Thin'; color: #b2b1b1;"> www.facebook.com/remakespace</span></td>
+			<td align="center"><span
+				style="font-family: 'Helvetica_Extended_Thin'; font-size:24px; color: #b2b1b1;">
+					www.facebook.com/remakespace</span></td>
 		</tr>
 
 	</table>
