@@ -57,7 +57,6 @@ body {
 }
 
 .introduction {
-	margin-top: 100px;
 	z-index: 333;
 	margin: 0 auto;
 	color: #fff;
@@ -76,7 +75,7 @@ body {
 	padding: 5px 15px;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size:14px;
-	border:1px solid #0076a3; border-right:0px;
+	border:1px solid #fff; border-right:0px;
 	border-top-left-radius: 5px 5px;
 		border-bottom-left-radius: 5px 5px;
 }
@@ -90,10 +89,10 @@ body {
 	text-align: center;
 	text-decoration: none;
 	color: #ffffff;
-	border: solid 1px #0076a3; border-right:0px;
-	background: #0095cd;
-	background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
-	background: -moz-linear-gradient(top,  #00adee,  #0078a5);
+	border: solid 1px #1dd87a; border-right:0px;
+	background: #1dd87a;
+	background: -webkit-gradient(linear, left top, left bottom, from(#1dd87a), to(#1dd87a));
+	background: -moz-linear-gradient(top,  #1dd87a,  #1dd87a);
 	border-top-right-radius: 5px 5px;
 	border-bottom-right-radius: 5px 5px;
 }
@@ -248,22 +247,22 @@ footer {
 	background: url("../images/icon_monitor_hover.png") no-repeat;
 }
 
-.op-100 { /* 별도로 지정할 필요 없음(기본값=1, 즉 100%) */}
+.op-100 { /* 蹂꾨룄濡� 吏��젙�븷 �븘�슂 �뾾�쓬(湲곕낯媛�=1, 利� 100%) */}
             .op-80 {
-                /* opacity = CSS3 투명도 지정 속성 범위는 0~1.0(지원 IE9이상, Firefix2.0이상, Chrome4.0이상, Opera9.0이상  */
-                /* http://caniuse.com/css-opacity 참조 */
+                /* opacity = CSS3 �닾紐낅룄 吏��젙 �냽�꽦 踰붿쐞�뒗 0~1.0(吏��썝 IE9�씠�긽, Firefix2.0�씠�긽, Chrome4.0�씠�긽, Opera9.0�씠�긽  */
+                /* http://caniuse.com/css-opacity 李몄“ */
                 opacity: 0.8;
  
-                /* Firefox 이전 버전에서 투명도 지정 */
+                /* Firefox �씠�쟾 踰꾩쟾�뿉�꽌 �닾紐낅룄 吏��젙 */
                 -moz-opacity: 0.8;
  
-                /* Safari 이전 버전에서 투명도 지정 */
+                /* Safari �씠�쟾 踰꾩쟾�뿉�꽌 �닾紐낅룄 吏��젙 */
                 -khtml-opacity: 0.7;
  
-                /* MS Internet Explorer 8,9에서 투명도 지정. 반드시 filter보다 앞에 와야 함. 범위는 0~100 */
+                /* MS Internet Explorer 8,9�뿉�꽌 �닾紐낅룄 吏��젙. 諛섎뱶�떆 filter蹂대떎 �븵�뿉 ���빞 �븿. 踰붿쐞�뒗 0~100 */
                 -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
  
-                /* MS Internet Explorer 4,5,6,7에서 투명도 지정. 8,9도 filter 지원하나 브라우저 모드에 따라 지원하지 않을 수 있으므로 추가함 */
+                /* MS Internet Explorer 4,5,6,7�뿉�꽌 �닾紐낅룄 吏��젙. 8,9�룄 filter 吏��썝�븯�굹 釉뚮씪�슦�� 紐⑤뱶�뿉 �뵲�씪 吏��썝�븯吏� �븡�쓣 �닔 �엳�쑝誘�濡� 異붽��븿 */
                 filter: alpha(opacity=80);
             }
             .op-60 {
