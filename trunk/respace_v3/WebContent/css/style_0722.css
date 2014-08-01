@@ -52,7 +52,7 @@ body {
 	margin-bottom: 30px;
 }
 
-#search_lounge{
+#search_lounge {
 	margin: 0 auto;
 	width:800px;
 }
@@ -62,56 +62,65 @@ body {
 	z-index: 333;
 	margin: 0 auto;
 	color: #fff;
-	text-shadow:1px 0px 10px #333;
+	text-shadow: 1px 0px 10px #333;
 }
 
-#tfheader{
-//		background-color:#c3dfef;
+#tfheader { //
+	background-color: #c3dfef;
 }
-#tfnewsearch{
-//	float:right;
-	padding:20px;
+
+#tfnewsearch { //
+	float: right;
+	padding: 20px;
 }
-.tftextinput{
+
+.tftextinput {
 	margin: 0;
 	padding: 5px 15px;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size:14px;
-	border:1px solid #fff; border-right:0px;
+	font-size: 14px;
+	border: 1px solid #fff;
+	border-right: 0px;
 	border-top-left-radius: 5px 5px;
-		border-bottom-left-radius: 5px 5px;
+	border-bottom-left-radius: 5px 5px;
 }
+
 .tfbutton {
 	margin: 0;
 	padding: 5px 15px;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size:14px;
+	font-size: 14px;
 	outline: none;
 	cursor: pointer;
 	text-align: center;
 	text-decoration: none;
 	color: #ffffff;
-	border: solid 1px #1dd87a; border-right:0px;
+	border: solid 1px #1dd87a;
+	border-right: 0px;
 	background: #1dd87a;
-	background: -webkit-gradient(linear, left top, left bottom, from(#1dd87a), to(#1dd87a));
-	background: -moz-linear-gradient(top,  #1dd87a,  #1dd87a);
+	background: -webkit-gradient(linear, left top, left bottom, from(#1dd87a),
+		to(#1dd87a));
+	background: -moz-linear-gradient(top, #1dd87a, #1dd87a);
 	border-top-right-radius: 5px 5px;
 	border-bottom-right-radius: 5px 5px;
 }
+
 .tfbutton:hover {
 	text-decoration: none;
 	background: #007ead;
-	background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
-	background: -moz-linear-gradient(top,  #0095cc,  #00678e);
+	background: -webkit-gradient(linear, left top, left bottom, from(#0095cc),
+		to(#00678e));
+	background: -moz-linear-gradient(top, #0095cc, #00678e);
 }
-	/* Fixes submit button height problem in Firefox */
+/* Fixes submit button height problem in Firefox */
 .tfbutton::-moz-focus-inner {
-  border: 0;
+	border: 0;
 }
-.tfclear{
-	clear:both;
+
+.tfclear {
+	clear: both;
 }
-	
+
 /* Page Sections */
 .section, .section-colored2 {
 	padding: 50px 0;
@@ -219,9 +228,10 @@ footer {
 	font-size: 12px;
 }
 
-.main_3containers {
+.main_3containers .text_container {
 	text-align: center;
 }
+
 
 .filters_container {
 	width: 20%;
@@ -251,51 +261,61 @@ footer {
 	background: url("../images/icon_monitor_hover.png") no-repeat;
 }
 
-.op-100 { /* 蹂꾨룄濡� 吏��젙�븷 �븘�슂 �뾾�쓬(湲곕낯媛�=1, 利� 100%) */}
-            .op-80 {
-                /* opacity = CSS3 �닾紐낅룄 吏��젙 �냽�꽦 踰붿쐞�뒗 0~1.0(吏��썝 IE9�씠�긽, Firefix2.0�씠�긽, Chrome4.0�씠�긽, Opera9.0�씠�긽  */
-                /* http://caniuse.com/css-opacity 李몄“ */
-                opacity: 0.8;
- 
-                /* Firefox �씠�쟾 踰꾩쟾�뿉�꽌 �닾紐낅룄 吏��젙 */
-                -moz-opacity: 0.8;
- 
-                /* Safari �씠�쟾 踰꾩쟾�뿉�꽌 �닾紐낅룄 吏��젙 */
-                -khtml-opacity: 0.7;
- 
-                /* MS Internet Explorer 8,9�뿉�꽌 �닾紐낅룄 吏��젙. 諛섎뱶�떆 filter蹂대떎 �븵�뿉 ���빞 �븿. 踰붿쐞�뒗 0~100 */
-                -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
- 
-                /* MS Internet Explorer 4,5,6,7�뿉�꽌 �닾紐낅룄 吏��젙. 8,9�룄 filter 吏��썝�븯�굹 釉뚮씪�슦�� 紐⑤뱶�뿉 �뵲�씪 吏��썝�븯吏� �븡�쓣 �닔 �엳�쑝誘�濡� 異붽��븿 */
-                filter: alpha(opacity=80);
-            }
-            .op-60 {
-                opacity: 0.6;
-                -moz-opacity: 0.6;
-                -khtml-opacity: 0.6;
-                -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-                filter: alpha(opacity=60);
-            }
-            .op-40 {
-                opacity: 0.4;
-                -moz-opacity: 0.4;
-                -khtml-opacity: 0.4;
-                -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-                filter: alpha(opacity=40);
-            }
-            .op-20 {
-                opacity: 0.2;
-                -moz-opacity: 0.2;
-                -khtml-opacity: 0.2;
-                -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
-                filter: alpha(opacity=20);
-            }
-            .op-10 {
-                opacity: 0.1;
-                -moz-opacity: 0.1;
-                -khtml-opacity: 0.1;
-                -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
-                filter: alpha(opacity=10);
-            }
-            
-            
+.op-100 { /* 蹂꾨룄濡� 吏��젙�븷 �븘�슂 �뾾�쓬(湲곕낯媛�=1, 利� 100%) */
+	
+}
+
+.op-80 {
+	/* opacity = CSS3 �닾紐낅룄 吏��젙 �냽�꽦 踰붿쐞�뒗 0~1.0(吏��썝 IE9�씠�긽, Firefix2.0�씠�긽, Chrome4.0�씠�긽, Opera9.0�씠�긽  */
+	/* http://caniuse.com/css-opacity 李몄“ */
+	opacity: 0.8;
+	/* Firefox �씠�쟾 踰꾩쟾�뿉�꽌 �닾紐낅룄 吏��젙 */
+	-moz-opacity: 0.8;
+	/* Safari �씠�쟾 踰꾩쟾�뿉�꽌 �닾紐낅룄 吏��젙 */
+	-khtml-opacity: 0.7;
+	/* MS Internet Explorer 8,9�뿉�꽌 �닾紐낅룄 吏��젙. 諛섎뱶�떆 filter蹂대떎 �븵�뿉 ���빞 �븿. 踰붿쐞�뒗 0~100 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	/* MS Internet Explorer 4,5,6,7�뿉�꽌 �닾紐낅룄 吏��젙. 8,9�룄 filter 吏��썝�븯�굹 釉뚮씪�슦�� 紐⑤뱶�뿉 �뵲�씪 吏��썝�븯吏� �븡�쓣 �닔 �엳�쑝誘�濡� 異붽��븿 */
+	filter: alpha(opacity = 80);
+}
+
+.op-60 {
+	opacity: 0.6;
+	-moz-opacity: 0.6;
+	-khtml-opacity: 0.6;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+	filter: alpha(opacity = 60);
+}
+
+.op-40 {
+	opacity: 0.4;
+	-moz-opacity: 0.4;
+	-khtml-opacity: 0.4;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+	filter: alpha(opacity = 40);
+}
+
+.op-20 {
+	opacity: 0.2;
+	-moz-opacity: 0.2;
+	-khtml-opacity: 0.2;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+	filter: alpha(opacity = 20);
+}
+
+.op-10 {
+	opacity: 0.1;
+	-moz-opacity: 0.1;
+	-khtml-opacity: 0.1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+	filter: alpha(opacity = 10);
+}
+
+#circle {
+	width: 300px;
+	height: 300px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	border-radius: 150px;
+	background-color: #fff;
+}
