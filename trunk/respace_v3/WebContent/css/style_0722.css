@@ -53,10 +53,12 @@ body {
 }
 
 #search_lounge{
-	
+	margin: 0 auto;
+	width:800px;
 }
 
 .introduction {
+	
 	z-index: 333;
 	margin: 0 auto;
 	color: #fff;
@@ -134,7 +136,9 @@ body {
 
 /* Half Page Height Carousel Customization */
 .carousel {
-	height: 80%;
+	height: 500px;
+	width: 100%;
+	margin: 0 auto;
 }
 
 .item, .active, .carousel-inner {
