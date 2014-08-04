@@ -376,3 +376,13 @@ footer {
 	position:relative;
 	top:1px;
 }
+
+.main3_places {
+	color: #fff;
+	font-family: NotoSansKR-Regular;
+	font-size: 20px;
+	margin: 20px 0 0 96px;
+	display: block;
+	float: left;
+	width: 250px;
+}
