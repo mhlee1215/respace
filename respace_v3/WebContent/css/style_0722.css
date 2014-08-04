@@ -311,32 +311,32 @@ footer {
 }
 
 #circle {
-	width: 250px;
-	height: 250px;
-	-webkit-border-radius: 125px;
-	-moz-border-radius: 125px;
-	border-radius: 125px;
+	width: 166px;
+	height: 166px;
+	-webkit-border-radius: 83px;
+	-moz-border-radius: 83px;
+	border-radius: 83px;
 	background-color: #fff;
 	float: left;
-	margin: 60px 0 0 96px;
+	margin: 60px 0 0 160px;
 }
 
 .main3_names {
 	color: #1dd87a;
 	font-family: NotoSansKR-Regular;
-	margin: 15px 0 0 96px;
+	margin: 15px 0 0 0;
 	display: block;
 	float: left;
-	width: 250px;
+	width: 287px;
 }
 
 .main3_detail {
 	color: #333333;
 	font-family: NotoSansKR-Regular;
-	margin: 20px 0 0 96px;
+	margin: 20px 0 0 0;
 	display: block;
 	float: left;
-	width: 250px;
+	width: 287px;
 }
 
 .gobutton {
@@ -381,8 +381,15 @@ footer {
 	color: #fff;
 	font-family: NotoSansKR-Regular;
 	font-size: 20px;
-	margin: 20px 0 0 96px;
+	margin: 10px 0 0 0;
 	display: block;
 	float: left;
-	width: 250px;
+	width: 287px;
+}
+.footer_img{
+	margin: 10px 0 0 20px;
+	display: block;
+	float: left;
+	width: 50px;
+	height: 50px;
 }
