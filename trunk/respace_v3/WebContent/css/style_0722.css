@@ -157,7 +157,7 @@ body {
 
 .fill {
 	width: 100%;
-	height: 100%;
+	height: 105%;
 	background-position: center;
 	background-size: cover;
 }
@@ -260,21 +260,21 @@ footer {
 	background: url("../images/icon_monitor_hover.png") no-repeat;
 }
 
-.op-100 { /* 蹂꾨룄濡� 吏��젙�븷 �븘�슂 �뾾�쓬(湲곕낯媛�=1, 利� 100%) */
+.op-100 { /* 癰귢쑬猷꾣에占� 筌욑옙占쎌젟占쎈막 占쎈툡占쎌뒄 占쎈씨占쎌벉(疫꿸퀡�궚揶쏉옙=1, 筌앾옙 100%) */
 	
 }
 
 .op-80 {
-	/* opacity = CSS3 �닾紐낅룄 吏��젙 �냽�꽦 踰붿쐞�뒗 0~1.0(吏��썝 IE9�씠�긽, Firefix2.0�씠�긽, Chrome4.0�씠�긽, Opera9.0�씠�긽  */
-	/* http://caniuse.com/css-opacity 李몄“ */
+	/* opacity = CSS3 占쎈떮筌뤿굝猷� 筌욑옙占쎌젟 占쎈꺗占쎄쉐 甕곕뗄�맄占쎈뮉 0~1.0(筌욑옙占쎌뜚 IE9占쎌뵠占쎄맒, Firefix2.0占쎌뵠占쎄맒, Chrome4.0占쎌뵠占쎄맒, Opera9.0占쎌뵠占쎄맒  */
+	/* http://caniuse.com/css-opacity 筌〓챷�� */
 	opacity: 0.8;
-	/* Firefox �씠�쟾 踰꾩쟾�뿉�꽌 �닾紐낅룄 吏��젙 */
+	/* Firefox 占쎌뵠占쎌읈 甕곌쑴�읈占쎈퓠占쎄퐣 占쎈떮筌뤿굝猷� 筌욑옙占쎌젟 */
 	-moz-opacity: 0.8;
-	/* Safari �씠�쟾 踰꾩쟾�뿉�꽌 �닾紐낅룄 吏��젙 */
+	/* Safari 占쎌뵠占쎌읈 甕곌쑴�읈占쎈퓠占쎄퐣 占쎈떮筌뤿굝猷� 筌욑옙占쎌젟 */
 	-khtml-opacity: 0.7;
-	/* MS Internet Explorer 8,9�뿉�꽌 �닾紐낅룄 吏��젙. 諛섎뱶�떆 filter蹂대떎 �븵�뿉 ���빞 �븿. 踰붿쐞�뒗 0~100 */
+	/* MS Internet Explorer 8,9占쎈퓠占쎄퐣 占쎈떮筌뤿굝猷� 筌욑옙占쎌젟. 獄쏆꼶諭띰옙�뻻 filter癰귣��뼄 占쎈링占쎈퓠 占쏙옙占쎈튊 占쎈맙. 甕곕뗄�맄占쎈뮉 0~100 */
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-	/* MS Internet Explorer 4,5,6,7�뿉�꽌 �닾紐낅룄 吏��젙. 8,9�룄 filter 吏��썝�븯�굹 釉뚮씪�슦�� 紐⑤뱶�뿉 �뵲�씪 吏��썝�븯吏� �븡�쓣 �닔 �엳�쑝誘�濡� 異붽��븿 */
+	/* MS Internet Explorer 4,5,6,7占쎈퓠占쎄퐣 占쎈떮筌뤿굝猷� 筌욑옙占쎌젟. 8,9占쎈즲 filter 筌욑옙占쎌뜚占쎈릭占쎄돌 �뇡�슢�뵬占쎌뒭占쏙옙 筌뤴뫀諭띰옙肉� 占쎈뎡占쎌뵬 筌욑옙占쎌뜚占쎈릭筌욑옙 占쎈륫占쎌뱽 占쎈땾 占쎌뿳占쎌몵沃섓옙嚥∽옙 �빊遺쏙옙占쎈맙 */
 	filter: alpha(opacity = 80);
 }
 
