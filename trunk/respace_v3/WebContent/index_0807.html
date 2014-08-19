@@ -15,23 +15,227 @@
 <link href="css/style_0807.css" rel="stylesheet">
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 <style type="text/css">
+	.respace-title span{
+		margin-top: 10px;
+		font-size: 50px;
+	}
+	.respace-comment{
+		font-size:20px;
+		margin : 0 0 50px 0;
+	}
+	
+	
+	.content-login{
+		height:500px;
+		text-align:center;
+		<!--
+		background-image: url(./images/DEPTtext.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		-->
+	}
+	.content-login-inner{
+		display: block;
+		width : 500px;
+		margin : 0 auto;
+		padding : 10px 10px 25px 10px;
+		background-color: #ccc;
+		opacity:.5;
+	}
+	.content-login-inner span{
+		font-size: 30px;
+	}
+	.content-login-inner form{
+		margin-top: 20px;
+	}
+	.content-login-inner input{
+		text-align : center;
+		margin : 10px;
+	}
+	
+	
+	.content-join{
+		height:500px;
+		text-align:center;
+	}
+	.content-join-title span{
+		margin-top: 10px;
+		font-size: 64px;
+	}
+	.content-join-comment{
+		font-size:16px;
+	}
+	.respace-join-logo{
+		font-size:50px;
+		margin : 10px;
+	}
+	.content-join-inner{
+		font-size: 18px;
+		margin : 0 auto;
+	}
+	.content-join-inner{
+		font-size: 18px;
+		padding : 30px;
+	}
+	.content-join-inner a{
+		margin-left: 10px;
+		border:2px  #31C120  solid;
+		color: #31C120;
+	}
+	.email-login{
+		width : 220px;
+		height: 32px;
+		margin: 20px auto 20px;
+		font-size: 18px;
+		background-color: #31C120;
+	}
+	.email-login a{
+		color: #fff;
+	}
+	
+	.content-email-join{
+		height:500px;
+		text-align:center;
+	}
+	.content-email-join-inner{
+		display: block;
+		width : 500px;
+		margin : 0 auto 50px;
+		padding : 10px 10px 25px 10px;
+	}
+	.content-email-join-inner span{
+		font-size: 30px;
+	}
+	.content-email-join-inner form{
+		margin-top: 20px;
+	}
+	.content-email-join-inner input{
+		text-align : center;
+		margin : 10px;
+	}
+	.content-email-join-inner button{
+		width : 220px;
+		height: 32px;
+		font-size: 18px;
+		color:#fff;
+		background-color: #31C120;
+	}
+	
+	
+	.fb-login-comment{
+		margin-top: 20px;
+		margin-bottom: 5px;
+		font-size: 15px;
+		color: #3b5998;
+	}
+	.fb-login{
+		width : 220px;
+		height: 32px;
+		margin: 0 auto;
+		font-size: 18px;
+		background-color: #3b5998;
+	}
+	.fb-login a{
+		color: #fff;
+	}
 </style>
 
 </head>
 
 <body>
+	<!-- Login Modal -->
+	<div class="modal fade bs-example-modal-lg" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+<!--
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+		  </div>
+		  <div class="modal-body">
+-->
+			<div class="content-login">
+				<div class="respace-title"><span>RESPACE</span></div>
+				<div class="respace-comment"><b>남는 공간</b>을 공간이 <b>필요한 사람</b>에게 <b>제공</b>하는 <b>플랫폼</b></div>
+				<div class="content-login-inner">
+					<span>LOGIN</span>
+					<form action="" method="post">
+						<input type="email" placeholder="이메일주소">
+						<input type="password" placeholder="비밀번호">
+					</form>
+					<a href="">비밀번호찾기</a>
+					/
+					<a data-dismiss="modal" data-toggle="modal" href="#joinModal">회원가입하기</a>
+				</div>
+				<div class="fb-login-comment">페이스북 아이디가 있으시다면...</div>
+				<div class="fb-login"><a href=""><img src="images/facebook_login.png" style="width: 15px; margin: 0 5px 2px 0;">페이스북으로 로그인</a></div>
+			
+			</div>
+<!--
+		  </div>
+
+		  <div class="modal-footer">
+		 
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			<button type="button" class="btn btn-primary">Save changes</button>
+			
+		  </div>
+-->
+		</div>
+	  </div>
+	</div>
+	
+	<!-- Join Modal -->
+	<div class="modal fade bs-example-modal-lg" id="joinModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+			<div class="content-join">
+				<div class="content-join-title"><span>RESPACE</span></div>
+				<div class="content-join-comment"><b>남는 공간</b>을 공간이 <b>필요한 사람</b>에게 <b>제공</b>하는 <b>플랫폼</b></div>
+				<div class="respace-join-logo">공간에 가치를 더하다</div>
+				<div class="content-join-inner">
+					이미 RESPACE의 회원이신가요?
+					<a data-dismiss="modal" data-toggle="modal" href="#loginModal">로그인</a>
+				</div>
+				<div class="email-login"><a data-dismiss="modal" data-toggle="modal" href="#emailjoinModal"><img src="images/facebook_login.png" style="width: 15px; margin: 0 5px 2px 0;">이메일로 가입하기</a></div>
+				<div class="fb-login"><a href=""><img src="images/facebook_login.png" style="width: 15px; margin: 0 5px 2px 0;">페이스북으로 가입하기</a></div>
+			
+			</div>
+		</div>
+	  </div>
+	</div>
+	
+	<!-- Emain Join Modal -->
+	<div class="modal fade bs-example-modal-lg" id="emailjoinModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+			<div class="content-email-join">
+				<div class="respace-title"><span>RESPACE</span></div>
+				<div class="content-email-join-inner">
+					<span>회원가입</span>
+					<form action="" method="post">
+						<input type="email" placeholder="이메일주소">
+						<input type="text" placeholder="이  름">
+						<input type="password" placeholder="비밀번호">
+						<br />
+						<button type="submit">가입하기</button>
+					</form>
+				</div>
+				<div class="fb-login"><a href=""><img src="images/facebook_login.png" style="width: 15px; margin: 0 5px 2px 0;">페이스북으로 가입하기</a></div>
+			
+			</div>
+		</div>
+	  </div>
+	</div>
+	
 	<nav class="navbar navbar-inverse navbar-fixed-top" style="height: 80px;" role="navigation">
 		<div id="in-bar" style="height: 30px;">
 			<div class="container2">
-				<a href="login.html"
-					style="margin: 0 20px; font-family: NotoSansKR-Light;"><img
-					src="images/facebook_login.png"
-					style="width: 15px; margin: 0 5px 2px 0;">LOGIN</a> <a
-					href="login.html"
-					style="margin: 0 20px; font-family: NotoSansKR-Light;">JOIN</a>
+				<a href="#loginModal" data-toggle="modal" style="margin: 0 20px; font-family: NotoSansKR-Light;">
+					<img src="images/facebook_login.png" style="width: 15px; margin: 0 5px 2px 0;">LOGIN</a>
+				<a href="#joinModal" data-toggle="modal" style="margin: 0 20px; font-family: NotoSansKR-Light;">JOIN</a>
 			</div>
 		</div>
-	
 	
 		<div class="container">
 	
@@ -303,6 +507,51 @@
 	<script src="js/jquery-1.10.2.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/modern-business.js"></script>
+	<script language="javascript">
+//		$('#myModal').modal()                      // initialized with defaults
+//		$('#myModal').modal({ keyboard: false })   // initialized with no keyboard
+//		$('#myModal').modal('show')                // initializes and invokes show immediately
+/*
+		$('#myModal').on('show.bs.modal', function (e) {
+			// do something...
+			
+		})
+*/
+
+/*
+		function modalPop(url){ 
+			var popOptions = "dialogWidth: 500px; dialogHeight: 30px; center: yes; resizable: yes; status: no; scroll: no;"; 
+			var vReturn = window.showModalDialog(url, window, popOptions); 
+			  
+			if (vReturn == 'ok'){
+				// (모달창에서 버튼 이벤트 실행 또는 닫기 후)모달창이 닫혔을 때 부모창에서 실행 할 함수
+				location.reload(); 
+				return;
+			}else{
+				return;
+			}
+			
+			return vReturn;
+		}
+*/
+
+		function click_choice(id) {
+			if (id == "etov") {
+				$("#" + id).attr("disabled", false);
+				$("#etov-body").show({
+					duration : 400,
+					done : function() {
+						$(document.body).scrollTop($(this).position().top);
+					}
+				});
+				$("#MEM_TYPE").val(id);
+			} else if (id == "login") {
+				var next_url = 'login.html';
+				location.replace(next_url);
+			}
+	
+		}
+	</script>
 </body>
 
 </html>
