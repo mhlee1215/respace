@@ -102,7 +102,42 @@
 	}
 	</style>
 	<script src="https://maps.googleapis.com/maps/api/js?ket=AIzaSyAnZFjINOu7CN03lzjWbgTUzjfMdLAC1Dg&sensor=true"></script>
-	<script>
+	<script type="text/javascript">
+		/*
+	    $(document).ready(function () {
+			var latitude = parseFloat("51.515252");
+			var longitude = parseFloat("-0.189852");
+			var latlngPos = new google.maps.LatLng(latitude, longitude);
+			// Set up options for the Google map
+			var myOptions = {
+				zoom: 10,
+				center: latlngPos,
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+			// Define the map
+			map = new google.maps.Map(document.getElementById("map"), myOptions);
+		});
+
+		var gmap = new google.maps.Map(
+		mymap,{
+			zoom:map3, //줌
+			left:new google.maps.LatLng(latlng[0][0], latlng[0][1]),
+			center: new google.maps.LatLng(gcenter[0][0], gcenter[0][1]),
+			icon: image,
+			mapTypeId:google.maps.MapTypeId.ROADMAP} //맵타입
+		);
+		*/
+		
+
+		///////////////////
+		var latlng = new Array();
+
+		latlng[0] = [37.583524, 127.054240,"테스트1"];
+		latlng[1] = [37.585292, 127.060956,"테스트2"];
+		latlng[2] = [37.583710, 127.060066,"테스트2"];
+		latlng[3] = [37.586924, 127.060302,"테스트2"];
+		latlng[4] = [37.586879, 127.056573,"테스트2"];
+		 
 		var map;
 		function initialize() {
 			var mapOptions = {
@@ -112,7 +147,10 @@
 			};
 		
 			map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
-
+		
+			setMarkers(map, latlng);
+			
+			/*
 			google.maps.event.addListener(map, 'click', function(event){
 				placeMarker(event.latLng);	
 			});
@@ -121,26 +159,40 @@
 				map: map,
 				position: map.getCenter()
 			});
-		   
+		   	
 			var infowindow = new google.maps.InfoWindow();
 			infowindow.setContent('<h1>Replace</h1>');  // 클릭했을때 나올 내용
 		   
 			google.maps.event.addListener(marker, 'click', function() {
 				infowindow.open(map, marker);
 			});
+			*/
 		}
 		
+		/*
 		function placeMarker(location){
-		var marker = new google.maps.Marker({
-		   	map: map,
-		   	position: location
-		});
-		
-		map.setCenter(location);
+			var marker = new google.maps.Marker({
+			   	map: map,
+			   	position: location
+			});
+			
+			map.setCenter(location);
 		}
-	 
+	 	*/
+	 	
+	 	function setMarkers(map, locations) {
+			for (var i = 0; i < latlng.length; i++){ //마커를 여러개 찍을 때 사용
+				var marker = new google.maps.Marker({
+					position: new google.maps.LatLng(latlng[i][0], latlng[i][1]),
+					map:map,
+					title:latlng[i][2]
+				});
+				
+			}
+		}
+	 	
 		google.maps.event.addDomListener(window, 'load', initialize);
-	 
+		
 	</script>
 </head>
 <body>
