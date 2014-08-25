@@ -30,11 +30,9 @@
 		max-width: none !important;
 		width: 1170px;
 		height: 30px;
-		background-color: #ccc;
 	}
 	.login-bar{
 		float: right;
-		background-color: #0f0;
 	}
 	.login-bar a{
 		float:left;
@@ -42,7 +40,6 @@
 		font-family: NotoSansKR-Light;
 		text-decoration: none;
 		color: #333;
-		background-color: #f0f;
 	}
 	.login-bar a:hover{
 		text-decoration: none;
@@ -85,7 +82,6 @@
 		width: 100%;
 		height: 100px;
 		background-color:#333333;
-		width: 1170px;
 	}
 	.head-container {
 		margin : 0 auto;
@@ -93,9 +89,9 @@
 	}
 	#map-canvas {
 		height: 100%;
-		width: 40%;
+		width: 600px;
 		position: relative;
-		top: 0px;
+		top: 80px;
 		float: left;
 		margin: 0 auto;
 		padding: 0px
@@ -195,7 +191,7 @@
 		
 	</script>
 </head>
-<body>
+<body style="overflow-y:hidden;">
 	<!-- Login Modal -->
 	<div class="modal fade bs-example-modal-lg" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-lg">
@@ -289,7 +285,41 @@
 			</div>
 		</div>
 		
+		<div class="head">
+			<div class="head-container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href=""><span
+						style="font-family: Dense-Regular;">RESPACE</span></a>
+				</div>
 		
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse navbar-ex1-collapse">
+					<ul class="nav navbar-nav navbar-right">
+		
+						<li><a href="space_search.html">공간찾기</a></li>
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown">참여하기 <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="magazine.html"><span
+										style="font-family: NotoSansKR-Light;">둘러보기</span></a></li>
+								<li><a href="calendar.html"><span
+										style="font-family: NotoSansKR-Light;">일정보기</span></a></li>
+							</ul></li>
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown">어바웃<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="portfolio-1-col.html"><span
+										style="font-family: NotoSansKR-Light;">회사 소개</span></a></li>
+								<li><a href="portfolio-2-col.html"><span
+										style="font-family: NotoSansKR-Light;">히스토리</span></a></li>
+								<li><a href="portfolio-3-col.html"><span
+										style="font-family: NotoSansKR-Light;">CONTACT</span></a></li>
+							</ul></li>
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+		</div>
 		
 	</nav>
 	
