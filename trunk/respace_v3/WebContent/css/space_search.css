@@ -1,0 +1,126 @@
+#in-bar {
+	background-color: #fff;
+	width: 100%;
+	margin-top: 0px;
+	display: block;
+	height: 30px;
+}
+.header-bar{
+	position: relative;
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	max-width: none !important;
+	width: 1170px;
+	height: 30px;
+}
+.login-bar{
+	float: right;
+}
+.login-bar a{
+	float:left;
+	margin: 0 20px;
+	font-family: NotoSansKR-Light;
+	text-decoration: none;
+	color: #333;
+}
+.login-bar a:hover{
+	text-decoration: none;
+}
+.login-bar img{
+	float: left;
+	margin: 2px 5px 2px 0;
+	width: 15px;
+}
+
+.head{
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 15px;
+	max-width: none !important;
+	width: 100%;
+	height: 90px;
+	background-color:#333333;
+}
+.head-container {
+	margin : auto;
+	min-width: 900px;
+	width: 1170px;
+}
+.head-title{
+	display: table;
+	float: left;
+}
+.head-title a{
+	color: #fff;
+	width: 150px;
+	font-size: 40px;
+	font-family: Dense-Regular;
+	text-decoration: none;
+}
+
+#map-canvas {
+	height: 100%;
+	width: 40%;
+	position: relative;
+	top: 70px;
+	float: left;
+	margin: 0 auto;
+	padding: 0px
+}
+
+.space-info{
+	height: 100%;
+	width: 60%;
+	position: relative;
+	top: 70px;
+	float: left;
+}
+
+.space-info span{
+	font-size: 18px;
+	font-family: 'NotoSansKR-Black';
+}
+
+.space-title{
+	float: left;
+	background-color: #fff;
+}
+.space-info .content{
+	float: left;
+	margin-left: 50px;
+	background-color:#eee;
+}
+
+.space-info-period, .space-info-purpose, .space-info-region, .space-info-price, .space-info-list{
+	float: left;
+	width: 100%;
+	height: 70px;
+	padding: 25px;
+	min-height: 50px;
+}
+
+.space-info-period{
+	background-color:#f0f;
+}
+.space-info-purpose{
+	height: 120px;
+	padding: 50px 25px;
+	background-color:#ff0;
+}
+.space-info-region{
+	background-color:#0ff;
+}
+.space-info-price{
+	background-color:#ddd;
+}
+.space-info-list{
+	direction: ltr;
+	overflow-y: scroll;
+	height: 1000px;
+	background-color:#aaa;
+}
