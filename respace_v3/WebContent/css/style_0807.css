@@ -53,12 +53,13 @@ body {
 }
 
 #search_lounge {
-	margin: 0 auto;
+	margin: auto;
 	width: 800px;
-	margin-top: 230px;
-	position: absolute;
+	height: 361px;
+	margin-top: 130px;
+	position: relative;
+	text-align: center;
 	z-index: 1;
-	left:25%;
 }
 
 .introduction {

@@ -1,126 +1,65 @@
-<!DOCTYPE html>
-<html dir="rtl">
+<!doctype html>
+<html lang="kr">
 <head>
-  <title>RESPACE :: 공유공간플랫폼</title>
-  <meta charset="utf-8">
-
-  <!-- Bootstrap core CSS -->
-  <link href="css/mybootstrap.css" rel="stylesheet">
-
-  <!-- Add custom CSS here -->
-  <link href="css/style_0722.css" rel="stylesheet">
-  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  
-  <style>
-  #map-canvas {
-    height: 100%;
-    width: 40%;
-    float:left;
-    margin: 0 auto;
-    margin-top: 60px;
-    padding: 0px
-  }
-  </style>
-  <script src="https://maps.googleapis.com/maps/api/js?ket=AIzaSyAnZFjINOu7CN03lzjWbgTUzjfMdLAC1Dg&sensor=true"></script>
-  <script>
-  var map;
-  function initialize() {
-    var mapOptions = {
-      scaleControl: true,
-      center: new google.maps.LatLng(37.560865, 126.935441), // 위치 좌표 작성
-      zoom: 15 // 초기 확대값
-    };
-
-    map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+	<title>테스트 페이지</title>
 	
-    google.maps.event.addListener(map, 'click', function(event){
-    	placeMarker(event.latLng);	
-    });
-    
-    var marker = new google.maps.Marker({
-      map: map,
-      position: map.getCenter()
-    });
-    
-    var infowindow = new google.maps.InfoWindow();
-    infowindow.setContent('<h1>Replace</h1>');  // 클릭했을때 나올 내용
-    
-    google.maps.event.addListener(marker, 'click', function() {
-      infowindow.open(map, marker);
-    });
-  }
-
-  function placeMarker(location){
-	var marker = new google.maps.Marker({
-    	map: map,
-    	position: location
-	});
+	<meta charset="utf-8">
 	
-	map.setCenter(location);
-  }
-  
-  google.maps.event.addDomListener(window, 'load', initialize);
-  
-  </script>
+	<style type="text/css">
+	body {
+		margin: 0px;
+		padding: 0px;
+		width: 100%;
+		height: 100%;
+	}
+	
+	#top {
+		width: 100%;
+		height: 200px;
+		background-color: #ffcccc;
+		position: absolute;
+	}
+	
+	#menu {
+		width: 100%;
+		height: 44px;
+		position: absolute;
+		left: 0px;
+		top: 200px;
+		z-index: 2;
+		background-color: #9c0a0d;
+	}
+	</style>
+	<script type="text/javascript"
+		src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$(window).scroll(function() {
+				if ($(this).scrollTop() > 200) {
+					$("#menu").css({
+						"position" : "fixed",
+						"top" : "0px"
+					});
+				} else {
+					$("#menu").css({
+						"position" : "absolute",
+						"top" : "200px"
+					});
+				}
+			});
+		});
+	</script>
 </head>
 <body>
-	<nav class="navbar navbar-inverse navbar-fixed-top" style="height: 80px;" role="navigation">
-		<div id="in-bar" style="height: 30px;">
-			<div class="container2">
-				<a href="#loginModal" data-toggle="modal" style="margin: 0 20px; font-family: NotoSansKR-Light;">
-					<img src="images/facebook_login.png" style="width: 15px; margin: 0 5px 2px 0;">LOGIN</a>
-				<a href="#joinModal" data-toggle="modal" style="margin: 0 20px; font-family: NotoSansKR-Light;">JOIN</a>
-			</div>
-		</div>
-	
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href=""><span
-					style="font-family: Dense-Regular;">RESPACE</span></a>
-			</div>
-	
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse navbar-ex1-collapse">
-				<ul class="nav navbar-nav navbar-right">
-	
-					<li><a href="services.html">공간찾기</a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">참여하기 <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="magazine.html"><span
-									style="font-family: NotoSansKR-Light;">둘러보기</span></a></li>
-							<li><a href="calendar.html"><span
-									style="font-family: NotoSansKR-Light;">일정보기</span></a></li>
-						</ul></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">어바웃<b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="portfolio-1-col.html"><span
-									style="font-family: NotoSansKR-Light;">회사 소개</span></a></li>
-							<li><a href="portfolio-2-col.html"><span
-									style="font-family: NotoSansKR-Light;">히스토리</span></a></li>
-							<li><a href="portfolio-3-col.html"><span
-									style="font-family: NotoSansKR-Light;">CONTACT</span></a></li>
-						</ul></li>
-				</ul>
-			</div>
-			<!-- /.navbar-collapse -->
-		</div>
-	
-		<!-- /.container -->
-	</nav>
-	
-	<!-- 구글 맵 API -->
-	<div id="map-canvas"></div>
-
-	<div class="section-colored2" style="padding-bottom: 0;">
 
 
-	</div>
+	<div id="top">로고......</div>
 
-  	<!-- JavaScript -->
-  	<script src="js/jquery-1.10.2.js"></script>
-  	<script src="js/bootstrap.js"></script>
-  	<script src="js/modern-business.js"></script>
+
+	<div id="menu">메뉴바......</div>
+
+	<div style="width: 200px; height: 2000px;"></div>
+
+
 </body>
 </html>
