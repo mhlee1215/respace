@@ -1,3 +1,68 @@
+#in-bar {
+	background-color: #fff;
+	width: 100%;
+	margin-top: 0px;
+	display: block;
+	height: 30px;
+}
+.header-bar{
+	position: relative;
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	max-width: none !important;
+	width: 1170px;
+	height: 30px;
+}
+.login-bar{
+	float: right;
+}
+.login-bar a{
+	float:left;
+	margin: 0 20px;
+	font-family: NotoSansKR-Light;
+	text-decoration: none;
+	color: #333;
+}
+.login-bar a:hover{
+	text-decoration: none;
+}
+.login-bar img{
+	float: left;
+	margin: 2px 5px 2px 0;
+	width: 15px;
+}
+
+.head{
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 15px;
+	max-width: none !important;
+	width: 100%;
+	height: 90px;
+	
+}
+.head-container {
+	margin : auto;
+	min-width: 900px;
+	width: 1170px;
+}
+.head-title{
+	display: table;
+	float: left;
+}
+.head-title a{
+	color: #fff;
+	width: 150px;
+	font-size: 40px;
+	font-family: Dense-Regular;
+	text-decoration: none;
+}
+
 .respace-title span{
 	margin-top: 10px;
 	font-size: 50px;
