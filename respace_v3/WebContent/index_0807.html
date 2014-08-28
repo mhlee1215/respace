@@ -2,111 +2,32 @@
 <html lang="kr">
 
 <head>
-<meta charset="utf-8">
-<meta name="description" content="">
-<meta name="author" content="">
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	
+	<title>RESPACE :: 공유공간플랫폼</title>
+	
+	<!-- Bootstrap core CSS -->
+	<link href="css/mybootstrap.css" rel="stylesheet">
+	
+	<!-- Add custom CSS here -->
+	<link href="css/style_0807.css" rel="stylesheet">
+	<link href="css/header.css" rel="stylesheet">
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<style type="text/css">
+	
+	</style>
 
-<title>RESPACE :: 공유공간플랫폼</title>
-
-<!-- Bootstrap core CSS -->
-<link href="css/mybootstrap.css" rel="stylesheet">
-
-<!-- Add custom CSS here -->
-<link href="css/style_0807.css" rel="stylesheet">
-<link href="css/header.css" rel="stylesheet">
-<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<style type="text/css">
-
-</style>
-
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/header.js"></script>
+	
 </head>
 
-<body>
-	<!-- Login Modal -->
-	<div class="modal fade bs-example-modal-lg" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-	  <div class="modal-dialog modal-lg">
-	    <div class="modal-content">
-<!--
-		  <div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-			<h4 class="modal-title" id="myModalLabel">Modal title</h4>
-		  </div>
-		  <div class="modal-body">
--->
-			<div class="content-login">
-				<div class="respace-title"><span>RESPACE</span></div>
-				<div class="respace-comment"><b>남는 공간</b>을 공간이 <b>필요한 사람</b>에게 <b>제공</b>하는 <b>플랫폼</b></div>
-				<div class="content-login-inner">
-					<span>LOGIN</span>
-					<form action="" method="post">
-						<input type="email" placeholder="이메일주소">
-						<input type="password" placeholder="비밀번호">
-					</form>
-					<a href="">비밀번호찾기</a>
-					/
-					<a data-dismiss="modal" data-toggle="modal" href="#joinModal">회원가입하기</a>
-				</div>
-				<div class="fb-login-comment">페이스북 아이디가 있으시다면...</div>
-				<div class="fb-login"><a href=""><img src="images/facebook_login.png" style="width: 15px; margin: 0 5px 2px 0;">페이스북으로 로그인</a></div>
-			
-			</div>
-<!--
-		  </div>
+<body class="index">
+	<? include('include/header.html') ?>
 
-		  <div class="modal-footer">
-		 
-			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			<button type="button" class="btn btn-primary">Save changes</button>
-			
-		  </div>
--->
-		</div>
-	  </div>
-	</div>
-	
-	<!-- Join Modal -->
-	<div class="modal fade bs-example-modal-lg" id="joinModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-	  <div class="modal-dialog modal-lg">
-	    <div class="modal-content">
-			<div class="content-join">
-				<div class="content-join-title"><span>RESPACE</span></div>
-				<div class="content-join-comment"><b>남는 공간</b>을 공간이 <b>필요한 사람</b>에게 <b>제공</b>하는 <b>플랫폼</b></div>
-				<div class="respace-join-logo">공간에 가치를 더하다</div>
-				<div class="content-join-inner">
-					이미 RESPACE의 회원이신가요?
-					<a data-dismiss="modal" data-toggle="modal" href="#loginModal">로그인</a>
-				</div>
-				<div class="email-login"><a data-dismiss="modal" data-toggle="modal" href="#emailjoinModal"><img src="images/facebook_login.png" style="width: 15px; margin: 0 5px 2px 0;">이메일로 가입하기</a></div>
-				<div class="fb-login"><a href=""><img src="images/facebook_login.png" style="width: 15px; margin: 0 5px 2px 0;">페이스북으로 가입하기</a></div>
-			
-			</div>
-		</div>
-	  </div>
-	</div>
-	
-	<!-- Emain Join Modal -->
-	<div class="modal fade bs-example-modal-lg" id="emailjoinModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-	  <div class="modal-dialog modal-lg">
-	    <div class="modal-content">
-			<div class="content-email-join">
-				<div class="respace-title"><span>RESPACE</span></div>
-				<div class="content-email-join-inner">
-					<span>회원가입</span>
-					<form action="" method="post">
-						<input type="email" placeholder="이메일주소">
-						<input type="text" placeholder="이  름">
-						<input type="password" placeholder="비밀번호">
-						<br />
-						<button type="submit">가입하기</button>
-					</form>
-				</div>
-				<div class="fb-login"><a href=""><img src="images/facebook_login.png" style="width: 15px; margin: 0 5px 2px 0;">페이스북으로 가입하기</a></div>
-			
-			</div>
-		</div>
-	  </div>
-	</div>
-	
+<!--	
 	<nav class="navbar navbar-inverse navbar-fixed-top" style="height: 80px;" role="navigation">
 		<div id="in-bar" style="height: 30px;">
 			<div class="container2">
@@ -122,7 +43,6 @@
 					style="font-family: Dense-Regular;">RESPACE</span></a>
 			</div>
 	
-			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav navbar-right">
 	
@@ -147,12 +67,10 @@
 						</ul></li>
 				</ul>
 			</div>
-			<!-- /.navbar-collapse -->
-		</div>
-	
-		<!-- /.container -->
+		</div>	
 	</nav>
-
+-->
+	
 	<div id="search_lounge">
 		<div class="introduction">
 			<p>
@@ -168,14 +86,14 @@
 		<div id="tfheader">
 			<form id="tfnewsearch" method="get" action="#">
 				<input type="text" class="tftextinput op-20" name="q" size="40"
-					maxlength="120"> <input type="submit" value="search"
+					maxlength="120" required> <input type="submit" value="search"
 					class="tfbutton">
 			</form>
 			<div class="tfclear"></div>
 		</div>
 	</div>
 		
-	<div id="myCarousel" class="carousel slide" style="position:absolute; top:100px;">
+	<div id="myCarousel" class="carousel slide" style="position:absolute; top:110px;">
 		
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner">
@@ -382,36 +300,9 @@
 	<!-- /.container -->
 
 	<!-- JavaScript -->
-	<script src="js/jquery-1.10.2.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/modern-business.js"></script>
 	<script language="javascript">
-//		$('#myModal').modal()                      // initialized with defaults
-//		$('#myModal').modal({ keyboard: false })   // initialized with no keyboard
-//		$('#myModal').modal('show')                // initializes and invokes show immediately
-/*
-		$('#myModal').on('show.bs.modal', function (e) {
-			// do something...
-			
-		})
-*/
-
-/*
-		function modalPop(url){ 
-			var popOptions = "dialogWidth: 500px; dialogHeight: 30px; center: yes; resizable: yes; status: no; scroll: no;"; 
-			var vReturn = window.showModalDialog(url, window, popOptions); 
-			  
-			if (vReturn == 'ok'){
-				// (모달창에서 버튼 이벤트 실행 또는 닫기 후)모달창이 닫혔을 때 부모창에서 실행 할 함수
-				location.reload(); 
-				return;
-			}else{
-				return;
-			}
-			
-			return vReturn;
-		}
-*/
 
 		function click_choice(id) {
 			if (id == "etov") {
