@@ -21,7 +21,7 @@
 }
 .login-bar a{
 	float:left;
-	margin: 0 20px;
+	margin: 0 15px;
 	font-family: NotoSansKR-Light;
 	text-decoration: none;
 	color: #333;
@@ -30,6 +30,7 @@
 	text-decoration: none;
 }
 .login-bar img{
+	cursor: pointer;
 	float: left;
 	margin: 2px 5px 2px 0;
 	width: 15px;
@@ -62,6 +63,10 @@
 	font-family: Dense-Regular;
 	text-decoration: none;
 }
+.head-title a:hover{
+	color: #1dd87a;
+	background-color: transparent;
+}
 
 .respace-title span{
 	margin-top: 10px;
@@ -76,11 +81,9 @@
 .content-login{
 	height:500px;
 	text-align:center;
-	<!--
-	background-image: url(./images/DEPTtext.jpg);
+	background-image: url(../images/BG2.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
-	-->
 }
 .content-login-inner{
 	display: block;
@@ -105,6 +108,9 @@
 .content-join{
 	height:500px;
 	text-align:center;
+	background-image: url(../images/BG3.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .content-join-title span{
 	margin-top: 10px;
@@ -130,6 +136,9 @@
 	border:2px  #31C120  solid;
 	color: #31C120;
 }
+.content-join-inner a:hover{
+	text-decoration: none;
+}
 .email-login{
 	width : 220px;
 	height: 32px;
@@ -140,10 +149,16 @@
 .email-login a{
 	color: #fff;
 }
+.email-login a:hover{
+	text-decoration: none;
+}
 
 .content-email-join{
 	height:500px;
 	text-align:center;
+	background-image: url(../images/BG1.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .content-email-join-inner{
 	display: block;
@@ -177,6 +192,7 @@
 	color: #3b5998;
 }
 .fb-login{
+	cursor: pointer;
 	width : 220px;
 	height: 32px;
 	margin: 0 auto;
