@@ -15,16 +15,48 @@
 				<div class="respace-comment"><b>남는 공간</b>을 공간이 <b>필요한 사람</b>에게 <b>제공</b>하는 <b>플랫폼</b></div>
 				<div class="content-login-inner">
 					<span>LOGIN</span>
-					<form action="" method="post">
-						<input type="email" placeholder="이메일주소">
-						<input type="password" placeholder="비밀번호">
+				
+					<form action="login.php" method="post" role="form" onsubmit="return onSubmit(this);">
+						<input type="email" id="MEM_EMAIL" name="MEM_EMAIL" placeholder="이메일주소">
+						<input type="password" id="MEM_PW" name="MEM_PW" placeholder="비밀번호">
+						<input type="hidden" name="login_type" value="email">
+						<br />
+						<button type="submit">로그인</button>
 					</form>
+					
+					 <!-- 
+					 <form class="join-form form-horizontal" role="form" action="login.php" method="post" enctype="multipart/form-data" onreset="location.reload();" onsubmit="return onSubmit(this);">
+						<input type="hidden" name="login_type" value="email" />
+						<div class="form-group">
+							<label for="MEM_EMAIL" class="col-sm-2 control-label">이메일</label>
+							<div class="col-sm-5">
+								<input type="email" class="form-control " id="MEM_EMAIL" placeholder="이메일주소" name="MEM_EMAIL" />
+							</div>
+						</div>
+					
+						<div class="form-group">
+							<label for="MEM_PW" class="col-sm-2 control-label">비밀번호</label>
+							<div class="col-sm-5">
+								<input type="password" class="form-control " id="MEM_PW" placeholder="비밀번호" name="MEM_PW">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-sm-offset-4 col-sm-4">
+								<button type="submit" class="btn btn-primary btn-lg">
+									로그인
+								</button>
+							</div>
+						</div>
+					</form>
+					 -->
+					 
 					<a href="">비밀번호찾기</a>
 					/
 					<a data-dismiss="modal" data-toggle="modal" href="#joinModal">회원가입하기</a>
 				</div>
 				<div class="fb-login-comment">페이스북 아이디가 있으시다면...</div>
-				<div class="fb-login"><a href=""><img src="images/facebook_login.png" style="width: 15px; margin: 0 5px 2px 0;">페이스북으로 로그인</a></div>
+				<div class="fb-login"><img src="images/facebook_login.png" style="width: 15px; margin: 0 5px 2px 0;">페이스북으로 로그인</div>
 			
 			</div>
 <!--
@@ -54,7 +86,7 @@
 					<a data-dismiss="modal" data-toggle="modal" href="#loginModal">로그인</a>
 				</div>
 				<div class="email-login"><a data-dismiss="modal" data-toggle="modal" href="#emailjoinModal"><img src="images/facebook_login.png" style="width: 15px; margin: 0 5px 2px 0;">이메일로 가입하기</a></div>
-				<div class="fb-login"><a href=""><img src="images/facebook_login.png" style="width: 15px; margin: 0 5px 2px 0;">페이스북으로 가입하기</a></div>
+				<div class="fb-login"><img src="images/facebook_login.png" style="width: 15px; margin: 0 5px 2px 0;">페이스북으로 가입하기</div>
 			
 			</div>
 		</div>
@@ -77,7 +109,7 @@
 						<button type="submit">가입하기</button>
 					</form>
 				</div>
-				<div class="fb-login"><a href=""><img src="images/facebook_login.png" style="width: 15px; margin: 0 5px 2px 0;">페이스북으로 가입하기</a></div>
+				<div class="fb-login"><img src="images/facebook_login.png" style="width: 15px; margin: 0 5px 2px 0;">페이스북으로 가입하기</div>
 			
 			</div>
 		</div>
@@ -86,16 +118,24 @@
 	
 	<nav class="navbar navbar-inverse navbar-fixed-top"  role="navigation">
 		<div class="header-bar">
-			<div class="login-bar">
-				<a href="#loginModal" data-toggle="modal"><img src="images/facebook_login.png">LOGIN</a>
-				<a href="#joinModal" data-toggle="modal">JOIN</a>
-			</div>
+			<? if(is_login()) { ?>
+				<div class="login-bar">
+					<a><?=get_mem_name() ?> 님 안녕하세요.</a>
+					<a onclick="FBlogout();" href="logout.php">LOGOUT</a>
+				</div>
+			<? } else { ?>
+				<div class="login-bar">
+					<a id="facebook-btn" style="margin-right:-5px"><img src="images/facebook_login.png"></a>
+					<a href="#loginModal" data-toggle="modal">LOGIN</a>
+					<a href="#joinModal" data-toggle="modal">JOIN</a>
+				</div>
+			<? } ?>
 		</div>
 		
 		<div class="head">
 			<div class="head-container">
 				<div class="head-title" id="head-title">
-					<a href="index_0807.html">
+					<a href="respace.html">
 					<span>RESPACE</span></a>
 				</div>
 		
@@ -112,6 +152,8 @@
 								<li><a href="calendar.html"><span
 										style="font-family: NotoSansKR-Light;">일정보기</span></a></li>
 							</ul></li>
+						<li><a href="about.html">어바웃</a></li>
+					<!--  
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown">어바웃<b class="caret"></b></a>
 							<ul class="dropdown-menu">
@@ -121,7 +163,9 @@
 										style="font-family: NotoSansKR-Light;">히스토리</span></a></li>
 								<li><a href="portfolio-3-col.html"><span
 										style="font-family: NotoSansKR-Light;">CONTACT</span></a></li>
-							</ul></li>
+							</ul>
+						</li>
+					-->
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->

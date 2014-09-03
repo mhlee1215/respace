@@ -1,3 +1,4 @@
+<? include("api/include.php")?>
 <!DOCTYPE html>
 <html lang="kr">
 <head>
@@ -8,8 +9,9 @@
 	<link href="css/mybootstrap.css" rel="stylesheet">
 
 	<!-- Add custom CSS here -->
-	<link href="css/style_0807.css" rel="stylesheet">
+	<link href="css/respace.css" rel="stylesheet">
 	<link href="css/header.css" rel="stylesheet">
+	<link href="css/jquery-ui.css" rel="stylesheet">
 	<link href="css/space_search.css" rel="stylesheet">
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
@@ -18,39 +20,12 @@
 	</style>
 	
 	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/jquery-ui.js"></script>
 	<script src="js/header.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?ket=AIzaSyAnZFjINOu7CN03lzjWbgTUzjfMdLAC1Dg&sensor=true"></script>
 	
 	<script type="text/javascript">
-		
-		
-		/*
-	    $(document).ready(function () {
-			var latitude = parseFloat("51.515252");
-			var longitude = parseFloat("-0.189852");
-			var latlngPos = new google.maps.LatLng(latitude, longitude);
-			// Set up options for the Google map
-			var myOptions = {
-				zoom: 10,
-				center: latlngPos,
-				mapTypeId: google.maps.MapTypeId.ROADMAP
-			};
-			// Define the map
-			map = new google.maps.Map(document.getElementById("map"), myOptions);
-		});
 
-		var gmap = new google.maps.Map(
-		mymap,{
-			zoom:map3, //줌
-			left:new google.maps.LatLng(latlng[0][0], latlng[0][1]),
-			center: new google.maps.LatLng(gcenter[0][0], gcenter[0][1]),
-			icon: image,
-			mapTypeId:google.maps.MapTypeId.ROADMAP} //맵타입
-		);
-		*/
-		
-
-		///////////////////
 		var latlng = new Array();
 
 		latlng[0] = [37.583524, 127.054240,"테스트1"];
@@ -116,6 +91,7 @@
 		
 	</script>
 </head>
+
 <body class="space_search">
 	<? include('include/header.html') ?>
 	
@@ -129,8 +105,25 @@
 				<span>대여기간</span>
 			</div>
 			
-			<div class="content">
-				<span>테스트</span>
+			<div class="space-content">
+				<input type="text" id="calendar1" name="calendar1"/>
+				<span>~</span>
+				<input type="text" id="calendar2" name="calendar2"/>
+				
+				<!-- 
+				<div class="btn-group" data-toggle="buttons">
+				  <label class="btn btn-default">
+				    <input type="checkbox"> 평일
+				  </label>
+				  <label class="btn btn-default">
+				    <input type="checkbox"> 주말/공휴일
+				  </label>
+				</div>
+				 -->
+				
+				<button class="space-btn-weekday">평  일</button>
+				<button class="space-btn-weekend">주말/공휴일</button>
+				
 			</div>
 		</div>
 		
@@ -139,8 +132,44 @@
 				<span>이용목적</span>
 			</div>
 			
-			<div class="content">
-				<span>테스트</span>
+			<div class="space-content">
+				<div>
+					<a href="">
+						<img src="images/icon_house.png">
+						<br>마켓
+					</a>
+				</div>
+				<div>
+					<a href="">
+						<img src="images/icon_house.png">
+						<br>공연
+					</a>
+				</div>
+				<div>
+					<a href="">
+						<img src="images/icon_house.png">
+						<br>전시
+					</a>
+				</div>
+				<div>
+					<a href="">
+						<img src="images/icon_house.png">
+						<br>파티
+					</a>
+				</div>
+				<div>
+					<a href="">
+						<img src="images/icon_house.png">
+						<br>회의
+					</a>
+				</div>
+				<div>
+					<a href="">
+						<img src="images/icon_house.png">
+						<br>기타
+					</a>
+				</div>
+				</NOBR>
 			</div>
 		</div>
 		
@@ -149,8 +178,12 @@
 				<span>지역선택</span>
 			</div>
 			
-			<div class="content">
-				<span>테스트</span>
+			<div class="space-content">
+				<a href="">신촌/홍대/상수</a>
+				<a href="">종로/삼청/인사</a>
+				<a href="">이태원/한남</a>
+				<a href="">강남/역삼/논현</a>
+				<a href="">신사/압구정</a>
 			</div>
 		</div>
 		
@@ -158,8 +191,11 @@
 			<div class="space-title">
 				<span>임대가격</span>
 			</div>
-			<div class="content">
-				<span>테스트</span>
+			<div class="space-content">
+				<button class="space-btn-price">$</button>
+				<button class="space-btn-price">$$</button>
+				<button class="space-btn-price">$$$</button>
+				<button class="space-btn-price">$$$$</button>
 			</div>
 		</div>
 		
@@ -172,5 +208,31 @@
   	<!-- JavaScript -->
   	<script src="js/bootstrap.js"></script>
   	<script src="js/modern-business.js"></script>
+  	<script>
+  		$("#calendar1").datepicker({
+  			changeMonth: true,	// 콤보 박스에 월 보이기
+  			changeYear: true,	// 콤보 박스에 년도 보이기
+  			//showOn: 'button'	// 우측에 달력 icon을 보인다
+  			//buttonImage: '/images/btn_cal.png',	// 우측 달력 icon의 이미지 경로
+  			//buttonImageOnly: true	// 달력에 아이콘 사용하기
+  		});
+  		$("#calendar2").datepicker({
+  			changeMonth: true,	// 콤보 박스에 월 보이기
+  			changeYear: true,	// 콤보 박스에 년도 보이기
+  			//showOn: 'button'	// 우측에 달력 icon을 보인다
+  			//buttonImage: '/images/btn_cal.png',	// 우측 달력 icon의 이미지 경로
+  			//buttonImageOnly: true	// 달력에 아이콘 사용하기
+  		});
+  		
+  		// 마우스를 손가락 모양으로 하고 여백 주기
+  		$('img.ui-datepicker-trigger').css({
+  			'cursor':'pointer',
+  			'margin-left':'5px',
+  			'margin-top':'3px'
+  			});
+  		
+  		// 날짜 형식을 0000-00-00으로 지정하기
+  		$.datepicker.setDefaults({dateFormat:'yy / mm / dd'});
+  	</script>
 </body>
 </html>

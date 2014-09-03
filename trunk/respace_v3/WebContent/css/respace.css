@@ -72,12 +72,12 @@ body {
 	text-shadow: 1px 0px 10px #333;
 }
 
-#tfheader { //
-	background-color: #c3dfef;
+#tfheader {
+	//background-color: #c3dfef;
 }
 
-#tfnewsearch { //
-	float: right;
+#tfnewsearch {
+	//float: right;
 	padding: 20px;
 }
 
