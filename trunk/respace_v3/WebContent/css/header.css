@@ -79,7 +79,7 @@
 
 
 .content-login{
-	height:500px;
+	height:600px;
 	text-align:center;
 	background-image: url(../images/BG2.jpg);
 	background-size: cover;
@@ -87,7 +87,7 @@
 }
 .content-login-inner{
 	display: block;
-	width : 500px;
+	width : 600px;
 	margin : 0 auto;
 	padding : 10px 10px 25px 10px;
 	background-color: #ccc;
@@ -106,7 +106,7 @@
 
 
 .content-join{
-	height:500px;
+	height:600px;
 	text-align:center;
 	background-image: url(../images/BG3.jpg);
 	background-size: cover;
@@ -154,7 +154,7 @@
 }
 
 .content-email-join{
-	height:500px;
+	height:600px;
 	text-align:center;
 	background-image: url(../images/BG1.jpg);
 	background-size: cover;
@@ -162,7 +162,7 @@
 }
 .content-email-join-inner{
 	display: block;
-	width : 500px;
+	width : 600px;
 	margin : 0 auto 50px;
 	padding : 10px 10px 25px 10px;
 }
