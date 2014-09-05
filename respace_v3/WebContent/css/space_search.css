@@ -10,7 +10,7 @@
 	top: 70px;
 	float: left;
 	margin: 0 auto;
-	padding: 0px
+	padding: 0px;
 }
 
 .space-info{
@@ -137,4 +137,8 @@
 	overflow-y: scroll;
 	height: 1000px;
 	background-color:#aaa;
+}
+
+.space-info-no-list{
+	display: none;
 }

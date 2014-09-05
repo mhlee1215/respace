@@ -2,7 +2,8 @@ function fblogin() {
 	var id;
     var name;
     var link;
-
+    var current_page = document.documentURI;
+    
     FB.api('/me', function (response) {
     	id = response.id;
         name = response.name;
@@ -18,8 +19,10 @@ function fblogin() {
                     link_data: link
                 },
                 success: function (data) {
-                    alert("페북 로그인 : " + data.code + "\n이름 : " + data.data.name + "\n프로필링크 : " + data.data.link);
-                    
+//                  alert("페북 로그인 : " + data.code + "\n이름 : " + data.data.name + "\n프로필링크 : " + data.data.link);
+//               	location.href = current;
+                	alert("페이스북 계정으로 로그인되었습니다.");
+                	location.replace(current_page);
                 }
             });
         });
@@ -46,7 +49,7 @@ function onSubmit(form) {
 		form.MEM_PW.focus();
 		return false;
 	}
-
+	
 	return true;
 }
 

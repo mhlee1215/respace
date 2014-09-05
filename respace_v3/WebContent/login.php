@@ -23,11 +23,13 @@
 //		$_SESSION[SESSION_MEM_PICTURE] = $MEM_LINK;
 
 		json_result($data);
+//		go("respace.html");
 	}
 	else if($LOGIN_TYPE === "email"){
 		$MEM_EMAIL = str_request("MEM_EMAIL");
 		$MEM_PW = str_request("MEM_PW");
-
+		$current_page = str_request("current_page");
+		
 		if($MEM_EMAIL == "" || $MEM_PW == ""){	
 			msg("아이디나 비밀번호를 입력해주세요.");
 		}
@@ -43,7 +45,7 @@
 			$_SESSION[SESSION_MEM_NAME] = "관리자";
 
 //			msg("이메일 : ".$MEM_EMAIL."\n회원번호 : ".get_mem_num());
-			go("respace.html");
+			go($current_page);
 		}	
 	}
 

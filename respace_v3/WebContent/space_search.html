@@ -1,4 +1,4 @@
-<? include("api/include.php")?>
+<? include("api/include.php"); ?>
 <!DOCTYPE html>
 <html lang="kr">
 <head>
@@ -23,72 +23,11 @@
 	<script src="js/jquery-ui.js"></script>
 	<script src="js/header.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?ket=AIzaSyAnZFjINOu7CN03lzjWbgTUzjfMdLAC1Dg&sensor=true"></script>
+	<script src="js/space_search.js"></script>
+	<script src="js/map.js"></script>
 	
 	<script type="text/javascript">
 
-		var latlng = new Array();
-
-		latlng[0] = [37.583524, 127.054240,"테스트1"];
-		latlng[1] = [37.585292, 127.060956,"테스트2"];
-		latlng[2] = [37.583710, 127.060066,"테스트2"];
-		latlng[3] = [37.586924, 127.060302,"테스트2"];
-		latlng[4] = [37.586879, 127.056573,"테스트2"];
-		 
-		var map;
-		function initialize() {
-			var mapOptions = {
-				scaleControl: true,
-				center: new google.maps.LatLng(37.560865, 126.935441), // 위치 좌표 작성
-				zoom: 15 // 초기 확대값
-			};
-		
-			map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
-		
-			setMarkers(map, latlng);
-			
-			/*
-			google.maps.event.addListener(map, 'click', function(event){
-				placeMarker(event.latLng);	
-			});
-		   
-			var marker = new google.maps.Marker({
-				map: map,
-				position: map.getCenter()
-			});
-		   	
-			var infowindow = new google.maps.InfoWindow();
-			infowindow.setContent('<h1>Replace</h1>');  // 클릭했을때 나올 내용
-		   
-			google.maps.event.addListener(marker, 'click', function() {
-				infowindow.open(map, marker);
-			});
-			*/
-		}
-		
-		/*
-		function placeMarker(location){
-			var marker = new google.maps.Marker({
-			   	map: map,
-			   	position: location
-			});
-			
-			map.setCenter(location);
-		}
-	 	*/
-	 	
-	 	function setMarkers(map, locations) {
-			for (var i = 0; i < latlng.length; i++){ //마커를 여러개 찍을 때 사용
-				var marker = new google.maps.Marker({
-					position: new google.maps.LatLng(latlng[i][0], latlng[i][1]),
-					map:map,
-					title:latlng[i][2]
-				});
-				
-			}
-		}
-	 	
-		google.maps.event.addDomListener(window, 'load', initialize);
-		
 	</script>
 </head>
 
@@ -106,9 +45,9 @@
 			</div>
 			
 			<div class="space-content">
-				<input type="text" id="calendar1" name="calendar1"/>
+				<input type="text" id="calendar1" name="calendar1" onchange="return ChangeValue(this);" />
 				<span>~</span>
-				<input type="text" id="calendar2" name="calendar2"/>
+				<input type="text" id="calendar2" name="calendar2" onchange="return ChangeValue(this);" />
 				
 				<!-- 
 				<div class="btn-group" data-toggle="buttons">
@@ -134,38 +73,38 @@
 			
 			<div class="space-content">
 				<div>
-					<a href="">
+					<a href="javascript:;" onclick="click_purpose(this.id);" id="purpose_1">
 						<img src="images/icon_house.png">
 						<br>마켓
 					</a>
 				</div>
 				<div>
-					<a href="">
-						<img src="images/icon_house.png">
+					<a href="javascript:;" onclick="click_purpose(this.id);" id="purpose_2">
+						<img src="images/icon_monitor.png">
 						<br>공연
 					</a>
 				</div>
 				<div>
-					<a href="">
-						<img src="images/icon_house.png">
+					<a href="javascript:;" onclick="click_purpose(this.id);" id="purpose_3">
+						<img src="images/icon_search.png">
 						<br>전시
 					</a>
 				</div>
 				<div>
-					<a href="">
+					<a href="javascript:;" onclick="click_purpose(this.id);" id="purpose_4">
 						<img src="images/icon_house.png">
 						<br>파티
 					</a>
 				</div>
 				<div>
-					<a href="">
-						<img src="images/icon_house.png">
+					<a href="javascript:;" onclick="click_purpose(this.id);" id="purpose_5">
+						<img src="images/icon_monitor.png">
 						<br>회의
 					</a>
 				</div>
 				<div>
-					<a href="">
-						<img src="images/icon_house.png">
+					<a href="javascript:;" onclick="click_purpose(this.id);" id="purpose_6">
+						<img src="images/icon_search.png">
 						<br>기타
 					</a>
 				</div>
@@ -178,11 +117,11 @@
 			</div>
 			
 			<div class="space-content">
-				<a href="">신촌/홍대/상수</a>
-				<a href="">종로/삼청/인사</a>
-				<a href="">이태원/한남</a>
-				<a href="">강남/역삼/논현</a>
-				<a href="">신사/압구정</a>
+				<a href="javascript:;" onclick="click_space(this.id);" id="space_1">신촌/홍대/상수</a>
+				<a href="javascript:;" onclick="click_space(this.id);" id="space_2">종로/삼청/인사</a>
+				<a href="javascript:;" onclick="click_space(this.id);" id="space_3">이태원/한남</a>
+				<a href="javascript:;" onclick="click_space(this.id);" id="space_4">강남/역삼/논현</a>
+				<a href="javascript:;" onclick="click_space(this.id);" id="space_5">신사/압구정</a>
 			</div>
 		</div>
 		
@@ -191,15 +130,25 @@
 				<span>임대가격</span>
 			</div>
 			<div class="space-content">
-				<button class="space-btn-price">$</button>
-				<button class="space-btn-price">$$</button>
-				<button class="space-btn-price">$$$</button>
-				<button class="space-btn-price">$$$$</button>
+				<button class="space-btn-price" href="javascript:;" onclick="click_price(this.id);" id="price_1">$</button>
+				<button class="space-btn-price" href="javascript:;" onclick="click_price(this.id);" id="price_2">$$</button>
+				<button class="space-btn-price" href="javascript:;" onclick="click_price(this.id);" id="price_3">$$$</button>
+				<button class="space-btn-price" href="javascript:;" onclick="click_price(this.id);" id="price_4">$$$$</button>
 			</div>
 		</div>
 		
 		<div class="space-info-list">
-			<span>정보</span>
+			<div class="space-no-list">
+				<p class="text-lead">회원님의 검색조건에 맞는 결과를 찾지 못했습니다. 검색조건을 이렇게 살짝 바꿔보시면 도움이 될 수 있습니다:</p>
+				<ul>
+					<li>검색 필터 항목 삭제하기</li>
+					<li>검색 지역을 더 넓게 잡으세요.</li>
+					<li>도시, 주소, 또는 랜드마크로 검색하기.</li>
+				</ul>
+		    </div>
+		    <div class="space-list-content">
+		    	<span>목록</span>
+		    </div>
 		</div>
 		
 	</div>
@@ -207,31 +156,10 @@
   	<!-- JavaScript -->
   	<script src="js/bootstrap.js"></script>
   	<script src="js/modern-business.js"></script>
+  	<script src="js/facebook.js"></script>
+	<script src="js/login.js"></script>
   	<script>
-  		$("#calendar1").datepicker({
-  			changeMonth: true,	// 콤보 박스에 월 보이기
-  			changeYear: true,	// 콤보 박스에 년도 보이기
-  			//showOn: 'button'	// 우측에 달력 icon을 보인다
-  			//buttonImage: '/images/btn_cal.png',	// 우측 달력 icon의 이미지 경로
-  			//buttonImageOnly: true	// 달력에 아이콘 사용하기
-  		});
-  		$("#calendar2").datepicker({
-  			changeMonth: true,	// 콤보 박스에 월 보이기
-  			changeYear: true,	// 콤보 박스에 년도 보이기
-  			//showOn: 'button'	// 우측에 달력 icon을 보인다
-  			//buttonImage: '/images/btn_cal.png',	// 우측 달력 icon의 이미지 경로
-  			//buttonImageOnly: true	// 달력에 아이콘 사용하기
-  		});
   		
-  		// 마우스를 손가락 모양으로 하고 여백 주기
-  		$('img.ui-datepicker-trigger').css({
-  			'cursor':'pointer',
-  			'margin-left':'5px',
-  			'margin-top':'3px'
-  			});
-  		
-  		// 날짜 형식을 0000-00-00으로 지정하기
-  		$.datepicker.setDefaults({dateFormat:'yy / mm / dd'});
   	</script>
 </body>
 </html>

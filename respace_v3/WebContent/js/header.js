@@ -1,4 +1,8 @@
 $(document).ready(function () {
+	var current_page = document.documentURI;
+	var current_page_input_hidden = document.getElementById("current_page");
+	current_page_input_hidden.setAttribute("value",current_page);
+	
 	var body = document.getElementsByTagName("body");
 	
 	if(body[0].className == "index"){
