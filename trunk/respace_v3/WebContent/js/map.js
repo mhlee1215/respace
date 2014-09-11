@@ -2,6 +2,7 @@
 // 경도 - Lng - 가로 - 127.xxx
 
 var map;
+var geocoder;
 var map_zoom = 15;
 var min_distance = 0.001;
 
@@ -47,6 +48,10 @@ center_latlng[2] = [37.536504, 127.000765, "이태원/한남", 0];
 center_latlng[3] = [37.500759, 127.036451, "강남/역삼/논현", 0];
 center_latlng[4] = [37.520679, 127.031837, "신사/압구정", 0];
 
+// 주소기반 마커 배열
+var address_maker = new Array();
+
+
 // 신촌 37.560865, 126.935441
 // 종로 37.570267, 126.987510
 // 이태원 37.536504, 127.000765
@@ -87,10 +92,16 @@ latlng[15] = [37.520679, 127.031837, "신사/압구정", 0];
 
 
 function initialize() {
+	geocoder = new google.maps.Geocoder();
 	var mapOptions = {
-		scaleControl: true,
 		center: new google.maps.LatLng(37.560865, 126.935441), // 위치 좌표 작성
-		zoom: map_zoom // 초기 확대값
+		zoom: map_zoom, // 초기 확대값
+		scaleControl: false,
+		panControl: false,
+		zoomControl: true,
+		mapTypeControl: false,
+		streetViewControl: false,
+		overviewMapControl: false
 	};
 
 	map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -147,9 +158,41 @@ function initialize() {
 		infowindow.close();
 	});
 	
+	// 브라우저 크기 변경 이벤트
 	google.maps.event.trigger(map, "resize");
 	
-	//// 서버에서 초기 좌표 데이터 얻어오기
+	// 지도 모두 로딩된 후에 한번 실행될 이벤트
+	google.maps.event.addListenerOnce(map, 'idle', function(){
+	    //loaded fully
+		/*
+		var address = "서울특별시 동대문구 전농동 270번지";
+		document.getElementById('address').value = address;
+		codeAddress();
+		*/ 
+	});
+	
+	/*
+	//// ajax() 서버에서 초기 좌표 데이터 얻어오기
+	$.ajax({
+		url: "",
+		dataType: 'JSON',
+		data: {
+			what : "map"
+		},
+		success: function(data){
+			for(var k=0; k<data.length; k++){
+				address_maker[k] = new Array();
+				address_maker[k]["num"] = data[k].num;
+				address_maker[k]["author"] = data[k].author;
+				address_maker[k]["address"] = data[k].address;			
+			}
+		}
+	});
+	
+	for (var j=0; j < address_maker.length;j++){
+		codeAddress(address_maker["address"]);
+	}
+	*/
 	
 	// 초기 마커 세팅
 	setMarkers();
@@ -251,8 +294,6 @@ function check_marker(){
 	return markersArray.length;
 }
 
-google.maps.event.addDomListener(window, 'load', initialize);
-
 /*
 //브라우저창 크기에 따른 지도 중심이동
 google.maps.event.addDomListener(window, "resize", function() {
@@ -266,3 +307,29 @@ google.maps.event.addDomListener(window, "resize", function() {
 	map.setCenter(center);
 });
 */
+
+// 주소 기반으로 마커 찍는 함수
+function codeAddress() {
+	var address = document.getElementById('address').value;
+    
+    geocoder.geocode({
+        'address': address
+    }, function(results, status) {
+    	alert(address + "\n" + results[0].geometry.location);
+        if (status == google.maps.GeocoderStatus.OK) {
+            map.setCenter(results[0].geometry.location);
+            addMarker(results[0].geometry.location);
+            
+            /*
+            var marker = new google.maps.Marker({
+                map: map,
+                position: results[0].geometry.location
+            });
+            */
+        } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+        }
+    });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);

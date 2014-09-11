@@ -73,38 +73,38 @@
 			
 			<div class="space-content">
 				<div>
-					<a href="javascript:;" onclick="click_purpose(this.id);" id="purpose_1">
-						<img src="images/icon_house.png">
+					<a href="javascript:;" onclick="click_purpose(this.id);" class="space-btn-purpose" id="purpose_1">
+						<img src="images/icon_house.png" class="space-img-purpose">
 						<br>마켓
 					</a>
 				</div>
 				<div>
-					<a href="javascript:;" onclick="click_purpose(this.id);" id="purpose_2">
-						<img src="images/icon_monitor.png">
+					<a href="javascript:;" onclick="click_purpose(this.id);" class="space-btn-purpose" id="purpose_2">
+						<img src="images/icon_monitor.png" class="space-img-purpose">
 						<br>공연
 					</a>
 				</div>
 				<div>
-					<a href="javascript:;" onclick="click_purpose(this.id);" id="purpose_3">
-						<img src="images/icon_search.png">
+					<a href="javascript:;" onclick="click_purpose(this.id);" class="space-btn-purpose" id="purpose_3">
+						<img src="images/icon_search.png" class="space-img-purpose">
 						<br>전시
 					</a>
 				</div>
 				<div>
-					<a href="javascript:;" onclick="click_purpose(this.id);" id="purpose_4">
-						<img src="images/icon_house.png">
+					<a href="javascript:;" onclick="click_purpose(this.id);" class="space-btn-purpose" id="purpose_4">
+						<img src="images/icon_house.png" class="space-img-purpose">
 						<br>파티
 					</a>
 				</div>
 				<div>
-					<a href="javascript:;" onclick="click_purpose(this.id);" id="purpose_5">
-						<img src="images/icon_monitor.png">
+					<a href="javascript:;" onclick="click_purpose(this.id);" class="space-btn-purpose" id="purpose_5">
+						<img src="images/icon_monitor.png" class="space-img-purpose">
 						<br>회의
 					</a>
 				</div>
 				<div>
-					<a href="javascript:;" onclick="click_purpose(this.id);" id="purpose_6">
-						<img src="images/icon_search.png">
+					<a href="javascript:;" onclick="click_purpose(this.id);" class="space-btn-purpose" id="purpose_6">
+						<img src="images/icon_search.png" class="space-img-purpose">
 						<br>기타
 					</a>
 				</div>
@@ -117,11 +117,11 @@
 			</div>
 			
 			<div class="space-content">
-				<a href="javascript:;" onclick="click_space(this.id);" id="space_1">신촌/홍대/상수</a>
-				<a href="javascript:;" onclick="click_space(this.id);" id="space_2">종로/삼청/인사</a>
-				<a href="javascript:;" onclick="click_space(this.id);" id="space_3">이태원/한남</a>
-				<a href="javascript:;" onclick="click_space(this.id);" id="space_4">강남/역삼/논현</a>
-				<a href="javascript:;" onclick="click_space(this.id);" id="space_5">신사/압구정</a>
+				<a href="javascript:;" onclick="click_region(this.id);" class="space-btn-region-active" id="space_1">신촌/홍대/상수</a>
+				<a href="javascript:;" onclick="click_region(this.id);" class="space-btn-region" id="space_2">종로/삼청/인사</a>
+				<a href="javascript:;" onclick="click_region(this.id);" class="space-btn-region" id="space_3">이태원/한남</a>
+				<a href="javascript:;" onclick="click_region(this.id);" class="space-btn-region" id="space_4">강남/역삼/논현</a>
+				<a href="javascript:;" onclick="click_region(this.id);" class="space-btn-region" id="space_5">신사/압구정</a>
 			</div>
 		</div>
 		
@@ -138,6 +138,12 @@
 		</div>
 		
 		<div class="space-info-list">
+		  
+			<div id="panel">
+		        <input id="address" type="textbox" value="" placeholder="주소를 입력하세요.">
+ 		        <input type="button" value="Geocode" onclick="codeAddress()">
+		    </div>
+		
 			<div class="space-no-list">
 				<p class="text-lead">회원님의 검색조건에 맞는 결과를 찾지 못했습니다. 검색조건을 이렇게 살짝 바꿔보시면 도움이 될 수 있습니다:</p>
 				<ul>

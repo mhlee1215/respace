@@ -40,12 +40,29 @@ function notEmpty(el, msg) {
 	return true;
 }
 
-function onSubmit(form) {
+function onSubmitLogin(form) {
 	if (!notEmpty(form.MEM_EMAIL, "이메일을 입력해 주시기 바랍니다.")) {
 		form.MEM_EMAIL.focus();
 		return false;
 	}
 	if (!notEmpty(form.MEM_PW, "비밀번호를 입력해 주시기 바랍니다.")) {
+		form.MEM_PW.focus();
+		return false;
+	}
+	
+	return true;
+}
+
+function onSubmitJoin(form) {
+	if (!notEmpty(form.MEM_EMAIL, "이메일을 입력해주세요.")) {
+		form.MEM_EMAIL.focus();
+		return false;
+	}
+	if (!notEmpty(form.MEM_NAME, "이름을 입력해주세요.")) {
+		form.MEM_NAME.focus();
+		return false;
+	}
+	if (!notEmpty(form.MEM_PW, "비밀번호를 입력해주세요.")) {
 		form.MEM_PW.focus();
 		return false;
 	}

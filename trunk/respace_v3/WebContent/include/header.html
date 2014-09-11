@@ -16,12 +16,12 @@
 				<div class="content-login-inner">
 					<span>LOGIN</span>
 				
-					<form action="login.php" method="post" role="form" onsubmit="return onSubmit(this);">
+					<form action="login.php" method="post" role="form" onsubmit="return onSubmitLogin(this);">
 						<input type="email" id="MEM_EMAIL" name="MEM_EMAIL" placeholder="이메일주소">
 						<br />
 						<input type="password" id="MEM_PW" name="MEM_PW" placeholder="비밀번호">
 						<input type="hidden" name="login_type" value="email">
-						<input type="hidden" name="current_page" id="current_page" value="">
+						<input type="hidden" name="current_page" id="current_page1" value="">
 						<br />
 						<button type="submit">로그인</button>
 					</form>
@@ -100,13 +100,16 @@
 				<div class="respace-title"><span>RESPACE</span></div>
 				<div class="content-email-join-inner">
 					<span>회원가입</span>
-					<form action="" method="post">
-						<input type="email" placeholder="이메일주소">
+						
+					<form action="login.php" method="post" role="form" onsubmit="return onSubmitJoin(this);">
+						<input type="email" id="MEM_EMAIL" name="MEM_EMAIL" placeholder="이메일주소">
 						<br />
-						<input type="text" placeholder="이  름">
+						<input type="text" id="MEM_NAME" name="MEM_NAME" placeholder="이  름">
 						<br />
-						<input type="password" placeholder="비밀번호">
+						<input type="password" id="MEM_PW" name="MEM_PW" placeholder="비밀번호">
 						<br />
+						<input type="hidden" name="login_type" value="emailjoin">
+						<input type="hidden" name="current_page" id="current_page2" value="">
 						<button type="submit">가입하기</button>
 					</form>
 				</div>
