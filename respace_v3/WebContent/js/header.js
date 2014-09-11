@@ -1,7 +1,10 @@
 $(document).ready(function () {
 	var current_page = document.documentURI;
-	var current_page_input_hidden = document.getElementById("current_page");
-	current_page_input_hidden.setAttribute("value",current_page);
+	var current_page_input_hidden1 = document.getElementById("current_page1");
+	current_page_input_hidden1.setAttribute("value",current_page);	// 현재 페이지값 넣기
+	
+	var current_page_input_hidden2 = document.getElementById("current_page2");
+	current_page_input_hidden2.setAttribute("value",current_page);	// 현재 페이지값 넣기
 	
 	var body = document.getElementsByTagName("body");
 	
