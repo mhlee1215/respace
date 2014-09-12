@@ -1,8 +1,11 @@
+.about{
+	min-width: 800px;
+}
+
 .about-div{
 	float: left;
 	width: 100%;
 	position: relative;
-	top: 70px;
 }
 .about-img{
 	width: 100%;
@@ -38,11 +41,24 @@
 
 .contact-hr{
 	width: 60%;
-	min-width: 650px;
 	margin: 20px auto 30px;
 	background-color: #000;
 	height: 3px;
 }
+
+@media screen and (max-width : 1000px) {
+	.contact-hr{
+		width: 600px;
+		margin: 20px auto 30px;
+		background-color: #000;
+		height: 3px;
+	}
+	.contact-form{
+		width: auto;
+		margin: auto;
+	}
+}
+
 
 .contact-form{
 	width: 600px;

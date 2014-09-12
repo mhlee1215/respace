@@ -10,11 +10,17 @@
 	<title>RESPACE :: 공유공간플랫폼</title>
 	
 	<!-- Bootstrap core CSS -->
+	<!-- 
 	<link href="css/mybootstrap.css" rel="stylesheet">
+	 -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
 	
 	<!-- Add custom CSS here -->
+	<!-- 
 	<link href="css/respace.css" rel="stylesheet">
+	 -->
 	<link href="css/header.css" rel="stylesheet">
+	<link href="css/footer.css" rel="stylesheet">
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 	<style type="text/css">
 	
@@ -22,12 +28,15 @@
 
 	<script src="js/jquery-1.10.2.js"></script>
 	<script src="js/header.js"></script>
-	
+
 </head>
 
 <body class="index">
 	<? include('include/header.html') ?>
-	
+	<div style="height:1000px; background-color:#ddd;">
+		Body
+	</div>
+	<!-- 
 	<div id="search_lounge">
 		<div class="introduction">
 			<p>
@@ -50,7 +59,7 @@
 		</div>
 	</div>
 		
-	<div id="myCarousel" class="carousel slide" style="position:absolute; top:110px;">
+	<div class="carousel slide" id="myCarousel" style="position:absolute; top:200px;">
 		<div class="carousel-inner">
 			<div class="item active">
 				<div class="fill"
@@ -190,34 +199,17 @@
 
 		</div>
 	</div>
-
+	 -->
+	 
 	<? include('include/footer.html') ?>
 	
 	<!-- JavaScript -->
 	<script src="js/bootstrap.js"></script>
 	<script src="js/modern-business.js"></script>
 	<script src="js/facebook.js"></script>
+	<!-- 
 	<script src="js/login.js"></script>
-	<script>
-
-		function click_choice(id) {
-			if (id == "etov") {
-				$("#" + id).attr("disabled", false);
-				$("#etov-body").show({
-					duration : 400,
-					done : function() {
-						$(document.body).scrollTop($(this).position().top);
-					}
-				});
-				$("#MEM_TYPE").val(id);
-			} else if (id == "login") {
-				var next_url = 'login.html';
-				location.replace(next_url);
-			}
-	
-		}
-	</script>
-	
+	 -->
 </body>
 
 </html>
