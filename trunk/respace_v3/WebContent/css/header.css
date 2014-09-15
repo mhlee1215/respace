@@ -58,6 +58,10 @@
 	color: #1dd87a;
 	background-color: transparent;
 }
+.head-title a:focus{
+	color: #1dd87a;
+	background-color: transparent;
+}
 
 .respace-title span{
 	margin-top: 10px;
@@ -68,6 +72,15 @@
 	margin : 0 0 50px 0;
 }
 
+.head a{
+	color: #fff;
+	text-shadow: 1px 0 10px #333;
+	text-decoration: none;
+}
+.head a:hover{
+	color: #1dd87a;
+	background-color: transparent;
+}
 
 .content-login{
 	height:600px;
